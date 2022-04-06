@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2022 MONAI Consortium
+# SPDX-FileCopyrightText: Â© 2022 MONAI Consortium
 # SPDX-License-Identifier: Apache License 2.0
 
 assembly-versioning-scheme: MajorMinorPatchTag
@@ -6,12 +6,52 @@ mode: ContinuousDelivery
 branches:
   main:
     tag: ''
+    mode: ContinuousDelivery
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    source-branches: [ 'release' ]
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: true
+    pre-release-weight: 55000
   release:
     tag: rc
+    regex: ^releases?[/-]
+    mode: ContinuousDelivery
+    increment: None
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    source-branches: [ 'main', 'release' ]
+    tracks-release-branches: false
+    is-release-branch: true
+    is-mainline: false
+    pre-release-weight: 30000
   feature:
     tag: alpha.{BranchName}
+    regex: ^features?[/-]
+    mode: ContinuousDelivery
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    source-branches: [ 'main', 'release', 'feature' ]
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
   pull-request:
     tag: pr
+    regex: ^(pull|pull\-requests|pr)[/-]
+    mode: ContinuousDelivery
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
+    tag-number-pattern: '[/-](?<number>\d+)[-/]'
+    track-merge-target: false
+    source-branches: [ 'main', 'release', 'feature' ]
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
 
 ignore:
   sha: []
