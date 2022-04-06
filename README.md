@@ -5,7 +5,16 @@
 💡 If you want to know more about MONAI Deploy WG vision, overall structure, and guidelines, please read [MONAI Deploy](https://github.com/Project-MONAI/monai-deploy) first.
 
 # MONAI Deploy Storage
-Storage layer for MONAI Deploy clinical data pipelines system
+
+The MONAI Deploy Storage library for MONAI Deploy clinical data pipelines system enables users to extend the system to external storage services by implementing the [IStorageService API](src/Storage/API/IStorageService.cs).  The API allows users to plug in any other storage services, such as [AWS S3](https://aws.amazon.com/pm/serv-s3/) and [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/)
+
+Currently supported storage services:
+
+- [MinIO](https://min.io/)*
+
+\* Services provided may not be free or requires special license agreements.  Please refer to the service providers' website for additional terms and conditions.
+
+If you would like to use a storage service provider not listed above, please file an [issue](https://github.com/Project-MONAI/monai-deploy-workflow-manager/issues) and contribute to the repository.
 
 ## Contributing
 
