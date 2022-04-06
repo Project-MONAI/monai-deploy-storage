@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - monai-deploy-storage Sonar way" ToolsVersion="17.0">
+  <Include Path="..\.sonarlint\project-monai_monai-deploy-storagecsharp.ruleset" Action="Default" />
+</RuleSet>

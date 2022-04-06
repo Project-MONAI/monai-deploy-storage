@@ -1,0 +1,292 @@
+# SPDX-FileCopyrightText: © 2022 MONAI Consortium
+# SPDX-License-Identifier: Apache License 2.0
+
+name: ci
+
+on:
+  # Triggers on pushes and on pull requests
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      nuget:
+        type: boolean
+        default: false
+        description: Publish to NuGet.org
+        required: true
+
+env:
+  BUILD_CONFIG: "Release"
+  SOLUTION: "Monai.Deploy.Storage.sln"
+  TEST_RESULTS: "results/"
+
+jobs:
+
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'csharp' ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: "6.0.x"
+
+    - name: Enable NuGet cache
+      uses: actions/cache@v2.1.7
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ./src
+
+    - name: Build Solution
+      run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo ${{ env.SOLUTION }}
+      working-directory: ./src
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+      
+    - name: Secret detection
+      uses: zricethezav/gitleaks-action@master
+
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Enable NuGet cache
+        uses: actions/cache@v2.1.7
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./src
+        
+      - name: Begin SonarScanner
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet sonarscanner begin /k:"Project-MONAI_monai-deploy-storage" /o:"project-monai" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="${{ env.TEST_RESULTS }}/**/*.xml"
+        working-directory: ./src
+        
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo "${{ env.SOLUTION }}"
+        working-directory: ./src
+      
+      - name: Test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: find ~+ -type f -name "*.Test.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal -r "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings 
+        working-directory: ./src
+
+      - name: End SonarScanner
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        working-directory: ./src
+          
+      - uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: "src/${{ env.TEST_RESULTS }}"
+          files: "**/coverage.opencover.xml"
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          verbose: true
+
+  build:
+    runs-on: ${{ matrix.os }}
+    
+    outputs:
+      majorMinorPatch: ${{ steps.gitversion.outputs.majorMinorPatch }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+      fail-fast: true
+
+    permissions:
+      contents: write
+      packages: write
+      checks: write
+      security-events: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Enable NuGet cache
+        uses: actions/cache@v2.1.7
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./src
+
+      - name: Install GitVersion
+        run: dotnet tool install --global GitVersion.Tool
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.11
+        with:
+          useConfigFile: true
+          updateAssemblyInfo: true
+          updateAssemblyInfoFilename: src/AssemblyInfo.cs
+
+      - name: Build Solution
+        run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo ${{ env.SOLUTION }}
+        working-directory: ./src
+
+      - name: Package
+        env:
+          PACKAGEDIR: '${{ github.workspace }}/release/'
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: |
+          mkdir $PACKAGEDIR
+          dotnet pack --no-build -c ${{ env.BUILD_CONFIG }} -o $PACKAGEDIR -p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+          ls -lR $PACKAGEDIR
+        working-directory: ./src
+        
+      - name: Upload
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          path: ${{ github.workspace }}/release/*.nupkg
+          retention-days: 30
+
+  publish:
+    name: Publish to GitHub Packages
+    runs-on: ubuntu-latest
+    needs: [build, unit-test]
+    steps:
+      - uses: actions/download-artifact@v2
+        id: download
+
+      - name: List artifacts
+        run: ls -ldR ${{steps.download.outputs.download-path}}/**/*
+
+      - uses: actions/setup-dotnet@v1
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          dotnet-version: "6.0.x"
+          source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
+          
+      - name: Publish to GitHub
+        run: dotnet nuget push ${{ steps.download.outputs.download-path }}/artifact/*.nupkg --skip-duplicate
+        
+  release:
+    name: Official Release to NuGet.org
+    if: ${{ github.event.inputs.nuget }}
+    runs-on: ubuntu-latest
+    needs: [build, unit-test]
+    env:
+      MAJORMINORPATCH: ${{ needs.build.outputs.majorMinorPatch }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v2
+        id: download
+
+      - name: List artifacts
+        run: ls -ldR ${{steps.download.outputs.download-path}}/**/*
+        
+      - name: Publish to NuGet.org
+        run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/artifact/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
+
+      - name: Extract owner and repo
+        uses: jungwinter/split@v1
+        id: repo
+        with:
+          seperator: "/"
+          msg: ${{ github.repository }}
+
+      - name: Install GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/setup@v0.9.13
+        with:
+          versionSpec: "0.13.x"
+
+      - name: Create release with GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/create@v0.9.13
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ steps.repo.outputs._0 }}
+          repository: ${{ steps.repo.outputs._1 }}
+          milestone: ${{ env.MAJORMINORPATCH }}
+          name: Release v${{ env.MAJORMINORPATCH }}
+
+      - name: Publish release with GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/publish@v0.9.13
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ steps.repo.outputs._0 }}
+          repository: ${{ steps.repo.outputs._1 }}
+          tagName: ${{ env.MAJORMINORPATCH }}
+
+      - name: Close release with GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/close@v0.9.13
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ steps.repo.outputs._0 }}
+          repository: ${{ steps.repo.outputs._1 }}
+          milestone: ${{ env.MAJORMINORPATCH }}
