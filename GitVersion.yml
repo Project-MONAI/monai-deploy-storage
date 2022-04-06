@@ -18,7 +18,7 @@ branches:
   release:
     tag: rc
     regex: ^releases?[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     increment: None
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
@@ -30,7 +30,7 @@ branches:
   feature:
     tag: alpha.{BranchName}
     regex: ^features?[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
@@ -42,7 +42,7 @@ branches:
   pull-request:
     tag: pr
     regex: ^(pull|pull\-requests|pr)[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
     tag-number-pattern: '[/-](?<number>\d+)[-/]'
