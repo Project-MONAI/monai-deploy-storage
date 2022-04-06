@@ -276,6 +276,7 @@ jobs:
           name: Release v${{ env.MAJORMINORPATCH }}
 
       - name: Publish release with GitReleaseManager
+        if: ${{ contains(github.ref, 'refs/heads/main') }}
         uses: gittools/actions/gitreleasemanager/publish@v0.9.13
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -284,6 +285,7 @@ jobs:
           tagName: ${{ env.MAJORMINORPATCH }}
 
       - name: Close release with GitReleaseManager
+        if: ${{ contains(github.ref, 'refs/heads/main') }}
         uses: gittools/actions/gitreleasemanager/close@v0.9.13
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
