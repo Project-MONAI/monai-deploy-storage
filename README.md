@@ -6,7 +6,7 @@
 
 # MONAI Deploy Storage
 
-The MONAI Deploy Storage library for MONAI Deploy clinical data pipelines system enables users to extend the system to external storage services by implementing the [IStorageService API](src/Storage/API/IStorageService.cs).  The API allows users to plug in any other storage services, such as [AWS S3](https://aws.amazon.com/pm/serv-s3/) and [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/).
+The MONAI Deploy Storage library for MONAI Deploy clinical data pipelines system enables users to extend the system to external storage services by implementing the [IStorageService API](src/Storage/API/IStorageService.cs). The API allows users to plug in any other storage services, such as [AWS S3](https://aws.amazon.com/pm/serv-s3/) and [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/).
 
 Currently supported storage services:
 
@@ -26,7 +26,7 @@ To participate, please join the MONAI Deploy Workflow Manager weekly meetings on
 
 Join the conversation on Twitter [@ProjectMONAI](https://twitter.com/ProjectMONAI) or join our [Slack channel](https://forms.gle/QTxJq3hFictp31UM9).
 
-Ask and answer questions over on [MONAI Deploy's GitHub Discussions tab](https://github.com/Project-MONAI/monai-deploy/discussions).
+Ask and answer questions over on [MONAI Deploy Storage's GitHub Discussions tab](https://github.com/Project-MONAI/monai-deploy-storage/discussions).
 
 ## Links
 
@@ -35,4 +35,3 @@ Ask and answer questions over on [MONAI Deploy's GitHub Discussions tab](https:/
 - Project tracker: <https://github.com/Project-MONAI/monai-deploy-storage/projects>
 - Issue tracker: <https://github.com/Project-MONAI/monai-deploy-storage/issues>
 - Test status: <https://github.com/Project-MONAI/monai-deploy-storage/actions>
-
