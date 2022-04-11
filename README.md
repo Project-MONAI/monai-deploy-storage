@@ -11,19 +11,19 @@
 [![ci](https://github.com/Project-MONAI/monai-deploy-storage/actions/workflows/ci.yml/badge.svg)](https://github.com/Project-MONAI/monai-deploy-storage/actions/workflows/ci.yml)
 [![Nuget](https://img.shields.io/nuget/dt/Monai.Deploy.Storage?label=NuGet%20Download)](https://www.nuget.org/packages/Monai.Deploy.Storage/)
 
-The MONAI Deploy Storage library for MONAI Deploy clinical data pipelines system enables users to extend the system to external storage services by implementing the [IStorageService API](src/Storage/API/IStorageService.cs). The API allows users to plug in any other storage services, such as [AWS S3](https://aws.amazon.com/pm/serv-s3/) and [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/).
+The MONAI Deploy Storage library for MONAI Deploy clinical data pipelines system enables users to extend the system to external storage services by implementing the [IStorageService API](src/Storage/API/IStorageService.cs), which allows the users to plug in any other storage services, such as [AWS S3](https://aws.amazon.com/pm/serv-s3/) and [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/).
 
 Currently supported storage services:
 
 - [MinIO](https://min.io/)*
 
-\* Services provided may not be free or requires special license agreements.  Please refer to the service providers' website for additional terms and conditions.
+\* Services provided may not be free or requires special license agreements. Please refer to the service providers' website for additional terms and conditions.
 
 If you would like to use a storage service provider not listed above, please file an [issue](https://github.com/Project-MONAI/monai-deploy-storage/issues) and contribute to the repository.
 
 ## Releases
 
-The MONAI Deploy Storage library is release in NuGet format which is available on both [NuGet.Org](https://www.nuget.org/packages/Monai.Deploy.Storage/) and [GitHub](https://github.com/Project-MONAI/monai-deploy-storage/packages/1350678).
+The MONAI Deploy Storage library is released in NuGet format, which is available on both [NuGet.Org](https://www.nuget.org/packages/Monai.Deploy.Storage/) and [GitHub](https://github.com/Project-MONAI/monai-deploy-storage/packages/1350678).
 
 ### Official Builds
 
@@ -35,11 +35,11 @@ Release candidates are built and released from the `release/*` branches.
 
 ### Development Builds
 
-Development builds are made from all branches except the `main` branch and the `release/*` branches.  The NuGet packages are released to [GitHub](https://github.com/Project-MONAI/monai-deploy-storage/packages/1350678) only.
+Development builds are made from all branches except the `main` branch and the `release/*` branches. The NuGet packages are released to [GitHub](https://github.com/Project-MONAI/monai-deploy-storage/packages/1350678) only.
 
 ## Contributing
 
-For guidance on making a contribution to MONAI Deploy Workflow Manager, see the [contributing guidelines](https://github.com/Project-MONAI/monai-deploy/blob/main/CONTRIBUTING.md).
+For guidance on contributing to MONAI Deploy Workflow Manager, see the [contributing guidelines](https://github.com/Project-MONAI/monai-deploy/blob/main/CONTRIBUTING.md).
 
 ## Community
 
