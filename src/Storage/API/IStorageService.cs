@@ -171,6 +171,5 @@ namespace Monai.Deploy.Storage
         /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
         /// <returns>Task</returns>
         Task CreateFolderWithCredentials(string bucketName, string folderPath, Credentials credentials, CancellationToken cancellationToken = default);
-
     }
 }

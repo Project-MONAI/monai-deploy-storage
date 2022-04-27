@@ -11,7 +11,9 @@ using Microsoft.Extensions.Options;
 using Minio;
 using Minio.DataModel;
 using Monai.Deploy.Storage.Common;
+using Monai.Deploy.Storage.Common.Extensions;
 using Monai.Deploy.Storage.Configuration;
+using Newtonsoft.Json;
 
 namespace Monai.Deploy.Storage.MinIo
 {
@@ -39,6 +41,7 @@ namespace Monai.Deploy.Storage.MinIo
             var accessKey = configuration.Settings[ConfigurationKeys.AccessKey];
             var accessToken = configuration.Settings[ConfigurationKeys.AccessToken];
             var securedConnection = configuration.Settings[ConfigurationKeys.SecuredConnection];
+            var credentialServiceUrl = configuration.Settings[ConfigurationKeys.CredentialServiceUrl];
 
             _client = new MinioClient(endpoint, accessKey, accessToken);
 
@@ -49,8 +52,8 @@ namespace Monai.Deploy.Storage.MinIo
 
             var config = new AmazonSecurityTokenServiceConfig
             {
-                AuthenticationRegion = RegionEndpoint.EUWest2.SystemName, // Should match the `MINIO_REGION` environment variable.
-                ServiceURL = "http://" + endpoint, // replace http://localhost:9000 with URL of your MinIO server
+                AuthenticationRegion = RegionEndpoint.EUWest2.SystemName,
+                ServiceURL = credentialServiceUrl
             };
 
             _tokenServiceClient = new AmazonSecurityTokenServiceClient(accessKey, accessToken, config);
@@ -162,11 +165,14 @@ namespace Monai.Deploy.Storage.MinIo
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrEmpty(folderName, nameof(folderName));
 
+            var policy = PolicyExtensions.ToPolicy(bucketName, folderName);
+
+            var policyString = JsonConvert.SerializeObject(policy, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
             var assumeRoleRequest = new AssumeRoleRequest
             {
                 DurationSeconds = durationSeconds,
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AllowUserToSeeBucketListInTheConsole\",\"Action\":[\"s3:ListAllMyBuckets\",\"s3:GetBucketLocation\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::*\"]},{\"Sid\":\"AllowRootAndHomeListingOfBucket\",\"Action\":[\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::" +
-                bucketName + "\"],\"Condition\":{\"StringEquals\":{\"s3:prefix\":[\"\",\"" + folderName + "\"],\"s3:delimiter\":[\"/\"]}}},{\"Sid\":\"AllowListingOfUserFolder\",\"Action\":[\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::" + bucketName + "\"],\"Condition\":{\"StringLike\":{\"s3:prefix\":[\"" + folderName + "/*\"]}}},{\"Sid\":\"AllowAllS3ActionsInUserFolder\",\"Effect\":\"Allow\",\"Action\":[\"s3:*\"],\"Resource\":[\"arn:aws:s3:::" + $"{bucketName}/{folderName}" + "/*\"]}]}"
+                Policy = policyString
             };
 
             var role = await _tokenServiceClient.AssumeRoleAsync(assumeRoleRequest, cancellationToken: cancellationToken);
