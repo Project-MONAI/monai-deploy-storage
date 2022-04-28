@@ -9,7 +9,9 @@ namespace Monai.Deploy.Storage.Configuration
         public static readonly string AccessKey = "accessKey";
         public static readonly string AccessToken = "accessToken";
         public static readonly string SecuredConnection = "securedConnection";
+        public static readonly string Region = "region";
+        public static readonly string CredentialServiceUrl = "credentialServiceUrl";
 
-        public static readonly string[] RequiredKeys = new[] { EndPoint, AccessKey, AccessToken, SecuredConnection };
+        public static readonly string[] RequiredKeys = new[] { EndPoint, AccessKey, AccessToken, SecuredConnection, Region };
     }
 }

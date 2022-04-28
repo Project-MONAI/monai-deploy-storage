@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Monai.Deploy.Storage.csproj" />
+  </ItemGroup>
+
 </Project>
