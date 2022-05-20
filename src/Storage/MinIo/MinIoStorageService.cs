@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Minio;
 using Minio.DataModel;
+using Minio.Exceptions;
 using Monai.Deploy.Storage.Common;
 using Monai.Deploy.Storage.Common.Extensions;
 using Monai.Deploy.Storage.Configuration;
@@ -118,6 +119,30 @@ namespace Monai.Deploy.Storage.MinIo
 
             completedEvent.Wait(cancellationToken);
             return files;
+        }
+
+        public async Task<Dictionary<string, string>> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict)
+        {
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.Null(objectDict, nameof(objectDict));
+
+            var existingObjectsDict = new Dictionary<string, string>();
+
+            foreach (var obj in objectDict)
+            {
+                try
+                {
+                    await _client.StatObjectAsync(bucketName, $"{obj.Value}/{obj.Key}");
+
+                    existingObjectsDict.Add(obj.Key, obj.Value);
+                }
+                catch (ObjectNotFoundException)
+                {
+                    _logger.FileNotFoundError(bucketName, $"{obj.Value}/{obj.Key}");
+                }
+            }
+
+            return existingObjectsDict;
         }
 
         public async Task PutObject(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, CancellationToken cancellationToken = default)
