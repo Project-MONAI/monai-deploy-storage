@@ -171,5 +171,13 @@ namespace Monai.Deploy.Storage
         /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
         /// <returns>Task</returns>
         Task CreateFolderWithCredentials(string bucketName, string folderPath, Credentials credentials, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Verifies a list of artifacts to ensure that they exist.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket</param>
+        /// <param name="objectDict">Artifact dictionary to verify</param>
+        /// <returns>all valid artifacts</returns>
+        Task<Dictionary<string, string>> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict);
     }
 }
