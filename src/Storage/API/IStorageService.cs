@@ -178,6 +178,14 @@ namespace Monai.Deploy.Storage
         /// <param name="bucketName">Name of the bucket</param>
         /// <param name="objectDict">Artifact dictionary to verify</param>
         /// <returns>all valid artifacts</returns>
-        Task<Dictionary<string, string>> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict);
+        Dictionary<string, string> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict);
+
+        /// <summary>
+        /// Verifies the existance of an artifact to ensure that they exist.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket</param>
+        /// <param name="objectPair">Artifact to verify</param>
+        /// <returns>valid artifact</returns>
+        KeyValuePair<string, string> VerifyObjectExists(string bucketName, KeyValuePair<string, string> objectPair);
     }
 }

@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Minio;
 using Minio.DataModel;
-using Minio.Exceptions;
 using Monai.Deploy.Storage.Common;
 using Monai.Deploy.Storage.Common.Extensions;
 using Monai.Deploy.Storage.Configuration;
@@ -121,7 +120,7 @@ namespace Monai.Deploy.Storage.MinIo
             return files;
         }
 
-        public async Task<Dictionary<string, string>> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict)
+        public Dictionary<string, string> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.Null(objectDict, nameof(objectDict));
@@ -132,17 +131,45 @@ namespace Monai.Deploy.Storage.MinIo
             {
                 try
                 {
-                    await _client.StatObjectAsync(bucketName, $"{obj.Value}/{obj.Key}");
+                    var fileObjects = ListObjects(bucketName, obj.Value);
+                    var folderObjects = ListObjects(bucketName, obj.Value.EndsWith("/") ? obj.Value : $"{obj.Value}/", true);
 
-                    existingObjectsDict.Add(obj.Key, obj.Value);
+                    if (!folderObjects.Any() && !fileObjects.Any())
+                    {
+                        _logger.FileNotFoundError(bucketName, $"{obj.Value}");
+
+                        continue;
+                    }
                 }
-                catch (ObjectNotFoundException)
+                catch (Exception e)
                 {
-                    _logger.FileNotFoundError(bucketName, $"{obj.Value}/{obj.Key}");
+                    _logger.LogError(e.Message);
+
+                    continue;
                 }
+
+                existingObjectsDict.Add(obj.Key, obj.Value);
             }
 
             return existingObjectsDict;
+        }
+
+        public KeyValuePair<string, string> VerifyObjectExists(string bucketName, KeyValuePair<string, string> objectPair)
+        {
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.Null(objectPair, nameof(objectPair));
+
+            var fileObjects = ListObjects(bucketName, objectPair.Value);
+            var folderObjects = ListObjects(bucketName, objectPair.Value.EndsWith("/") ? objectPair.Value : $"{objectPair.Value}/", true);
+
+            if (folderObjects.Any() || fileObjects.Any())
+            {
+                return objectPair;
+            }
+
+            _logger.FileNotFoundError(bucketName, $"{objectPair.Value}");
+
+            return default;
         }
 
         public async Task PutObject(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, CancellationToken cancellationToken = default)
