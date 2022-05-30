@@ -8,9 +8,9 @@ namespace Monai.Deploy.Storage.Core.Policies
     public class StringEquals
     {
         [JsonProperty(PropertyName = "s3:prefix")]
-        public string[] S3Prefix { get; set; }
+        public string[]? S3Prefix { get; set; }
 
         [JsonProperty(PropertyName = "s3:delimiter")]
-        public string[] S3Delimiter { get; set; }
+        public string[]? S3Delimiter { get; set; }
     }
 }

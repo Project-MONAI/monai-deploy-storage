@@ -8,6 +8,6 @@ namespace Monai.Deploy.Storage.Core.Policies
     public class StringLike
     {
         [JsonProperty(PropertyName = "s3:prefix")]
-        public string[] S3Prefix { get; set; }
+        public string[]? S3Prefix { get; set; }
     }
 }

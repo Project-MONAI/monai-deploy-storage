@@ -5,14 +5,14 @@ namespace Monai.Deploy.Storage.Core.Policies
 {
     public class Statement
     {
-        public string Sid { get; set; }
+        public string? Sid { get; set; }
 
-        public string[] Action { get; set; }
+        public string[]? Action { get; set; }
 
-        public string Effect { get; set; }
+        public string? Effect { get; set; }
 
-        public string[] Resource { get; set; }
+        public string[]? Resource { get; set; }
 
-        public Condition Condition { get; set; }
+        public Condition? Condition { get; set; }
     }
 }

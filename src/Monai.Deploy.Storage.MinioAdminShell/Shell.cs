@@ -180,6 +180,14 @@ namespace Monai.Deploy.Storage.MinioAdmin
             return credentials;
         }
 
+        /// <summary>
+        /// Admin policy command requires json file for policy so we create file
+        /// and remove it after setting the admin policy for the user.
+        /// </summary>
+        /// <param name="policyRequests"></param>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         private async Task CreatePolicyAsync(PolicyRequest[] policyRequests, string username)
         {
             await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
@@ -187,8 +195,10 @@ namespace Monai.Deploy.Storage.MinioAdmin
             if (!result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")))
             {
                 RemoveUser(username);
+                File.Delete($"{username}.json");
                 throw new InvalidOperationException("Failed to create policy, user has been removed");
             }
+            File.Delete($"{username}.json");
         }
 
         private static async Task CreatePolicyFile(PolicyRequest[] policyRequests, string username)
