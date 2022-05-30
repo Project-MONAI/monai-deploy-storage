@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿// SPDX-FileCopyrightText: © 2022 MONAI Consortium
+// SPDX-License-Identifier: Apache License 2.0
+
+using System.Diagnostics;
 using Amazon.SecurityToken.Model;
 using Monai.Deploy.Storage.Core.Extensions;
 using Monai.Deploy.Storage.Core.Policies;
