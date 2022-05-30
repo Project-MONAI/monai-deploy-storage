@@ -1,7 +1,7 @@
 ﻿// SPDX-FileCopyrightText: © 2021-2022 MONAI Consortium
 // SPDX-License-Identifier: Apache License 2.0
 
-namespace Monai.Deploy.Storage.Common.Policies
+namespace Monai.Deploy.Storage.Core.Policies
 {
     public class Statement
     {

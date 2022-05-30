@@ -11,9 +11,11 @@ using Microsoft.Extensions.Options;
 using Minio;
 using Minio.DataModel;
 using Monai.Deploy.Storage.Common;
-using Monai.Deploy.Storage.Common.Extensions;
 using Monai.Deploy.Storage.Configuration;
 using Newtonsoft.Json;
+using Monai.Deploy.Storage.Core.Policies;
+using Monai.Deploy.Storage.Core.Extensions;
+using Monai.Deploy.Storage.MinioAdmin.Interfaces;
 
 namespace Monai.Deploy.Storage.MinIo
 {
@@ -233,6 +235,15 @@ namespace Monai.Deploy.Storage.MinIo
         }
 
         #endregion
+
+
+
+        public Credentials CreateReadOnlyUser(string username,
+            PolicyRequest[] policyRequests, IMinioAdmin minioAdmin)
+        {
+            return minioAdmin.CreateReadOnlyUser(username, policyRequests);
+        }
+
 
         #region TemporaryCredentials
 
