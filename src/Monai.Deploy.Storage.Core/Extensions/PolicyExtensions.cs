@@ -2,9 +2,11 @@
 // SPDX-License-Identifier: Apache License 2.0
 
 using Ardalis.GuardClauses;
-using Monai.Deploy.Storage.Common.Policies;
+using Monai.Deploy.Storage.Core.Policies;
+using Newtonsoft.Json;
+using static Monai.Deploy.Storage.Core.Policies.Policy;
 
-namespace Monai.Deploy.Storage.Common.Extensions
+namespace Monai.Deploy.Storage.Core.Extensions
 {
     public static class PolicyExtensions
     {
@@ -66,6 +68,64 @@ namespace Monai.Deploy.Storage.Common.Extensions
             };
         }
 
+        public static Policy ToPolicy(PolicyRequest[] policyRequests)
+        {
+            Guard.Against.NullOrEmpty(policyRequests, nameof(policyRequests));
+
+            var pathList = policyRequests.SelectMany(pr => GetPathList(pr.FolderName));
+            Guard.Against.NullOrEmpty(pathList, nameof(pathList));
+
+            return new Policy
+            {
+                Statement = new List<Statement>
+                {
+                    new Statement
+                    {
+                        Sid = "AllowUserToSeeBucketListInTheConsole",
+                        Action = new string[] {"s3:ListAllMyBuckets", "s3:GetBucketLocation" },
+                        Effect = "Allow",
+                        Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
+                    },
+                    new Statement
+                    {
+                        Sid = "AllowRootAndHomeListingOfBucket",
+                        Action = new string[] { "s3:ListBucket" },
+                        Effect = "Allow",
+                        Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
+                        Condition = new Condition
+                        {
+                            StringEquals = new StringEquals
+                            {
+                                S3Prefix = pathList.ToArray(),
+                                S3Delimiter = new string[] { "/" }
+                            }
+                        }
+                    },
+                    new Statement
+                    {
+                        Sid = "AllowListingOfUserFolder",
+                        Action = new string[] { "s3:ListBucket" },
+                        Effect = "Allow",
+                        Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
+                        Condition = new Condition
+                        {
+                            StringEquals = new StringEquals
+                            {
+                                S3Prefix = policyRequests.Select(pr => $"{pr.FolderName}/*").ToArray(),
+                            }
+                        }
+                    },
+                    new Statement
+                    {
+                        Sid = "AllowAllS3ActionsInUserFolder",
+                        Action = new string[] { "s3:*" },
+                        Effect = "Allow",
+                        Resource = policyRequests.Select(pr => $"{pr.BucketName}/{pr.FolderName}").ToArray(),
+                    },
+                }
+            };
+        }
+
         public static List<string> GetPathList(string folderName)
         {
             Guard.Against.NullOrWhiteSpace(folderName, nameof(folderName));
@@ -86,5 +146,7 @@ namespace Monai.Deploy.Storage.Common.Extensions
 
             return pathList;
         }
+
+        public static string ToJson(this Policy self) => JsonConvert.SerializeObject(self, Converter.Settings);
     }
 }
