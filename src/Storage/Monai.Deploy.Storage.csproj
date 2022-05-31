@@ -52,7 +52,13 @@ SPDX-License-Identifier: Apache License 2.0
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Monai.Deploy.Storage.Core\Monai.Deploy.Storage.Core.csproj" />
-    <ProjectReference Include="..\Monai.Deploy.Storage.MinioAdminShell\Monai.Deploy.Storage.MinioAdmin.csproj" />
+    <ProjectReference Include="..\Monai.Deploy.Storage.Core\Monai.Deploy.Storage.Core.csproj" >
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <IncludeAssets>Monai.Deploy.Storage.Core.dll</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Monai.Deploy.Storage.MinioAdminShell\Monai.Deploy.Storage.MinioAdmin.csproj" >
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <IncludeAssets>Monai.Deploy.Storage.MinioAdmin.dll</IncludeAssets>
+    </ProjectReference>
   </ItemGroup>
 </Project>
