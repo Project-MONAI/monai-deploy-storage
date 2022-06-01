@@ -26,7 +26,6 @@ SPDX-License-Identifier: Apache License 2.0
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Monai.Deploy.Storage.Core\Monai.Deploy.Storage.Core.csproj" />
     <ProjectReference Include="..\Monai.Deploy.Storage.csproj" />
   </ItemGroup>
 
