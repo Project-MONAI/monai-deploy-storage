@@ -3,7 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-using Monai.Deploy.Storage.Common.Extensions;
+using Monai.Deploy.Storage.Core.Extensions;
 using Newtonsoft.Json;
 using Xunit;
 

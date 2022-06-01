@@ -3,14 +3,11 @@
 
 using Newtonsoft.Json;
 
-namespace Monai.Deploy.Storage.Common.Policies
+namespace Monai.Deploy.Storage.Core.Policies
 {
-    public class StringEquals
+    public class StringLike
     {
         [JsonProperty(PropertyName = "s3:prefix")]
         public string[]? S3Prefix { get; set; }
-
-        [JsonProperty(PropertyName = "s3:delimiter")]
-        public string[]? S3Delimiter { get; set; }
     }
 }
