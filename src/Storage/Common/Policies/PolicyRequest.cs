@@ -3,7 +3,7 @@
 
 using Ardalis.GuardClauses;
 
-namespace Monai.Deploy.Storage.Core.Policies
+namespace Monai.Deploy.Storage.Common.Policies
 {
     public class PolicyRequest
     {

@@ -3,7 +3,7 @@
 
 using Newtonsoft.Json;
 
-namespace Monai.Deploy.Storage.Core.Policies
+namespace Monai.Deploy.Storage.Common.Policies
 {
     public partial class Policy
     {

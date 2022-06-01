@@ -3,8 +3,8 @@
 
 using System.Diagnostics;
 using Amazon.SecurityToken.Model;
-using Monai.Deploy.Storage.Core.Extensions;
-using Monai.Deploy.Storage.Core.Policies;
+using Monai.Deploy.Storage.Common.Extensions;
+using Monai.Deploy.Storage.Common.Policies;
 using Monai.Deploy.Storage.MinioAdmin.Extensions;
 using Monai.Deploy.Storage.MinioAdmin.Interfaces;
 using Monai.Deploy.Storage.MinioAdmin.Models;
@@ -71,8 +71,8 @@ namespace Monai.Deploy.Storage.MinioAdmin
 
         private static (List<string> Output, List<string> Errors) RunProcess(Process process)
         {
-            List<string> output = new();
-            List<string> errors = new();
+            var output = new List<string>();
+            var errors = new List<string>();
             process.Start();
             while (!process.StandardOutput.EndOfStream)
             {
@@ -93,7 +93,7 @@ namespace Monai.Deploy.Storage.MinioAdmin
 
         private Process CreateProcess(string cmd)
         {
-            ProcessStartInfo startinfo = new()
+            var startinfo = new ProcessStartInfo()
             {
                 FileName = _executableLocation,
                 Arguments = cmd,
@@ -103,7 +103,7 @@ namespace Monai.Deploy.Storage.MinioAdmin
                 RedirectStandardError = true
             };
 
-            Process process = new()
+            var process = new Process()
             {
                 StartInfo = startinfo
             };
@@ -154,7 +154,7 @@ namespace Monai.Deploy.Storage.MinioAdmin
                 throw new InvalidOperationException("User already exists");
             }
 
-            Credentials credentials = new();
+            var credentials = new Credentials();
             var userSecretKey = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
             credentials.SecretAccessKey = userSecretKey;
             credentials.AccessKeyId = username;
@@ -167,7 +167,7 @@ namespace Monai.Deploy.Storage.MinioAdmin
                 throw new InvalidOperationException($"Unknown Output {result.SelectMany(e => e)}");
             }
 
-            List<string> minioPolicies = new()
+            var minioPolicies = new List<string>()
             {
                 MinioPolicy.ReadOnly.GetString()
             };
@@ -208,7 +208,7 @@ namespace Monai.Deploy.Storage.MinioAdmin
         {
             var policy = PolicyExtensions.ToPolicy(policyRequests);
             var jsonPolicy = policy.ToJson();
-            List<string> lines = new() { jsonPolicy };
+            var lines = new List<string>() { jsonPolicy };
             await File.WriteAllLinesAsync($"{username}.json", lines).ConfigureAwait(false);
         }
     }

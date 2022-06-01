@@ -1,8 +1,9 @@
 ﻿// SPDX-FileCopyrightText: © 2022 MONAI Consortium
 // SPDX-License-Identifier: Apache License 2.0
 
+using System.Collections.Generic;
 using Amazon.SecurityToken.Model;
-using Monai.Deploy.Storage.Core.Policies;
+using Monai.Deploy.Storage.Common.Policies;
 using Monai.Deploy.Storage.MinioAdmin.Models;
 
 namespace Monai.Deploy.Storage.MinioAdmin.Interfaces

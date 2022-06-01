@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache License 2.0
 
 using Ardalis.GuardClauses;
-using Monai.Deploy.Storage.Core.Policies;
+using Monai.Deploy.Storage.Common.Policies;
 using Newtonsoft.Json;
-using static Monai.Deploy.Storage.Core.Policies.Policy;
+using static Monai.Deploy.Storage.Common.Policies.Policy;
 
-namespace Monai.Deploy.Storage.Core.Extensions
+namespace Monai.Deploy.Storage.Common.Extensions
 {
     public static class PolicyExtensions
     {

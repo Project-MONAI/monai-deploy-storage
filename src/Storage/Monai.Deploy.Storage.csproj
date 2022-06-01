@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache License 2.0
 
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -52,13 +52,6 @@ SPDX-License-Identifier: Apache License 2.0
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Monai.Deploy.Storage.Core\Monai.Deploy.Storage.Core.csproj" >
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-      <IncludeAssets>Monai.Deploy.Storage.Core.dll</IncludeAssets>
-    </ProjectReference>
-    <ProjectReference Include="..\Monai.Deploy.Storage.MinioAdminShell\Monai.Deploy.Storage.MinioAdmin.csproj" >
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-      <IncludeAssets>Monai.Deploy.Storage.MinioAdmin.dll</IncludeAssets>
-    </ProjectReference>
+    <Folder Include="MinIoAdmin\" />
   </ItemGroup>
 </Project>
