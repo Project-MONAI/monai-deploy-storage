@@ -26,7 +26,7 @@ namespace Monai.Deploy.Storage.MinIo
 
         public string Name => "MinIO Storage Service";
 
-        public MinIoStorageService(IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
+        public MinIoStorageService(IMinIoClientFactory minioClientFactory, IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
         {
             Guard.Against.Null(options, nameof(options));
 
@@ -37,18 +37,11 @@ namespace Monai.Deploy.Storage.MinIo
 
             _options = configuration;
 
-            var endpoint = configuration.Settings[ConfigurationKeys.EndPoint];
             var accessKey = configuration.Settings[ConfigurationKeys.AccessKey];
             var accessToken = configuration.Settings[ConfigurationKeys.AccessToken];
-            var securedConnection = configuration.Settings[ConfigurationKeys.SecuredConnection];
             var credentialServiceUrl = configuration.Settings[ConfigurationKeys.CredentialServiceUrl];
 
-            _client = new MinioClient(endpoint, accessKey, accessToken);
-
-            if (bool.Parse(securedConnection))
-            {
-                _client.WithSSL();
-            }
+            _client = minioClientFactory.GetClient();
 
             var config = new AmazonSecurityTokenServiceConfig
             {
