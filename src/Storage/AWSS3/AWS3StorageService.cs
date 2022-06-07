@@ -221,7 +221,7 @@ namespace Monai.Deploy.AWSS3
             IsCredentialsNull(credentials);
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
 
-            using (GetObjectResponse obj = await _client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false))
+            using (GetObjectResponse obj = await client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false))
             {
                 callback(obj.ResponseStream);
             }
