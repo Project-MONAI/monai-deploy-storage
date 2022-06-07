@@ -98,7 +98,7 @@ namespace Monai.Deploy.AWSS3
             var files = new List<VirtualFileInfo>();
 
             Task<ListObjectsV2Response> objservable = _client.ListObjectsV2Async(request, cancellationToken);
-            var response;
+            ListObjectsV2Response response;
 
             do
             {
