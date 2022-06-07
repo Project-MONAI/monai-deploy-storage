@@ -102,8 +102,6 @@ namespace Monai.Deploy.AWSS3
 
             do
             {
-
-                
                 objservable.Wait();
                 response = objservable.Result;
 
