@@ -98,12 +98,12 @@ namespace Monai.Deploy.AWSS3
             var files = new List<VirtualFileInfo>();
 
             Task<ListObjectsV2Response> objservable = _client.ListObjectsV2Async(request, cancellationToken);
-            var response = new ListObjectsV2Response();
+            var response;
 
             do
             {
 
-                var completedEvent = new ManualResetEventSlim(false);
+                
                 objservable.Wait();
                 response = objservable.Result;
 
