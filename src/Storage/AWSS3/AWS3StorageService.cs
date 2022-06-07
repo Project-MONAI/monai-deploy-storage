@@ -17,16 +17,16 @@ using Monai.Deploy.Storage;
 
 namespace Monai.Deploy.AWSS3
 {
-    public class AWSS3StorageService : IStorageService
+    public class Awss3StorageService : IStorageService
     {
-        private readonly ILogger<AWSS3StorageService> _logger;
+        private readonly ILogger<Awss3StorageService> _logger;
         private readonly AmazonS3Client _client;
         private readonly AmazonSecurityTokenServiceClient _tokenServiceClient;
         private readonly StorageServiceConfiguration _options;
 
         public string Name => "AWS S3 Storage Service";
 
-        public AWSS3StorageService(IOptions<StorageServiceConfiguration> options, ILogger<AWSS3StorageService> logger)
+        public Awss3StorageService(IOptions<StorageServiceConfiguration> options, ILogger<Awss3StorageService> logger)
         {
             Guard.Against.Null(options, nameof(options));
 
@@ -37,7 +37,6 @@ namespace Monai.Deploy.AWSS3
 
             _options = configuration;
 
-            var endpoint = configuration.Settings[ConfigurationKeys.EndPoint];
             var accessKey = configuration.Settings[ConfigurationKeys.AccessKey];
             var accessToken = configuration.Settings[ConfigurationKeys.AccessToken];
             var region = configuration.Settings[ConfigurationKeys.Region];
@@ -117,30 +116,6 @@ namespace Monai.Deploy.AWSS3
             return files;
         }
 
-        //06/07/2022 : Made obsolete by changes in IStorageService. Sync methods implemented at the end of the file.
-        //public async Task<Dictionary<string, string>> VerifyObjectsExist(string bucketName, Dictionary<string, string> objectDict)
-        //{
-        //    Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-        //    Guard.Against.Null(objectDict, nameof(objectDict));
-
-        //    var existingObjectsDict = new Dictionary<string, string>();
-
-        //    foreach (var obj in objectDict)
-        //    {
-        //        try
-        //        {
-        //            var listS3Objects =  await _client.ListObjectsV2Async( new ListObjectsV2Request { BucketName = bucketName, Prefix = obj.Key });
-        //            if(listS3Objects.S3Objects.Any() == true)
-        //                existingObjectsDict.Add(obj.Key, obj.Value);
-        //        }
-        //        catch (ObjectNotFoundException)
-        //        {
-        //            _logger.FileNotFoundError(bucketName, obj.Key);
-        //        }
-        //    }
-
-        //    return existingObjectsDict;
-        //}
 
         public async Task PutObject(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, CancellationToken cancellationToken = default)
         {
@@ -267,12 +242,11 @@ namespace Monai.Deploy.AWSS3
             var files = new List<VirtualFileInfo>();
 
             Task<ListObjectsV2Response> objservable = client.ListObjectsV2Async(request, cancellationToken);
-            var response = new ListObjectsV2Response();
+            ListObjectsV2Response response;
 
             do
             {
 
-                var completedEvent = new ManualResetEventSlim(false);
                 objservable.Wait();
                 response = objservable.Result;
 

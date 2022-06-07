@@ -5,12 +5,11 @@ namespace Monai.Deploy.AWSS3
 {
     internal static class ConfigurationKeys
     {
-        public static readonly string EndPoint = "endpoint";
         public static readonly string AccessKey = "accessKey";
         public static readonly string AccessToken = "accessToken";
         public static readonly string Region = "region";
         public static readonly string CredentialServiceUrl = "credentialServiceUrl";
 
-        public static readonly string[] RequiredKeys = new[] { EndPoint, AccessKey, AccessToken, Region };
+        public static readonly string[] RequiredKeys = new[] { AccessKey, AccessToken, Region };
     }
 }
