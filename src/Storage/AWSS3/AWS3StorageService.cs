@@ -97,11 +97,12 @@ namespace Monai.Deploy.AWSS3
             var request = new ListObjectsV2Request { BucketName = bucketName, Prefix = prefix };
             var files = new List<VirtualFileInfo>();
 
-            Task<ListObjectsV2Response> objservable = _client.ListObjectsV2Async(request, cancellationToken);
+            
             ListObjectsV2Response response;
 
             do
             {
+                Task<ListObjectsV2Response> objservable = _client.ListObjectsV2Async(request, cancellationToken);
                 objservable.Wait();
                 response = objservable.Result;
 
@@ -239,12 +240,12 @@ namespace Monai.Deploy.AWSS3
             var request = new ListObjectsV2Request { BucketName = bucketName, Prefix = prefix };
             var files = new List<VirtualFileInfo>();
 
-            Task<ListObjectsV2Response> objservable = client.ListObjectsV2Async(request, cancellationToken);
+            
             ListObjectsV2Response response;
 
             do
             {
-
+                Task<ListObjectsV2Response> objservable = client.ListObjectsV2Async(request, cancellationToken);
                 objservable.Wait();
                 response = objservable.Result;
 
