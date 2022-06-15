@@ -3,7 +3,7 @@
 
 using Newtonsoft.Json;
 
-namespace Monai.Deploy.Storage.S3Policy
+namespace Monai.Deploy.Storage.S3Policy.Policies
 {
     public class StringEquals
     {

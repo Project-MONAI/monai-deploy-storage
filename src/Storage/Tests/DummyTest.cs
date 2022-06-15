@@ -3,7 +3,7 @@
 
 using Xunit;
 
-namespace Monai.Deploy.Storage.Test
+namespace Monai.Deploy.Storage.Tests
 {
     public class DummyTest
     {

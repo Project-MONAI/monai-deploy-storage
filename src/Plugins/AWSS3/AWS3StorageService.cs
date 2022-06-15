@@ -21,7 +21,7 @@ using Monai.Deploy.Storage.Configuration;
 using Monai.Deploy.Storage.S3Policy;
 using Newtonsoft.Json;
 
-namespace Monai.Deploy.AWSS3
+namespace Monai.Deploy.Storage.AWSS3
 {
     public class Awss3StorageService : IStorageService
     {
@@ -36,7 +36,7 @@ namespace Monai.Deploy.AWSS3
         {
             Guard.Against.Null(options, nameof(options));
 
-            _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
             var configuration = options.Value;
             ValidateConfiguration(configuration);
@@ -95,7 +95,7 @@ namespace Monai.Deploy.AWSS3
             }
         }
 
-        public async Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string? prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
+        public async Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
 
@@ -224,7 +224,7 @@ namespace Monai.Deploy.AWSS3
             }
         }
 
-        public async Task<IList<VirtualFileInfo>> ListObjectsWithCredentialsAsync(string bucketName, Credentials credentials, string? prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
+        public async Task<IList<VirtualFileInfo>> ListObjectsWithCredentialsAsync(string bucketName, Credentials credentials, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             IsCredentialsNull(credentials);

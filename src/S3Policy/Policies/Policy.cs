@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache License 2.0
 
 using System.Collections.Generic;
+using Monai.Deploy.Storage.S3Policy.Policies;
 using Newtonsoft.Json;
 
 namespace Monai.Deploy.Storage.S3Policy

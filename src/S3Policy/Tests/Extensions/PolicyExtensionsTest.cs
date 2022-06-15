@@ -3,7 +3,7 @@
 
 using Newtonsoft.Json;
 
-namespace Monai.Deploy.Storage.S3Policy.Tests
+namespace Monai.Deploy.Storage.S3Policy.Tests.Extensions
 {
     public class PolicyExtensionsTest
     {

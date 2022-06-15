@@ -225,6 +225,9 @@ jobs:
       - name: List artifacts
         run: ls -ldR ${{steps.download.outputs.download-path}}/**/*
 
+      - name: Install grp
+        run: dotnet tool install gpr -g
+
       - uses: actions/setup-dotnet@v1
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -233,7 +236,7 @@ jobs:
           source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
           
       - name: Publish to GitHub
-        run: dotnet nuget push ${{ steps.download.outputs.download-path }}/artifact/*.nupkg --skip-duplicate
+        run: gpr push '${{ steps.download.outputs.download-path }}/artifact/*.nupkg' --repository ${{ github.repository }} -k ${{ secrets.GITHUB_TOKEN }}
         
   release:
     name: Official Release to NuGet.org
