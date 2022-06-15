@@ -10,17 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A73CC5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage", "Storage\Monai.Deploy.Storage.csproj", "{C642D39F-72BB-4D6F-8302-6DAE1A386639}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.MinIo", "Plugins\MinIo\Monai.Deploy.Storage.MinIo.csproj", "{E1A9418F-81A8-41F0-AA46-E5A19B83E42F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.AWSS3", "Plugins\AWSS3\Monai.Deploy.Storage.AWSS3.csproj", "{9E605292-D0F4-4E56-B723-D98397E07A77}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.Tests", "Storage\Tests\Monai.Deploy.Storage.Tests.csproj", "{C4BCE456-EFA3-4A82-ACED-86A0BDD57536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monai.Deploy.Storage.S3Policy", "S3Policy\Monai.Deploy.Storage.S3Policy.csproj", "{6A84FFB0-149F-41B1-9B28-29F3FDC36910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.S3Policy", "S3Policy\Monai.Deploy.Storage.S3Policy.csproj", "{6A84FFB0-149F-41B1-9B28-29F3FDC36910}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{0F380AAC-016C-4B0E-808E-059F6F17EB29}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.S3Policy.Tests", "S3Policy\Tests\Monai.Deploy.Storage.S3Policy.Tests.csproj", "{9D95F796-22E0-47A4-9A2D-60F85523943A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.MinIO", "Plugins\MinIO\Monai.Deploy.Storage.MinIO.csproj", "{612FB921-44FB-4807-9FC7-49079B527094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +32,6 @@ Global
 		{C642D39F-72BB-4D6F-8302-6DAE1A386639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C642D39F-72BB-4D6F-8302-6DAE1A386639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C642D39F-72BB-4D6F-8302-6DAE1A386639}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1A9418F-81A8-41F0-AA46-E5A19B83E42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1A9418F-81A8-41F0-AA46-E5A19B83E42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1A9418F-81A8-41F0-AA46-E5A19B83E42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1A9418F-81A8-41F0-AA46-E5A19B83E42F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E605292-D0F4-4E56-B723-D98397E07A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E605292-D0F4-4E56-B723-D98397E07A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E605292-D0F4-4E56-B723-D98397E07A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,13 +48,17 @@ Global
 		{9D95F796-22E0-47A4-9A2D-60F85523943A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D95F796-22E0-47A4-9A2D-60F85523943A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D95F796-22E0-47A4-9A2D-60F85523943A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612FB921-44FB-4807-9FC7-49079B527094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612FB921-44FB-4807-9FC7-49079B527094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612FB921-44FB-4807-9FC7-49079B527094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612FB921-44FB-4807-9FC7-49079B527094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E1A9418F-81A8-41F0-AA46-E5A19B83E42F} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
 		{9E605292-D0F4-4E56-B723-D98397E07A77} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
+		{612FB921-44FB-4807-9FC7-49079B527094} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1105263-9CBF-45AA-BAC3-BD8504C1B962}

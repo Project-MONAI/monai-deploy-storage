@@ -4,12 +4,12 @@
 using System.Diagnostics;
 using Amazon.SecurityToken.Model;
 using Monai.Deploy.Storage.Minio.Extensions;
-using Monai.Deploy.Storage.MinIo.MinIoAdmin.Interfaces;
-using Monai.Deploy.Storage.MinIo.MinIoAdmin.Models;
+using Monai.Deploy.Storage.MinIO.MinIoAdmin.Interfaces;
+using Monai.Deploy.Storage.MinIO.MinIoAdmin.Models;
 using Monai.Deploy.Storage.S3Policy;
 using Monai.Deploy.Storage.S3Policy.Policies;
 
-namespace Monai.Deploy.Storage.MinIo.MinIoAdmin
+namespace Monai.Deploy.Storage.MinIO.MinIoAdmin
 {
     public class Shell : IMinioAdmin
     {

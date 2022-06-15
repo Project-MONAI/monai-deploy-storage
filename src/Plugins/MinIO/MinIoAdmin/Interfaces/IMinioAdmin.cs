@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache License 2.0
 
 using Amazon.SecurityToken.Model;
-using Monai.Deploy.Storage.MinIo.MinIoAdmin.Models;
+using Monai.Deploy.Storage.MinIO.MinIoAdmin.Models;
 using Monai.Deploy.Storage.S3Policy.Policies;
 
-namespace Monai.Deploy.Storage.MinIo.MinIoAdmin.Interfaces
+namespace Monai.Deploy.Storage.MinIO.MinIoAdmin.Interfaces
 {
     public interface IMinioAdmin
     {

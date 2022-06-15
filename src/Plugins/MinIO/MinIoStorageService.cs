@@ -13,7 +13,7 @@ using Monai.Deploy.Storage.Configuration;
 using Monai.Deploy.Storage.S3Policy;
 using Newtonsoft.Json;
 
-namespace Monai.Deploy.Storage.MinIo
+namespace Monai.Deploy.Storage.MinIO
 {
     public class MinIoStorageService : IStorageService
     {

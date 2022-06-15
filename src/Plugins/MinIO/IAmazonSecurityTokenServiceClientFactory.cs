@@ -3,7 +3,7 @@
 
 using Amazon.SecurityToken;
 
-namespace Monai.Deploy.Storage.MinIo
+namespace Monai.Deploy.Storage.MinIO
 {
     public interface IAmazonSecurityTokenServiceClientFactory
     {

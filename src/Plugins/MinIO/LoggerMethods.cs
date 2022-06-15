@@ -3,7 +3,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace Monai.Deploy.Storage.MinIo
+namespace Monai.Deploy.Storage.MinIO
 {
     public static partial class LoggerMethods
     {

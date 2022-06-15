@@ -8,13 +8,14 @@ namespace Monai.Deploy.Storage.Configuration
 {
     public class StorageServiceConfiguration
     {
+        internal static readonly string DefaultStorageServiceAssemblyName = "Monai.Deploy.Storage.MinIo.MinIoStorageService, Monai.Deploy.Storage.MinIo";
         /// <summary>
         /// Gets or sets the a fully qualified type name of the storage service.
         /// The specified type must implement <typeparam name="Monai.Deploy.Storage.IStorageService">IStorageService</typeparam> interface.
         /// The default storage service configured is MinIO.
         /// </summary>
         [ConfigurationKeyName("serviceAssemblyName")]
-        public string ServiceAssemblyName { get; set; } = "Monai.Deploy.Storage.MinIo.MinIoStorageService, Monai.Deploy.Storage";
+        public string ServiceAssemblyName { get; set; } = DefaultStorageServiceAssemblyName;
 
         /// <summary>
         /// Gets or sets the storage service settings.

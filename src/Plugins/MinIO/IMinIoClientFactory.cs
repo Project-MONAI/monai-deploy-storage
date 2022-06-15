@@ -4,7 +4,7 @@
 using Amazon.SecurityToken.Model;
 using Minio;
 
-namespace Monai.Deploy.Storage.MinIo
+namespace Monai.Deploy.Storage.MinIO
 {
     public interface IMinIoClientFactory
     {

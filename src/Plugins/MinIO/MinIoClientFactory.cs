@@ -7,7 +7,7 @@ using Microsoft.Extensions.Options;
 using Minio;
 using Monai.Deploy.Storage.Configuration;
 
-namespace Monai.Deploy.Storage.MinIo
+namespace Monai.Deploy.Storage.MinIO
 {
     public class MinIoClientFactory : IMinIoClientFactory
     {
