@@ -20,7 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{0F38
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.S3Policy.Tests", "S3Policy\Tests\Monai.Deploy.Storage.S3Policy.Tests.csproj", "{9D95F796-22E0-47A4-9A2D-60F85523943A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.MinIO", "Plugins\MinIO\Monai.Deploy.Storage.MinIO.csproj", "{612FB921-44FB-4807-9FC7-49079B527094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.MinIO", "Plugins\MinIO\Monai.Deploy.Storage.MinIO.csproj", "{0292D249-4FDD-4C4A-9D81-669E4375D23A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monai.Deploy.Storage.MinIO.Tests", "Plugins\MinIO\Tests\Monai.Deploy.Storage.MinIO.Tests.csproj", "{FCB3FCA4-2BB6-4921-9715-CDECF343C6E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,17 +50,22 @@ Global
 		{9D95F796-22E0-47A4-9A2D-60F85523943A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D95F796-22E0-47A4-9A2D-60F85523943A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D95F796-22E0-47A4-9A2D-60F85523943A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{612FB921-44FB-4807-9FC7-49079B527094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{612FB921-44FB-4807-9FC7-49079B527094}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{612FB921-44FB-4807-9FC7-49079B527094}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{612FB921-44FB-4807-9FC7-49079B527094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0292D249-4FDD-4C4A-9D81-669E4375D23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0292D249-4FDD-4C4A-9D81-669E4375D23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0292D249-4FDD-4C4A-9D81-669E4375D23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0292D249-4FDD-4C4A-9D81-669E4375D23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB3FCA4-2BB6-4921-9715-CDECF343C6E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB3FCA4-2BB6-4921-9715-CDECF343C6E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB3FCA4-2BB6-4921-9715-CDECF343C6E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB3FCA4-2BB6-4921-9715-CDECF343C6E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9E605292-D0F4-4E56-B723-D98397E07A77} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
-		{612FB921-44FB-4807-9FC7-49079B527094} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
+		{0292D249-4FDD-4C4A-9D81-669E4375D23A} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
+		{FCB3FCA4-2BB6-4921-9715-CDECF343C6E2} = {0F380AAC-016C-4B0E-808E-059F6F17EB29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1105263-9CBF-45AA-BAC3-BD8504C1B962}

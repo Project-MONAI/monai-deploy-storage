@@ -4,4 +4,4 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Monai.Deploy.Storage.Tests")]
-
+[assembly: InternalsVisibleTo("Monai.Deploy.Storage.MinIO.Tests")]

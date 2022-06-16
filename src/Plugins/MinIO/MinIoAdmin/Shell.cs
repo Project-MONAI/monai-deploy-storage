@@ -3,6 +3,10 @@
 
 using System.Diagnostics;
 using Amazon.SecurityToken.Model;
+using Ardalis.GuardClauses;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Monai.Deploy.Storage.Configuration;
 using Monai.Deploy.Storage.Minio.Extensions;
 using Monai.Deploy.Storage.MinIO.MinIoAdmin.Interfaces;
 using Monai.Deploy.Storage.MinIO.MinIoAdmin.Models;
@@ -19,13 +23,32 @@ namespace Monai.Deploy.Storage.MinIO.MinIoAdmin
         private readonly string _accessKey;
         private readonly string _secretKey;
 
-        public Shell(string executableLocation, string serviceName, string endpoint, string accessKey, string secretKey)
+        public Shell(IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
         {
-            _executableLocation = executableLocation;
-            _serviceName = serviceName;
-            _endpoint = endpoint;
-            _accessKey = accessKey;
-            _secretKey = secretKey;
+            Guard.Against.Null(options, nameof(options));
+            Guard.Against.Null(logger, nameof(logger));
+
+            var configuration = options.Value;
+            ValidateConfiguration(configuration);
+
+            _executableLocation = options.Value.Settings[ConfigurationKeys.McExecutablePath];
+            _serviceName = options.Value.Settings[ConfigurationKeys.McServiceName];
+            _endpoint = options.Value.Settings[ConfigurationKeys.EndPoint];
+            _accessKey = options.Value.Settings[ConfigurationKeys.AccessKey];
+            _secretKey = options.Value.Settings[ConfigurationKeys.AccessToken];
+        }
+
+        private void ValidateConfiguration(StorageServiceConfiguration configuration)
+        {
+            Guard.Against.Null(configuration, nameof(configuration));
+
+            foreach (var key in ConfigurationKeys.McRequiredKeys)
+            {
+                if (!configuration.Settings.ContainsKey(key))
+                {
+                    throw new ConfigurationException($"IMinioAdmin Shell is missing configuration for {key}.");
+                }
+            }
         }
 
         private string CreateUserCmd(string username, string secretKey) => $"admin user add {_serviceName} {username} {secretKey}";
