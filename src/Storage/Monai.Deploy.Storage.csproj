@@ -48,5 +48,6 @@ SPDX-License-Identifier: Apache License 2.0
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.165" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="System.IO.Abstractions" Version="17.0.18" />
   </ItemGroup>
 </Project>
