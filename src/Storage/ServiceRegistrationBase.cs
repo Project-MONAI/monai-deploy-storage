@@ -22,7 +22,7 @@ namespace Monai.Deploy.Storage
         private string ParseAssemblyName()
         {
             var assemblyNameParts = FullyQualifiedAssemblyName.Split(',', StringSplitOptions.None);
-            if (assemblyNameParts.Length <= 2 || string.IsNullOrWhiteSpace(assemblyNameParts[1]))
+            if (assemblyNameParts.Length < 2 || string.IsNullOrWhiteSpace(assemblyNameParts[1]))
             {
                 throw new ConfigurationException($"Storage service '{FullyQualifiedAssemblyName}' is invalid.  Please provide a fully qualified name.")
                 {

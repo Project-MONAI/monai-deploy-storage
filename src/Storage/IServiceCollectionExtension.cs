@@ -74,9 +74,9 @@ namespace Monai.Deploy.Storage
         private static string GetAssemblyName(string fullyQualifiedTypeName)
         {
             var assemblyNameParts = fullyQualifiedTypeName.Split(',', StringSplitOptions.None);
-            if (assemblyNameParts.Length <= 2 || string.IsNullOrWhiteSpace(assemblyNameParts[1]))
+            if (assemblyNameParts.Length < 2 || string.IsNullOrWhiteSpace(assemblyNameParts[1]))
             {
-                throw new ConfigurationException($"The configured storage service type is not a valid fully qualified type name.  E.g. {StorageServiceConfiguration.DefaultStorageServiceAssemblyName}")
+                throw new ConfigurationException($"The configured storage service type '{fullyQualifiedTypeName}' is not a valid fully qualified type name.  E.g. {StorageServiceConfiguration.DefaultStorageServiceAssemblyName}")
                 {
                     HelpLink = "https://docs.microsoft.com/en-us/dotnet/standard/assembly/find-fully-qualified-name"
                 };
