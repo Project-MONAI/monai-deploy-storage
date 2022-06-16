@@ -3,6 +3,8 @@
 
 using Microsoft.Extensions.DependencyInjection;
 using Monai.Deploy.Storage.API;
+using Monai.Deploy.Storage.MinIO.MinIoAdmin;
+using Monai.Deploy.Storage.MinIO.MinIoAdmin.Interfaces;
 
 namespace Monai.Deploy.Storage.MinIO
 {
@@ -18,6 +20,7 @@ namespace Monai.Deploy.Storage.MinIO
             services.AddSingleton<IAmazonSecurityTokenServiceClientFactory, AmazonSecurityTokenServiceClientFactory>();
             services.AddSingleton<IAmazonSecurityTokenServiceClientFactory, AmazonSecurityTokenServiceClientFactory>();
             services.AddSingleton<IStorageService, MinIoStorageService>();
+            services.AddSingleton<IMinioAdmin, Shell>();
             return services;
         }
     }

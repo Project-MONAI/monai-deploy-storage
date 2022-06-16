@@ -15,15 +15,46 @@ The MONAI Deploy Storage library for MONAI Deploy clinical data pipelines system
 
 Currently supported storage services:
 
-- [MinIO](https://min.io/)*
+- [MinIO](./src/Plugins//MinIO/)*
+- [Amazon S3](./src/Plugins/AWSS3/)
 
 \* Services provided may not be free or requires special license agreements. Please refer to the service providers' website for additional terms and conditions.
 
 If you would like to use a storage service provider not listed above, please file an [issue](https://github.com/Project-MONAI/monai-deploy-storage/issues) and contribute to the repository.
 
+---
+
+## Installation
+
+### 1. Configure the Service
+To use the MONAI Deploy Storage library, install the [NuGet.Org](https://www.nuget.org/packages/Monai.Deploy.Storage/) package and call the `AddMonaiDeployStorageService(...)` method to register the dependencies:
+
+```csharp
+
+Host.CreateDefaultBuilder(args)
+    .ConfigureServices((hostContext, services) =>
+    {
+        ...
+        services.AddMonaiDeployStorageService(hostContext.Configuration.GetSection("InformaticsGateway:storage:serviceAssemblyName").Value);
+        ...
+    });
+```
+
+### 2. Install the Plug-in
+
+1. Create a subdirectory named `plug-ins` in the directory where your main application is installed.
+2. Download the zipped plug-in of your choice and extract the files to the `plug-ins` directory.
+3. Update `appsettings.json` and set the `serviceAssemblyName`, e.g.:  
+   ```json
+    "storage": {
+      "serviceAssemblyName": "Monai.Deploy.Storage.MinIo.MinIoStorageService, Monai.Deploy.Storage.MinIO"
+    }
+   ```
+---
+
 ## Releases
 
-The MONAI Deploy Storage library is released in NuGet format, which is available on both [NuGet.Org](https://www.nuget.org/packages/Monai.Deploy.Storage/) and [GitHub](https://github.com/Project-MONAI/monai-deploy-storage/packages/1350678).
+The MONAI Deploy Storage library is released in NuGet & zip formats. NuGet packages are available on both [NuGet.Org](https://www.nuget.org/packages/Monai.Deploy.Storage/) and [GitHub](https://github.com/Project-MONAI/monai-deploy-storage/packages/1350678). Zip files may be found in the build artifacts or the [Releases](https://github.com/Project-MONAI/monai-deploy-storage/releases) section.
 
 ### Official Builds
 
@@ -40,6 +71,13 @@ Development builds are made from all branches except the `main` branch and the `
 ## Contributing
 
 For guidance on contributing to MONAI Deploy Workflow Manager, see the [contributing guidelines](https://github.com/Project-MONAI/monai-deploy/blob/main/CONTRIBUTING.md).
+
+### Writing Your Plug-in
+
+To extend MONAI Deploy with your custom storage service provider, you must implement the [IStorageService](./src/Storage/API/IStorageService.cs) interface and extend the [ServiceRegistrationBase](./src/Storage/ServiceRegistrationBase.cs) base class.
+
+* The **IStorageService** interface provides a set of methods required to interact with the storage layer.
+* The **ServiceRegistrationBase** base class provides an abstract method _Configure()_ to configure service dependencies based on [.NET Dependency injection](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection). The derived instance is dynamically activated during runtime based on the *ServiceAssemblyName* value defined in the [StorageServiceConfiguration](./src/Storage/Configuration/StorageServiceConfiguration.cs).
 
 ## Community
 
