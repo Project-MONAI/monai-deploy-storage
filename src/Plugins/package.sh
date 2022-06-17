@@ -8,7 +8,7 @@ export PACKAGEDIR="${PWD}/release"
 [ -d $PACKAGEDIR ] && rm -rf $PACKAGEDIR && echo "Removing $PACKAGEDIR..."
 
 
-find . -type f -name '*.csproj' -exec bash -c '
+find . -type f -name '*.csproj' ! -name '*.Tests.csproj' -exec bash -c '
     for project do
         echo Processing $project...
         projectName=$(basename -s .csproj $project)
