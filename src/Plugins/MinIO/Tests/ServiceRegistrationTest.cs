@@ -4,7 +4,6 @@
 using System.IO.Abstractions.TestingHelpers;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Monai.Deploy.Storage.Configuration;
 using Moq;
 using Xunit;

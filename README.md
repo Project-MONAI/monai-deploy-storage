@@ -50,6 +50,11 @@ Host.CreateDefaultBuilder(args)
       "serviceAssemblyName": "Monai.Deploy.Storage.MinIo.MinIoStorageService, Monai.Deploy.Storage.MinIO"
     }
    ```
+
+### 3. Restrict Access to the Plug-ins Directory
+
+To avoid tampering of the plug-ins, it is recommended to set access rights to the plug-ins directory.
+
 ---
 
 ## Releases
