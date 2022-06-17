@@ -4,10 +4,25 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>Monai.Deploy.Storage.S3Policy</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>MONAI Consortium</Authors>
+    <Company>MONAI Consortium</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Storage layer for MONAI Deploy clinical data pipelines system.</Description>
+    <Copyright>MONAI Consortium</Copyright>
+    <PackageProjectUrl>https://github.com/Project-MONAI/monai-deploy-storage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Project-MONAI/monai-deploy-storage</RepositoryUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  
   <ItemGroup>
     <Compile Include="..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
   </ItemGroup>

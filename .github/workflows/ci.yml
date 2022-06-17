@@ -204,7 +204,6 @@ jobs:
         run: |
           mkdir $PACKAGEDIR
           dotnet pack --no-build -c ${{ env.BUILD_CONFIG }} -o $PACKAGEDIR -p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }}
-          rm $PACKAGEDIR/Monai.Deploy.Storage.S3Policy.*.nupkg
           ls -lR $PACKAGEDIR
         working-directory: ./src
         

@@ -9,6 +9,7 @@ SPDX-License-Identifier: Apache License 2.0
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Monai.Deploy.Storage</RootNamespace>
     <Nullable>enable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
@@ -49,5 +50,9 @@ SPDX-License-Identifier: Apache License 2.0
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="System.IO.Abstractions" Version="17.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
   </ItemGroup>
 </Project>

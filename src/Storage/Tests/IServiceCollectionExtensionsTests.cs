@@ -18,6 +18,7 @@ using Xunit;
 namespace Monai.Deploy.Storage.Tests
 {
 #pragma warning disable CS8604 // Possible null reference argument.
+
     public class IServiceCollectionExtensionsTests
     {
         [Theory(DisplayName = "AddMonaiDeployStorageService throws when type name is invalid")]
@@ -171,5 +172,6 @@ namespace Monai.Deploy.Storage.Tests
     internal class TheBadTestStorageService
     {
     }
+
 #pragma warning restore CS8604 // Possible null reference argument.
 }
