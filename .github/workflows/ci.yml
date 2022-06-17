@@ -204,14 +204,31 @@ jobs:
         run: |
           mkdir $PACKAGEDIR
           dotnet pack --no-build -c ${{ env.BUILD_CONFIG }} -o $PACKAGEDIR -p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+          rm $PACKAGEDIR/Monai.Deploy.Storage.S3Policy.*.nupkg
           ls -lR $PACKAGEDIR
         working-directory: ./src
         
-      - name: Upload
+      - name: Zip Plug-ins
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: |
+          ./package.sh
+          ls -lR release/
+        working-directory: ./src/Plugins
+        
+      - name: Upload Nuget
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: actions/upload-artifact@v2.3.1
         with:
+          name: nuget
           path: ${{ github.workspace }}/release/*.nupkg
+          retention-days: 30
+
+      - name: Upload Zipped Plug-ins
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: plug-ins
+          path: ${{ github.workspace }}/src/Plugins/release/*.zip
           retention-days: 30
 
   publish:
@@ -225,6 +242,9 @@ jobs:
       - name: List artifacts
         run: ls -ldR ${{steps.download.outputs.download-path}}/**/*
 
+      - name: Install grp
+        run: dotnet tool install gpr -g
+
       - uses: actions/setup-dotnet@v1
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -233,7 +253,7 @@ jobs:
           source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
           
       - name: Publish to GitHub
-        run: dotnet nuget push ${{ steps.download.outputs.download-path }}/artifact/*.nupkg --skip-duplicate
+        run: gpr push '${{ steps.download.outputs.download-path }}/nuget/*.nupkg' --repository ${{ github.repository }} -k ${{ secrets.GITHUB_TOKEN }}
         
   release:
     name: Official Release to NuGet.org
@@ -255,7 +275,7 @@ jobs:
         run: ls -ldR ${{steps.download.outputs.download-path}}/**/*
         
       - name: Publish to NuGet.org
-        run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/artifact/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
+        run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/nuget/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
 
       - name: Extract owner and repo
         uses: jungwinter/split@v1
