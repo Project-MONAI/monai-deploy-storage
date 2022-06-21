@@ -72,6 +72,19 @@ namespace Monai.Deploy.Storage.MinIO
             await GetObjectUsingClient(client, bucketName, objectName, callback, cancellationToken).ConfigureAwait(false);
         }
 
+        public async Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
+        {
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+
+            var stream = new MemoryStream();
+
+            var client = _minioClientFactory.GetClient();
+            await GetObjectUsingClient(client, bucketName, objectName, async (s) => await s.CopyToAsync(stream), cancellationToken).ConfigureAwait(false);
+
+            return stream;
+        }
+
         public async Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string? prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
@@ -220,6 +233,20 @@ namespace Monai.Deploy.Storage.MinIO
             var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
 
             await GetObjectUsingClient(client, bucketName, objectName, callback, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task<Stream> GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
+        {
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+
+            var stream = new MemoryStream();
+
+            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+
+            await GetObjectUsingClient(client, bucketName, objectName, async (s) => await s.CopyToAsync(stream), cancellationToken).ConfigureAwait(false);
+
+            return stream;
         }
 
         public async Task<IList<VirtualFileInfo>> ListObjectsWithCredentialsAsync(string bucketName, Credentials credentials, string? prefix = "", bool recursive = false, CancellationToken cancellationToken = default)

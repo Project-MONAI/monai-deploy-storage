@@ -23,7 +23,7 @@ namespace Monai.Deploy.Storage.API
         Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Downloads an objects as stream.
+        /// Downloads an objects as stream with a callback.
         /// </summary>
         /// <param name="bucketName">Name of the bucket</param>
         /// <param name="objectName">Name of the object in the bucket</param>
@@ -31,6 +31,15 @@ namespace Monai.Deploy.Storage.API
         /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
         /// <returns>Task</returns>
         Task GetObjectAsync(string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Downloads an objects as stream.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket</param>
+        /// <param name="objectName">Name of the object in the bucket</param>
+        /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
+        /// <returns>Stream</returns>
+        Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Uploads an object.
@@ -124,7 +133,7 @@ namespace Monai.Deploy.Storage.API
         Task CopyObjectWithCredentialsAsync(string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, Credentials credentials, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Downloads an objects as stream using temporary credentials.
+        /// Downloads an objects as stream in a callback using temporary credentials.
         /// </summary>
         /// <param name="bucketName">Name of the bucket</param>
         /// <param name="objectName">Name of the object in the bucket</param>
@@ -133,6 +142,17 @@ namespace Monai.Deploy.Storage.API
         /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
         /// <returns>Task</returns>
         Task GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, Action<Stream> callback, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Downloads an objects as stream using temporary credentials.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket</param>
+        /// <param name="objectName">Name of the object in the bucket</param>
+        /// <param name="credentials">Temporary credentials used to connect</param>
+        /// <param name="callback">Action to be called when stream is ready</param>
+        /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
+        /// <returns>Task</returns>
+        Task<Stream> GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Lists objects in a bucket using temporary credentials.
