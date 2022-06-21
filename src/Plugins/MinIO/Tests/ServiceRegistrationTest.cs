@@ -40,16 +40,6 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(4));
         }
 
-        private void AddOptions(StorageServiceConfiguration options, string[] requiredKeys)
-        {
-            foreach (var key in requiredKeys)
-            {
-                if (options.Settings.ContainsKey(key)) continue;
-
-                options.Settings.Add(key, Guid.NewGuid().ToString());
-            }
-        }
-
         private static byte[] GetAssemblyeBytes(Assembly assembly)
         {
             return File.ReadAllBytes(assembly.Location);

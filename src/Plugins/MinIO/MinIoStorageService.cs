@@ -7,7 +7,6 @@ using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Minio;
-using Minio.DataModel;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
 using Monai.Deploy.Storage.S3Policy;
@@ -78,7 +77,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
 
             var client = _minioClientFactory.GetClient();
-            return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken);
+            return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<Dictionary<string, string>> VerifyObjectsExistAsync(string bucketName, Dictionary<string, string> objectDict)
@@ -92,8 +91,8 @@ namespace Monai.Deploy.Storage.MinIO
             {
                 try
                 {
-                    var fileObjects = await ListObjectsAsync(bucketName, obj.Value);
-                    var folderObjects = await ListObjectsAsync(bucketName, obj.Value.EndsWith("/") ? obj.Value : $"{obj.Value}/", true);
+                    var fileObjects = await ListObjectsAsync(bucketName, obj.Value).ConfigureAwait(false);
+                    var folderObjects = await ListObjectsAsync(bucketName, obj.Value.EndsWith("/") ? obj.Value : $"{obj.Value}/", true).ConfigureAwait(false);
 
                     if (!folderObjects.Any() && !fileObjects.Any())
                     {
@@ -104,7 +103,7 @@ namespace Monai.Deploy.Storage.MinIO
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError(e.Message);
+                    _logger.VerifyObjectError(bucketName, e);
 
                     continue;
                 }
@@ -120,8 +119,8 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.Null(objectPair, nameof(objectPair));
 
-            var fileObjects = await ListObjectsAsync(bucketName, objectPair.Value);
-            var folderObjects = await ListObjectsAsync(bucketName, objectPair.Value.EndsWith("/") ? objectPair.Value : $"{objectPair.Value}/", true);
+            var fileObjects = await ListObjectsAsync(bucketName, objectPair.Value).ConfigureAwait(false);
+            var folderObjects = await ListObjectsAsync(bucketName, objectPair.Value.EndsWith("/") ? objectPair.Value : $"{objectPair.Value}/", true).ConfigureAwait(false);
 
             if (folderObjects.Any() || fileObjects.Any())
             {
@@ -228,7 +227,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
 
             var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
-            return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken);
+            return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task PutObjectWithCredentialsAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, Credentials credentials, CancellationToken cancellationToken = default)
@@ -312,7 +311,7 @@ namespace Monai.Deploy.Storage.MinIO
 
                 var objservable = client.ListObjectsAsync(listArgs, cancellationToken);
                 var completedEvent = new ManualResetEventSlim(false);
-                objservable.Subscribe<Item>(item =>
+                objservable.Subscribe(item =>
                 {
                     if (!item.IsDir)
                     {
@@ -330,7 +329,7 @@ namespace Monai.Deploy.Storage.MinIO
 
                 completedEvent.Wait(cancellationToken);
                 return files;
-            });
+            }).ConfigureAwait(false);
         }
 
         private static async Task RemoveObjectUsingClient(MinioClient client, string bucketName, string objectName, CancellationToken cancellationToken)
@@ -341,7 +340,7 @@ namespace Monai.Deploy.Storage.MinIO
             await client.RemoveObjectAsync(args, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task PutObjectUsingClient(MinioClient client, string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken)
+        private static async Task PutObjectUsingClient(MinioClient client, string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken)
         {
             var args = new PutObjectArgs()
                                 .WithBucket(bucketName)
