@@ -83,18 +83,6 @@ namespace Monai.Deploy.Storage.AWSS3
             await _client.CopyObjectAsync(sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task GetObjectAsync(string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken = default)
-        {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(callback, nameof(callback));
-
-            using (var obj = await _client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false))
-            {
-                callback(obj.ResponseStream);
-            }
-        }
-
         public async Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));

@@ -62,16 +62,6 @@ namespace Monai.Deploy.Storage.MinIO
             await CopyObjectUsingClient(client, sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task GetObjectAsync(string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken = default)
-        {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(callback, nameof(callback));
-
-            var client = _minioClientFactory.GetClient();
-            await GetObjectUsingClient(client, bucketName, objectName, callback, cancellationToken).ConfigureAwait(false);
-        }
-
         public async Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));

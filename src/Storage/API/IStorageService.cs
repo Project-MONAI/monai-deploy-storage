@@ -23,16 +23,6 @@ namespace Monai.Deploy.Storage.API
         Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Downloads an objects as stream with a callback.
-        /// </summary>
-        /// <param name="bucketName">Name of the bucket</param>
-        /// <param name="objectName">Name of the object in the bucket</param>
-        /// <param name="callback">Action to be called when stream is ready</param>
-        /// <param name="cancellationToken">Optional cancellation token. Defaults to default(CancellationToken)</param>
-        /// <returns>Task</returns>
-        Task GetObjectAsync(string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Downloads an objects as stream.
         /// </summary>
         /// <param name="bucketName">Name of the bucket</param>
