@@ -207,22 +207,6 @@ namespace Monai.Deploy.Storage.AWSS3
             await client.CopyObjectAsync(sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, Action<Stream> callback, CancellationToken cancellationToken = default)
-        {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(callback, nameof(callback));
-
-            IsCredentialsNull(credentials);
-            var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
-
-            using (var obj = await client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false))
-            {
-                callback(obj.ResponseStream);
-            }
-
-        }
-
         public async Task<Stream> GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
