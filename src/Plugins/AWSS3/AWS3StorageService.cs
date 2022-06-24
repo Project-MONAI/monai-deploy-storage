@@ -83,16 +83,14 @@ namespace Monai.Deploy.Storage.AWSS3
             await _client.CopyObjectAsync(sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task GetObjectAsync(string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(callback, nameof(callback));
 
-            using (var obj = await _client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false))
-            {
-                callback(obj.ResponseStream);
-            }
+            var obj = await _client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            return obj.ResponseStream;
         }
 
         public async Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
@@ -209,19 +207,17 @@ namespace Monai.Deploy.Storage.AWSS3
             await client.CopyObjectAsync(sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, Action<Stream> callback, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(callback, nameof(callback));
 
             IsCredentialsNull(credentials);
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
 
-            using (var obj = await client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false))
-            {
-                callback(obj.ResponseStream);
-            }
+            var obj = await client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            return obj.ResponseStream;
         }
 
         public async Task<IList<VirtualFileInfo>> ListObjectsWithCredentialsAsync(string bucketName, Credentials credentials, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
