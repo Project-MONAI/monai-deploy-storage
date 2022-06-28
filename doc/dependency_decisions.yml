@@ -1,0 +1,1191 @@
+---
+- - :approve
+  - xunit.runner.visualstudio
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.5
+    :when: 2022-06-27 22:42:33.642090671 Z
+- - :approve
+  - AWSSDK.Core
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 3.7.12
+    :when: 2022-06-27 22:42:41.849665530 Z
+- - :approve
+  - AWSSDK.S3
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 3.7.9.16
+    :when: 2022-06-27 22:42:42.227790254 Z
+- - :approve
+  - AWSSDK.SecurityToken
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 3.7.1.165
+    :when: 2022-06-27 22:42:42.605175044 Z
+- - :approve
+  - Ardalis.GuardClauses
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.0.1
+    :when: 2022-06-27 22:42:42.977412764 Z
+- - :approve
+  - Castle.Core
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 5.0.0
+    :when: 2022-06-27 22:42:43.351515437 Z
+- - :approve
+  - Crc32.NET
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 1.2.0
+    :when: 2022-06-27 22:42:43.731476329 Z
+- - :approve
+  - JetBrains.Annotations
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 2021.3.0
+    :when: 2022-06-27 22:42:44.104175791 Z
+- - :approve
+  - Microsoft.Bcl.AsyncInterfaces
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 1.1.0
+    :when: 2022-06-27 22:42:44.464818097 Z
+- - :approve
+  - Microsoft.CSharp
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.0.1
+    :when: 2022-06-27 22:42:44.871860926 Z
+- - :approve
+  - Microsoft.CSharp
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.7.0
+    :when: 2022-06-27 22:42:45.254982934 Z
+- - :approve
+  - Microsoft.CodeCoverage
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.1.0
+    :when: 2022-06-27 22:42:45.628927554 Z
+- - :approve
+  - Microsoft.CodeCoverage
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.2.0
+    :when: 2022-06-27 22:42:46.000296413 Z
+- - :approve
+  - Microsoft.Extensions.Configuration
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.1
+    :when: 2022-06-27 22:42:46.380890638 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.Abstractions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:46.785876415 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.Binder
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:47.165761523 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.CommandLine
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:47.553252865 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.EnvironmentVariables
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.1
+    :when: 2022-06-27 22:42:47.941570538 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.FileExtensions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:48.323458920 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.Json
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:48.699690117 Z
+- - :approve
+  - Microsoft.Extensions.Configuration.UserSecrets
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.1
+    :when: 2022-06-27 22:42:49.104666254 Z
+- - :approve
+  - Microsoft.Extensions.DependencyInjection
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:49.474915090 Z
+- - :approve
+  - Microsoft.Extensions.DependencyInjection.Abstractions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:49.859305092 Z
+- - :approve
+  - Microsoft.Extensions.FileProviders.Abstractions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:50.243207886 Z
+- - :approve
+  - Microsoft.Extensions.FileProviders.Physical
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:50.615257021 Z
+- - :approve
+  - Microsoft.Extensions.FileSystemGlobbing
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:51.038168579 Z
+- - :approve
+  - Microsoft.Extensions.Hosting
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.1
+    :when: 2022-06-27 22:42:51.430277784 Z
+- - :approve
+  - Microsoft.Extensions.Hosting.Abstractions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:51.805406283 Z
+- - :approve
+  - Microsoft.Extensions.Logging
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:52.193594254 Z
+- - :approve
+  - Microsoft.Extensions.Logging.Abstractions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:52.577360735 Z
+- - :approve
+  - Microsoft.Extensions.Logging.Configuration
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:52.953594300 Z
+- - :approve
+  - Microsoft.Extensions.Logging.Console
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:53.338583996 Z
+- - :approve
+  - Microsoft.Extensions.Logging.Debug
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:53.715614997 Z
+- - :approve
+  - Microsoft.Extensions.Logging.EventLog
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:54.087920951 Z
+- - :approve
+  - Microsoft.Extensions.Logging.EventSource
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:54.465996906 Z
+- - :approve
+  - Microsoft.Extensions.Options
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:54.846518465 Z
+- - :approve
+  - Microsoft.Extensions.Options.ConfigurationExtensions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:55.263755867 Z
+- - :approve
+  - Microsoft.Extensions.Primitives
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:42:55.671734021 Z
+- - :approve
+  - Microsoft.NET.Test.Sdk
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.1.0
+    :when: 2022-06-27 22:42:56.058223832 Z
+- - :approve
+  - Microsoft.NET.Test.Sdk
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.2.0
+    :when: 2022-06-27 22:42:56.433426099 Z
+- - :approve
+  - Microsoft.NETCore.Platforms
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 1.1.0
+    :when: 2022-06-27 22:42:56.821915815 Z
+- - :approve
+  - Microsoft.NETCore.Platforms
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 1.1.1
+    :when: 2022-06-27 22:42:57.207151376 Z
+- - :approve
+  - Microsoft.NETCore.Targets
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 1.1.0
+    :when: 2022-06-27 22:42:57.589785117 Z
+- - :approve
+  - Microsoft.NETCore.Targets
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 1.1.3
+    :when: 2022-06-27 22:42:57.973717610 Z
+- - :approve
+  - Microsoft.TestPlatform.ObjectModel
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.1.0
+    :when: 2022-06-27 22:42:58.357457701 Z
+- - :approve
+  - Microsoft.TestPlatform.ObjectModel
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.2.0
+    :when: 2022-06-27 22:42:58.751244614 Z
+- - :approve
+  - Microsoft.TestPlatform.TestHost
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.1.0
+    :when: 2022-06-27 22:42:59.150534574 Z
+- - :approve
+  - Microsoft.TestPlatform.TestHost
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.2.0
+    :when: 2022-06-27 22:42:59.534428162 Z
+- - :approve
+  - Microsoft.Win32.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:42:59.921165740 Z
+- - :approve
+  - Minio
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 4.0.4
+    :when: 2022-06-27 22:43:00.299192906 Z
+- - :approve
+  - Moq
+  - :who: mocsharp
+    :why: BSD-3
+    :versions:
+    - 4.18.1
+    :when: 2022-06-27 22:43:00.722083082 Z
+- - :approve
+  - NETStandard.Library
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 1.6.1
+    :when: 2022-06-27 22:43:01.109242926 Z
+- - :approve
+  - NETStandard.Library
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 2.0.0
+    :when: 2022-06-27 22:43:01.498778721 Z
+- - :approve
+  - Newtonsoft.Json
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 13.0.1
+    :when: 2022-06-27 22:43:01.905545030 Z
+- - :approve
+  - Newtonsoft.Json
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 9.0.1
+    :when: 2022-06-27 22:43:02.295237769 Z
+- - :approve
+  - NuGet.Frameworks
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 5.11.0
+    :when: 2022-06-27 22:43:02.679740499 Z
+- - :approve
+  - System.AppContext
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:03.066728456 Z
+- - :approve
+  - System.Buffers
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:03.466575493 Z
+- - :approve
+  - System.Buffers
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.5.1
+    :when: 2022-06-27 22:43:03.845741065 Z
+- - :approve
+  - System.Collections
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:04.232046848 Z
+- - :approve
+  - System.Collections.Concurrent
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:04.628304254 Z
+- - :approve
+  - System.Console
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:05.007094873 Z
+- - :approve
+  - System.Diagnostics.Debug
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:05.403809554 Z
+- - :approve
+  - System.Diagnostics.DiagnosticSource
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:05.803976349 Z
+- - :approve
+  - System.Diagnostics.DiagnosticSource
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:43:06.202514730 Z
+- - :approve
+  - System.Diagnostics.EventLog
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:43:06.588277734 Z
+- - :approve
+  - System.Diagnostics.Tools
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:06.974463715 Z
+- - :approve
+  - System.Diagnostics.Tracing
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:07.354764428 Z
+- - :approve
+  - System.Dynamic.Runtime
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.0.11
+    :when: 2022-06-27 22:43:07.738542764 Z
+- - :approve
+  - System.Globalization
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:08.118302067 Z
+- - :approve
+  - System.Globalization.Calendars
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:08.494924180 Z
+- - :approve
+  - System.Globalization.Extensions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:08.883759935 Z
+- - :approve
+  - System.IO
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:09.269113347 Z
+- - :approve
+  - System.IO.Abstractions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.0.18
+    :when: 2022-06-27 22:43:09.649222170 Z
+- - :approve
+  - System.IO.Abstractions.TestingHelpers
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 17.0.18
+    :when: 2022-06-27 22:43:10.031120014 Z
+- - :approve
+  - System.IO.Compression
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:10.416876746 Z
+- - :approve
+  - System.IO.Compression.ZipFile
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:10.812127493 Z
+- - :approve
+  - System.IO.FileSystem
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:11.212307650 Z
+- - :approve
+  - System.IO.FileSystem.AccessControl
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.7.0
+    :when: 2022-06-27 22:43:11.603899417 Z
+- - :approve
+  - System.IO.FileSystem.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:11.978432335 Z
+- - :approve
+  - System.Linq
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:12.374563896 Z
+- - :approve
+  - System.Linq.Expressions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:12.757862251 Z
+- - :approve
+  - System.Memory
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.5.4
+    :when: 2022-06-27 22:43:13.140081895 Z
+- - :approve
+  - System.Net.Http
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:13.522063413 Z
+- - :approve
+  - System.Net.Http
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.4
+    :when: 2022-06-27 22:43:13.902373442 Z
+- - :approve
+  - System.Net.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:14.283498516 Z
+- - :approve
+  - System.Net.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.1
+    :when: 2022-06-27 22:43:14.674662851 Z
+- - :approve
+  - System.Net.Sockets
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:15.061488418 Z
+- - :approve
+  - System.Numerics.Vectors
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.4.0
+    :when: 2022-06-27 22:43:15.473011438 Z
+- - :approve
+  - System.ObjectModel
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:15.861879177 Z
+- - :approve
+  - System.Reactive
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 5.0.0
+    :when: 2022-06-27 22:43:16.246290122 Z
+- - :approve
+  - System.Reactive.Linq
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 5.0.0
+    :when: 2022-06-27 22:43:16.648363833 Z
+- - :approve
+  - System.Reflection
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:17.041462401 Z
+- - :approve
+  - System.Reflection.Emit
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:17.430635750 Z
+- - :approve
+  - System.Reflection.Emit.ILGeneration
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:17.826273141 Z
+- - :approve
+  - System.Reflection.Emit.Lightweight
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:18.206820896 Z
+- - :approve
+  - System.Reflection.Extensions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:18.593643043 Z
+- - :approve
+  - System.Reflection.Metadata
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 1.6.0
+    :when: 2022-06-27 22:43:19.013253297 Z
+- - :approve
+  - System.Reflection.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:19.404949431 Z
+- - :approve
+  - System.Reflection.TypeExtensions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:19.792620276 Z
+- - :approve
+  - System.Resources.ResourceManager
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:20.195107919 Z
+- - :approve
+  - System.Runtime
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:20.559147590 Z
+- - :approve
+  - System.Runtime
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.1
+    :when: 2022-06-27 22:43:20.956041234 Z
+- - :approve
+  - System.Runtime.CompilerServices.Unsafe
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:43:21.338537171 Z
+- - :approve
+  - System.Runtime.Extensions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:21.739140281 Z
+- - :approve
+  - System.Runtime.Handles
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:22.133604084 Z
+- - :approve
+  - System.Runtime.InteropServices
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:22.518128102 Z
+- - :approve
+  - System.Runtime.InteropServices.RuntimeInformation
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:22.899850728 Z
+- - :approve
+  - System.Runtime.InteropServices.WindowsRuntime
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:23.284191876 Z
+- - :approve
+  - System.Runtime.Numerics
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:23.674613936 Z
+- - :approve
+  - System.Runtime.Serialization.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.1.1
+    :when: 2022-06-27 22:43:24.058124023 Z
+- - :approve
+  - System.Security.AccessControl
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.7.0
+    :when: 2022-06-27 22:43:24.439172609 Z
+- - :approve
+  - System.Security.Cryptography.Algorithms
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:24.830341704 Z
+- - :approve
+  - System.Security.Cryptography.Cng
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:25.218635872 Z
+- - :approve
+  - System.Security.Cryptography.Csp
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:25.628678763 Z
+- - :approve
+  - System.Security.Cryptography.Encoding
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:26.014168317 Z
+- - :approve
+  - System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:26.403879168 Z
+- - :approve
+  - System.Security.Cryptography.Primitives
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:26.785891945 Z
+- - :approve
+  - System.Security.Cryptography.X509Certificates
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:27.206266666 Z
+- - :approve
+  - System.Security.Principal.Windows
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.7.0
+    :when: 2022-06-27 22:43:27.600950414 Z
+- - :approve
+  - System.Text.Encoding
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:28.022691205 Z
+- - :approve
+  - System.Text.Encoding.Extensions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:28.411501974 Z
+- - :approve
+  - System.Text.Encodings.Web
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:43:28.799919736 Z
+- - :approve
+  - System.Text.Json
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 6.0.0
+    :when: 2022-06-27 22:43:29.230934509 Z
+- - :approve
+  - System.Text.RegularExpressions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:29.620170883 Z
+- - :approve
+  - System.Threading
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:30.007589654 Z
+- - :approve
+  - System.Threading.Tasks
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:30.401118931 Z
+- - :approve
+  - System.Threading.Tasks.Extensions
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:30.809569823 Z
+- - :approve
+  - System.Threading.Tasks.Extensions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.5.2
+    :when: 2022-06-27 22:43:31.201598188 Z
+- - :approve
+  - System.Threading.Tasks.Extensions
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.5.4
+    :when: 2022-06-27 22:43:31.585741106 Z
+- - :approve
+  - System.Threading.Timer
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:31.979232444 Z
+- - :approve
+  - System.ValueTuple
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 4.4.0
+    :when: 2022-06-27 22:43:32.417777035 Z
+- - :approve
+  - System.Xml.ReaderWriter
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:32.814059460 Z
+- - :approve
+  - System.Xml.XDocument
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:33.207713876 Z
+- - :approve
+  - coverlet.collector
+  - :who: mocsharp
+    :why: MIT
+    :versions:
+    - 3.1.2
+    :when: 2022-06-27 22:43:33.603950268 Z
+- - :approve
+  - runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:34.007161043 Z
+- - :approve
+  - runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:34.397445099 Z
+- - :approve
+  - runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:34.790795358 Z
+- - :approve
+  - runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:35.172927501 Z
+- - :approve
+  - runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:35.612398419 Z
+- - :approve
+  - runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:36.003023034 Z
+- - :approve
+  - runtime.native.System
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:36.413403817 Z
+- - :approve
+  - runtime.native.System.IO.Compression
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:36.820989610 Z
+- - :approve
+  - runtime.native.System.Net.Http
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:37.208480969 Z
+- - :approve
+  - runtime.native.System.Security.Cryptography.Apple
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:37.611933580 Z
+- - :approve
+  - runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:38.016209611 Z
+- - :approve
+  - runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:38.406356457 Z
+- - :approve
+  - runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:38.797466000 Z
+- - :approve
+  - runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:39.195612716 Z
+- - :approve
+  - runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:39.580414109 Z
+- - :approve
+  - runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:39.968631029 Z
+- - :approve
+  - runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:40.365483838 Z
+- - :approve
+  - runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:40.787922217 Z
+- - :approve
+  - runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:41.182624517 Z
+- - :approve
+  - runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:41.574306028 Z
+- - :approve
+  - runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:41.971062259 Z
+- - :approve
+  - runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:42.360451246 Z
+- - :approve
+  - runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:42.753764173 Z
+- - :approve
+  - runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:43.160668019 Z
+- - :approve
+  - runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:43.559288258 Z
+- - :approve
+  - runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.0
+    :when: 2022-06-27 22:43:43.981855434 Z
+- - :approve
+  - runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl
+  - :who: mocsharp
+    :why: DOTNET Library License
+    :versions:
+    - 4.3.2
+    :when: 2022-06-27 22:43:44.379970780 Z
+- - :approve
+  - xunit
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.1
+    :when: 2022-06-27 22:43:44.776985815 Z
+- - :approve
+  - xunit.abstractions
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.0.3
+    :when: 2022-06-27 22:43:45.168661507 Z
+- - :approve
+  - xunit.analyzers
+  - :who: mocsharp
+    :why: Apache 2.0
+    :versions:
+    - 0.10.0
+    :when: 2022-06-27 22:43:45.589678531 Z
+- - :approve
+  - xunit.assert
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.1
+    :when: 2022-06-27 22:43:45.976653891 Z
+- - :approve
+  - xunit.core
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.1
+    :when: 2022-06-27 22:43:46.369281694 Z
+- - :approve
+  - xunit.extensibility.core
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.1
+    :when: 2022-06-27 22:43:46.764757417 Z
+- - :approve
+  - xunit.extensibility.execution
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.1
+    :when: 2022-06-27 22:43:47.171520109 Z
+- - :approve
+  - xunit.runner.visualstudio
+  - :who: mocsharp
+    :why: DOTNET Foundation/MIT
+    :versions:
+    - 2.4.3
+    :when: 2022-06-27 22:44:12.093306104 Z
