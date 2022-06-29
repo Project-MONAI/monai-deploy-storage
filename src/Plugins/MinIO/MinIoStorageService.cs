@@ -67,11 +67,9 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
-            var stream = new MemoryStream();
-
             var client = _minioClientFactory.GetClient();
-            await GetObjectUsingClient(client, bucketName, objectName, async (s) => await s.CopyToAsync(stream), cancellationToken).ConfigureAwait(false);
-
+            var stream = new MemoryStream();
+            await GetObjectUsingClient(client, bucketName, objectName, (s) => s.CopyTo(stream), cancellationToken).ConfigureAwait(false);
             return stream;
         }
 
@@ -219,12 +217,9 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
-            var stream = new MemoryStream();
-
             var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
-
-            await GetObjectUsingClient(client, bucketName, objectName, async (s) => await s.CopyToAsync(stream), cancellationToken).ConfigureAwait(false);
-
+            var stream = new MemoryStream();
+            await GetObjectUsingClient(client, bucketName, objectName, (s) => s.CopyTo(stream), cancellationToken).ConfigureAwait(false);
             return stream;
         }
 
