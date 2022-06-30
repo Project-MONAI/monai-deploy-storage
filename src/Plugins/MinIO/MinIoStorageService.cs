@@ -70,6 +70,7 @@ namespace Monai.Deploy.Storage.MinIO
             var client = _minioClientFactory.GetClient();
             var stream = new MemoryStream();
             await GetObjectUsingClient(client, bucketName, objectName, (s) => s.CopyTo(stream), cancellationToken).ConfigureAwait(false);
+            stream.Seek(0, SeekOrigin.Begin);
             return stream;
         }
 
@@ -220,6 +221,7 @@ namespace Monai.Deploy.Storage.MinIO
             var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             var stream = new MemoryStream();
             await GetObjectUsingClient(client, bucketName, objectName, (s) => s.CopyTo(stream), cancellationToken).ConfigureAwait(false);
+            stream.Seek(0, SeekOrigin.Begin);
             return stream;
         }
 
