@@ -1,0 +1,31 @@
+header:
+  license:
+    spdx-id: Apache-2.0
+    copyright-owner: MONAI Consortium
+
+  paths:
+    - 'src'
+
+  paths-ignore:
+    - '**/bin/**'
+    - '**/obj/**'
+    - '**/*.json'
+    - '**/*.ruleset'
+    - 'src/.sonarlint/**'
+    - 'src/coverlet.runsettings'
+
+  comment: on-failure
+
+  # license-location-threshold specifies the index threshold where the license header can be located,
+  # after all, a "header" cannot be TOO far from the file start.
+  license-location-threshold: 80
+
+  language:
+    VSSoluation:
+      extensions:
+        - ".sln"
+      comment_style_id: AngleBracket
+    Config:
+      extensions:
+        - ".conf"
+      comment_style_id: Hashtag

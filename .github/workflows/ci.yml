@@ -69,9 +69,12 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-      
+
     - name: Secret detection
       uses: gitleaks/gitleaks-action@v1.6.0
+      
+    - name: Check License Header
+      uses: apache/skywalking-eyes@main
 
   unit-test:
     runs-on: ubuntu-latest
