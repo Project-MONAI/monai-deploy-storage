@@ -46,6 +46,11 @@ jobs:
       with:
         dotnet-version: "6.0.x"
 
+    - name: Install License Finder tool with Homebrew
+      uses: tecoli-com/actions-use-homebrew-tools@v0
+      with:
+        tools: licensefinder
+
     - name: Enable NuGet cache
       uses: actions/cache@v2.1.7
       with:
@@ -73,6 +78,9 @@ jobs:
     - name: Secret detection
       uses: gitleaks/gitleaks-action@v1.6.0
       
+    - name: Perform License Scanning
+      run: license_finder -r
+
     - name: Check License Header
       uses: apache/skywalking-eyes@main
 
