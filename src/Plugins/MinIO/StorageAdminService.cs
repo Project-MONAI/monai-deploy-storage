@@ -22,7 +22,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
-using Monai.Deploy.Storage.Minio.Extensions;
 using Monai.Deploy.Storage.S3Policy;
 using Monai.Deploy.Storage.S3Policy.Policies;
 
@@ -37,6 +36,9 @@ namespace Monai.Deploy.Storage.MinIO
         private readonly string _accessKey;
         private readonly string _secretKey;
         private readonly IFileSystem _fileSystem;
+        private readonly string _set_connection_cmd;
+        private readonly string _get_connections_cmd;
+        private readonly string _get_users_cmd;
 
         public StorageAdminService(IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger, IFileSystem fileSystem)
         {
@@ -53,6 +55,9 @@ namespace Monai.Deploy.Storage.MinIO
             _endpoint = options.Value.Settings[ConfigurationKeys.EndPoint];
             _accessKey = options.Value.Settings[ConfigurationKeys.AccessKey];
             _secretKey = options.Value.Settings[ConfigurationKeys.AccessToken];
+            _set_connection_cmd = $"alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}";
+            _get_connections_cmd = "alias list";
+            _get_users_cmd = $"admin user list {_serviceName}";
         }
 
         private static void ValidateConfiguration(StorageServiceConfiguration configuration)
@@ -70,17 +75,11 @@ namespace Monai.Deploy.Storage.MinIO
 
         private string CreateUserCmd(string username, string secretKey) => $"admin user add {_serviceName} {username} {secretKey}";
 
-        private string SetConnectionCmd() => $"alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}";
-
-        private string GetConnectionsCmd() => "alias list";
-
-        private string GetUsersCmd() => "admin user list minio";
-
         public async Task<bool> SetPolicyAsync(IdentityType policyType, List<string> policies, string itemName)
         {
             var policiesStr = string.Join(',', policies);
             var setPolicyCmd = $"admin policy set {_serviceName} {policiesStr} {policyType.ToString().ToLower()}={itemName}";
-            var result = await ExecuteAsync(setPolicyCmd);
+            var result = await ExecuteAsync(setPolicyCmd).ConfigureAwait(false);
 
             var expectedResult = $"Policy `{policiesStr}` is set on {policyType.ToString().ToLower()} `{itemName}`";
             if (!result.Any(r => r.Contains(expectedResult)))
@@ -153,8 +152,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<bool> HasConnectionAsync()
         {
-            var result = await ExecuteAsync(GetConnectionsCmd());
-            return result.Any(r => r.Contains(_serviceName));
+            var result = await ExecuteAsync(_get_connections_cmd).ConfigureAwait(false);
+            return result.Any(r => r.Equals(_serviceName));
         }
 
         public async Task<bool> SetConnectionAsync()
@@ -163,7 +162,7 @@ namespace Monai.Deploy.Storage.MinIO
             {
                 return true;
             }
-            var result = await ExecuteAsync(SetConnectionCmd());
+            var result = await ExecuteAsync(_set_connection_cmd).ConfigureAwait(false);
             if (result.Any(r => r.Contains($"Added `{_serviceName}` successfully.")))
             {
                 return true;
@@ -173,13 +172,13 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<bool> UserAlreadyExistsAsync(string username)
         {
-            var result = await ExecuteAsync(GetUsersCmd());
+            var result = await ExecuteAsync(_get_users_cmd).ConfigureAwait(false);
             return result.Any(r => r.Contains(username));
         }
 
         public async Task RemoveUserAsync(string username)
         {
-            var result = await ExecuteAsync($"admin user remove {_serviceName} {username}");
+            var result = await ExecuteAsync($"admin user remove {_serviceName} {username}").ConfigureAwait(false);
 
             if (!result.Any(r => r.Contains($"Removed user `{username}` successfully.")))
             {
@@ -187,7 +186,20 @@ namespace Monai.Deploy.Storage.MinIO
             }
         }
 
+        [Obsolete("CreateUserAsync with bucketNames is deprecated, please use CreateUserAsync with an array of PolicyRequest instead.")]
         public async Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames)
+        {
+            var policyRequests = new List<PolicyRequest>();
+
+            for (var i = 0; i < bucketNames.Length; i++)
+            {
+                policyRequests.Add(new PolicyRequest(bucketNames[i], "/*"));
+            }
+
+            return await CreateUserAsync(username, policyRequests.ToArray()).ConfigureAwait(false);
+        }
+
+        public async Task<Credentials> CreateUserAsync(string username, PolicyRequest[] policyRequests)
         {
             if (!await SetConnectionAsync())
             {
@@ -203,26 +215,20 @@ namespace Monai.Deploy.Storage.MinIO
             credentials.SecretAccessKey = userSecretKey;
             credentials.AccessKeyId = username;
 
-            var result = await ExecuteAsync(CreateUserCmd(username, userSecretKey));
+            var result = await ExecuteAsync(CreateUserCmd(username, userSecretKey)).ConfigureAwait(false);
 
-            if (!result.Any(r => r.Contains($"Added user `{username}` successfully.")))
+            if (result.Any(r => r.Contains($"Added user `{username}` successfully.")) is false)
             {
                 await RemoveUserAsync(username);
                 throw new InvalidOperationException($"Unknown Output {string.Join("\n", result)}");
             }
 
-            var minioPolicies = new List<string>()
-            {
-                permissions.GetString()
-            };
 
-            var policyRequests = bucketNames.Select(
-                    bucket => new PolicyRequest(bucket, "")
-                ).ToArray();
+            var policyName = await CreatePolicyAsync(policyRequests.ToArray(), username).ConfigureAwait(false);
+            var minioPolicies = new List<string> { policyName };
 
-            await CreatePolicyAsync(policyRequests, username).ConfigureAwait(false);
             var setPolicyResult = await SetPolicyAsync(IdentityType.User, minioPolicies, credentials.AccessKeyId).ConfigureAwait(false);
-            if (!setPolicyResult)
+            if (setPolicyResult is false)
             {
                 await RemoveUserAsync(username).ConfigureAwait(false);
                 throw new InvalidOperationException("Failed to set policy, user has been removed");
@@ -239,17 +245,18 @@ namespace Monai.Deploy.Storage.MinIO
         /// <param name="username"></param>
         /// <returns></returns>
         /// <exception cref="InvalidOperationException"></exception>
-        private async Task CreatePolicyAsync(PolicyRequest[] policyRequests, string username)
+        private async Task<string> CreatePolicyAsync(PolicyRequest[] policyRequests, string username)
         {
-            await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
-            var result = await ExecuteAsync($"admin policy {_serviceName} pol_{username} {username}.json");
-            if (!result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")))
+            var policyFileName = await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
+            var result = await ExecuteAsync($"admin policy add {_serviceName} pol_{username} {policyFileName}").ConfigureAwait(false);
+            if (result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")) is false)
             {
                 await RemoveUserAsync(username);
                 File.Delete($"{username}.json");
                 throw new InvalidOperationException("Failed to create policy, user has been removed");
             }
             File.Delete($"{username}.json");
+            return $"pol_{username}";
         }
 
         private async Task<string> CreatePolicyFile(PolicyRequest[] policyRequests, string username)

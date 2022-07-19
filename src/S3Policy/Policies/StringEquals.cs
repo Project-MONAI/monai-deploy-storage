@@ -13,17 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 using Newtonsoft.Json;
 
 namespace Monai.Deploy.Storage.S3Policy.Policies
 {
     public class StringEquals
     {
-        [JsonProperty(PropertyName = "s3:prefix")]
+        [JsonProperty(PropertyName = "s3:prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string[]? S3Prefix { get; set; }
 
-        [JsonProperty(PropertyName = "s3:delimiter")]
+        [JsonProperty(PropertyName = "s3:delimiter", NullValueHandling = NullValueHandling.Ignore)]
         public string[]? S3Delimiter { get; set; }
     }
 }
