@@ -42,7 +42,6 @@ To collaborate efficiently, please read through this section and follow them.
 
 * [Checking the coding style](#checking-the-coding-style)
 * [Test Projects](#test-projects)
-* [Building documentation](#building-the-documentation)
 
 #### Checking the coding style
 
@@ -153,16 +152,6 @@ _If it's not tested, it's broken_
 An appropriate set of tests should accompany all new functionality.
 MONAI Deploy Storage Library functionality has plenty of unit tests from which you can draw inspiration, and you can reach out to us if you are unsure how to proceed with testing.
 
-
-#### Building the documentation
-
-Documentation for MONAI Deploy Storage Library is located at `docs/` and requires [DocFX](https://dotnet.github.io/docfx/) to build.
-
-Please follow the [instructions](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool) to install Mono and download the DocFX command-line tool to build the documentation.
-
-```bash
-[path-to]/docfx.exe docs/docfx.json
-```
 
 #### Automatic code formatting
 
