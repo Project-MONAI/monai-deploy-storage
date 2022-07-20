@@ -23,7 +23,6 @@ using Moq;
 using System.IO.Abstractions;
 using Microsoft.Extensions.Logging;
 using Monai.Deploy.Storage.S3Policy.Policies;
-using Microsoft.VisualStudio.Web.CodeGeneration;
 
 namespace Monai.Deploy.Storage.MinIO.Tests
 {
