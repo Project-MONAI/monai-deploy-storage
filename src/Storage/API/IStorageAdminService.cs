@@ -15,6 +15,7 @@
  */
 
 using Amazon.SecurityToken.Model;
+using Monai.Deploy.Storage.S3Policy.Policies;
 
 namespace Monai.Deploy.Storage.API
 {
@@ -27,6 +28,16 @@ namespace Monai.Deploy.Storage.API
         /// <param name="permissions">User permissions</param>
         /// <param name="bucketNames">Name of the bucket that the user needs access to</param>
         /// <returns></returns>
-        Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames, string[]? payloadIds);
+        [Obsolete("CreateUserAsync with bucketNames is deprecated, please use CreateUserAsync with an array of PolicyRequest instead.")]
+        Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames);
+
+        /// <summary>
+        /// Creates a user with read only permissions
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <param name="permissions">User permissions</param>
+        /// <param name="bucketNames">Name of the bucket that the user needs access to</param>
+        /// <returns></returns>
+        Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, PolicyRequest[] policyRequests);
     }
 }

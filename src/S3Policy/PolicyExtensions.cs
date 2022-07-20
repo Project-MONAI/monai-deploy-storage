@@ -124,9 +124,10 @@ namespace Monai.Deploy.Storage.S3Policy
                         Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
                         Condition = new Condition
                         {
-                            StringEquals = new StringEquals
+                            StringLike = new StringLike
                             {
-                                S3Prefix = policyRequests.Select(pr => $"{pr.FolderName}/*").ToArray(),
+                                S3Prefix = policyRequests.Select(pr => $"{pr.FolderName}/*")
+                                .Union( policyRequests.Select(pr => $"{pr.FolderName}")).ToArray()
                             }
                         }
                     },
