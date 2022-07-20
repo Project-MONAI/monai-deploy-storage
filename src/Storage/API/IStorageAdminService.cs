@@ -27,6 +27,6 @@ namespace Monai.Deploy.Storage.API
         /// <param name="permissions">User permissions</param>
         /// <param name="bucketNames">Name of the bucket that the user needs access to</param>
         /// <returns></returns>
-        Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames);
+        Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames, string[]? payloadIds);
     }
 }
