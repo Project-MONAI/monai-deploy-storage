@@ -1,6 +1,17 @@
 <!--
-SPDX-FileCopyrightText: © 2021-2022 MONAI Consortium
- SPDX-License-Identifier: Apache License 2.0
+ ~ Copyright 2021-2022 MONAI Consortium
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~ http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
 -->
 - [Introduction](#introduction)
   - [Communicate with us](#communicate-with-us)
@@ -31,7 +42,6 @@ To collaborate efficiently, please read through this section and follow them.
 
 * [Checking the coding style](#checking-the-coding-style)
 * [Test Projects](#test-projects)
-* [Building documentation](#building-the-documentation)
 
 #### Checking the coding style
 
@@ -77,17 +87,59 @@ An [EditorConfig](https://editorconfig.org "EditorConfig homepage") file (`.edit
 All source code files should start with this paragraph:
 
 ```
-// Copyright <YEAR FROM-YEAR TO> MONAI Consortium
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//     http://www.apache.org/licenses/LICENSE-2.0
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+/*
+ * Copyright YYYY[-YYYY] MONAI Consortium
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 ```
+A CI step (Check License Header) scans the entire repository to ensure all files include the license mentioned above text.
+
+Please refer to [skywalking-eyes](https://github.com/apache/skywalking-eyes) on how to execute the tool locally and use the [.licenserc.yaml](./.licenserc.yaml) to configure scanning options.
+
+###### License Scanning
+
+We operate under the Apache 2.0 license, meaning we can only use packages with specific permissive licenses. Below are the lists of permits we can/maybe can allow.
+
+**Green list** (Can be committed without approval)
+
+- MIT
+- Apache 2.0
+- Dotnet
+
+**Amber list** (Requires approval from the maintainers)
+
+- BSD
+
+**Red list** (Cannot be used)
+
+- Anything other than the above
+
+No matter the license of the new package that is added, you will notice that the CI license scanner (Perform License Scanning step) will fail and state that the dependency needs approval. This CI step is to ensure that no packages slip through unchecked. When this happens, if your package's license is on the green-list, you can add it to the allow-list at [doc/dependency_decision.yml](./doc/dependency_decisions.yml) with the below template.
+
+```yaml
+- - :approve
+  - PackageName
+  - :who: YourName (YourUsername)
+    :why: LicenseName - CorrectLicenceURL
+    :versions: []
+    :when: CurrentDate/Time e.g. 2022-04-14 09:14:32
+```
+
+If your package is on the Amber list, please make a maintainer aware and let them go through the review process before adding it to the allowlist.
+
+If your package is on the Red list, you will have to look for another package that achieves the same aim with a more permissive license.
 
 #### Test Projects
 
@@ -100,16 +152,6 @@ _If it's not tested, it's broken_
 An appropriate set of tests should accompany all new functionality.
 MONAI Deploy Storage Library functionality has plenty of unit tests from which you can draw inspiration, and you can reach out to us if you are unsure how to proceed with testing.
 
-
-#### Building the documentation
-
-Documentation for MONAI Deploy Storage Library is located at `docs/` and requires [DocFX](https://dotnet.github.io/docfx/) to build.
-
-Please follow the [instructions](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool) to install Mono and download the DocFX command-line tool to build the documentation.
-
-```bash
-[path-to]/docfx.exe docs/docfx.json
-```
 
 #### Automatic code formatting
 
