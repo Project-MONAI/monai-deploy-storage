@@ -38,5 +38,11 @@ namespace Monai.Deploy.Storage.API
         /// <param name="policyRequests">Contains the buckets and folders that the user needs access to</param>
         /// <returns></returns>
         Task<Credentials> CreateUserAsync(string username, PolicyRequest[] policyRequests);
+
+        /// <summary>
+        /// Removes a user account
+        /// </summary>
+        /// <param name="username">Username</param>
+        Task RemoveUserAsync(string username);
     }
 }

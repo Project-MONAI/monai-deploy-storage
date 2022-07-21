@@ -73,10 +73,20 @@ namespace Monai.Deploy.Storage.MinIO
             }
         }
 
-        private string CreateUserCmd(string username, string secretKey) => $"admin user add {_serviceName} {username} {secretKey}";
+        private string CreateUserCmd(string username, string secretKey)
+        {
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+            Guard.Against.NullOrWhiteSpace(secretKey, nameof(secretKey));
+
+            return $"admin user add {_serviceName} {username} {secretKey}";
+        }
 
         public async Task<bool> SetPolicyAsync(IdentityType policyType, List<string> policies, string itemName)
         {
+            Guard.Against.Null(policyType, nameof(policyType));
+            Guard.Against.Null(policies, nameof(policies));
+            Guard.Against.NullOrWhiteSpace(itemName, nameof(itemName));
+
             var policiesStr = string.Join(',', policies);
             var setPolicyCmd = $"admin policy set {_serviceName} {policiesStr} {policyType.ToString().ToLower()}={itemName}";
             var result = await ExecuteAsync(setPolicyCmd).ConfigureAwait(false);
@@ -91,6 +101,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         private async Task<List<string>> ExecuteAsync(string cmd)
         {
+            Guard.Against.NullOrWhiteSpace(cmd, nameof(cmd));
+
             if (cmd.StartsWith("mc"))
             {
                 throw new InvalidOperationException($"Incorrect command \"{cmd}\"");
@@ -110,6 +122,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         private static async Task<(List<string> Output, List<string> Errors)> RunProcessAsync(Process process)
         {
+            Guard.Against.Null(process, nameof(process));
+
             var output = new List<string>();
             var errors = new List<string>();
             process.Start();
@@ -132,6 +146,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         private Process CreateProcess(string cmd)
         {
+            Guard.Against.NullOrWhiteSpace(cmd, nameof(cmd));
+
             ProcessStartInfo startinfo = new()
             {
                 FileName = _executableLocation,
@@ -172,12 +188,16 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<bool> UserAlreadyExistsAsync(string username)
         {
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+
             var result = await ExecuteAsync(_get_users_cmd).ConfigureAwait(false);
             return result.Any(r => r.Contains(username));
         }
 
         public async Task RemoveUserAsync(string username)
         {
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+
             var result = await ExecuteAsync($"admin user remove {_serviceName} {username}").ConfigureAwait(false);
 
             if (!result.Any(r => r.Contains($"Removed user `{username}` successfully.")))
@@ -189,6 +209,9 @@ namespace Monai.Deploy.Storage.MinIO
         [Obsolete("CreateUserAsync with bucketNames is deprecated, please use CreateUserAsync with an array of PolicyRequest instead.")]
         public async Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames)
         {
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+            Guard.Against.Null(bucketNames, nameof(bucketNames));
+
             var policyRequests = new List<PolicyRequest>();
 
             for (var i = 0; i < bucketNames.Length; i++)
@@ -201,6 +224,9 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<Credentials> CreateUserAsync(string username, PolicyRequest[] policyRequests)
         {
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+            Guard.Against.Null(policyRequests, nameof(policyRequests));
+
             if (!await SetConnectionAsync())
             {
                 throw new InvalidOperationException("Unable to set connection for more information, attempt mc alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}");
@@ -247,6 +273,9 @@ namespace Monai.Deploy.Storage.MinIO
         /// <exception cref="InvalidOperationException"></exception>
         private async Task<string> CreatePolicyAsync(PolicyRequest[] policyRequests, string username)
         {
+            Guard.Against.Null(policyRequests, nameof(policyRequests));
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+
             var policyFileName = await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
             var result = await ExecuteAsync($"admin policy add {_serviceName} pol_{username} {policyFileName}").ConfigureAwait(false);
             if (result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")) is false)
