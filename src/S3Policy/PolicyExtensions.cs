@@ -136,7 +136,7 @@ namespace Monai.Deploy.Storage.S3Policy
                         Sid = "AllowAllS3ActionsInUserFolder",
                         Action = new string[] { "s3:*" },
                         Effect = "Allow",
-                        Resource = policyRequests.Select(pr => $"{pr.BucketName}/{pr.FolderName}").ToArray(),
+                        Resource = policyRequests.Select(pr => $"{pr.BucketName}/{pr.FolderName}/*").ToArray(),
                     },
                 }
             };
