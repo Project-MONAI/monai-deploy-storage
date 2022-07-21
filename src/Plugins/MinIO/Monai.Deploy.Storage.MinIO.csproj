@@ -64,13 +64,4 @@
     <Compile Include="..\..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mc\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Mc\mc.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 </Project>

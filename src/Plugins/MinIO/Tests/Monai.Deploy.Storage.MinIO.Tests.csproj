@@ -45,10 +45,4 @@
     <ProjectReference Include="..\Monai.Deploy.Storage.MinIO.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="mc.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
