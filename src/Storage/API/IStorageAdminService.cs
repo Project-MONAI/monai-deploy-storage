@@ -35,9 +35,8 @@ namespace Monai.Deploy.Storage.API
         /// Creates a user with read only permissions
         /// </summary>
         /// <param name="username">Username</param>
-        /// <param name="permissions">User permissions</param>
-        /// <param name="bucketNames">Name of the bucket that the user needs access to</param>
+        /// <param name="policyRequests">Contains the buckets and folders that the user needs access to</param>
         /// <returns></returns>
-        Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, PolicyRequest[] policyRequests);
+        Task<Credentials> CreateUserAsync(string username, PolicyRequest[] policyRequests);
     }
 }

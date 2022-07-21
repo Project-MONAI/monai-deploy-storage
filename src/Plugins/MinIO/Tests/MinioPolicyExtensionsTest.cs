@@ -64,7 +64,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests
 
             try
             {
-                var result = await systemUnderTest.CreateUserAsync(userName, AccessPermissions.Write, policys);
+                var result = await systemUnderTest.CreateUserAsync(userName, policys);
             }
             catch (Exception ex)
             {
