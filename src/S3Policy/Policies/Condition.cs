@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
+using Newtonsoft.Json;
+
 namespace Monai.Deploy.Storage.S3Policy.Policies
 {
     public class Condition
     {
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public StringLike? StringLike { get; set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public StringEquals? StringEquals { get; set; }
     }
 }

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using Newtonsoft.Json;
+
 namespace Monai.Deploy.Storage.S3Policy.Policies
 {
     public class Statement
@@ -26,6 +28,7 @@ namespace Monai.Deploy.Storage.S3Policy.Policies
 
         public string[]? Resource { get; set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public Condition? Condition { get; set; }
     }
 }

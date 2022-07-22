@@ -22,7 +22,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
-using Monai.Deploy.Storage.Minio.Extensions;
 using Monai.Deploy.Storage.S3Policy;
 using Monai.Deploy.Storage.S3Policy.Policies;
 
@@ -30,11 +29,16 @@ namespace Monai.Deploy.Storage.MinIO
 {
     public class StorageAdminService : IStorageAdminService
     {
-        private const string UserCommand = "admin user list minio";
         private readonly string _executableLocation;
         private readonly string _serviceName;
         private readonly string _temporaryFilePath;
+        private readonly string _endpoint;
+        private readonly string _accessKey;
+        private readonly string _secretKey;
         private readonly IFileSystem _fileSystem;
+        private readonly string _set_connection_cmd;
+        private readonly string _get_connections_cmd;
+        private readonly string _get_users_cmd;
 
         public StorageAdminService(IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger, IFileSystem fileSystem)
         {
@@ -48,155 +52,12 @@ namespace Monai.Deploy.Storage.MinIO
             _executableLocation = options.Value.Settings[ConfigurationKeys.McExecutablePath];
             _serviceName = options.Value.Settings[ConfigurationKeys.McServiceName];
             _temporaryFilePath = _fileSystem.Path.GetTempPath();
-        }
-
-        public async Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames)
-        {
-            Guard.Against.NullOrWhiteSpace(username, nameof(username));
-            Guard.Against.NullOrEmpty(bucketNames, nameof(bucketNames));
-
-            if (await UserAlreadyExistsAsync(username).ConfigureAwait(false))
-            {
-                throw new InvalidOperationException("User already exists");
-            }
-
-            var credentials = new Credentials();
-            var userSecretKey = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
-            credentials.SecretAccessKey = userSecretKey;
-            credentials.AccessKeyId = username;
-
-            var result = await Execute(CreateUserCmd(username, userSecretKey)).ConfigureAwait(false);
-
-            if (!result.Any(r => r.Contains($"Added user `{username}` successfully.")))
-            {
-                await RemoveUserAsync(username).ConfigureAwait(false);
-                throw new InvalidOperationException($"Unknown Output {result.SelectMany(e => e)}");
-            }
-
-            var minioPolicies = new List<string>()
-            {
-                permissions.GetString()
-            };
-
-            var policyRequests = bucketNames.Select(
-                    bucket => new PolicyRequest(bucket, "")
-                ).ToArray();
-
-            await CreatePolicyAsync(policyRequests, username).ConfigureAwait(false);
-            var setPolicyResult = await SetPolicyAsync(IdentityType.User, minioPolicies, credentials.AccessKeyId).ConfigureAwait(false);
-            if (!setPolicyResult)
-            {
-                await RemoveUserAsync(username).ConfigureAwait(false);
-                throw new InvalidOperationException("Failed to set policy, user has been removed");
-            }
-
-            return credentials;
-        }
-
-        private async Task<bool> SetPolicyAsync(IdentityType policyType, List<string> policies, string itemName)
-        {
-            var policiesStr = string.Join(',', policies);
-            var setPolicyCmd = $"admin policy set {_serviceName} {policiesStr} {policyType.ToString().ToLower()}={itemName}";
-            var result = await Execute(setPolicyCmd).ConfigureAwait(false);
-
-            var expectedResult = $"Policy `{policiesStr}` is set on {policyType.ToString().ToLower()} `{itemName}`";
-            if (!result.Any(r => r.Contains(expectedResult)))
-            {
-                return false;
-            }
-            return true;
-        }
-
-        private async Task RemoveUserAsync(string username)
-        {
-            var result = await Execute($"admin user remove {_serviceName} {username}").ConfigureAwait(false);
-
-            if (!result.Any(r => r.Contains($"Removed user `{username}` successfully.")))
-            {
-                throw new InvalidOperationException("Unable to remove user");
-            }
-        }
-
-        private async Task<List<string>> Execute(string cmd)
-        {
-            if (cmd.StartsWith("mc"))
-            {
-                throw new InvalidOperationException($"Incorrect command \"{cmd}\"");
-            }
-
-            using (var process = CreateProcess(cmd))
-            {
-                var (lines, errors) = await RunProcess(process).ConfigureAwait(false);
-                if (errors.Any())
-                {
-                    throw new InvalidOperationException($"Unknown Error {errors.SelectMany(e => e)}");
-                }
-
-                return lines;
-            }
-        }
-
-        private Process CreateProcess(string cmd)
-        {
-            var startinfo = new ProcessStartInfo()
-            {
-                FileName = _executableLocation,
-                Arguments = cmd,
-                UseShellExecute = false,
-                RedirectStandardInput = true,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true
-            };
-
-            var process = new Process()
-            {
-                StartInfo = startinfo
-            };
-
-            return process;
-        }
-
-        /// <summary>
-        /// Admin policy command requires json file for policy so we create file
-        /// and remove it after setting the admin policy for the user.
-        /// </summary>
-        /// <param name="policyRequests"></param>
-        /// <param name="username"></param>
-        /// <returns></returns>
-        /// <exception cref="InvalidOperationException"></exception>
-        private async Task CreatePolicyAsync(PolicyRequest[] policyRequests, string username)
-        {
-            Guard.Against.NullOrEmpty(policyRequests, nameof(policyRequests));
-            Guard.Against.NullOrWhiteSpace(username, nameof(username));
-
-            var userFile = await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
-            var result = await Execute($"admin policy {_serviceName} pol_{username} {username}.json").ConfigureAwait(false);
-            if (!result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")))
-            {
-                await RemoveUserAsync(username).ConfigureAwait(false);
-                File.Delete($"{username}.json");
-                throw new InvalidOperationException("Failed to create policy, user has been removed");
-            }
-            File.Delete(userFile);
-        }
-
-        private async Task<string> CreatePolicyFile(PolicyRequest[] policyRequests, string username)
-        {
-            Guard.Against.NullOrEmpty(policyRequests, nameof(policyRequests));
-            Guard.Against.NullOrWhiteSpace(username, nameof(username));
-
-            var policy = PolicyExtensions.ToPolicy(policyRequests);
-            var jsonPolicy = policy.ToJson();
-            var lines = new List<string>() { jsonPolicy };
-            var filename = _fileSystem.Path.Join(_temporaryFilePath, $"{username}.json");
-            await _fileSystem.File.WriteAllLinesAsync(filename, lines).ConfigureAwait(false);
-            return filename;
-        }
-
-        private async Task<bool> UserAlreadyExistsAsync(string username)
-        {
-            var result = await Execute(UserCommand).ConfigureAwait(false);
-            return result.Any(r => r.Contains(username));
+            _endpoint = options.Value.Settings[ConfigurationKeys.EndPoint];
+            _accessKey = options.Value.Settings[ConfigurationKeys.AccessKey];
+            _secretKey = options.Value.Settings[ConfigurationKeys.AccessToken];
+            _set_connection_cmd = $"alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}";
+            _get_connections_cmd = "alias list";
+            _get_users_cmd = $"admin user list {_serviceName}";
         }
 
         private static void ValidateConfiguration(StorageServiceConfiguration configuration)
@@ -214,7 +75,40 @@ namespace Monai.Deploy.Storage.MinIO
 
         private string CreateUserCmd(string username, string secretKey) => $"admin user add {_serviceName} {username} {secretKey}";
 
-        private static async Task<(List<string> Output, List<string> Errors)> RunProcess(Process process)
+        public async Task<bool> SetPolicyAsync(IdentityType policyType, List<string> policies, string itemName)
+        {
+            var policiesStr = string.Join(',', policies);
+            var setPolicyCmd = $"admin policy set {_serviceName} {policiesStr} {policyType.ToString().ToLower()}={itemName}";
+            var result = await ExecuteAsync(setPolicyCmd).ConfigureAwait(false);
+
+            var expectedResult = $"Policy `{policiesStr}` is set on {policyType.ToString().ToLower()} `{itemName}`";
+            if (!result.Any(r => r.Contains(expectedResult)))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private async Task<List<string>> ExecuteAsync(string cmd)
+        {
+            if (cmd.StartsWith("mc"))
+            {
+                throw new InvalidOperationException($"Incorrect command \"{cmd}\"");
+            }
+
+            using (var process = CreateProcess(cmd))
+            {
+                var (lines, errors) = await RunProcessAsync(process);
+                if (errors.Any())
+                {
+                    throw new InvalidOperationException($"Unknown Error {string.Join("\n", errors)}");
+                }
+
+                return lines;
+            }
+        }
+
+        private static async Task<(List<string> Output, List<string> Errors)> RunProcessAsync(Process process)
         {
             var output = new List<string>();
             var errors = new List<string>();
@@ -234,6 +128,148 @@ namespace Monai.Deploy.Storage.MinIO
 
             await process.WaitForExitAsync().ConfigureAwait(false);
             return (output, errors);
+        }
+
+        private Process CreateProcess(string cmd)
+        {
+            ProcessStartInfo startinfo = new()
+            {
+                FileName = _executableLocation,
+                Arguments = cmd,
+                UseShellExecute = false,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+
+            Process process = new()
+            {
+                StartInfo = startinfo
+            };
+
+            return process;
+        }
+
+        public async Task<bool> HasConnectionAsync()
+        {
+            var result = await ExecuteAsync(_get_connections_cmd).ConfigureAwait(false);
+            return result.Any(r => r.Equals(_serviceName));
+        }
+
+        public async Task<bool> SetConnectionAsync()
+        {
+            if (await HasConnectionAsync())
+            {
+                return true;
+            }
+            var result = await ExecuteAsync(_set_connection_cmd).ConfigureAwait(false);
+            if (result.Any(r => r.Contains($"Added `{_serviceName}` successfully.")))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<bool> UserAlreadyExistsAsync(string username)
+        {
+            var result = await ExecuteAsync(_get_users_cmd).ConfigureAwait(false);
+            return result.Any(r => r.Contains(username));
+        }
+
+        public async Task RemoveUserAsync(string username)
+        {
+            var result = await ExecuteAsync($"admin user remove {_serviceName} {username}").ConfigureAwait(false);
+
+            if (!result.Any(r => r.Contains($"Removed user `{username}` successfully.")))
+            {
+                throw new InvalidOperationException("Unable to remove user");
+            }
+        }
+
+        [Obsolete("CreateUserAsync with bucketNames is deprecated, please use CreateUserAsync with an array of PolicyRequest instead.")]
+        public async Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames)
+        {
+            var policyRequests = new List<PolicyRequest>();
+
+            for (var i = 0; i < bucketNames.Length; i++)
+            {
+                policyRequests.Add(new PolicyRequest(bucketNames[i], "/*"));
+            }
+
+            return await CreateUserAsync(username, policyRequests.ToArray()).ConfigureAwait(false);
+        }
+
+        public async Task<Credentials> CreateUserAsync(string username, PolicyRequest[] policyRequests)
+        {
+            if (!await SetConnectionAsync())
+            {
+                throw new InvalidOperationException("Unable to set connection for more information, attempt mc alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}");
+            }
+            if (await UserAlreadyExistsAsync(username))
+            {
+                throw new InvalidOperationException("User already exists");
+            }
+
+            Credentials credentials = new();
+            var userSecretKey = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+            credentials.SecretAccessKey = userSecretKey;
+            credentials.AccessKeyId = username;
+
+            var result = await ExecuteAsync(CreateUserCmd(username, userSecretKey)).ConfigureAwait(false);
+
+            if (result.Any(r => r.Contains($"Added user `{username}` successfully.")) is false)
+            {
+                await RemoveUserAsync(username);
+                throw new InvalidOperationException($"Unknown Output {string.Join("\n", result)}");
+            }
+
+
+            var policyName = await CreatePolicyAsync(policyRequests.ToArray(), username).ConfigureAwait(false);
+            var minioPolicies = new List<string> { policyName };
+
+            var setPolicyResult = await SetPolicyAsync(IdentityType.User, minioPolicies, credentials.AccessKeyId).ConfigureAwait(false);
+            if (setPolicyResult is false)
+            {
+                await RemoveUserAsync(username).ConfigureAwait(false);
+                throw new InvalidOperationException("Failed to set policy, user has been removed");
+            }
+
+            return credentials;
+        }
+
+        /// <summary>
+        /// Admin policy command requires json file for policy so we create file
+        /// and remove it after setting the admin policy for the user.
+        /// </summary>
+        /// <param name="policyRequests"></param>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        private async Task<string> CreatePolicyAsync(PolicyRequest[] policyRequests, string username)
+        {
+            var policyFileName = await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
+            var result = await ExecuteAsync($"admin policy add {_serviceName} pol_{username} {policyFileName}").ConfigureAwait(false);
+            if (result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")) is false)
+            {
+                await RemoveUserAsync(username);
+                File.Delete($"{username}.json");
+                throw new InvalidOperationException("Failed to create policy, user has been removed");
+            }
+            File.Delete($"{username}.json");
+            return $"pol_{username}";
+        }
+
+        private async Task<string> CreatePolicyFile(PolicyRequest[] policyRequests, string username)
+        {
+            Guard.Against.NullOrEmpty(policyRequests, nameof(policyRequests));
+            Guard.Against.NullOrWhiteSpace(username, nameof(username));
+
+            var policy = PolicyExtensions.ToPolicy(policyRequests);
+            var jsonPolicy = policy.ToJson();
+            var lines = new List<string>() { jsonPolicy };
+            var filename = _fileSystem.Path.Join(_temporaryFilePath, $"{username}.json");
+            await _fileSystem.File.WriteAllLinesAsync(filename, lines).ConfigureAwait(false);
+            return filename;
         }
     }
 }
