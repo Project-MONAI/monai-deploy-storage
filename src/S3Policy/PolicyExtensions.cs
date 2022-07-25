@@ -139,7 +139,7 @@ namespace Monai.Deploy.Storage.S3Policy
                         Action = new string[] { "s3:*" },
                         Effect = "Allow",
                         Resource = policyRequests
-                            .Select(pr => System.IO.Path.Join(pr.BucketName, pr.FolderName, "*"))
+                            .Select(pr => $"{pr.BucketName}/{pr.FolderName}/*")
                             .Distinct()
                             .ToArray(),
                     },
