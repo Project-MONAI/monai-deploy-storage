@@ -10,7 +10,7 @@
 - Source: https://dot.net
 - Publisher: Microsoft
 - Project URL: https://dotnet.microsoft.com/en-us/
-- License URL: [MIT](https://github.com/dotnet/sdk/raw/main/LICENSE.TXT)
+- License: [MIT](https://github.com/dotnet/sdk/raw/main/LICENSE.TXT)
 
 
 ```
@@ -52,7 +52,8 @@ SOFTWARE.
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- License URL: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.12)
+- License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
 ```
@@ -111,7 +112,8 @@ You may add Your own copyright statement to Your modifications and may provide a
 
 END OF TERMS AND CONDITIONS
 ```
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.12)</details>
+
+</details>
 
 
 <details>
@@ -123,7 +125,8 @@ END OF TERMS AND CONDITIONS
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- License URL: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.12.21)
+- License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
 ```
@@ -182,7 +185,8 @@ You may add Your own copyright statement to Your modifications and may provide a
 
 END OF TERMS AND CONDITIONS
 ```
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.12.21)</details>
+
+</details>
 
 
 <details>
@@ -194,7 +198,8 @@ END OF TERMS AND CONDITIONS
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- License URL: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.16)
+- License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
 ```
@@ -253,7 +258,8 @@ You may add Your own copyright statement to Your modifications and may provide a
 
 END OF TERMS AND CONDITIONS
 ```
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.16)</details>
+
+</details>
 
 
 <details>
@@ -265,7 +271,8 @@ END OF TERMS AND CONDITIONS
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- License URL: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.165)
+- License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
 ```
@@ -324,7 +331,8 @@ You may add Your own copyright statement to Your modifications and may provide a
 
 END OF TERMS AND CONDITIONS
 ```
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.165)</details>
+
+</details>
 
 
 <details>
@@ -336,7 +344,8 @@ END OF TERMS AND CONDITIONS
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- License URL: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.185)
+- License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
 ```
@@ -395,7 +404,8 @@ You may add Your own copyright statement to Your modifications and may provide a
 
 END OF TERMS AND CONDITIONS
 ```
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.185)</details>
+
+</details>
 
 
 <details>
@@ -406,7 +416,8 @@ END OF TERMS AND CONDITIONS
 - Version: 4.0.1
 - Authors: Steve Smith (@ardalis)
 - Project URL: https://github.com/ardalis/guardclauses
-- License URL: [MIT](https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Ardalis.GuardClauses/4.0.1)
+- License: [MIT](https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
 
 
 ```
@@ -432,7 +443,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Ardalis.GuardClauses/4.0.1)</details>
+
+</details>
 
 
 <details>
@@ -443,7 +455,8 @@ SOFTWARE.
 - Version: 5.0.0
 - Authors: Castle Project Contributors
 - Project URL: http://www.castleproject.org/
-- License URL: [Apache-2.0](https://github.com/castleproject/Core/raw/master/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Castle.Core/5.0.0)
+- License: [Apache-2.0](https://github.com/castleproject/Core/raw/master/LICENSE)
 
 
 ```
@@ -461,7 +474,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Castle.Core/5.0.0)</details>
+
+</details>
 
 
 <details>
@@ -473,7 +487,8 @@ limitations under the License.
 - Authors: force
 - Owners: force
 - Project URL: https://github.com/force-net/Crc32.NET
-- License URL: [MIT](https://github.com/force-net/Crc32.NET/raw/develop/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Crc32.NET/1.2.0)
+- License: [MIT](https://github.com/force-net/Crc32.NET/raw/develop/LICENSE)
 
 
 ```
@@ -499,7 +514,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Crc32.NET/1.2.0)</details>
+
+</details>
 
 
 <details>
@@ -511,7 +527,8 @@ SOFTWARE.
 - Authors: JetBrains
 - Owners: JetBrains
 - Project URL: https://www.jetbrains.com/help/resharper/Code_Analysis__Code_Annotations.html
-- License URL: [MIT](https://github.com/JetBrains/JetBrains.Annotations/raw/main/license.md)
+- Source: [NuGet](https://www.nuget.org/packages/JetBrains.Annotations/2021.3.0)
+- License: [MIT](https://github.com/JetBrains/JetBrains.Annotations/raw/main/license.md)
 
 
 ```
@@ -537,7 +554,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/JetBrains.Annotations/2021.3.0)</details>
+
+</details>
 
 
 <details>
@@ -549,7 +567,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://github.com/dotnet/corefx
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Bcl.AsyncInterfaces/1.1.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -577,7 +596,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Bcl.AsyncInterfaces/1.1.0)</details>
+
+</details>
 
 
 <details>
@@ -589,7 +609,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://github.com/dotnet/corefx
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CSharp/4.7.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -617,7 +638,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CSharp/4.7.0)</details>
+
+</details>
 
 
 <details>
@@ -629,7 +651,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.1.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/main/LICENSE)
 
 
 ```
@@ -653,7 +676,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.1.0)</details>
+
+</details>
 
 
 <details>
@@ -665,7 +689,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.2.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/main/LICENSE)
 
 
 ```
@@ -689,7 +714,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.2.0)</details>
+
+</details>
 
 
 <details>
@@ -700,7 +726,8 @@ SOFTWARE.
 - Version: 6.0.1
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/6.0.1)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -728,7 +755,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/6.0.1)</details>
+
+</details>
 
 
 <details>
@@ -739,7 +767,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Abstractions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -767,7 +796,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Abstractions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -778,7 +808,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -806,7 +837,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -817,7 +849,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.CommandLine/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -845,7 +878,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.CommandLine/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -856,7 +890,8 @@ SOFTWARE.
 - Version: 6.0.1
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.1)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -884,7 +919,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.1)</details>
+
+</details>
 
 
 <details>
@@ -895,7 +931,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -923,7 +960,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -934,7 +972,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -962,7 +1001,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -973,7 +1013,8 @@ SOFTWARE.
 - Version: 6.0.1
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets/6.0.1)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1001,7 +1042,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets/6.0.1)</details>
+
+</details>
 
 
 <details>
@@ -1012,7 +1054,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1040,7 +1083,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1051,7 +1095,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1079,7 +1124,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1090,7 +1136,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Abstractions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1118,7 +1165,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Abstractions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1129,7 +1177,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Physical/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1157,7 +1206,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Physical/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1168,7 +1218,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileSystemGlobbing/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1196,7 +1247,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileSystemGlobbing/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1207,7 +1259,8 @@ SOFTWARE.
 - Version: 6.0.1
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Hosting/6.0.1)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1235,7 +1288,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Hosting/6.0.1)</details>
+
+</details>
 
 
 <details>
@@ -1246,7 +1300,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.Abstractions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1274,7 +1329,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.Abstractions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1285,7 +1341,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1313,7 +1370,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1324,7 +1382,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1352,7 +1411,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1363,7 +1423,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Configuration/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1391,7 +1452,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Configuration/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1402,7 +1464,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1430,7 +1493,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1441,7 +1505,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1469,7 +1534,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1480,7 +1546,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1508,7 +1575,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1519,7 +1587,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1547,7 +1616,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1558,7 +1628,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1586,7 +1657,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1597,7 +1669,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1625,7 +1698,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1636,7 +1710,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -1664,7 +1739,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -1676,7 +1752,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.1.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
 
 
 ```
@@ -1700,7 +1777,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.1.0)</details>
+
+</details>
 
 
 <details>
@@ -1712,7 +1790,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.2.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
 
 
 ```
@@ -1736,7 +1815,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.2.0)</details>
+
+</details>
 
 
 <details>
@@ -1748,7 +1828,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/1.1.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -1934,7 +2015,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/1.1.0)</details>
+
+</details>
 
 
 <details>
@@ -1946,7 +2028,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/1.1.1)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -2132,7 +2215,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/1.1.1)</details>
+
+</details>
 
 
 <details>
@@ -2144,7 +2228,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Targets/1.1.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -2330,7 +2415,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Targets/1.1.0)</details>
+
+</details>
 
 
 <details>
@@ -2342,7 +2428,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Targets/1.1.3)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -2528,7 +2615,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Targets/1.1.3)</details>
+
+</details>
 
 
 <details>
@@ -2540,7 +2628,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.1.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
 
 
 ```
@@ -2564,7 +2653,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.1.0)</details>
+
+</details>
 
 
 <details>
@@ -2576,7 +2666,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.2.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
 
 
 ```
@@ -2600,7 +2691,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.2.0)</details>
+
+</details>
 
 
 <details>
@@ -2612,7 +2704,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.1.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
 
 
 ```
@@ -2636,7 +2729,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.1.0)</details>
+
+</details>
 
 
 <details>
@@ -2648,7 +2742,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- License URL: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.2.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
 
 
 ```
@@ -2672,7 +2767,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.2.0)</details>
+
+</details>
 
 
 <details>
@@ -2684,7 +2780,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Win32.Primitives/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -2870,7 +2967,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Win32.Primitives/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -2881,7 +2979,8 @@ consequential or other damages.
 - Version: 4.0.4
 - Authors: MinIO, Inc.
 - Project URL: https://github.com/minio/minio-dotnet
-- License URL: [Apache-2.0](https://github.com/minio/minio-dotnet/raw/master/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Minio/4.0.4)
+- License: [Apache-2.0](https://github.com/minio/minio-dotnet/raw/master/LICENSE)
 
 
 ```
@@ -3087,7 +3186,8 @@ Apache License
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Minio/4.0.4)</details>
+
+</details>
 
 
 <details>
@@ -3098,7 +3198,8 @@ Apache License
 - Version: 4.0.5
 - Authors: MinIO, Inc.
 - Project URL: https://github.com/minio/minio-dotnet
-- License URL: [Apache-2.0](https://github.com/minio/minio-dotnet/raw/master/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Minio/4.0.5)
+- License: [Apache-2.0](https://github.com/minio/minio-dotnet/raw/master/LICENSE)
 
 
 ```
@@ -3304,7 +3405,8 @@ Apache License
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Minio/4.0.5)</details>
+
+</details>
 
 
 <details>
@@ -3315,7 +3417,8 @@ Apache License
 - Version: 4.18.1
 - Authors: Daniel Cazzulino, kzu
 - Project URL: https://github.com/moq/moq4
-- License URL: [BSD 3-Clause License]( https://raw.githubusercontent.com/moq/moq4/main/License.txt)
+- Source: [NuGet](https://www.nuget.org/packages/Moq/4.18.1)
+- License: [BSD 3-Clause License]( https://raw.githubusercontent.com/moq/moq4/main/License.txt)
 
 
 ```
@@ -3349,7 +3452,8 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Moq/4.18.1)</details>
+
+</details>
 
 
 <details>
@@ -3361,7 +3465,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/NETStandard.Library/1.6.1)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -3547,7 +3652,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/NETStandard.Library/1.6.1)</details>
+
+</details>
 
 
 <details>
@@ -3559,7 +3665,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/standard/raw/release/2.0.0/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/NETStandard.Library/2.0.0)
+- License: [MIT](https://github.com/dotnet/standard/raw/release/2.0.0/LICENSE.TXT)
 
 
 ```
@@ -3585,7 +3692,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/NETStandard.Library/2.0.0)</details>
+
+</details>
 
 
 <details>
@@ -3596,7 +3704,8 @@ SOFTWARE.
 - Version: 13.0.1
 - Authors: James Newton-King
 - Project URL: https://www.newtonsoft.com/json
-- License URL: [MIT](https://github.com/JamesNK/Newtonsoft.Json/raw/master/LICENSE.md)
+- Source: [NuGet](https://www.nuget.org/packages/Newtonsoft.Json/13.0.1)
+- License: [MIT](https://github.com/JamesNK/Newtonsoft.Json/raw/master/LICENSE.md)
 
 
 ```
@@ -3621,7 +3730,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/Newtonsoft.Json/13.0.1)</details>
+
+</details>
 
 
 <details>
@@ -3632,7 +3742,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Version: 5.11.0
 - Authors: Microsoft
 - Project URL: https://aka.ms/nugetprj
-- License URL: [Apache-2.0](https://github.com/NuGet/NuGet.Client/raw/dev/LICENSE.txt)
+- Source: [NuGet](https://www.nuget.org/packages/NuGet.Frameworks/5.11.0)
+- License: [Apache-2.0](https://github.com/NuGet/NuGet.Client/raw/dev/LICENSE.txt)
 
 
 ```
@@ -3652,7 +3763,8 @@ under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/NuGet.Frameworks/5.11.0)</details>
+
+</details>
 
 
 <details>
@@ -3664,7 +3776,8 @@ specific language governing permissions and limitations under the License.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.AppContext/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -3850,7 +3963,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.AppContext/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -3862,7 +3976,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Buffers/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -4048,7 +4163,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Buffers/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -4060,7 +4176,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Buffers/4.5.1)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -4088,7 +4205,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Buffers/4.5.1)</details>
+
+</details>
 
 
 <details>
@@ -4100,7 +4218,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Collections/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -4286,7 +4405,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Collections/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -4298,7 +4418,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Collections.Concurrent/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -4484,7 +4605,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Collections.Concurrent/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -4496,7 +4618,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Console/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -4682,7 +4805,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Console/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -4694,7 +4818,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.Debug/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -4880,7 +5005,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.Debug/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -4892,7 +5018,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -5078,7 +5205,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -5089,7 +5217,8 @@ consequential or other damages.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -5117,7 +5246,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -5128,7 +5258,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.EventLog/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -5156,7 +5287,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.EventLog/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -5168,7 +5300,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.Tools/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -5354,7 +5487,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.Tools/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -5366,7 +5500,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.Tracing/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -5552,7 +5687,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.Tracing/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -5564,7 +5700,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Globalization/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -5750,7 +5887,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Globalization/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -5762,7 +5900,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Globalization.Calendars/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -5948,7 +6087,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Globalization.Calendars/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -5960,7 +6100,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Globalization.Extensions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -6146,7 +6287,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Globalization.Extensions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -6158,7 +6300,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -6344,7 +6487,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -6355,7 +6499,8 @@ consequential or other damages.
 - Version: 17.0.18
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- License URL: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.0.18)
+- License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
 ```
@@ -6383,7 +6528,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.0.18)</details>
+
+</details>
 
 
 <details>
@@ -6394,26 +6540,37 @@ SOFTWARE.
 - Version: 17.1.1
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- License URL: [MIT]( https://licenses.nuget.org/MIT)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.1.1)
+- License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
 ```
-'MIT' reference
+The MIT License (MIT)
 
+Copyright (c) Tatham Oddie and Contributors
 
+All rights reserved.
 
-SPDX identifier
-MIT
-License text
- MIT License _____
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of _____ (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL _____ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.1.1)</details>
+
+</details>
 
 
 <details>
@@ -6424,26 +6581,37 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Version: 17.0.18
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- License URL: [MIT]( https://licenses.nuget.org/MIT)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.0.18)
+- License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
 ```
-'MIT' reference
+The MIT License (MIT)
 
+Copyright (c) Tatham Oddie and Contributors
 
+All rights reserved.
 
-SPDX identifier
-MIT
-License text
- MIT License _____
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of _____ (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-The above copyright notice and this permission notice (including the next paragraph) shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL _____ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.0.18)</details>
+
+</details>
 
 
 <details>
@@ -6455,7 +6623,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Compression/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -6641,7 +6810,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Compression/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -6653,7 +6823,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Compression.ZipFile/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -6839,7 +7010,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Compression.ZipFile/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -6851,7 +7023,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -7037,7 +7210,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -7049,7 +7223,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://github.com/dotnet/corefx
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem.AccessControl/4.7.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -7077,7 +7252,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem.AccessControl/4.7.0)</details>
+
+</details>
 
 
 <details>
@@ -7089,7 +7265,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem.Primitives/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -7275,7 +7452,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem.Primitives/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -7287,7 +7465,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Linq/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -7473,7 +7652,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Linq/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -7485,7 +7665,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Linq.Expressions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -7671,7 +7852,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Linq.Expressions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -7683,7 +7865,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Memory/4.5.4)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -7711,7 +7894,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Memory/4.5.4)</details>
+
+</details>
 
 
 <details>
@@ -7723,7 +7907,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Net.Http/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -7909,7 +8094,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Http/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -7921,7 +8107,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Net.Http/4.3.4)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -8107,7 +8294,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Http/4.3.4)</details>
+
+</details>
 
 
 <details>
@@ -8119,7 +8307,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Net.Primitives/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -8305,7 +8494,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Primitives/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -8317,7 +8507,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Net.Primitives/4.3.1)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -8503,7 +8694,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Primitives/4.3.1)</details>
+
+</details>
 
 
 <details>
@@ -8515,7 +8707,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Net.Sockets/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -8701,7 +8894,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Sockets/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -8713,7 +8907,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Numerics.Vectors/4.4.0)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -8741,7 +8936,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Numerics.Vectors/4.4.0)</details>
+
+</details>
 
 
 <details>
@@ -8753,7 +8949,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.ObjectModel/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -8939,7 +9136,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.ObjectModel/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -8950,7 +9148,8 @@ consequential or other damages.
 - Version: 5.0.0
 - Authors: .NET Foundation and Contributors
 - Project URL: https://github.com/dotnet/reactive
-- License URL: [MIT](https://github.com/dotnet/reactive/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reactive/5.0.0)
+- License: [MIT](https://github.com/dotnet/reactive/raw/main/LICENSE)
 
 
 ```
@@ -8978,7 +9177,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reactive/5.0.0)</details>
+
+</details>
 
 
 <details>
@@ -8989,7 +9189,8 @@ SOFTWARE.
 - Version: 5.0.0
 - Authors: .NET Foundation and Contributors
 - Project URL: https://github.com/dotnet/reactive
-- License URL: [MIT](https://github.com/dotnet/reactive/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reactive.Linq/5.0.0)
+- License: [MIT](https://github.com/dotnet/reactive/raw/main/LICENSE)
 
 
 ```
@@ -9017,7 +9218,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reactive.Linq/5.0.0)</details>
+
+</details>
 
 
 <details>
@@ -9029,7 +9231,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -9215,7 +9418,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -9227,7 +9431,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Emit/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -9413,7 +9618,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Emit/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -9425,7 +9631,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Emit.ILGeneration/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -9611,7 +9818,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Emit.ILGeneration/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -9623,7 +9831,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Emit.Lightweight/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -9809,7 +10018,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Emit.Lightweight/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -9821,7 +10031,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Extensions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -10007,7 +10218,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Extensions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -10019,7 +10231,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Metadata/1.6.0)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -10047,7 +10260,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Metadata/1.6.0)</details>
+
+</details>
 
 
 <details>
@@ -10059,7 +10273,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Primitives/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -10245,7 +10460,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.Primitives/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -10257,7 +10473,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.TypeExtensions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -10443,7 +10660,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Reflection.TypeExtensions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -10455,7 +10673,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Resources.ResourceManager/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -10641,7 +10860,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Resources.ResourceManager/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -10653,7 +10873,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -10839,7 +11060,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -10851,7 +11073,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime/4.3.1)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -11037,7 +11260,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime/4.3.1)</details>
+
+</details>
 
 
 <details>
@@ -11048,7 +11272,8 @@ consequential or other damages.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -11076,7 +11301,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -11088,7 +11314,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.Extensions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -11274,7 +11501,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.Extensions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -11286,7 +11514,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.Handles/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -11472,7 +11701,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.Handles/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -11484,7 +11714,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.InteropServices/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -11670,7 +11901,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.InteropServices/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -11682,7 +11914,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.InteropServices.RuntimeInformation/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -11868,7 +12101,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.InteropServices.RuntimeInformation/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -11880,7 +12114,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.Numerics/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -12066,7 +12301,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime.Numerics/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -12078,7 +12314,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://github.com/dotnet/corefx
-- License URL: [MIT]( https://licenses.nuget.org/MIT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.AccessControl/4.7.0)
+- License: [MIT]( https://licenses.nuget.org/MIT)
 
 
 ```
@@ -12097,7 +12334,8 @@ The above copyright notice and this permission notice (including the next paragr
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL _____ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.AccessControl/4.7.0)</details>
+
+</details>
 
 
 <details>
@@ -12109,7 +12347,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Algorithms/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -12295,7 +12534,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Algorithms/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -12307,7 +12547,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Cng/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -12493,7 +12734,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Cng/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -12505,7 +12747,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Csp/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -12691,7 +12934,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Csp/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -12703,7 +12947,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Encoding/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -12889,7 +13134,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Encoding/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -12901,7 +13147,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -13087,7 +13334,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -13099,7 +13347,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Primitives/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -13285,7 +13534,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.Primitives/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -13297,7 +13547,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.X509Certificates/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -13483,7 +13734,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Cryptography.X509Certificates/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -13495,7 +13747,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://github.com/dotnet/corefx
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Security.Principal.Windows/4.7.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -13523,7 +13776,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Principal.Windows/4.7.0)</details>
+
+</details>
 
 
 <details>
@@ -13535,7 +13789,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encoding/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -13721,7 +13976,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encoding/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -13733,7 +13989,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encoding.Extensions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -13919,7 +14176,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encoding.Extensions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -13930,7 +14188,8 @@ consequential or other damages.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encodings.Web/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -13958,7 +14217,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encodings.Web/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -13969,7 +14229,8 @@ SOFTWARE.
 - Version: 6.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Text.Json/6.0.0)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -13997,7 +14258,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.Json/6.0.0)</details>
+
+</details>
 
 
 <details>
@@ -14009,7 +14271,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Text.RegularExpressions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -14195,7 +14458,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.RegularExpressions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -14207,7 +14471,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -14393,7 +14658,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -14405,7 +14671,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -14591,7 +14858,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -14603,7 +14871,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -14789,7 +15058,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -14801,7 +15071,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.5.2)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -14829,7 +15100,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.5.2)</details>
+
+</details>
 
 
 <details>
@@ -14841,7 +15113,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.5.4)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -14869,7 +15142,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.5.4)</details>
+
+</details>
 
 
 <details>
@@ -14881,7 +15155,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Timer/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -15067,7 +15342,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Timer/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -15079,7 +15355,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+- Source: [NuGet](https://www.nuget.org/packages/System.ValueTuple/4.4.0)
+- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
 
 
 ```
@@ -15107,7 +15384,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.ValueTuple/4.4.0)</details>
+
+</details>
 
 
 <details>
@@ -15119,7 +15397,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Xml.ReaderWriter/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -15305,7 +15584,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Xml.ReaderWriter/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -15317,7 +15597,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/System.Xml.XDocument/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -15503,7 +15784,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/System.Xml.XDocument/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -15514,7 +15796,8 @@ consequential or other damages.
 - Version: 3.1.2
 - Authors: tonerdo
 - Project URL: https://github.com/coverlet-coverage/coverlet
-- License URL: [MIT](https://github.com/coverlet-coverage/coverlet/raw/master/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/coverlet.collector/3.1.2)
+- License: [MIT](https://github.com/coverlet-coverage/coverlet/raw/master/LICENSE)
 
 
 ```
@@ -15540,7 +15823,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/coverlet.collector/3.1.2)</details>
+
+</details>
 
 
 <details>
@@ -15552,7 +15836,8 @@ SOFTWARE.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -15738,7 +16023,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -15750,7 +16036,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -15936,7 +16223,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -15948,7 +16236,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -16134,7 +16423,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -16146,7 +16436,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -16332,7 +16623,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -16344,7 +16636,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -16530,7 +16823,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -16542,7 +16836,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -16728,7 +17023,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -16740,7 +17036,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -16926,7 +17223,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -16938,7 +17236,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.IO.Compression/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -17124,7 +17423,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.IO.Compression/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -17136,7 +17436,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Net.Http/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -17322,7 +17623,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Net.Http/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -17334,7 +17636,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Security.Cryptography.Apple/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -17520,7 +17823,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Security.Cryptography.Apple/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -17532,7 +17836,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -17718,7 +18023,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -17730,7 +18036,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -17916,7 +18223,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -17928,7 +18236,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -18114,7 +18423,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -18126,7 +18436,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -18312,7 +18623,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -18324,7 +18636,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -18510,7 +18823,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -18522,7 +18836,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -18708,7 +19023,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -18720,7 +19036,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -18906,7 +19223,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -18918,7 +19236,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -19104,7 +19423,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -19116,7 +19436,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -19302,7 +19623,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -19314,7 +19636,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -19500,7 +19823,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -19512,7 +19836,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -19698,7 +20023,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -19710,7 +20036,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -19896,7 +20223,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -19908,7 +20236,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -20094,7 +20423,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -20106,7 +20436,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -20292,7 +20623,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -20304,7 +20636,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -20490,7 +20823,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -20502,7 +20836,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -20688,7 +21023,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0)</details>
+
+</details>
 
 
 <details>
@@ -20700,7 +21036,8 @@ consequential or other damages.
 - Authors: Microsoft
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
-- License URL: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)
+- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
 ```
@@ -20886,7 +21223,8 @@ of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2)</details>
+
+</details>
 
 
 <details>
@@ -20898,7 +21236,8 @@ consequential or other damages.
 - Authors: James Newkirk,Brad Wilson
 - Owners: James Newkirk,Brad Wilson
 - Project URL: https://github.com/xunit/xunit
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
+- Source: [NuGet](https://www.nuget.org/packages/xunit/2.4.1)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
 ```
@@ -20951,7 +21290,8 @@ Both sets of code are covered by the following license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit/2.4.1)</details>
+
+</details>
 
 
 <details>
@@ -20963,7 +21303,8 @@ Both sets of code are covered by the following license:
 - Authors: James Newkirk,Brad Wilson
 - Owners: James Newkirk,Brad Wilson
 - Project URL: https://github.com/xunit/xunit
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.abstractions/2.0.3)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
 ```
@@ -21016,7 +21357,8 @@ Both sets of code are covered by the following license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.abstractions/2.0.3)</details>
+
+</details>
 
 
 <details>
@@ -21028,7 +21370,8 @@ Both sets of code are covered by the following license:
 - Authors: Marcin Dobosz
 - Owners: Marcin Dobosz
 - Project URL: https://github.com/xunit/xunit.analyzers
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.analyzers/0.10.0)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
 
 
 ```
@@ -21047,7 +21390,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.analyzers/0.10.0)</details>
+
+</details>
 
 
 <details>
@@ -21059,7 +21403,8 @@ limitations under the License.
 - Authors: James Newkirk,Brad Wilson
 - Owners: James Newkirk,Brad Wilson
 - Project URL: https://github.com/xunit/xunit
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.4.1)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
 ```
@@ -21112,7 +21457,8 @@ Both sets of code are covered by the following license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.4.1)</details>
+
+</details>
 
 
 <details>
@@ -21124,7 +21470,8 @@ Both sets of code are covered by the following license:
 - Authors: James Newkirk,Brad Wilson
 - Owners: James Newkirk,Brad Wilson
 - Project URL: https://github.com/xunit/xunit
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.4.1)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
 ```
@@ -21177,7 +21524,8 @@ Both sets of code are covered by the following license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.4.1)</details>
+
+</details>
 
 
 <details>
@@ -21189,7 +21537,8 @@ Both sets of code are covered by the following license:
 - Authors: James Newkirk,Brad Wilson
 - Owners: James Newkirk,Brad Wilson
 - Project URL: https://github.com/xunit/xunit
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.4.1)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
 ```
@@ -21242,7 +21591,8 @@ Both sets of code are covered by the following license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.4.1)</details>
+
+</details>
 
 
 <details>
@@ -21254,7 +21604,8 @@ Both sets of code are covered by the following license:
 - Authors: James Newkirk,Brad Wilson
 - Owners: James Newkirk,Brad Wilson
 - Project URL: https://github.com/xunit/xunit
-- License URL: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.4.1)
+- License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
 ```
@@ -21307,7 +21658,8 @@ Both sets of code are covered by the following license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.4.1)</details>
+
+</details>
 
 
 <details>
@@ -21319,7 +21671,8 @@ Both sets of code are covered by the following license:
 - Authors: .NET Foundation and Contributors
 - Owners: .NET Foundation and Contributors
 - Project URL: https://github.com/xunit/visualstudio.xunit
-- License URL: [MIT]( https://licenses.nuget.org/MIT)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.3)
+- License: [MIT]( https://licenses.nuget.org/MIT)
 
 
 ```
@@ -21338,7 +21691,8 @@ The above copyright notice and this permission notice (including the next paragr
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL _____ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.3)</details>
+
+</details>
 
 
 <details>
@@ -21349,7 +21703,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Version: 2.4.5
 - Authors: .NET Foundation and Contributors
 - Project URL: https://github.com/xunit/visualstudio.xunit
-- License URL: [MIT]( https://licenses.nuget.org/MIT)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.5)
+- License: [MIT]( https://licenses.nuget.org/MIT)
 
 
 ```
@@ -21368,5 +21723,6 @@ The above copyright notice and this permission notice (including the next paragr
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL _____ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
-- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.5)</details>
+
+</details>
 

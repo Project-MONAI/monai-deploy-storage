@@ -513,14 +513,14 @@
 - - :approve
   - System.IO.Abstractions
   - :who: mocsharp
-    :why: MIT ( https://licenses.nuget.org/MIT)
+    :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 17.1.1
     :when: 2022-08-16 18:11:44.550586685 Z
 - - :approve
   - System.IO.Abstractions.TestingHelpers
   - :who: mocsharp
-    :why: MIT ( https://licenses.nuget.org/MIT)
+    :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 17.0.18
     :when: 2022-08-16 18:11:44.984891276 Z
