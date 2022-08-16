@@ -24,6 +24,11 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
+    <None Include="..\..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
+  </ItemGroup>
+
   <PropertyGroup>
     <PackageId>Monai.Deploy.Storage.AWSS3</PackageId>
     <Version>0.1.0</Version>

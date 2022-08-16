@@ -46,6 +46,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
+    <None Include="..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Tests\**" />
     <EmbeddedResource Remove="Tests\**" />
     <None Remove="Tests\**" />
