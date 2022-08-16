@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+export PLUGINSDIR="${PWD}"
 export PACKAGEDIR="${PWD}/release"
 
 [ -d $PACKAGEDIR ] && rm -rf $PACKAGEDIR && echo "Removing $PACKAGEDIR..."
@@ -29,6 +29,8 @@ find . -type f -name '*.csproj' ! -name '*.Tests.csproj' -exec bash -c '
         echo Publishing $project...
         dotnet publish $project -c Release -o $projectPACKAGEDIR --nologo
         pushd $projectPACKAGEDIR
+        cp ${PLUGINSDIR}/../../LICENSE .
+        cp ${PLUGINSDIR}/../../third-party-licenses.md .
         rm -f Microsoft*.dll System*.dll JetBrains*.dll
         zip -r $zipPath *
         popd
