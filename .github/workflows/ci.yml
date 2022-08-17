@@ -60,7 +60,7 @@ jobs:
           ${{ runner.os }}-nuget
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+      uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
 
@@ -73,7 +73,7 @@ jobs:
       working-directory: ./src
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      uses: github/codeql-action/analyze@v2
 
     - name: Secret detection
       uses: gitleaks/gitleaks-action@v1.6.0
