@@ -190,15 +190,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.9.16</summary>
+<summary>AWSSDK.S3 3.7.9.39</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.9.16
+- Version: 3.7.9.39
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.16)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.39)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -448,14 +448,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Castle.Core 5.0.0</summary>
+<summary>Castle.Core 5.1.0</summary>
 
 ## Castle.Core
 
-- Version: 5.0.0
+- Version: 5.1.0
 - Authors: Castle Project Contributors
 - Project URL: http://www.castleproject.org/
-- Source: [NuGet](https://www.nuget.org/packages/Castle.Core/5.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Castle.Core/5.1.0)
 - License: [Apache-2.0](https://github.com/castleproject/Core/raw/master/LICENSE)
 
 
@@ -643,16 +643,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.CodeCoverage 17.1.0</summary>
+<summary>Microsoft.CodeCoverage 17.3.0</summary>
 
 ## Microsoft.CodeCoverage
 
-- Version: 17.1.0
+- Version: 17.3.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.1.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
 ```
@@ -681,16 +681,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.CodeCoverage 17.2.0</summary>
+<summary>Microsoft.CodeCoverage 17.3.0</summary>
 
 ## Microsoft.CodeCoverage
 
-- Version: 17.2.0
+- Version: 17.3.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.2.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/main/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
 ```
@@ -1744,16 +1744,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.NET.Test.Sdk 17.1.0</summary>
+<summary>Microsoft.NET.Test.Sdk 17.3.0</summary>
 
 ## Microsoft.NET.Test.Sdk
 
-- Version: 17.1.0
+- Version: 17.3.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.1.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.3.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
 ```
@@ -1782,16 +1782,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.NET.Test.Sdk 17.2.0</summary>
+<summary>Microsoft.NET.Test.Sdk 17.3.0</summary>
 
 ## Microsoft.NET.Test.Sdk
 
-- Version: 17.2.0
+- Version: 17.3.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.2.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.3.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
 ```
@@ -2620,16 +2620,16 @@ consequential or other damages.
 
 
 <details>
-<summary>Microsoft.TestPlatform.ObjectModel 17.1.0</summary>
+<summary>Microsoft.TestPlatform.ObjectModel 17.3.0</summary>
 
 ## Microsoft.TestPlatform.ObjectModel
 
-- Version: 17.1.0
+- Version: 17.3.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.1.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.3.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
 ```
@@ -2658,92 +2658,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.TestPlatform.ObjectModel 17.2.0</summary>
-
-## Microsoft.TestPlatform.ObjectModel
-
-- Version: 17.2.0
-- Authors: Microsoft
-- Owners: Microsoft
-- Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.2.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
-
-
-```
-Copyright (c) 2020 Microsoft Corporation
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.TestPlatform.TestHost 17.1.0</summary>
+<summary>Microsoft.TestPlatform.TestHost 17.3.0</summary>
 
 ## Microsoft.TestPlatform.TestHost
 
-- Version: 17.1.0
+- Version: 17.3.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.1.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
-
-
-```
-Copyright (c) 2020 Microsoft Corporation
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.TestPlatform.TestHost 17.2.0</summary>
-
-## Microsoft.TestPlatform.TestHost
-
-- Version: 17.2.0
-- Authors: Microsoft
-- Owners: Microsoft
-- Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.2.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.3.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
 ```
@@ -3410,14 +3334,14 @@ Apache License
 
 
 <details>
-<summary>Moq 4.18.1</summary>
+<summary>Moq 4.18.2</summary>
 
 ## Moq
 
-- Version: 4.18.1
+- Version: 4.18.2
 - Authors: Daniel Cazzulino, kzu
 - Project URL: https://github.com/moq/moq4
-- Source: [NuGet](https://www.nuget.org/packages/Moq/4.18.1)
+- Source: [NuGet](https://www.nuget.org/packages/Moq/4.18.2)
 - License: [BSD 3-Clause License]( https://raw.githubusercontent.com/moq/moq4/main/License.txt)
 
 
@@ -6574,14 +6498,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions.TestingHelpers 17.0.18</summary>
+<summary>System.IO.Abstractions.TestingHelpers 17.1.1</summary>
 
 ## System.IO.Abstractions.TestingHelpers
 
-- Version: 17.0.18
+- Version: 17.1.1
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.0.18)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.1.1)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -21228,15 +21152,13 @@ consequential or other damages.
 
 
 <details>
-<summary>xunit 2.4.1</summary>
+<summary>xunit 2.4.2</summary>
 
 ## xunit
 
-- Version: 2.4.1
-- Authors: James Newkirk,Brad Wilson
-- Owners: James Newkirk,Brad Wilson
-- Project URL: https://github.com/xunit/xunit
-- Source: [NuGet](https://www.nuget.org/packages/xunit/2.4.1)
+- Version: 2.4.2
+- Authors: jnewkirk,bradwilson
+- Source: [NuGet](https://www.nuget.org/packages/xunit/2.4.2)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -21362,15 +21284,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.analyzers 0.10.0</summary>
+<summary>xunit.analyzers 1.0.0</summary>
 
 ## xunit.analyzers
 
-- Version: 0.10.0
-- Authors: Marcin Dobosz
-- Owners: Marcin Dobosz
-- Project URL: https://github.com/xunit/xunit.analyzers
-- Source: [NuGet](https://www.nuget.org/packages/xunit.analyzers/0.10.0)
+- Version: 1.0.0
+- Authors: jnewkirk,bradwilson,marcind
+- Source: [NuGet](https://www.nuget.org/packages/xunit.analyzers/1.0.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
 
 
@@ -21395,15 +21315,13 @@ limitations under the License.
 
 
 <details>
-<summary>xunit.assert 2.4.1</summary>
+<summary>xunit.assert 2.4.2</summary>
 
 ## xunit.assert
 
-- Version: 2.4.1
-- Authors: James Newkirk,Brad Wilson
-- Owners: James Newkirk,Brad Wilson
-- Project URL: https://github.com/xunit/xunit
-- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.4.1)
+- Version: 2.4.2
+- Authors: jnewkirk,bradwilson
+- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.4.2)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -21462,15 +21380,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.core 2.4.1</summary>
+<summary>xunit.core 2.4.2</summary>
 
 ## xunit.core
 
-- Version: 2.4.1
-- Authors: James Newkirk,Brad Wilson
-- Owners: James Newkirk,Brad Wilson
-- Project URL: https://github.com/xunit/xunit
-- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.4.1)
+- Version: 2.4.2
+- Authors: jnewkirk,bradwilson
+- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.4.2)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -21529,15 +21445,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.extensibility.core 2.4.1</summary>
+<summary>xunit.extensibility.core 2.4.2</summary>
 
 ## xunit.extensibility.core
 
-- Version: 2.4.1
-- Authors: James Newkirk,Brad Wilson
-- Owners: James Newkirk,Brad Wilson
-- Project URL: https://github.com/xunit/xunit
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.4.1)
+- Version: 2.4.2
+- Authors: jnewkirk,bradwilson
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.4.2)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -21596,15 +21510,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.extensibility.execution 2.4.1</summary>
+<summary>xunit.extensibility.execution 2.4.2</summary>
 
 ## xunit.extensibility.execution
 
-- Version: 2.4.1
-- Authors: James Newkirk,Brad Wilson
-- Owners: James Newkirk,Brad Wilson
-- Project URL: https://github.com/xunit/xunit
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.4.1)
+- Version: 2.4.2
+- Authors: jnewkirk,bradwilson
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.4.2)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 

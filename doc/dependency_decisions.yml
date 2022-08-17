@@ -18,7 +18,7 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.9.16
+    - 3.7.9.39
     :when: 2022-08-16 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
@@ -46,7 +46,7 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/castleproject/Core/raw/master/LICENSE)
     :versions:
-    - 5.0.0
+    - 5.1.0
     :when: 2022-08-16 18:11:15.068656854 Z
 - - :approve
   - Crc32.NET
@@ -79,16 +79,16 @@
 - - :approve
   - Microsoft.CodeCoverage
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/main/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.1.0
+    - 17.3.0
     :when: 2022-08-16 18:11:17.245887971 Z
 - - :approve
   - Microsoft.CodeCoverage
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/main/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.2.0
+    - 17.3.0
     :when: 2022-08-16 18:11:17.665958106 Z
 - - :approve
   - Microsoft.Extensions.Configuration
@@ -268,16 +268,16 @@
 - - :approve
   - Microsoft.NET.Test.Sdk
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.1.0
+    - 17.3.0
     :when: 2022-08-16 18:11:29.155295778 Z
 - - :approve
   - Microsoft.NET.Test.Sdk
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.2.0
+    - 17.3.0
     :when: 2022-08-16 18:11:29.588968034 Z
 - - :approve
   - Microsoft.NETCore.Platforms
@@ -310,30 +310,16 @@
 - - :approve
   - Microsoft.TestPlatform.ObjectModel
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.1.0
-    :when: 2022-08-16 18:11:31.804958800 Z
-- - :approve
-  - Microsoft.TestPlatform.ObjectModel
-  - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
-    :versions:
-    - 17.2.0
+    - 17.3.0
     :when: 2022-08-16 18:11:32.293966383 Z
 - - :approve
   - Microsoft.TestPlatform.TestHost
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.1.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.1.0
-    :when: 2022-08-16 18:11:32.735601129 Z
-- - :approve
-  - Microsoft.TestPlatform.TestHost
-  - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.2.0/LICENSE)
-    :versions:
-    - 17.2.0
+    - 17.3.0
     :when: 2022-08-16 18:11:33.162650175 Z
 - - :approve
   - Microsoft.Win32.Primitives
@@ -361,7 +347,7 @@
   - :who: mocsharp
     :why: BSD 3-Clause License ( https://raw.githubusercontent.com/moq/moq4/main/License.txt)
     :versions:
-    - 4.18.1
+    - 4.18.2
     :when: 2022-08-16 18:11:34.872036382 Z
 - - :approve
   - NETStandard.Library
@@ -522,7 +508,7 @@
   - :who: mocsharp
     :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 17.0.18
+    - 17.1.1
     :when: 2022-08-16 18:11:44.984891276 Z
 - - :approve
   - System.IO.Compression
@@ -1124,7 +1110,7 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.4.1
+    - 2.4.2
     :when: 2022-08-16 18:12:23.908089715 Z
 - - :approve
   - xunit.abstractions
@@ -1138,35 +1124,35 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
     :versions:
-    - 0.10.0
+    - 1.0.0
     :when: 2022-08-16 18:12:24.794067387 Z
 - - :approve
   - xunit.assert
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.4.1
+    - 2.4.2
     :when: 2022-08-16 18:12:25.267072818 Z
 - - :approve
   - xunit.core
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.4.1
+    - 2.4.2
     :when: 2022-08-16 18:12:25.712645737 Z
 - - :approve
   - xunit.extensibility.core
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.4.1
+    - 2.4.2
     :when: 2022-08-16 18:12:26.153575547 Z
 - - :approve
   - xunit.extensibility.execution
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.4.1
+    - 2.4.2
     :when: 2022-08-16 18:12:26.592263714 Z
 - - :approve
   - xunit.runner.visualstudio
