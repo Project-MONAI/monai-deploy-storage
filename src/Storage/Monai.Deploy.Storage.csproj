@@ -62,7 +62,7 @@
 
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.185" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.186" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="System.IO.Abstractions" Version="17.1.1" />
