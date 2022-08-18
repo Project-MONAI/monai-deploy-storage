@@ -314,7 +314,7 @@ jobs:
         run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/nuget/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
 
       - name: Extract owner and repo
-        uses: jungwinter/split@v1
+        uses: jungwinter/split@v2
         id: repo
         with:
           seperator: "/"
