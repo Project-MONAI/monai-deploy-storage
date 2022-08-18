@@ -334,7 +334,8 @@ jobs:
           milestone: ${{ env.MAJORMINORPATCH }}
           name: Release v${{ env.MAJORMINORPATCH }}
           assets: |
-            plug-ins/*.zip
+            plug-ins/Monai.Deploy.Storage.AWSS3.zip
+            plug-ins/Monai.Deploy.Storage.MinIO.zip
 
       - name: Publish release with GitReleaseManager
         if: ${{ contains(github.ref, 'refs/heads/main') }}
