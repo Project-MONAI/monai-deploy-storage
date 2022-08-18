@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using Monai.Deploy.Storage.S3Policy.Policies;
 using Newtonsoft.Json;
 
 namespace Monai.Deploy.Storage.S3Policy.Tests.Extensions
@@ -98,6 +99,22 @@ namespace Monai.Deploy.Storage.S3Policy.Tests.Extensions
         public void ToPolicy_NullFolder_ThrowsException()
         {
             Assert.Throws<ArgumentNullException>(() => PolicyExtensions.ToPolicy("test-bucket", null));
+        }
+
+        [Fact]
+        public async Task ToPolicy_Should_Set_Correct_Allow_All_Path()
+        {
+            const string bucketName = "test-bucket";
+            const string payloadId = "00000000-1000-0000-0000-000000000000";
+
+            var policys = new PolicyRequest[] { new PolicyRequest(bucketName, payloadId) };
+
+            var policyMade = PolicyExtensions.ToPolicy(policys);
+
+            Assert.EndsWith(
+                $"{bucketName}/{payloadId}/*",
+                policyMade.Statement.First(p => p.Sid == "AllowAllS3ActionsInUserFolder").Resource?.First());
+
         }
 
         #endregion ToPolicy

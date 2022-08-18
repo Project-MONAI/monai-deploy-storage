@@ -14,9 +14,15 @@
  * limitations under the License.
  */
 
+using Microsoft.Extensions.Options;
 using Monai.Deploy.Storage.API;
+using Monai.Deploy.Storage.Configuration;
 using Monai.Deploy.Storage.Minio.Extensions;
 using Xunit;
+using Moq;
+using System.IO.Abstractions;
+using Microsoft.Extensions.Logging;
+using Monai.Deploy.Storage.S3Policy.Policies;
 
 namespace Monai.Deploy.Storage.MinIO.Tests
 {
@@ -31,6 +37,43 @@ namespace Monai.Deploy.Storage.MinIO.Tests
         public void GetString_Test(AccessPermissions permissions, string expectedValue)
         {
             Assert.Equal(expectedValue, permissions.GetString());
+        }
+
+        // integration test needs Minio setup
+        //[Fact]
+        public async Task Should_Set_Correct_Policy()
+        {
+            var optionSettings = new StorageServiceConfiguration
+            {
+                Settings = new Dictionary<string, string> {
+                    { "executableLocation", "mc.exe" },
+                    { "serviceName", "serviceName" },
+                    { "endpoint", "localhost:9000" },
+                    { "accessKey", "admin" },
+                    { "accessToken", "password" },
+                }
+            };
+            var options = Options.Create(optionSettings);
+
+            var systemUnderTest = new StorageAdminService(options, new Mock<ILogger<MinIoStorageService>>().Object, new FileSystem());
+            const string bucketName = "test-bucket";
+            const string payloadId = "00000000-1000-0000-0000-000000000000";
+            const string userName = "nameUsedForTests";
+
+            var policys = new PolicyRequest[] { new PolicyRequest(bucketName, payloadId) };
+
+            try
+            {
+                var result = await systemUnderTest.CreateUserAsync(userName, policys);
+            }
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+            }
+            finally
+            {
+                await systemUnderTest.RemoveUserAsync(userName);
+            }
         }
     }
 }

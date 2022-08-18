@@ -99,19 +99,19 @@ namespace Monai.Deploy.Storage.S3Policy
                         Sid = "AllowUserToSeeBucketListInTheConsole",
                         Action = new string[] {"s3:ListAllMyBuckets", "s3:GetBucketLocation" },
                         Effect = "Allow",
-                        Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
+                        Resource = policyRequests.Select(pr => pr.BucketName).Distinct().ToArray(),
                     },
                     new Statement
                     {
                         Sid = "AllowRootAndHomeListingOfBucket",
                         Action = new string[] { "s3:ListBucket" },
                         Effect = "Allow",
-                        Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
+                        Resource = policyRequests.Select(pr => pr.BucketName).Distinct().ToArray(),
                         Condition = new Condition
                         {
                             StringEquals = new StringEquals
                             {
-                                S3Prefix = pathList.ToArray(),
+                                S3Prefix = pathList.Distinct().ToArray(),
                                 S3Delimiter = new string[] { "/" }
                             }
                         }
@@ -121,12 +121,15 @@ namespace Monai.Deploy.Storage.S3Policy
                         Sid = "AllowListingOfUserFolder",
                         Action = new string[] { "s3:ListBucket" },
                         Effect = "Allow",
-                        Resource = policyRequests.Select(pr => pr.BucketName).ToArray(),
+                        Resource = policyRequests.Select(pr => pr.BucketName).Distinct().ToArray(),
                         Condition = new Condition
                         {
-                            StringEquals = new StringEquals
+                            StringLike = new StringLike
                             {
-                                S3Prefix = policyRequests.Select(pr => $"{pr.FolderName}/*").ToArray(),
+                                S3Prefix = policyRequests
+                                    .Select(pr => $"{pr.FolderName}/*")
+                                    .Union( policyRequests.Select(pr => $"{pr.FolderName}"))
+                                    .Distinct().ToArray()
                             }
                         }
                     },
@@ -135,7 +138,10 @@ namespace Monai.Deploy.Storage.S3Policy
                         Sid = "AllowAllS3ActionsInUserFolder",
                         Action = new string[] { "s3:*" },
                         Effect = "Allow",
-                        Resource = policyRequests.Select(pr => $"{pr.BucketName}/{pr.FolderName}").ToArray(),
+                        Resource = policyRequests
+                            .Select(pr => $"{pr.BucketName}/{pr.FolderName}/*")
+                            .Distinct()
+                            .ToArray(),
                     },
                 }
             };
