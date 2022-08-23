@@ -77,7 +77,7 @@ namespace Monai.Deploy.Storage.S3Policy
                         Sid = "AllowAllS3ActionsInUserFolder",
                         Action = new string[] { "s3:*" },
                         Effect = "Allow",
-                        Resource = new string[] { $"arn:aws:s3:::{bucketName}/{folderName}/*" },
+                        Resource = new string[] { $"arn:aws:s3:::{bucketName}/{folderName}", $"arn:aws:s3:::{bucketName}/{folderName}/*" },
                     },
                 }
             };
@@ -139,7 +139,7 @@ namespace Monai.Deploy.Storage.S3Policy
                         Action = new string[] { "s3:*" },
                         Effect = "Allow",
                         Resource = policyRequests
-                            .Select(pr => $"{pr.BucketName}/{pr.FolderName}/*")
+                            .SelectMany(pr => new []{ $"{pr.BucketName}/{pr.FolderName}" , $"{pr.BucketName}/{pr.FolderName}/*" } )
                             .Distinct()
                             .ToArray(),
                     },
