@@ -102,7 +102,7 @@ namespace Monai.Deploy.Storage.S3Policy.Tests.Extensions
         }
 
         [Fact]
-        public async Task ToPolicy_Should_Set_Correct_Allow_All_Path()
+        public void ToPolicy_Should_Set_Correct_Allow_All_Path()
         {
             const string bucketName = "test-bucket";
             const string payloadId = "00000000-1000-0000-0000-000000000000";

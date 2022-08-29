@@ -25,8 +25,6 @@ namespace Monai.Deploy.Storage
 {
     public static class IServiceCollectionExtensions
     {
-        private static IFileSystem? s_fileSystem;
-
         /// <summary>
         /// Configures all dependencies required for the MONAI Deploy Storage Service.
         /// </summary>
@@ -50,11 +48,14 @@ namespace Monai.Deploy.Storage
             Guard.Against.NullOrWhiteSpace(fullyQualifiedTypeName, nameof(fullyQualifiedTypeName));
             Guard.Against.Null(fileSystem, nameof(fileSystem));
 
-            s_fileSystem = fileSystem;
+            ResolveEventHandler resolveEventHandler = (sender, args) =>
+            {
+                return CurrentDomain_AssemblyResolve(args, fileSystem);
+            };
 
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve += resolveEventHandler;
 
-            var storageServiceAssembly = LoadAssemblyFromDisk(GetAssemblyName(fullyQualifiedTypeName));
+            var storageServiceAssembly = LoadAssemblyFromDisk(GetAssemblyName(fullyQualifiedTypeName), fileSystem);
             var serviceRegistrationType = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(ServiceRegistrationBase)));
 
             if (serviceRegistrationType is null || Activator.CreateInstance(serviceRegistrationType, fullyQualifiedTypeName) is not ServiceRegistrationBase serviceRegistrar)
@@ -69,11 +70,11 @@ namespace Monai.Deploy.Storage
 
             serviceRegistrar.Configure(services);
 
-            AppDomain.CurrentDomain.AssemblyResolve -= CurrentDomain_AssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve -= resolveEventHandler;
             return services;
         }
 
-        private static bool IsSupportedType(string fullyQualifiedTypeName, Assembly storageServiceAssembly)
+        internal static bool IsSupportedType(string fullyQualifiedTypeName, Assembly storageServiceAssembly)
         {
             Guard.Against.NullOrWhiteSpace(fullyQualifiedTypeName, nameof(fullyQualifiedTypeName));
             Guard.Against.Null(storageServiceAssembly, nameof(storageServiceAssembly));
@@ -84,7 +85,7 @@ namespace Monai.Deploy.Storage
                 storageServiceType.GetInterfaces().Contains(typeof(IStorageService));
         }
 
-        private static string GetAssemblyName(string fullyQualifiedTypeName)
+        internal static string GetAssemblyName(string fullyQualifiedTypeName)
         {
             var assemblyNameParts = fullyQualifiedTypeName.Split(',', StringSplitOptions.None);
             if (assemblyNameParts.Length < 2 || string.IsNullOrWhiteSpace(assemblyNameParts[1]))
@@ -98,31 +99,31 @@ namespace Monai.Deploy.Storage
             return assemblyNameParts[1].Trim();
         }
 
-        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        internal static Assembly CurrentDomain_AssemblyResolve(ResolveEventArgs args, IFileSystem fileSystem)
         {
             Guard.Against.Null(args, nameof(args));
 
             var requestedAssemblyName = new AssemblyName(args.Name);
-            return LoadAssemblyFromDisk(requestedAssemblyName.Name);
+            return LoadAssemblyFromDisk(requestedAssemblyName.Name!, fileSystem);
         }
 
-        private static Assembly LoadAssemblyFromDisk(string assemblyName)
+        internal static Assembly LoadAssemblyFromDisk(string assemblyName, IFileSystem fileSystem)
         {
             Guard.Against.NullOrWhiteSpace(assemblyName, nameof(assemblyName));
-            Guard.Against.Null(s_fileSystem, nameof(s_fileSystem));
+            Guard.Against.Null(fileSystem, nameof(fileSystem));
 
-            if (!s_fileSystem.Directory.Exists(SR.PlugInDirectoryPath))
+            if (!fileSystem.Directory.Exists(SR.PlugInDirectoryPath))
             {
                 throw new ConfigurationException($"Plug-in directory '{SR.PlugInDirectoryPath}' cannot be found.");
             }
 
-            var assemblyFilePath = s_fileSystem.Path.Combine(SR.PlugInDirectoryPath, $"{assemblyName}.dll");
-            if (!s_fileSystem.File.Exists(assemblyFilePath))
+            var assemblyFilePath = fileSystem.Path.Combine(SR.PlugInDirectoryPath, $"{assemblyName}.dll");
+            if (!fileSystem.File.Exists(assemblyFilePath))
             {
                 throw new ConfigurationException($"The configured storage plug-in '{assemblyFilePath}' cannot be found.");
             }
 
-            var asesmblyeData = s_fileSystem.File.ReadAllBytes(assemblyFilePath);
+            var asesmblyeData = fileSystem.File.ReadAllBytes(assemblyFilePath);
             return Assembly.Load(asesmblyeData);
         }
     }

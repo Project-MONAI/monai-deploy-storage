@@ -64,15 +64,11 @@ namespace Monai.Deploy.Storage.MinIO.Tests
 
             try
             {
-                var result = await systemUnderTest.CreateUserAsync(userName, policys);
-            }
-            catch (Exception ex)
-            {
-                var message = ex.Message;
+                var result = await systemUnderTest.CreateUserAsync(userName, policys).ConfigureAwait(false);
             }
             finally
             {
-                await systemUnderTest.RemoveUserAsync(userName);
+                await systemUnderTest.RemoveUserAsync(userName).ConfigureAwait(false);
             }
         }
     }
