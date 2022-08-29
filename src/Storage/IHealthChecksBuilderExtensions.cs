@@ -33,27 +33,24 @@ namespace Monai.Deploy.Storage
         /// <param name="fullyQualifiedTypeName">Fully qualified type name of the service to use.</param>
         /// <returns>Instance of <see cref="IHealthChecksBuilder"/>.</returns>
         /// <exception cref="ConfigurationException"></exception>
-        public static IHealthChecksBuilder AddMOnaiDeployStorageHealthCheck(
+        public static IHealthChecksBuilder AddMonaiDeployStorageHealthCheck(
             this IHealthChecksBuilder builder,
-            IServiceProvider serviceProvider,
             string fullyQualifiedTypeName,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
-            => AddMOnaiDeployStorageHealthCheck(builder, serviceProvider, fullyQualifiedTypeName, new FileSystem(), failureStatus, tags, timeout);
+            => AddMonaiDeployStorageHealthCheck(builder, fullyQualifiedTypeName, new FileSystem(), failureStatus, tags, timeout);
 
         /// <summary>
         /// Configures health check for the MONAI Deploy Storage Service.
         /// </summary>
         /// <param name="builder">Instance of <see cref="IHealthChecksBuilder"/>.</param>
-        /// <param name="serviceProvider">Instance of <see cref="IServiceProvider"/>.</param>
         /// <param name="fullyQualifiedTypeName">Fully qualified type name of the service to use.</param>
         /// <param name="fileSystem">Instance of <see cref="IFileSystem"/>.</param>
         /// <returns>Instance of <see cref="IHealthChecksBuilder"/>.</returns>
         /// <exception cref="ConfigurationException"></exception>
-        public static IHealthChecksBuilder AddMOnaiDeployStorageHealthCheck(
+        public static IHealthChecksBuilder AddMonaiDeployStorageHealthCheck(
             this IHealthChecksBuilder builder,
-            IServiceProvider serviceProvider,
             string fullyQualifiedTypeName,
             IFileSystem fileSystem,
             HealthStatus? failureStatus = null,
@@ -83,7 +80,7 @@ namespace Monai.Deploy.Storage
                 throw new ConfigurationException($"The configured type '{fullyQualifiedTypeName}' does not implement the {typeof(IStorageService).Name} interface.");
             }
 
-            healthCheckBuilder.Configure(builder, serviceProvider, failureStatus, tags, timeout);
+            healthCheckBuilder.Configure(builder, failureStatus, tags, timeout);
 
             AppDomain.CurrentDomain.AssemblyResolve -= resolveEventHandler;
             return builder;

@@ -49,7 +49,6 @@ namespace Monai.Deploy.Storage
 
         public abstract IHealthChecksBuilder Configure(
             IHealthChecksBuilder builder,
-            IServiceProvider serviceProvider,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null);
