@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
@@ -33,13 +32,12 @@ namespace Monai.Deploy.Storage.MinIO
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
         {
-
             builder.Add(new HealthCheckRegistration(
                 ConfigurationKeys.StorageServiceName,
                 serviceProvider =>
                 {
-                    var minioClientFactory = serviceProvider.GetRequiredService<IMinIoClientFactory>();
                     var logger = serviceProvider.GetRequiredService<ILogger<MinIoHealthCheck>>();
+                    var minioClientFactory = serviceProvider.GetRequiredService<IMinIoClientFactory>();
                     return new MinIoHealthCheck(minioClientFactory, logger);
                 },
                 failureStatus,
