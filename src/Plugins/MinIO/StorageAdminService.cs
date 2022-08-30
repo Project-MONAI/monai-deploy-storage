@@ -249,7 +249,6 @@ namespace Monai.Deploy.Storage.MinIO
                 throw new InvalidOperationException($"Unknown Output {string.Join("\n", result)}");
             }
 
-
             var policyName = await CreatePolicyAsync(policyRequests.ToArray(), username).ConfigureAwait(false);
             var minioPolicies = new List<string> { policyName };
 

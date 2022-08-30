@@ -14,39 +14,13 @@
  * limitations under the License.
  */
 
-using Ardalis.GuardClauses;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Monai.Deploy.Storage.Configuration;
 
 namespace Monai.Deploy.Storage
 {
     public abstract class HealthCheckRegistrationBase
     {
-        protected string FullyQualifiedAssemblyName { get; }
-        protected string AssemblyFilename { get; }
-
-        protected HealthCheckRegistrationBase(string fullyQualifiedAssemblyName)
-        {
-            Guard.Against.NullOrWhiteSpace(fullyQualifiedAssemblyName, nameof(fullyQualifiedAssemblyName));
-            FullyQualifiedAssemblyName = fullyQualifiedAssemblyName;
-            AssemblyFilename = ParseAssemblyName();
-        }
-
-        private string ParseAssemblyName()
-        {
-            var assemblyNameParts = FullyQualifiedAssemblyName.Split(',', StringSplitOptions.None);
-            if (assemblyNameParts.Length < 2 || string.IsNullOrWhiteSpace(assemblyNameParts[1]))
-            {
-                throw new ConfigurationException($"Storage service '{FullyQualifiedAssemblyName}' is invalid.  Please provide a fully qualified name.")
-                {
-                    HelpLink = "https://docs.microsoft.com/en-us/dotnet/standard/assembly/find-fully-qualified-name"
-                };
-            }
-
-            return assemblyNameParts[1].Trim();
-        }
-
         public abstract IHealthChecksBuilder Configure(
             IHealthChecksBuilder builder,
             HealthStatus? failureStatus = null,

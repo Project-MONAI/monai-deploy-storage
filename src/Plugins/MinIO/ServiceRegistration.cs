@@ -21,10 +21,6 @@ namespace Monai.Deploy.Storage.MinIO
 {
     public class ServiceRegistration : ServiceRegistrationBase
     {
-        public ServiceRegistration(string fullyQualifiedAssemblyName) : base(fullyQualifiedAssemblyName)
-        {
-        }
-
         public override IServiceCollection Configure(IServiceCollection services)
         {
             services.AddSingleton<IMinIoClientFactory, MinIoClientFactory>();

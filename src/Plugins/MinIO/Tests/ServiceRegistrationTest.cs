@@ -17,7 +17,7 @@
 using System.IO.Abstractions.TestingHelpers;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using Monai.Deploy.Storage.Configuration;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Moq;
 using Xunit;
 
@@ -51,6 +51,20 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             Assert.Same(serviceCollection.Object, returnedServiceCollection);
 
             serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(4));
+        }
+
+        [Fact(DisplayName = "Shall be able to Add MinIO as default storage service")]
+        public void ShallAddMinIOAsDefaultStorageServiceAndStorageHealthChecks()
+        {
+            var serviceCollection = new Mock<IServiceCollection>();
+            serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
+
+            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, true);
+
+            Assert.Same(serviceCollection.Object, returnedServiceCollection);
+
+            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.AtLeast(5));
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))), Times.Once());
         }
 
         private static byte[] GetAssemblyeBytes(Assembly assembly)

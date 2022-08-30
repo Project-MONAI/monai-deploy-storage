@@ -111,11 +111,9 @@ namespace Monai.Deploy.Storage.S3Policy.Tests.Extensions
 
             var policyMade = PolicyExtensions.ToPolicy(policys);
 
-
             Assert.Collection(policyMade.Statement.First(p => p.Sid == "AllowAllS3ActionsInUserFolder").Resource!,
                 (item) => item.Equals($"{bucketName}/{payloadId}"),
                 (item) => item.Equals($"{bucketName}/{payloadId}/*"));
-
         }
 
         #endregion ToPolicy

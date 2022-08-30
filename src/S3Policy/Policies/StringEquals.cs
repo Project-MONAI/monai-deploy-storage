@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 using Newtonsoft.Json;
 
 namespace Monai.Deploy.Storage.S3Policy.Policies

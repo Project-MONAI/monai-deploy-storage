@@ -11,14 +11,14 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.9.43
+    - 3.7.9.44
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.1.189
+    - 3.7.1.190
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
@@ -270,15 +270,8 @@
   - :who: mocsharp
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
     :versions:
-    - 17.3.0
+    - 17.3.1
     :when: 2022-08-16 18:11:29.155295778 Z
-- - :approve
-  - Microsoft.NET.Test.Sdk
-  - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
-    :versions:
-    - 17.3.0
-    :when: 2022-08-16 18:11:29.588968034 Z
 - - :approve
   - Microsoft.NETCore.Platforms
   - :who: mocsharp

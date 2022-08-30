@@ -18,6 +18,7 @@ using System.IO.Abstractions;
 using System.Reflection;
 using Ardalis.GuardClauses;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
 
@@ -32,8 +33,14 @@ namespace Monai.Deploy.Storage
         /// <param name="fullyQualifiedTypeName">Fully qualified type name of the service to use.</param>
         /// <returns>Instance of <see cref="IServiceCollection"/>.</returns>
         /// <exception cref="ConfigurationException"></exception>
-        public static IServiceCollection AddMonaiDeployStorageService(this IServiceCollection services, string fullyQualifiedTypeName, bool registerHealthCheck = true)
-            => AddMonaiDeployStorageService(services, fullyQualifiedTypeName, new FileSystem());
+        public static IServiceCollection AddMonaiDeployStorageService(
+            this IServiceCollection services,
+            string fullyQualifiedTypeName,
+            bool registerHealthCheck = true,
+            HealthStatus? failureStatus = null,
+            IEnumerable<string>? tags = null,
+            TimeSpan? timeout = null)
+            => AddMonaiDeployStorageService(services, fullyQualifiedTypeName, new FileSystem(), registerHealthCheck, failureStatus, tags, timeout);
 
         /// <summary>
         /// Configures all dependencies required for the MONAI Deploy Storage Service.
@@ -43,7 +50,14 @@ namespace Monai.Deploy.Storage
         /// <param name="fileSystem">Instance of <see cref="IFileSystem"/>.</param>
         /// <returns>Instance of <see cref="IServiceCollection"/>.</returns>
         /// <exception cref="ConfigurationException"></exception>
-        public static IServiceCollection AddMonaiDeployStorageService(this IServiceCollection services, string fullyQualifiedTypeName, IFileSystem fileSystem, bool registerHealthCheck = true)
+        public static IServiceCollection AddMonaiDeployStorageService(
+            this IServiceCollection services,
+            string fullyQualifiedTypeName,
+            IFileSystem fileSystem,
+            bool registerHealthCheck = true,
+            HealthStatus? failureStatus = null,
+            IEnumerable<string>? tags = null,
+            TimeSpan? timeout = null)
         {
             Guard.Against.NullOrWhiteSpace(fullyQualifiedTypeName, nameof(fullyQualifiedTypeName));
             Guard.Against.Null(fileSystem, nameof(fileSystem));
@@ -66,30 +80,36 @@ namespace Monai.Deploy.Storage
 
             if (registerHealthCheck)
             {
-                RegisterHealtChecks(services, fullyQualifiedTypeName, storageServiceAssembly);
+                RegisterHealtChecks(services, fullyQualifiedTypeName, storageServiceAssembly, failureStatus, tags, timeout);
             }
 
             AppDomain.CurrentDomain.AssemblyResolve -= resolveEventHandler;
             return services;
         }
 
-        private static void RegisterHealtChecks(IServiceCollection services, string fullyQualifiedTypeName, Assembly storageServiceAssembly)
+        private static void RegisterHealtChecks(
+            IServiceCollection services,
+            string fullyQualifiedTypeName,
+            Assembly storageServiceAssembly,
+            HealthStatus? failureStatus = null,
+            IEnumerable<string>? tags = null,
+            TimeSpan? timeout = null)
         {
             var healthCheckBase = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(HealthCheckRegistrationBase)));
 
-            if (healthCheckBase is null || Activator.CreateInstance(healthCheckBase, fullyQualifiedTypeName) is not HealthCheckRegistrationBase healthCheckBuilderBase)
+            if (healthCheckBase is null || Activator.CreateInstance(healthCheckBase) is not HealthCheckRegistrationBase healthCheckBuilderBase)
             {
                 throw new ConfigurationException($"Health check registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
             }
 
             var healthCheckBuilder = services.AddHealthChecks();
-            healthCheckBuilderBase.Configure(healthCheckBuilder);
+            healthCheckBuilderBase.Configure(healthCheckBuilder, failureStatus, tags, timeout);
         }
 
         private static void RegisterServices(IServiceCollection services, string fullyQualifiedTypeName, Assembly storageServiceAssembly)
         {
             var serviceRegistrationType = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(ServiceRegistrationBase)));
-            if (serviceRegistrationType is null || Activator.CreateInstance(serviceRegistrationType, fullyQualifiedTypeName) is not ServiceRegistrationBase serviceRegistrar)
+            if (serviceRegistrationType is null || Activator.CreateInstance(serviceRegistrationType) is not ServiceRegistrationBase serviceRegistrar)
             {
                 throw new ConfigurationException($"Service registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
             }

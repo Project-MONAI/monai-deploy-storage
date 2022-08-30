@@ -22,10 +22,6 @@ namespace Monai.Deploy.Storage.MinIO
 {
     public class HealthCheckBuilder : HealthCheckRegistrationBase
     {
-        public HealthCheckBuilder(string fullyQualifiedAssemblyName) : base(fullyQualifiedAssemblyName)
-        {
-        }
-
         public override IHealthChecksBuilder Configure(
             IHealthChecksBuilder builder,
             HealthStatus? failureStatus = null,
