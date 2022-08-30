@@ -76,7 +76,7 @@ namespace Monai.Deploy.Storage
 
             if (healthCheckBase is null || Activator.CreateInstance(healthCheckBase, fullyQualifiedTypeName) is not HealthCheckRegistrationBase healthCheckBuilder)
             {
-                throw new ConfigurationException($"Service registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
+                throw new ConfigurationException($"Health check registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
             }
             var serviceRegistrationType = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(ServiceRegistrationBase)));
 

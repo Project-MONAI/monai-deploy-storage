@@ -46,7 +46,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             var serviceCollection = new Mock<IServiceCollection>();
             serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
 
-            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem);
+            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, false);
 
             Assert.Same(serviceCollection.Object, returnedServiceCollection);
 

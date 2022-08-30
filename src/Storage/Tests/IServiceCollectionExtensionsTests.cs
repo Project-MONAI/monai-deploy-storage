@@ -70,23 +70,6 @@ namespace Monai.Deploy.Storage.Tests
             Assert.Equal($"The configured storage plug-in '{SR.PlugInDirectoryPath}{Path.DirectorySeparatorChar}{badType.Assembly.ManifestModule.Name}' cannot be found.", exception.Message);
         }
 
-        [Fact(DisplayName = "AddMonaiDeployStorageService throws if service registrar cannot be found in the assembly")]
-        public void AddMonaiDeployStorageService_ThrowsIfServiceRegistrarCannotBeFoundInTheAssembly()
-        {
-            var badType = typeof(Assert);
-            var typeName = badType.AssemblyQualifiedName;
-            var assemblyData = GetAssemblyeBytes(badType.Assembly);
-            var assemblyFilePath = Path.Combine(SR.PlugInDirectoryPath, badType.Assembly.ManifestModule.Name);
-            var fileSystem = new MockFileSystem();
-            fileSystem.Directory.CreateDirectory(SR.PlugInDirectoryPath);
-            fileSystem.File.WriteAllBytes(assemblyFilePath, assemblyData);
-            var serviceCollection = new Mock<IServiceCollection>();
-            var exception = Assert.Throws<ConfigurationException>(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem));
-
-            Assert.NotNull(exception);
-            Assert.Equal($"Service registrar cannot be found for the configured plug-in '{typeName}'.", exception.Message);
-        }
-
         [Fact(DisplayName = "AddMonaiDeployStorageService throws if storage service type is not supported")]
         public void AddMonaiDeployStorageService_ThrowsIfStorageServiceTypeIsNotSupported()
         {
@@ -108,16 +91,16 @@ namespace Monai.Deploy.Storage.Tests
         [Fact(DisplayName = "AddMonaiDeployStorageService configures all services as expected")]
         public void AddMonaiDeployStorageService_ConfiuresServicesAsExpected()
         {
-            var badType = typeof(GoodStorageService);
-            var typeName = badType.AssemblyQualifiedName;
-            var assemblyData = GetAssemblyeBytes(badType.Assembly);
-            var assemblyFilePath = Path.Combine(SR.PlugInDirectoryPath, badType.Assembly.ManifestModule.Name);
+            var goodType = typeof(GoodStorageService);
+            var typeName = goodType.AssemblyQualifiedName;
+            var assemblyData = GetAssemblyeBytes(goodType.Assembly);
+            var assemblyFilePath = Path.Combine(SR.PlugInDirectoryPath, goodType.Assembly.ManifestModule.Name);
             var fileSystem = new MockFileSystem();
             fileSystem.Directory.CreateDirectory(SR.PlugInDirectoryPath);
             fileSystem.File.WriteAllBytes(assemblyFilePath, assemblyData);
             var serviceCollection = new Mock<IServiceCollection>();
             serviceCollection.Setup(p => p.Clear());
-            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem));
+            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, false));
 
             Assert.Null(exception);
 

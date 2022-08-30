@@ -32,7 +32,7 @@ namespace Monai.Deploy.Storage
         /// <param name="fullyQualifiedTypeName">Fully qualified type name of the service to use.</param>
         /// <returns>Instance of <see cref="IServiceCollection"/>.</returns>
         /// <exception cref="ConfigurationException"></exception>
-        public static IServiceCollection AddMonaiDeployStorageService(this IServiceCollection services, string fullyQualifiedTypeName)
+        public static IServiceCollection AddMonaiDeployStorageService(this IServiceCollection services, string fullyQualifiedTypeName, bool registerHealthCheck = true)
             => AddMonaiDeployStorageService(services, fullyQualifiedTypeName, new FileSystem());
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Monai.Deploy.Storage
         /// <param name="fileSystem">Instance of <see cref="IFileSystem"/>.</param>
         /// <returns>Instance of <see cref="IServiceCollection"/>.</returns>
         /// <exception cref="ConfigurationException"></exception>
-        public static IServiceCollection AddMonaiDeployStorageService(this IServiceCollection services, string fullyQualifiedTypeName, IFileSystem fileSystem)
+        public static IServiceCollection AddMonaiDeployStorageService(this IServiceCollection services, string fullyQualifiedTypeName, IFileSystem fileSystem, bool registerHealthCheck = true)
         {
             Guard.Against.NullOrWhiteSpace(fullyQualifiedTypeName, nameof(fullyQualifiedTypeName));
             Guard.Against.Null(fileSystem, nameof(fileSystem));
@@ -56,22 +56,45 @@ namespace Monai.Deploy.Storage
             AppDomain.CurrentDomain.AssemblyResolve += resolveEventHandler;
 
             var storageServiceAssembly = LoadAssemblyFromDisk(GetAssemblyName(fullyQualifiedTypeName), fileSystem);
-            var serviceRegistrationType = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(ServiceRegistrationBase)));
-
-            if (serviceRegistrationType is null || Activator.CreateInstance(serviceRegistrationType, fullyQualifiedTypeName) is not ServiceRegistrationBase serviceRegistrar)
-            {
-                throw new ConfigurationException($"Service registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
-            }
 
             if (!IsSupportedType(fullyQualifiedTypeName, storageServiceAssembly))
             {
                 throw new ConfigurationException($"The configured type '{fullyQualifiedTypeName}' does not implement the {typeof(IStorageService).Name} interface.");
             }
 
-            serviceRegistrar.Configure(services);
+            RegisterServices(services, fullyQualifiedTypeName, storageServiceAssembly);
+
+            if (registerHealthCheck)
+            {
+                RegisterHealtChecks(services, fullyQualifiedTypeName, storageServiceAssembly);
+            }
 
             AppDomain.CurrentDomain.AssemblyResolve -= resolveEventHandler;
             return services;
+        }
+
+        private static void RegisterHealtChecks(IServiceCollection services, string fullyQualifiedTypeName, Assembly storageServiceAssembly)
+        {
+            var healthCheckBase = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(HealthCheckRegistrationBase)));
+
+            if (healthCheckBase is null || Activator.CreateInstance(healthCheckBase, fullyQualifiedTypeName) is not HealthCheckRegistrationBase healthCheckBuilderBase)
+            {
+                throw new ConfigurationException($"Health check registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
+            }
+
+            var healthCheckBuilder = services.AddHealthChecks();
+            healthCheckBuilderBase.Configure(healthCheckBuilder);
+        }
+
+        private static void RegisterServices(IServiceCollection services, string fullyQualifiedTypeName, Assembly storageServiceAssembly)
+        {
+            var serviceRegistrationType = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(ServiceRegistrationBase)));
+            if (serviceRegistrationType is null || Activator.CreateInstance(serviceRegistrationType, fullyQualifiedTypeName) is not ServiceRegistrationBase serviceRegistrar)
+            {
+                throw new ConfigurationException($"Service registrar cannot be found for the configured plug-in '{fullyQualifiedTypeName}'.");
+            }
+
+            serviceRegistrar.Configure(services);
         }
 
         internal static bool IsSupportedType(string fullyQualifiedTypeName, Assembly storageServiceAssembly)
