@@ -52,7 +52,7 @@ jobs:
         tools: licensefinder
 
     - name: Enable NuGet cache
-      uses: actions/cache@v2.1.7
+      uses: actions/cache@v3.0.8
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -97,7 +97,7 @@ jobs:
           dotnet-version: "6.0.x"
 
       - name: Enable NuGet cache
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3.0.8
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -182,7 +182,7 @@ jobs:
           dotnet-version: "6.0.x"
 
       - name: Enable NuGet cache
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3.0.8
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
