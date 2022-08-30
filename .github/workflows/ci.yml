@@ -39,10 +39,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - uses: actions/setup-dotnet@v1
+    - uses: actions/setup-dotnet@v2
       with:
         dotnet-version: "6.0.x"
 
@@ -92,7 +92,7 @@ jobs:
         with:
           java-version: 1.11
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         with:
           dotnet-version: "6.0.x"
 
@@ -104,7 +104,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           
@@ -173,11 +173,11 @@ jobs:
       
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         with:
           dotnet-version: "6.0.x"
 
@@ -256,7 +256,7 @@ jobs:
       - name: Install grp
         run: dotnet tool install gpr -g
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -281,7 +281,7 @@ jobs:
       - name: Install grp
         run: dotnet tool install gpr -g
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -300,7 +300,7 @@ jobs:
       MAJORMINORPATCH: ${{ needs.build.outputs.majorMinorPatch }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -314,7 +314,7 @@ jobs:
         run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/nuget/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
 
       - name: Extract owner and repo
-        uses: jungwinter/split@v1
+        uses: jungwinter/split@v2
         id: repo
         with:
           seperator: "/"
