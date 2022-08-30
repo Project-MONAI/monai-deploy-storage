@@ -40,8 +40,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             _fileSystem.File.WriteAllBytes(assemblyFilePath, assemblyData);
         }
 
-        [Fact(DisplayName = "Shall be able to Add MinIO as default storage service")]
-        public void ShallAddMinIOAsDefaultStorageService()
+        [Fact]
+        public void AddMonaiDeployStorageService_WhenCalled_RegisterServicesOnly()
         {
             var serviceCollection = new Mock<IServiceCollection>();
             serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
@@ -53,8 +53,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(4));
         }
 
-        [Fact(DisplayName = "Shall be able to Add MinIO as default storage service")]
-        public void ShallAddMinIOAsDefaultStorageServiceAndStorageHealthChecks()
+        [Fact]
+        public void AddMonaiDeployStorageService_WhenCalled_RegisterServicesAndHealthChecks()
         {
             var serviceCollection = new Mock<IServiceCollection>();
             serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
