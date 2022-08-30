@@ -17,3 +17,4 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Monai.Deploy.Storage.MinIO.Tests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]

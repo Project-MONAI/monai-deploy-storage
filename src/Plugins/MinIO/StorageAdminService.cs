@@ -110,7 +110,7 @@ namespace Monai.Deploy.Storage.MinIO
 
             using (var process = CreateProcess(cmd))
             {
-                var (lines, errors) = await RunProcessAsync(process);
+                var (lines, errors) = await RunProcessAsync(process).ConfigureAwait(false);
                 if (errors.Any())
                 {
                     throw new InvalidOperationException($"Unknown Error {string.Join("\n", errors)}");
@@ -174,7 +174,7 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<bool> SetConnectionAsync()
         {
-            if (await HasConnectionAsync())
+            if (await HasConnectionAsync().ConfigureAwait(false))
             {
                 return true;
             }
@@ -227,11 +227,11 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(username, nameof(username));
             Guard.Against.Null(policyRequests, nameof(policyRequests));
 
-            if (!await SetConnectionAsync())
+            if (!await SetConnectionAsync().ConfigureAwait(false))
             {
-                throw new InvalidOperationException("Unable to set connection for more information, attempt mc alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}");
+                throw new InvalidOperationException($"Unable to set connection for more information, attempt mc alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}");
             }
-            if (await UserAlreadyExistsAsync(username))
+            if (await UserAlreadyExistsAsync(username).ConfigureAwait(false))
             {
                 throw new InvalidOperationException("User already exists");
             }
@@ -245,10 +245,9 @@ namespace Monai.Deploy.Storage.MinIO
 
             if (result.Any(r => r.Contains($"Added user `{username}` successfully.")) is false)
             {
-                await RemoveUserAsync(username);
+                await RemoveUserAsync(username).ConfigureAwait(false);
                 throw new InvalidOperationException($"Unknown Output {string.Join("\n", result)}");
             }
-
 
             var policyName = await CreatePolicyAsync(policyRequests.ToArray(), username).ConfigureAwait(false);
             var minioPolicies = new List<string> { policyName };
@@ -280,7 +279,7 @@ namespace Monai.Deploy.Storage.MinIO
             var result = await ExecuteAsync($"admin policy add {_serviceName} pol_{username} {policyFileName}").ConfigureAwait(false);
             if (result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")) is false)
             {
-                await RemoveUserAsync(username);
+                await RemoveUserAsync(username).ConfigureAwait(false);
                 File.Delete($"{username}.json");
                 throw new InvalidOperationException("Failed to create policy, user has been removed");
             }

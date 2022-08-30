@@ -28,5 +28,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         [LoggerMessage(EventId = 20002, Level = LogLevel.Error, Message = "Error verifying objects in bucket '{bucketName}'.")]
         public static partial void VerifyObjectError(this ILogger logger, string bucketName, Exception ex);
+
+        [LoggerMessage(EventId = 20003, Level = LogLevel.Error, Message = "Health check failure.")]
+        public static partial void HealthCheckError(this ILogger logger, Exception ex);
     }
 }
