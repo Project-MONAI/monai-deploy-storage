@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Amazon.SecurityToken.Model;
 using Monai.Deploy.Storage.API;
@@ -27,6 +28,10 @@ namespace Monai.Deploy.Storage.AWSS3
         public Task<Credentials> CreateUserAsync(string username, AccessPermissions permissions, string[] bucketNames) => throw new NotImplementedException();
 
         public Task<Credentials> CreateUserAsync(string username, PolicyRequest[] policyRequests) => throw new NotImplementedException();
+
+        public Task<List<string>> GetConnectionAsync() => throw new NotImplementedException();
+
+        public Task<bool> HasConnectionAsync() => throw new NotImplementedException();
 
         public Task RemoveUserAsync(string username) => throw new NotImplementedException();
     }
