@@ -41,7 +41,7 @@ namespace Monai.Deploy.Storage.MinIO
                 tags,
                 timeout));
             builder.Add(new HealthCheckRegistration(
-                ConfigurationKeys.StorageServiceName,
+                $"{ConfigurationKeys.StorageServiceName}-admin",
                 serviceProvider =>
                 {
                     var logger = serviceProvider.GetRequiredService<ILogger<MinIoAdminHealthCheck>>();
