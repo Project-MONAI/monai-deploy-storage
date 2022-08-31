@@ -39,10 +39,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - uses: actions/setup-dotnet@v1
+    - uses: actions/setup-dotnet@v2
       with:
         dotnet-version: "6.0.x"
 
@@ -52,7 +52,7 @@ jobs:
         tools: licensefinder
 
     - name: Enable NuGet cache
-      uses: actions/cache@v2.1.7
+      uses: actions/cache@v3.0.8
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -88,23 +88,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up JDK 11
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
-          java-version: 1.11
+          distribution: 'zulu'
+          java-version: '11'
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         with:
           dotnet-version: "6.0.x"
 
       - name: Enable NuGet cache
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3.0.8
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           
@@ -144,7 +145,7 @@ jobs:
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         working-directory: ./src
           
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: "src/${{ env.TEST_RESULTS }}"
@@ -173,16 +174,16 @@ jobs:
       
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         with:
           dotnet-version: "6.0.x"
 
       - name: Enable NuGet cache
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3.0.8
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -198,7 +199,7 @@ jobs:
 
       - name: Determine Version
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.11
+        uses: gittools/actions/gitversion/execute@v0.9.13
         with:
           useConfigFile: true
           updateAssemblyInfo: true
@@ -227,7 +228,7 @@ jobs:
         
       - name: Upload Nuget
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: nuget
           path: ${{ github.workspace }}/release/*.nupkg
@@ -235,7 +236,7 @@ jobs:
 
       - name: Upload Zipped Plug-ins
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: plug-ins
           path: ${{ github.workspace }}/src/Plugins/release/*.zip
@@ -247,7 +248,7 @@ jobs:
     needs: [build, unit-test]
     if: ${{ ! ( github.event.inputs.nuget ) }}
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         id: download
 
       - name: List artifacts
@@ -256,7 +257,7 @@ jobs:
       - name: Install grp
         run: dotnet tool install gpr -g
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -272,7 +273,7 @@ jobs:
     needs: [build, unit-test]
     if: ${{ github.event.inputs.nuget }}
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         id: download
 
       - name: List artifacts
@@ -281,7 +282,7 @@ jobs:
       - name: Install grp
         run: dotnet tool install gpr -g
 
-      - uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v2
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -300,11 +301,11 @@ jobs:
       MAJORMINORPATCH: ${{ needs.build.outputs.majorMinorPatch }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         id: download
 
       - name: List artifacts
@@ -314,7 +315,7 @@ jobs:
         run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/nuget/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
 
       - name: Extract owner and repo
-        uses: jungwinter/split@v1
+        uses: jungwinter/split@v2
         id: repo
         with:
           seperator: "/"

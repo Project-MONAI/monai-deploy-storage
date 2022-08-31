@@ -44,5 +44,17 @@ namespace Monai.Deploy.Storage.API
         /// </summary>
         /// <param name="username">Username</param>
         Task RemoveUserAsync(string username);
+
+        /// <summary>
+        /// Gets list of alias connections.
+        /// </summary>
+        /// <returns></returns>
+        Task<List<string>> GetConnectionAsync();
+
+        /// <summary>
+        /// If connection contains configured service name.
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> HasConnectionAsync();
     }
 }
