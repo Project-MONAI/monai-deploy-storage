@@ -18,7 +18,8 @@ namespace Monai.Deploy.Storage.MinIO
 {
     internal static class ConfigurationKeys
     {
-        public static readonly string StorageServiceName = "minio";
+        public static readonly string StorageServiceName = "MinIo";
+        public static readonly string StorageAdminServiceName = "MinIo Admin";
 
         public static readonly string EndPoint = "endpoint";
         public static readonly string AccessKey = "accessKey";

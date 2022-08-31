@@ -44,7 +44,7 @@ namespace Monai.Deploy.Storage
         public static IServiceCollection AddMonaiDeployStorageService(
             this IServiceCollection services,
             string fullyQualifiedTypeName,
-            HealthCheckOptions healthCheckOptions = HealthCheckOptions.ServiceHealthCheck & HealthCheckOptions.AdminServiceHealthCheck,
+            HealthCheckOptions healthCheckOptions = HealthCheckOptions.ServiceHealthCheck | HealthCheckOptions.AdminServiceHealthCheck,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
@@ -62,7 +62,7 @@ namespace Monai.Deploy.Storage
             this IServiceCollection services,
             string fullyQualifiedTypeName,
             IFileSystem fileSystem,
-            HealthCheckOptions healthCheckOptions = HealthCheckOptions.ServiceHealthCheck & HealthCheckOptions.AdminServiceHealthCheck,
+            HealthCheckOptions healthCheckOptions = HealthCheckOptions.ServiceHealthCheck | HealthCheckOptions.AdminServiceHealthCheck,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
