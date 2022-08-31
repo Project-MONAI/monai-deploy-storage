@@ -17,6 +17,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+using Monai.Deploy.Storage.API;
 
 namespace Monai.Deploy.Storage.MinIO
 {
@@ -35,6 +36,17 @@ namespace Monai.Deploy.Storage.MinIO
                     var logger = serviceProvider.GetRequiredService<ILogger<MinIoHealthCheck>>();
                     var minioClientFactory = serviceProvider.GetRequiredService<IMinIoClientFactory>();
                     return new MinIoHealthCheck(minioClientFactory, logger);
+                },
+                failureStatus,
+                tags,
+                timeout));
+            builder.Add(new HealthCheckRegistration(
+                ConfigurationKeys.StorageServiceName,
+                serviceProvider =>
+                {
+                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoAdminHealthCheck>>();
+                    var storageAdminService = serviceProvider.GetRequiredService<IStorageAdminService>();
+                    return new MinIoAdminHealthCheck(storageAdminService, logger);
                 },
                 failureStatus,
                 tags,
