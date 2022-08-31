@@ -40,6 +40,7 @@ namespace Monai.Deploy.Storage.MinIO
                 failureStatus,
                 tags,
                 timeout));
+
             builder.Add(new HealthCheckRegistration(
                 $"{ConfigurationKeys.StorageServiceName}-admin",
                 serviceProvider =>
@@ -51,6 +52,7 @@ namespace Monai.Deploy.Storage.MinIO
                 failureStatus,
                 tags,
                 timeout));
+
             return builder;
         }
     }
