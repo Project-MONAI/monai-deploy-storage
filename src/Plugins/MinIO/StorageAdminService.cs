@@ -169,17 +169,13 @@ namespace Monai.Deploy.Storage.MinIO
         public async Task<bool> HasConnectionAsync()
         {
             var result = await GetConnectionAsync().ConfigureAwait(false);
-            return result.Any(r => r.Equals(_serviceName));
+            return result.Any(r => r.Trim().Equals(_serviceName));
         }
 
         public async Task<List<string>> GetConnectionAsync() => await ExecuteAsync(_get_connections_cmd).ConfigureAwait(false);
 
         public async Task<bool> SetConnectionAsync()
         {
-            if (await HasConnectionAsync().ConfigureAwait(false))
-            {
-                return true;
-            }
             var result = await ExecuteAsync(_set_connection_cmd).ConfigureAwait(false);
             if (result.Any(r => r.Contains($"Added `{_serviceName}` successfully.")))
             {

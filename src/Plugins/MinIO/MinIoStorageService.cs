@@ -339,7 +339,7 @@ namespace Monai.Deploy.Storage.MinIO
                 },
                 error =>
                 {
-                    _logger.ListObjectError(bucketName);
+                    _logger.ListObjectError(bucketName, error.Message);
                 },
                 () => completedEvent.Set(), cancellationToken);
 
