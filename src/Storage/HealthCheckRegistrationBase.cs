@@ -21,7 +21,13 @@ namespace Monai.Deploy.Storage
 {
     public abstract class HealthCheckRegistrationBase
     {
-        public abstract IHealthChecksBuilder Configure(
+        public abstract IHealthChecksBuilder ConfigureHealthCheck(
+            IHealthChecksBuilder builder,
+            HealthStatus? failureStatus = null,
+            IEnumerable<string>? tags = null,
+            TimeSpan? timeout = null);
+
+        public abstract IHealthChecksBuilder ConfigureAdminHealthCheck(
             IHealthChecksBuilder builder,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,

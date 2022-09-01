@@ -101,15 +101,15 @@ namespace Monai.Deploy.Storage.Tests
             fileSystem.File.WriteAllBytes(assemblyFilePath, assemblyData);
             var serviceCollection = new Mock<IServiceCollection>();
             serviceCollection.Setup(p => p.Clear());
-            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, false));
+            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, HealthCheckOptions.None));
 
             Assert.Null(exception);
 
             serviceCollection.Verify(p => p.Clear(), Times.Once());
         }
 
-        [Fact(DisplayName = "AddMonaiDeployStorageService configures all services & health checks as expected")]
-        public void AddMonaiDeployStorageService_ConfiuresServicesAndHealtChecksAsExpected()
+        [Fact(DisplayName = "AddMonaiDeployStorageService configures all services & service health check as expected")]
+        public void AddMonaiDeployStorageService_ConfiuresServicesAndServiceHealtCheckAsExpected()
         {
             var goodType = typeof(GoodStorageService);
             var typeName = goodType.AssemblyQualifiedName;
@@ -123,12 +123,59 @@ namespace Monai.Deploy.Storage.Tests
             serviceCollection.Setup(p => p.Clear());
             serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
 
-            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, true));
+            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, HealthCheckOptions.ServiceHealthCheck));
 
             Assert.Null(exception);
 
             serviceCollection.Verify(p => p.Clear(), Times.Once());
             serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(2));
+        }
+
+        [Fact(DisplayName = "AddMonaiDeployStorageService configures all services & admin health check as expected")]
+        public void AddMonaiDeployStorageService_ConfiuresServicesAndAdminHealthCheckAsExpected()
+        {
+            var goodType = typeof(GoodStorageService);
+            var typeName = goodType.AssemblyQualifiedName;
+            var assemblyData = GetAssemblyeBytes(goodType.Assembly);
+            var assemblyFilePath = Path.Combine(SR.PlugInDirectoryPath, goodType.Assembly.ManifestModule.Name);
+            var fileSystem = new MockFileSystem();
+            fileSystem.Directory.CreateDirectory(SR.PlugInDirectoryPath);
+            fileSystem.File.WriteAllBytes(assemblyFilePath, assemblyData);
+
+            var serviceCollection = new Mock<IServiceCollection>();
+            serviceCollection.Setup(p => p.Clear());
+            serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
+
+            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, HealthCheckOptions.AdminServiceHealthCheck));
+
+            Assert.Null(exception);
+
+            serviceCollection.Verify(p => p.Clear(), Times.Once());
+            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(2));
+        }
+
+        [Fact(DisplayName = "AddMonaiDeployStorageService configures all services & all health checks as expected")]
+        public void AddMonaiDeployStorageService_ConfiuresServicesAndAllHealtCheckAsExpected()
+        {
+            var goodType = typeof(GoodStorageService);
+            var typeName = goodType.AssemblyQualifiedName;
+            var assemblyData = GetAssemblyeBytes(goodType.Assembly);
+            var assemblyFilePath = Path.Combine(SR.PlugInDirectoryPath, goodType.Assembly.ManifestModule.Name);
+            var fileSystem = new MockFileSystem();
+            fileSystem.Directory.CreateDirectory(SR.PlugInDirectoryPath);
+            fileSystem.File.WriteAllBytes(assemblyFilePath, assemblyData);
+
+            var serviceCollection = new Mock<IServiceCollection>();
+            serviceCollection.Setup(p => p.Clear());
+            serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
+
+            var exception = Record.Exception(() => serviceCollection.Object.AddMonaiDeployStorageService(typeName, fileSystem, HealthCheckOptions.ServiceHealthCheck | HealthCheckOptions.AdminServiceHealthCheck));
+
+            Assert.Null(exception);
+
+            serviceCollection.Verify(p => p.Clear(), Times.Once());
+            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(2));
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))), Times.Once());
         }
 
         private static byte[] GetAssemblyeBytes(Assembly assembly)
@@ -139,10 +186,9 @@ namespace Monai.Deploy.Storage.Tests
 
     internal class TestHealthCheckRegistrar : HealthCheckRegistrationBase
     {
-        public override IHealthChecksBuilder Configure(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null)
-        {
-            return builder;
-        }
+        public override IHealthChecksBuilder ConfigureAdminHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) => builder;
+
+        public override IHealthChecksBuilder ConfigureHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) => builder;
     }
 
     internal class TestServiceRegistrar : ServiceRegistrationBase

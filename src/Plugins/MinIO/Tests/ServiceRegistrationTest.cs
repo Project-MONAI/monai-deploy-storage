@@ -18,6 +18,7 @@ using System.IO.Abstractions.TestingHelpers;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Options;
 using Moq;
 using Xunit;
 
@@ -46,7 +47,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             var serviceCollection = new Mock<IServiceCollection>();
             serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
 
-            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, false);
+            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, HealthCheckOptions.None);
 
             Assert.Same(serviceCollection.Object, returnedServiceCollection);
 
@@ -54,17 +55,51 @@ namespace Monai.Deploy.Storage.MinIO.Tests
         }
 
         [Fact]
-        public void AddMonaiDeployStorageService_WhenCalled_RegisterServicesAndHealthChecks()
+        public void AddMonaiDeployStorageService_WhenCalled_RegisterServicesAndServiceHealthCheck()
         {
             var serviceCollection = new Mock<IServiceCollection>();
+
             serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
+            serviceCollection.Setup(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))));
 
-            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, true);
-
+            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, HealthCheckOptions.ServiceHealthCheck);
             Assert.Same(serviceCollection.Object, returnedServiceCollection);
 
             serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.AtLeast(5));
             serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))), Times.Once());
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(IConfigureOptions<HealthCheckServiceOptions>))), Times.Once());
+        }
+
+        [Fact]
+        public void AddMonaiDeployStorageService_WhenCalled_RegisterServicesAndHealthCheck()
+        {
+            var serviceCollection = new Mock<IServiceCollection>();
+
+            serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
+            serviceCollection.Setup(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))));
+
+            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, HealthCheckOptions.AdminServiceHealthCheck);
+            Assert.Same(serviceCollection.Object, returnedServiceCollection);
+
+            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.AtLeast(5));
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))), Times.Once());
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(IConfigureOptions<HealthCheckServiceOptions>))), Times.Once());
+        }
+
+        [Fact]
+        public void AddMonaiDeployStorageService_WhenCalled_RegisterServicesAndHealthChecks()
+        {
+            var serviceCollection = new Mock<IServiceCollection>();
+
+            serviceCollection.Setup(p => p.Add(It.IsAny<ServiceDescriptor>()));
+            serviceCollection.Setup(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))));
+
+            var returnedServiceCollection = serviceCollection.Object.AddMonaiDeployStorageService(_type.AssemblyQualifiedName, _fileSystem, HealthCheckOptions.ServiceHealthCheck | HealthCheckOptions.AdminServiceHealthCheck);
+            Assert.Same(serviceCollection.Object, returnedServiceCollection);
+
+            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.AtLeast(5));
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(HealthCheckService))), Times.Once());
+            serviceCollection.Verify(p => p.Add(It.Is<ServiceDescriptor>(p => p.ServiceType == typeof(IConfigureOptions<HealthCheckServiceOptions>))), Times.Exactly(2));
         }
 
         private static byte[] GetAssemblyeBytes(Assembly assembly)
@@ -72,6 +107,6 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             return File.ReadAllBytes(assembly.Location);
         }
     }
+}
 
 #pragma warning restore CS8604 // Possible null reference argument.
-}

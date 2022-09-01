@@ -24,6 +24,14 @@ using Monai.Deploy.Storage.Configuration;
 
 namespace Monai.Deploy.Storage
 {
+    [Flags]
+    public enum HealthCheckOptions
+    {
+        None = 0,
+        ServiceHealthCheck = 1,
+        AdminServiceHealthCheck = 2,
+    }
+
     public static class IServiceCollectionExtensions
     {
         /// <summary>
@@ -36,11 +44,11 @@ namespace Monai.Deploy.Storage
         public static IServiceCollection AddMonaiDeployStorageService(
             this IServiceCollection services,
             string fullyQualifiedTypeName,
-            bool registerHealthCheck = true,
+            HealthCheckOptions healthCheckOptions = HealthCheckOptions.ServiceHealthCheck | HealthCheckOptions.AdminServiceHealthCheck,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
-            => AddMonaiDeployStorageService(services, fullyQualifiedTypeName, new FileSystem(), registerHealthCheck, failureStatus, tags, timeout);
+            => AddMonaiDeployStorageService(services, fullyQualifiedTypeName, new FileSystem(), healthCheckOptions, failureStatus, tags, timeout);
 
         /// <summary>
         /// Configures all dependencies required for the MONAI Deploy Storage Service.
@@ -54,7 +62,7 @@ namespace Monai.Deploy.Storage
             this IServiceCollection services,
             string fullyQualifiedTypeName,
             IFileSystem fileSystem,
-            bool registerHealthCheck = true,
+            HealthCheckOptions healthCheckOptions = HealthCheckOptions.ServiceHealthCheck | HealthCheckOptions.AdminServiceHealthCheck,
             HealthStatus? failureStatus = null,
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
@@ -78,16 +86,14 @@ namespace Monai.Deploy.Storage
 
             RegisterServices(services, fullyQualifiedTypeName, storageServiceAssembly);
 
-            if (registerHealthCheck)
-            {
-                RegisterHealtChecks(services, fullyQualifiedTypeName, storageServiceAssembly, failureStatus, tags, timeout);
-            }
+            RegisterHealtChecks(healthCheckOptions, services, fullyQualifiedTypeName, storageServiceAssembly, failureStatus, tags, timeout);
 
             AppDomain.CurrentDomain.AssemblyResolve -= resolveEventHandler;
             return services;
         }
 
         private static void RegisterHealtChecks(
+            HealthCheckOptions healthCheckOptions,
             IServiceCollection services,
             string fullyQualifiedTypeName,
             Assembly storageServiceAssembly,
@@ -95,6 +101,11 @@ namespace Monai.Deploy.Storage
             IEnumerable<string>? tags = null,
             TimeSpan? timeout = null)
         {
+            if (healthCheckOptions == HealthCheckOptions.None)
+            {
+                return;
+            }
+
             var healthCheckBase = storageServiceAssembly.GetTypes().FirstOrDefault(p => p.IsSubclassOf(typeof(HealthCheckRegistrationBase)));
 
             if (healthCheckBase is null || Activator.CreateInstance(healthCheckBase) is not HealthCheckRegistrationBase healthCheckBuilderBase)
@@ -103,7 +114,16 @@ namespace Monai.Deploy.Storage
             }
 
             var healthCheckBuilder = services.AddHealthChecks();
-            healthCheckBuilderBase.Configure(healthCheckBuilder, failureStatus, tags, timeout);
+
+            if (healthCheckOptions.HasFlag(HealthCheckOptions.ServiceHealthCheck))
+            {
+                healthCheckBuilderBase.ConfigureHealthCheck(healthCheckBuilder, failureStatus, tags, timeout);
+            }
+
+            if (healthCheckOptions.HasFlag(HealthCheckOptions.AdminServiceHealthCheck))
+            {
+                healthCheckBuilderBase.ConfigureAdminHealthCheck(healthCheckBuilder, failureStatus, tags, timeout);
+            }
         }
 
         private static void RegisterServices(IServiceCollection services, string fullyQualifiedTypeName, Assembly storageServiceAssembly)

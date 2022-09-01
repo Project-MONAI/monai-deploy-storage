@@ -23,12 +23,20 @@ namespace Monai.Deploy.Storage.MinIO
 {
     public class HealthCheckBuilder : HealthCheckRegistrationBase
     {
-        public override IHealthChecksBuilder Configure(
-            IHealthChecksBuilder builder,
-            HealthStatus? failureStatus = null,
-            IEnumerable<string>? tags = null,
-            TimeSpan? timeout = null)
-        {
+        public override IHealthChecksBuilder ConfigureAdminHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
+            builder.Add(new HealthCheckRegistration(
+                $"{ConfigurationKeys.StorageAdminServiceName}",
+                serviceProvider =>
+                {
+                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoAdminHealthCheck>>();
+                    var storageAdminService = serviceProvider.GetRequiredService<IStorageAdminService>();
+                    return new MinIoAdminHealthCheck(storageAdminService, logger);
+                },
+                failureStatus,
+                tags,
+                timeout));
+
+        public override IHealthChecksBuilder ConfigureHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
             builder.Add(new HealthCheckRegistration(
                 ConfigurationKeys.StorageServiceName,
                 serviceProvider =>
@@ -40,20 +48,5 @@ namespace Monai.Deploy.Storage.MinIO
                 failureStatus,
                 tags,
                 timeout));
-
-            builder.Add(new HealthCheckRegistration(
-                $"{ConfigurationKeys.StorageServiceName}-admin",
-                serviceProvider =>
-                {
-                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoAdminHealthCheck>>();
-                    var storageAdminService = serviceProvider.GetRequiredService<IStorageAdminService>();
-                    return new MinIoAdminHealthCheck(storageAdminService, logger);
-                },
-                failureStatus,
-                tags,
-                timeout));
-
-            return builder;
-        }
     }
 }
