@@ -169,7 +169,7 @@ namespace Monai.Deploy.Storage.MinIO
         public async Task<bool> HasConnectionAsync()
         {
             var result = await GetConnectionAsync().ConfigureAwait(false);
-            return result.Any(r => r.Trim().Equals(_serviceName));
+            return result.Any(r => r.Equals(_serviceName));
         }
 
         public async Task<List<string>> GetConnectionAsync() => await ExecuteAsync(_get_connections_cmd).ConfigureAwait(false);
