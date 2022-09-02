@@ -203,6 +203,7 @@ namespace Monai.Deploy.Storage.MinIO
 
             var policyString = JsonConvert.SerializeObject(policy, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
+            _logger.TemporaryCredentialPolicy(policyString);
             var assumeRoleRequest = new AssumeRoleRequest
             {
                 DurationSeconds = durationSeconds,
