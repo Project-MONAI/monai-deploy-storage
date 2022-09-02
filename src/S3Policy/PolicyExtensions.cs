@@ -53,7 +53,7 @@ namespace Monai.Deploy.Storage.S3Policy
                         {
                             StringEquals = new StringEquals
                             {
-                                S3Prefix = pathList.ToArray(),
+                                S3Prefix = pathList.Distinct().ToArray(),
                                 S3Delimiter = new string[] { "/" }
                             }
                         }
@@ -68,7 +68,7 @@ namespace Monai.Deploy.Storage.S3Policy
                         {
                             StringEquals = new StringEquals
                             {
-                                S3Prefix = new string[] {$"{folderName}/*" }
+                                S3Prefix = new string[] {$"{folderName}/*", folderName }
                             }
                         }
                     },
@@ -128,7 +128,7 @@ namespace Monai.Deploy.Storage.S3Policy
                             {
                                 S3Prefix = policyRequests
                                     .Select(pr => $"{pr.FolderName}/*")
-                                    .Union( policyRequests.Select(pr => $"{pr.FolderName}"))
+                                    .Union( policyRequests.Select(pr => pr.FolderName))
                                     .Distinct().ToArray()
                             }
                         }
