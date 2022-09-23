@@ -117,15 +117,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.9.54</summary>
+<summary>AWSSDK.S3 3.7.9.57</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.9.54
+- Version: 3.7.9.57
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.54)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.57)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -190,15 +190,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.SecurityToken 3.7.1.200</summary>
+<summary>AWSSDK.SecurityToken 3.7.1.203</summary>
 
 ## AWSSDK.SecurityToken
 
-- Version: 3.7.1.200
+- Version: 3.7.1.203
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.200)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.203)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
