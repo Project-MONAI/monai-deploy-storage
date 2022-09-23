@@ -44,15 +44,15 @@ SOFTWARE.
 
 
 <details>
-<summary>AWSSDK.Core 3.7.13.5</summary>
+<summary>AWSSDK.Core 3.7.13.8</summary>
 
 ## AWSSDK.Core
 
-- Version: 3.7.13.5
+- Version: 3.7.13.8
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.13.5)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.13.8)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
