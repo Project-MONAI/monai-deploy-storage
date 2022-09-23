@@ -23,7 +23,7 @@ namespace Monai.Deploy.Storage.MinIO
 {
     public class HealthCheckBuilder : HealthCheckRegistrationBase
     {
-        public override IHealthChecksBuilder ConfigureAdminHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
+        public override IHealthChecksBuilder ConfigureHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
             builder.Add(new HealthCheckRegistration(
                 ConfigurationKeys.StorageServiceName,
                 serviceProvider =>
@@ -36,7 +36,7 @@ namespace Monai.Deploy.Storage.MinIO
                 tags,
                 timeout));
 
-        public override IHealthChecksBuilder ConfigureHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
+        public override IHealthChecksBuilder ConfigureAdminHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
             builder.Add(new HealthCheckRegistration(
                 $"{ConfigurationKeys.StorageServiceName}-admin",
                 serviceProvider =>
