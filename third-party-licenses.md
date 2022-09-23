@@ -44,15 +44,15 @@ SOFTWARE.
 
 
 <details>
-<summary>AWSSDK.Core 3.7.12.25</summary>
+<summary>AWSSDK.Core 3.7.13.5</summary>
 
 ## AWSSDK.Core
 
-- Version: 3.7.12.25
+- Version: 3.7.13.5
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.12.25)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.13.5)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -117,15 +117,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.9.44</summary>
+<summary>AWSSDK.S3 3.7.9.54</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.9.44
+- Version: 3.7.9.54
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.44)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.54)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -190,15 +190,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.SecurityToken 3.7.1.190</summary>
+<summary>AWSSDK.SecurityToken 3.7.1.200</summary>
 
 ## AWSSDK.SecurityToken
 
-- Version: 3.7.1.190
+- Version: 3.7.1.200
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.190)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.200)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -497,53 +497,15 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.CodeCoverage 17.3.0</summary>
+<summary>Microsoft.CodeCoverage 17.3.1</summary>
 
 ## Microsoft.CodeCoverage
 
-- Version: 17.3.0
+- Version: 17.3.1
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.0)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
-
-
-```
-Copyright (c) 2020 Microsoft Corporation
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.CodeCoverage 17.3.0</summary>
-
-## Microsoft.CodeCoverage
-
-- Version: 17.3.0
-- Authors: Microsoft
-- Owners: Microsoft
-- Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.1)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
@@ -983,14 +945,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks 6.0.8</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks 6.0.9</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks
 
-- Version: 6.0.8
+- Version: 6.0.9
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/6.0.8)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/6.0.9)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -1024,14 +986,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 6.0.8</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 6.0.9</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
 
-- Version: 6.0.8
+- Version: 6.0.9
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/6.0.8)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/6.0.9)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -1311,14 +1273,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Logging.Abstractions 6.0.1</summary>
+<summary>Microsoft.Extensions.Logging.Abstractions 6.0.2</summary>
 
 ## Microsoft.Extensions.Logging.Abstractions
 
-- Version: 6.0.1
+- Version: 6.0.2
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/6.0.1)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/6.0.2)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -2518,15 +2480,15 @@ consequential or other damages.
 
 
 <details>
-<summary>Microsoft.TestPlatform.ObjectModel 17.3.0</summary>
+<summary>Microsoft.TestPlatform.ObjectModel 17.3.1</summary>
 
 ## Microsoft.TestPlatform.ObjectModel
 
-- Version: 17.3.0
+- Version: 17.3.1
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.3.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.3.1)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
@@ -2556,15 +2518,15 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.TestPlatform.TestHost 17.3.0</summary>
+<summary>Microsoft.TestPlatform.TestHost 17.3.1</summary>
 
 ## Microsoft.TestPlatform.TestHost
 
-- Version: 17.3.0
+- Version: 17.3.1
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.3.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.3.1)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
@@ -6355,14 +6317,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions 17.1.1</summary>
+<summary>System.IO.Abstractions 17.2.3</summary>
 
 ## System.IO.Abstractions
 
-- Version: 17.1.1
+- Version: 17.2.3
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.1.1)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.2.3)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -6396,14 +6358,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions.TestingHelpers 17.1.1</summary>
+<summary>System.IO.Abstractions.TestingHelpers 17.2.3</summary>
 
 ## System.IO.Abstractions.TestingHelpers
 
-- Version: 17.1.1
+- Version: 17.2.3
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.1.1)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.2.3)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 

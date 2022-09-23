@@ -25,12 +25,12 @@ namespace Monai.Deploy.Storage.MinIO
     {
         public override IHealthChecksBuilder ConfigureAdminHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
             builder.Add(new HealthCheckRegistration(
-                $"{ConfigurationKeys.StorageAdminServiceName}",
+                ConfigurationKeys.StorageServiceName,
                 serviceProvider =>
                 {
-                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoAdminHealthCheck>>();
-                    var storageAdminService = serviceProvider.GetRequiredService<IStorageAdminService>();
-                    return new MinIoAdminHealthCheck(storageAdminService, logger);
+                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoHealthCheck>>();
+                    var minioClientFactory = serviceProvider.GetRequiredService<IMinIoClientFactory>();
+                    return new MinIoHealthCheck(minioClientFactory, logger);
                 },
                 failureStatus,
                 tags,
@@ -38,12 +38,12 @@ namespace Monai.Deploy.Storage.MinIO
 
         public override IHealthChecksBuilder ConfigureHealthCheck(IHealthChecksBuilder builder, HealthStatus? failureStatus = null, IEnumerable<string>? tags = null, TimeSpan? timeout = null) =>
             builder.Add(new HealthCheckRegistration(
-                ConfigurationKeys.StorageServiceName,
+                $"{ConfigurationKeys.StorageServiceName}-admin",
                 serviceProvider =>
                 {
-                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoHealthCheck>>();
-                    var minioClientFactory = serviceProvider.GetRequiredService<IMinIoClientFactory>();
-                    return new MinIoHealthCheck(minioClientFactory, logger);
+                    var logger = serviceProvider.GetRequiredService<ILogger<MinIoAdminHealthCheck>>();
+                    var storageAdminService = serviceProvider.GetRequiredService<IStorageAdminService>();
+                    return new MinIoAdminHealthCheck(storageAdminService, logger);
                 },
                 failureStatus,
                 tags,
