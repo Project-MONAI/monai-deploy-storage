@@ -200,7 +200,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 6.0.3
+    - 6.0.2
     :when: 2022-08-29 18:11:25.167886026 Z
 - - :approve
   - Microsoft.Extensions.Logging.Configuration
