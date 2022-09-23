@@ -31,5 +31,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         [LoggerMessage(EventId = 20003, Level = LogLevel.Error, Message = "Health check failure.")]
         public static partial void HealthCheckError(this ILogger logger, Exception ex);
+
+        [LoggerMessage(EventId = 20004, Level = LogLevel.Debug, Message = "Temporary credential policy={policy}.")]
+        public static partial void TemporaryCredentialPolicy(this ILogger logger, string policy);
     }
 }

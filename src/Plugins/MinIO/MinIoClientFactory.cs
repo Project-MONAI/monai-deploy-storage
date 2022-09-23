@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System.Collections.Concurrent;
 using Amazon.SecurityToken.Model;
 using Ardalis.GuardClauses;
 using Microsoft.Extensions.Options;
@@ -25,7 +26,7 @@ namespace Monai.Deploy.Storage.MinIO
     public class MinIoClientFactory : IMinIoClientFactory
     {
         private static readonly string DefaultClient = "_DEFAULT_";
-        private readonly Dictionary<string, MinioClient> _clients;
+        private readonly ConcurrentDictionary<string, MinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }
 
@@ -38,22 +39,19 @@ namespace Monai.Deploy.Storage.MinIO
 
             Options = configuration;
 
-            _clients = new Dictionary<string, MinioClient>();
+            _clients = new ConcurrentDictionary<string, MinioClient>();
         }
 
         public MinioClient GetClient()
         {
-            if (_clients.ContainsKey(DefaultClient))
-            {
-                return _clients[DefaultClient];
-            }
+            return _clients.GetOrAdd(DefaultClient, _ =>
+                    {
+                        var accessKey = Options.Settings[ConfigurationKeys.AccessKey];
+                        var accessToken = Options.Settings[ConfigurationKeys.AccessToken];
+                        var client = CreateClient(accessKey, accessToken);
 
-            var accessKey = Options.Settings[ConfigurationKeys.AccessKey];
-            var accessToken = Options.Settings[ConfigurationKeys.AccessToken];
-            var client = CreateClient(accessKey, accessToken);
-
-            _clients[DefaultClient] = client.Build();
-            return _clients[DefaultClient];
+                        return client.Build();
+                    });
         }
 
         public MinioClient GetClient(Credentials credentials)
@@ -68,21 +66,20 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(credentials.SecretAccessKey, nameof(credentials.SecretAccessKey));
             Guard.Against.NullOrWhiteSpace(credentials.SessionToken, nameof(credentials.SessionToken));
 
-            if (_clients.ContainsKey(credentials.SessionToken))
+            return _clients.GetOrAdd(credentials.SessionToken, _ =>
             {
-                return _clients[credentials.SessionToken];
-            }
+                var client = CreateClient(credentials.AccessKeyId, credentials.SecretAccessKey);
+                client.WithSessionToken(credentials.SessionToken);
 
-            var client = CreateClient(credentials.AccessKeyId, credentials.SecretAccessKey);
-            client.WithSessionToken(credentials.SessionToken);
+                if (!string.IsNullOrWhiteSpace(region))
+                {
+                    client.WithRegion(region);
+                }
 
-            if (!string.IsNullOrWhiteSpace(region))
-            {
-                client.WithRegion(region);
-            }
+                return client.Build();
+            });
 
-            _clients[DefaultClient] = client.Build();
-            return _clients[DefaultClient];
+
         }
 
         private MinioClient CreateClient(string accessKey, string accessToken)

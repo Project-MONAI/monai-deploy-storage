@@ -117,15 +117,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.9.44</summary>
+<summary>AWSSDK.S3 3.7.9.54</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.9.44
+- Version: 3.7.9.54
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.44)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.54)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -190,15 +190,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.SecurityToken 3.7.1.190</summary>
+<summary>AWSSDK.SecurityToken 3.7.1.20</summary>
 
 ## AWSSDK.SecurityToken
 
-- Version: 3.7.1.190
+- Version: 3.7.1.20
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.190)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.20)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -983,14 +983,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks 6.0.8</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks 6.0.9</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks
 
-- Version: 6.0.8
+- Version: 6.0.9
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/6.0.8)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/6.0.9)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -1024,14 +1024,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 6.0.8</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 6.0.9</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
 
-- Version: 6.0.8
+- Version: 6.0.9
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/6.0.8)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/6.0.9)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -6355,14 +6355,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions 17.1.1</summary>
+<summary>System.IO.Abstractions 17.2.3</summary>
 
 ## System.IO.Abstractions
 
-- Version: 17.1.1
+- Version: 17.2.3
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.1.1)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.2.3)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -6396,14 +6396,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions.TestingHelpers 17.1.1</summary>
+<summary>System.IO.Abstractions.TestingHelpers 17.2.3</summary>
 
 ## System.IO.Abstractions.TestingHelpers
 
-- Version: 17.1.1
+- Version: 17.2.3
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.1.1)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.2.3)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 

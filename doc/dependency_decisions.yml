@@ -4,21 +4,21 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.12.26
+    - 3.7.13.5
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.9.44
+    - 3.7.9.54
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.1.190
+    - 3.7.1.200
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
@@ -144,14 +144,14 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
-    - 6.0.8
+    - 6.0.9
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
-    - 6.0.8
+    - 6.0.9
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.FileProviders.Abstractions
@@ -200,7 +200,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 6.0.1
+    - 6.0.2
     :when: 2022-08-29 18:11:25.167886026 Z
 - - :approve
   - Microsoft.Extensions.Logging.Configuration
@@ -487,14 +487,14 @@
   - :who: mocsharp
     :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 17.1.1
+    - 17.2.3
     :when: 2022-08-16 18:11:44.550586685 Z
 - - :approve
   - System.IO.Abstractions.TestingHelpers
   - :who: mocsharp
     :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 17.1.1
+    - 17.2.3
     :when: 2022-08-16 18:11:44.984891276 Z
 - - :approve
   - System.IO.Compression
