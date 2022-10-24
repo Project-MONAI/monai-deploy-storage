@@ -28,6 +28,7 @@ namespace Monai.Deploy.Storage.MinIO
         public static readonly string CredentialServiceUrl = "credentialServiceUrl";
         public static readonly string McExecutablePath = "executableLocation";
         public static readonly string McServiceName = "serviceName";
+        public static readonly string CreateBucket = "createBuckets";
 
         public static readonly string[] RequiredKeys = new[] { EndPoint, AccessKey, AccessToken, SecuredConnection, Region };
         public static readonly string[] McRequiredKeys = new[] { EndPoint, AccessKey, AccessToken, McExecutablePath, McServiceName };
