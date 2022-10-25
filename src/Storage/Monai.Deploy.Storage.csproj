@@ -16,60 +16,60 @@
 
 
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Monai.Deploy.Storage</RootNamespace>
-    <Nullable>enable</Nullable>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-    <CodeAnalysisRuleSet>..\.sonarlint\project-monai_monai-deploy-storagecsharp.ruleset</CodeAnalysisRuleSet>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-  </PropertyGroup>
-  <ItemGroup>
-    <AdditionalFiles Include="..\.sonarlint\project-monai_monai-deploy-storage\CSharp\SonarLint.xml" Link="SonarLint.xml" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Monai.Deploy.Storage</RootNamespace>
+		<Nullable>enable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<CodeAnalysisRuleSet>..\.sonarlint\project-monai_monai-deploy-storagecsharp.ruleset</CodeAnalysisRuleSet>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="..\.sonarlint\project-monai_monai-deploy-storage\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <PackageId>Monai.Deploy.Storage</PackageId>
-    <Version>0.1.0</Version>
-    <Authors>MONAI Consortium</Authors>
-    <Company>MONAI Consortium</Company>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Storage layer for MONAI Deploy clinical data pipelines system.</Description>
-    <Copyright>MONAI Consortium</Copyright>
-    <PackageProjectUrl>https://github.com/Project-MONAI/monai-deploy-storage</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Project-MONAI/monai-deploy-storage</RepositoryUrl>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-  </PropertyGroup>
+	<PropertyGroup>
+		<PackageId>Monai.Deploy.Storage</PackageId>
+		<Version>0.1.0</Version>
+		<Authors>MONAI Consortium</Authors>
+		<Company>MONAI Consortium</Company>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Description>Storage layer for MONAI Deploy clinical data pipelines system.</Description>
+		<Copyright>MONAI Consortium</Copyright>
+		<PackageProjectUrl>https://github.com/Project-MONAI/monai-deploy-storage</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Project-MONAI/monai-deploy-storage</RepositoryUrl>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
-    <None Include="..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
+		<None Include="..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Tests\**" />
-    <EmbeddedResource Remove="Tests\**" />
-    <None Remove="Tests\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Tests\**" />
+		<EmbeddedResource Remove="Tests\**" />
+		<None Remove="Tests\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.203" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
-    <PackageReference Include="System.IO.Abstractions" Version="17.2.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+		<PackageReference Include="AWSSDK.SecurityToken" Version="3.7.100.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+		<PackageReference Include="System.IO.Abstractions" Version="17.2.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
+	</ItemGroup>
 </Project>
