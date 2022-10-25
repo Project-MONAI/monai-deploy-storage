@@ -42,7 +42,51 @@ namespace Monai.Deploy.Storage.MinIO
             _clients = new ConcurrentDictionary<string, MinioClient>();
         }
 
-        public MinioClient GetClient()
+        public IMinioClient GetClient()
+        {
+            return _clients.GetOrAdd(DefaultClient, _ =>
+            {
+                var accessKey = Options.Settings[ConfigurationKeys.AccessKey];
+                var accessToken = Options.Settings[ConfigurationKeys.AccessToken];
+                var client = CreateClient(accessKey, accessToken);
+
+                return client.Build();
+            });
+        }
+
+        public IMinioClient GetClient(Credentials credentials)
+        {
+            return GetClient(credentials, string.Empty);
+        }
+
+        public IMinioClient GetClient(Credentials credentials, string region)
+        {
+            return GetClientInternal(credentials, region);
+        }
+
+        public IBucketOperations GetBucketOperationsClient()
+        {
+            return _clients.GetOrAdd(DefaultClient, _ =>
+            {
+                var accessKey = Options.Settings[ConfigurationKeys.AccessKey];
+                var accessToken = Options.Settings[ConfigurationKeys.AccessToken];
+                var client = CreateClient(accessKey, accessToken);
+
+                return client.Build();
+            });
+        }
+
+        public IBucketOperations GetBucketOperationsClient(Credentials credentials)
+        {
+            return GetClientInternal(credentials, string.Empty);
+        }
+
+        public IBucketOperations GetBucketOperationsClient(Credentials credentials, string region)
+        {
+            return GetClientInternal(credentials, region);
+        }
+
+        public IObjectOperations GetObjectOperationsClient()
         {
             return _clients.GetOrAdd(DefaultClient, _ =>
                     {
@@ -54,12 +98,34 @@ namespace Monai.Deploy.Storage.MinIO
                     });
         }
 
-        public MinioClient GetClient(Credentials credentials)
+        public IObjectOperations GetObjectOperationsClient(Credentials credentials)
         {
-            return GetClient(credentials, string.Empty);
+            return GetClientInternal(credentials, string.Empty);
         }
 
-        public MinioClient GetClient(Credentials credentials, string region)
+        public IObjectOperations GetObjectOperationsClient(Credentials credentials, string region)
+        {
+            return GetClientInternal(credentials, region);
+        }
+
+        private IMinioClient CreateClient(string accessKey, string accessToken)
+        {
+            var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
+            var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
+
+            var client = new MinioClient()
+                .WithEndpoint(endpoint)
+                .WithCredentials(accessKey, accessToken);
+
+            if (bool.Parse(securedConnection))
+            {
+                client.WithSSL();
+            }
+
+            return client;
+        }
+
+        private MinioClient GetClientInternal(Credentials credentials, string region)
         {
             Guard.Against.Null(credentials, nameof(credentials));
             Guard.Against.NullOrWhiteSpace(credentials.AccessKeyId, nameof(credentials.AccessKeyId));
@@ -78,25 +144,6 @@ namespace Monai.Deploy.Storage.MinIO
 
                 return client.Build();
             });
-
-
-        }
-
-        private MinioClient CreateClient(string accessKey, string accessToken)
-        {
-            var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
-            var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
-
-            var client = new MinioClient()
-                .WithEndpoint(endpoint)
-                .WithCredentials(accessKey, accessToken);
-
-            if (bool.Parse(securedConnection))
-            {
-                client.WithSSL();
-            }
-
-            return client;
         }
 
         private void ValidateConfiguration(StorageServiceConfiguration configuration)

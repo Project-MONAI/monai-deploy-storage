@@ -41,17 +41,17 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            if (_options.Value.Settings.ContainsKey(ConfigurationKeys.CreateBucket))
+            if (_options.Value.Settings.ContainsKey(ConfigurationKeys.CreateBuckets))
             {
-                var buckets = _options.Value.Settings[ConfigurationKeys.CreateBucket];
-                var region = _options.Value.Settings[ConfigurationKeys.Region];
+                var buckets = _options.Value.Settings[ConfigurationKeys.CreateBuckets];
+                var region = _options.Value.Settings.ContainsKey(ConfigurationKeys.Region) ? _options.Value.Settings[ConfigurationKeys.Region] : string.Empty;
 
                 if (!string.IsNullOrWhiteSpace(buckets))
                 {
                     var exceptions = new List<Exception>();
                     var bucketNames = buckets.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
-                    var client = _minIoClientFactory.GetClient();
+                    var client = _minIoClientFactory.GetBucketOperationsClient();
 
                     foreach (var bucket in bucketNames)
                     {
@@ -83,7 +83,7 @@ namespace Monai.Deploy.Storage.MinIO
             return Task.CompletedTask;
         }
 
-        private async Task CreateBucket(MinioClient client, string bucket, string region, CancellationToken cancellationToken)
+        private async Task CreateBucket(IBucketOperations client, string bucket, string region, CancellationToken cancellationToken)
         {
             Guard.Against.Null(client, nameof(client));
             Guard.Against.Null(bucket, nameof(bucket));
