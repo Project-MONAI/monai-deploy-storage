@@ -44,15 +44,15 @@ SOFTWARE.
 
 
 <details>
-<summary>AWSSDK.Core 3.7.13.8</summary>
+<summary>AWSSDK.Core 3.7.100.1</summary>
 
 ## AWSSDK.Core
 
-- Version: 3.7.13.8
+- Version: 3.7.100.1
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.13.8)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.100.1)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -497,16 +497,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.CodeCoverage 17.3.1</summary>
+<summary>Microsoft.CodeCoverage 17.3.2</summary>
 
 ## Microsoft.CodeCoverage
 
-- Version: 17.3.1
+- Version: 17.3.2
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.1)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.2)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.2/LICENSE)
 
 
 ```
@@ -945,14 +945,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks 6.0.9</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks 6.0.10</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks
 
-- Version: 6.0.9
+- Version: 6.0.10
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/6.0.9)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/6.0.10)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -986,7 +986,7 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 6.0.9</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 6.0.10</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
 
@@ -2480,15 +2480,15 @@ consequential or other damages.
 
 
 <details>
-<summary>Microsoft.TestPlatform.ObjectModel 17.3.1</summary>
+<summary>Microsoft.TestPlatform.ObjectModel 17.3.2</summary>
 
 ## Microsoft.TestPlatform.ObjectModel
 
-- Version: 17.3.1
+- Version: 17.3.2
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.3.1)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.3.2)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
@@ -2518,15 +2518,15 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.TestPlatform.TestHost 17.3.1</summary>
+<summary>Microsoft.TestPlatform.TestHost 17.3.2</summary>
 
 ## Microsoft.TestPlatform.TestHost
 
-- Version: 17.3.1
+- Version: 17.3.2
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.3.1)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.3.2)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
