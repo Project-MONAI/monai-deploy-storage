@@ -39,7 +39,7 @@ namespace Monai.Deploy.Storage.MinIO
         public MinIoStorageService(IMinIoClientFactory minioClientFactory, IAmazonSecurityTokenServiceClientFactory amazonSecurityTokenServiceClientFactory, IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
         {
             Guard.Against.Null(options, nameof(options));
-            _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(minioClientFactory));
+            _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(IMinIoClientFactory));
             _amazonSecurityTokenServiceClientFactory = amazonSecurityTokenServiceClientFactory ?? throw new ArgumentNullException(nameof(amazonSecurityTokenServiceClientFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
@@ -71,7 +71,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(destinationBucketName, nameof(destinationBucketName));
             Guard.Against.NullOrWhiteSpace(destinationObjectName, nameof(destinationObjectName));
 
-            var client = _minioClientFactory.GetClient();
+            var client = _minioClientFactory.GetObjectOperationsClient();
             await CopyObjectUsingClient(client, sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken).ConfigureAwait(false);
         }
 
@@ -80,7 +80,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
-            var client = _minioClientFactory.GetClient();
+            var client = _minioClientFactory.GetObjectOperationsClient();
             var stream = new MemoryStream();
             await GetObjectUsingClient(client, bucketName, objectName, (s) => s.CopyTo(stream), cancellationToken).ConfigureAwait(false);
             stream.Seek(0, SeekOrigin.Begin);
@@ -91,7 +91,7 @@ namespace Monai.Deploy.Storage.MinIO
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
 
-            var client = _minioClientFactory.GetClient();
+            var client = _minioClientFactory.GetBucketOperationsClient();
             return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken).ConfigureAwait(false);
         }
 
@@ -154,7 +154,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.Null(data, nameof(data));
             Guard.Against.NullOrWhiteSpace(contentType, nameof(contentType));
 
-            var client = _minioClientFactory.GetClient();
+            var client = _minioClientFactory.GetObjectOperationsClient();
             await PutObjectUsingClient(client, bucketName, objectName, data, size, contentType, metadata, cancellationToken).ConfigureAwait(false);
         }
 
@@ -163,7 +163,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
-            var client = _minioClientFactory.GetClient();
+            var client = _minioClientFactory.GetObjectOperationsClient();
             await RemoveObjectUsingClient(client, bucketName, objectName, cancellationToken).ConfigureAwait(false);
         }
 
@@ -172,7 +172,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrEmpty(objectNames, nameof(objectNames));
 
-            var client = _minioClientFactory.GetClient();
+            var client = _minioClientFactory.GetObjectOperationsClient();
             await RemoveObjectsUsingClient(client, bucketName, objectNames, cancellationToken).ConfigureAwait(false);
         }
 
@@ -223,7 +223,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(destinationBucketName, nameof(destinationBucketName));
             Guard.Against.NullOrWhiteSpace(destinationObjectName, nameof(destinationObjectName));
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await CopyObjectUsingClient(client, sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken).ConfigureAwait(false);
         }
 
@@ -232,7 +232,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             var stream = new MemoryStream();
             await GetObjectUsingClient(client, bucketName, objectName, (s) => s.CopyTo(stream), cancellationToken).ConfigureAwait(false);
             stream.Seek(0, SeekOrigin.Begin);
@@ -243,7 +243,7 @@ namespace Monai.Deploy.Storage.MinIO
         {
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetBucketOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken).ConfigureAwait(false);
         }
 
@@ -254,7 +254,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.Null(data, nameof(data));
             Guard.Against.NullOrWhiteSpace(contentType, nameof(contentType));
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await PutObjectUsingClient(client, bucketName, objectName, data, size, contentType, metadata, cancellationToken).ConfigureAwait(false);
         }
 
@@ -263,7 +263,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await RemoveObjectUsingClient(client, bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -272,7 +272,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             Guard.Against.NullOrEmpty(objectNames, nameof(objectNames));
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await RemoveObjectsUsingClient(client, bucketName, objectNames, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -287,7 +287,7 @@ namespace Monai.Deploy.Storage.MinIO
             var length = data.Length;
             var stream = new MemoryStream(data);
 
-            var client = _minioClientFactory.GetClient(credentials, _options.Settings[ConfigurationKeys.Region]);
+            var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await PutObjectUsingClient(client, bucketName, stubFile, stream, length, "application/octet-stream", null, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -295,7 +295,7 @@ namespace Monai.Deploy.Storage.MinIO
 
         #region Internal Helper Methods
 
-        private static async Task CopyObjectUsingClient(MinioClient client, string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, CancellationToken cancellationToken)
+        private static async Task CopyObjectUsingClient(IObjectOperations client, string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, CancellationToken cancellationToken)
         {
             var copySourceObjectArgs = new CopySourceObjectArgs()
                            .WithBucket(sourceBucketName)
@@ -307,7 +307,7 @@ namespace Monai.Deploy.Storage.MinIO
             await client.CopyObjectAsync(copyObjectArgs, cancellationToken).ConfigureAwait(false);
         }
 
-        private static async Task GetObjectUsingClient(MinioClient client, string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken)
+        private static async Task GetObjectUsingClient(IObjectOperations client, string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken)
         {
             var args = new GetObjectArgs()
                             .WithBucket(bucketName)
@@ -316,7 +316,7 @@ namespace Monai.Deploy.Storage.MinIO
             await client.GetObjectAsync(args, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<IList<VirtualFileInfo>> ListObjectsUsingClient(MinioClient client, string bucketName, string? prefix, bool recursive, CancellationToken cancellationToken)
+        private async Task<IList<VirtualFileInfo>> ListObjectsUsingClient(IBucketOperations client, string bucketName, string? prefix, bool recursive, CancellationToken cancellationToken)
         {
             return await Task.Run(() =>
             {
@@ -349,7 +349,7 @@ namespace Monai.Deploy.Storage.MinIO
             }).ConfigureAwait(false);
         }
 
-        private static async Task RemoveObjectUsingClient(MinioClient client, string bucketName, string objectName, CancellationToken cancellationToken)
+        private static async Task RemoveObjectUsingClient(IObjectOperations client, string bucketName, string objectName, CancellationToken cancellationToken)
         {
             var args = new RemoveObjectArgs()
                            .WithBucket(bucketName)
@@ -357,7 +357,7 @@ namespace Monai.Deploy.Storage.MinIO
             await client.RemoveObjectAsync(args, cancellationToken).ConfigureAwait(false);
         }
 
-        private static async Task PutObjectUsingClient(MinioClient client, string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken)
+        private static async Task PutObjectUsingClient(IObjectOperations client, string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken)
         {
             var args = new PutObjectArgs()
                                 .WithBucket(bucketName)
@@ -373,7 +373,7 @@ namespace Monai.Deploy.Storage.MinIO
             await client.PutObjectAsync(args, cancellationToken).ConfigureAwait(false);
         }
 
-        private static async Task RemoveObjectsUsingClient(MinioClient client, string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken)
+        private static async Task RemoveObjectsUsingClient(IObjectOperations client, string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken)
         {
             var args = new RemoveObjectsArgs()
                            .WithBucket(bucketName)

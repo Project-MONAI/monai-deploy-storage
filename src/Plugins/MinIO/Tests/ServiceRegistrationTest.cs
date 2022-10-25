@@ -51,7 +51,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests
 
             Assert.Same(serviceCollection.Object, returnedServiceCollection);
 
-            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(4));
+            serviceCollection.Verify(p => p.Add(It.IsAny<ServiceDescriptor>()), Times.Exactly(6));
         }
 
         [Fact]

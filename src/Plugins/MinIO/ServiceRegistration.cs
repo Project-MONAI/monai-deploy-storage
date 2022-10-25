@@ -27,6 +27,9 @@ namespace Monai.Deploy.Storage.MinIO
             services.AddSingleton<IAmazonSecurityTokenServiceClientFactory, AmazonSecurityTokenServiceClientFactory>();
             services.AddSingleton<IStorageService, MinIoStorageService>();
             services.AddSingleton<IStorageAdminService, StorageAdminService>();
+            services.AddSingleton<MinIoStartup>();
+
+            services.AddHostedService(p => p.GetRequiredService<MinIoStartup>());
             return services;
         }
     }
