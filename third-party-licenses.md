@@ -117,15 +117,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.9.57</summary>
+<summary>AWSSDK.S3 3.7.101.1</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.9.57
+- Version: 3.7.101.1
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.9.57)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.101.1)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -190,15 +190,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.SecurityToken 3.7.1.203</summary>
+<summary>AWSSDK.SecurityToken 3.7.100.1</summary>
 
 ## AWSSDK.SecurityToken
 
-- Version: 3.7.1.203
+- Version: 3.7.100.1
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.1.203)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.100.1)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -1642,15 +1642,15 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.NET.Test.Sdk 17.3.1</summary>
+<summary>Microsoft.NET.Test.Sdk 17.3.2</summary>
 
 ## Microsoft.NET.Test.Sdk
 
-- Version: 17.3.1
+- Version: 17.3.2
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.3.1)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.3.2)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
 
 
