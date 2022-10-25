@@ -34,7 +34,7 @@ namespace Monai.Deploy.Storage.MinIO
         {
             try
             {
-                var minioClient = _minIoClientFactory.GetClient();
+                var minioClient = _minIoClientFactory.GetBucketOperationsClient();
                 await minioClient.ListBucketsAsync(cancellationToken).ConfigureAwait(false);
 
                 return HealthCheckResult.Healthy();

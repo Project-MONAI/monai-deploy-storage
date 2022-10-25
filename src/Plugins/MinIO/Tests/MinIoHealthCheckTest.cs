@@ -36,7 +36,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests
         [Fact]
         public async Task CheckHealthAsync_WhenFailedToListBucket_ReturnUnhealthy()
         {
-            _minIoClientFactory.Setup(p => p.GetClient()).Throws(new Exception("error"));
+            _minIoClientFactory.Setup(p => p.GetBucketOperationsClient()).Throws(new Exception("error"));
 
             var healthCheck = new MinIoHealthCheck(_minIoClientFactory.Object, _logger.Object);
             var results = await healthCheck.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
@@ -54,7 +54,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests
             .WithCredentials("Q3AM3UQ867SPQQA43P2F", "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG")
             .Build();
 
-            _minIoClientFactory.Setup(p => p.GetClient()).Returns(minioClient);
+            _minIoClientFactory.Setup(p => p.GetBucketOperationsClient()).Returns(minioClient);
             var healthCheck = new MinIoHealthCheck(_minIoClientFactory.Object, _logger.Object);
             var results = await healthCheck.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
 

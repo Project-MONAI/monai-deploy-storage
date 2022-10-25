@@ -34,5 +34,14 @@ namespace Monai.Deploy.Storage.MinIO
 
         [LoggerMessage(EventId = 20004, Level = LogLevel.Debug, Message = "Temporary credential policy={policy}.")]
         public static partial void TemporaryCredentialPolicy(this ILogger logger, string policy);
+
+        [LoggerMessage(EventId = 20005, Level = LogLevel.Information, Message = "`createBuckets` not configured; no buckets created.")]
+        public static partial void NoBucketCreated(this ILogger logger);
+
+        [LoggerMessage(EventId = 20006, Level = LogLevel.Critical, Message = "Error creating bucket {bucket} in region {region}.")]
+        public static partial void ErrorCreatingBucket(this ILogger logger, string bucket, string region, Exception ex);
+
+        [LoggerMessage(EventId = 20007, Level = LogLevel.Information, Message = "Bucket {bucket} created in region {region}.")]
+        public static partial void BucketCreated(this ILogger logger, string bucket, string region);
     }
 }
