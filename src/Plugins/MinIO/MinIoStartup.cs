@@ -57,7 +57,7 @@ namespace Monai.Deploy.Storage.MinIO
                     {
                         try
                         {
-                            await CreateBucket(client, bucket, region, cancellationToken).ConfigureAwait(false);
+                            await CreateBucket(client, bucket.Trim(), region, cancellationToken).ConfigureAwait(false);
                         }
                         catch (Exception ex)
                         {
