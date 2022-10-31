@@ -45,10 +45,10 @@ jobs:
     - uses: actions/setup-dotnet@v3
       with:
         dotnet-version: "6.0.x"
-        
+
     - name: Enable Homebrew
       run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
-      
+
     - name: Install License Finder tool with Homebrew
       uses: tecoli-com/actions-use-homebrew-tools@v1
       with:
@@ -80,12 +80,12 @@ jobs:
 
     - name: Secret detection
       uses: gitleaks/gitleaks-action@v1.6.0
-      
+
     - name: Perform License Scanning
       run: license_finder -r
 
     - name: Check License Header
-      uses: apache/skywalking-eyes@main
+      uses: apache/skywalking-eyes@v0.4.0
 
   unit-test:
     runs-on: ubuntu-latest
@@ -111,7 +111,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
+
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: dotnet tool install --global dotnet-sonarscanner
@@ -119,26 +119,26 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
         working-directory: ./src
-        
+
       - name: Begin SonarScanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: dotnet sonarscanner begin /k:"Project-MONAI_monai-deploy-storage" /o:"project-monai" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="${{ env.TEST_RESULTS }}/**/*.xml"
         working-directory: ./src
-        
+
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo "${{ env.SOLUTION }}"
         working-directory: ./src
-      
+
       - name: Test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: find ~+ -type f -name "*.Test.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal -r "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings 
+        run: find ~+ -type f -name "*.Test.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal -r "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
         working-directory: ./src
 
       - name: End SonarScanner
@@ -147,7 +147,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         working-directory: ./src
-          
+
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -160,7 +160,7 @@ jobs:
 
   build:
     runs-on: ${{ matrix.os }}
-    
+
     outputs:
       majorMinorPatch: ${{ steps.gitversion.outputs.majorMinorPatch }}
 
@@ -174,7 +174,7 @@ jobs:
       packages: write
       checks: write
       security-events: write
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -221,14 +221,14 @@ jobs:
           dotnet pack --no-build -c ${{ env.BUILD_CONFIG }} -o $PACKAGEDIR -p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }}
           ls -lR $PACKAGEDIR
         working-directory: ./src
-        
+
       - name: Zip Plug-ins
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           ./package.sh
           ls -lR release/
         working-directory: ./src/Plugins
-        
+
       - name: Upload Nuget
         if: ${{ matrix.os == 'ubuntu-latest' }}
         uses: actions/upload-artifact@v3.1.1
@@ -266,10 +266,10 @@ jobs:
         with:
           dotnet-version: "6.0.x"
           source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
-          
+
       - name: Publish to GitHub
         run: gpr push '${{ steps.download.outputs.download-path }}/nuget/*.nupkg' --repository ${{ github.repository }} -k ${{ secrets.GITHUB_TOKEN }}
-        
+
   release-nuget:
     name: Official Release to GitHub Packages
     runs-on: ubuntu-latest
@@ -291,10 +291,10 @@ jobs:
         with:
           dotnet-version: "6.0.x"
           source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
-          
+
       - name: Publish to GitHub
         run: gpr push '${{ steps.download.outputs.download-path }}/nuget/*.nupkg' --repository ${{ github.repository }} -k ${{ secrets.GITHUB_TOKEN }}
-        
+
   release:
     name: Official Release to NuGet.org
     if: ${{ github.event.inputs.nuget || contains(github.ref, 'refs/heads/release') }}
@@ -313,7 +313,7 @@ jobs:
 
       - name: List artifacts
         run: ls -ldR ${{steps.download.outputs.download-path}}/**/*
-        
+
       - name: Publish to NuGet.org
         run: dotnet nuget push  ${{ steps.download.outputs.download-path }}/nuget/*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET }} --skip-duplicate
 
