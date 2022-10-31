@@ -213,7 +213,10 @@ jobs:
         working-directory: ./src
 
       - name: Nuget Vulnerabiilty Scan
-        run: dotnet list package --vulnerable
+        run: |
+          dotnet list package --vulnerable 2>&1 | tee vulnerable.txt
+          echo "Analyzing dotnet list package command log output..."
+          sh -c "! grep 'has the following vulnerable packages' vulnerable.txt"
         working-directory: ./src
 
       - name: Package
