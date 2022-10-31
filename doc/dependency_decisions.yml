@@ -4,21 +4,21 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.100.1
+    - 3.7.100.6
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.101.1
+    - 3.7.101.6
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.100.1
+    - 3.7.100.6
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
@@ -319,14 +319,7 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/minio/minio-dotnet/raw/master/LICENSE)
     :versions:
-    - 4.0.4
-    :when: 2022-08-16 18:11:34.023353580 Z
-- - :approve
-  - Minio
-  - :who: mocsharp
-    :why: Apache-2.0 (https://github.com/minio/minio-dotnet/raw/master/LICENSE)
-    :versions:
-    - 4.0.5
+    - 4.0.6
     :when: 2022-08-16 18:11:34.443742604 Z
 - - :approve
   - Moq
@@ -900,7 +893,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/coverlet-coverage/coverlet/raw/master/LICENSE)
     :versions:
-    - 3.1.2
+    - 3.2.0
     :when: 2022-08-16 18:12:11.244463651 Z
 - - :approve
   - runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl
