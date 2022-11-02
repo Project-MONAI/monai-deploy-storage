@@ -32,20 +32,28 @@
 		<None Include="..\..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
 	</ItemGroup>
 
-	<PropertyGroup>
-		<PackageId>Monai.Deploy.Storage.MinIO</PackageId>
-		<Version>0.1.0</Version>
-		<Authors>MONAI Consortium</Authors>
-		<Company>MONAI Consortium</Company>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Description>MINIO plug-in for MONAI Deploy Storage Service.</Description>
-		<Copyright>MONAI Consortium</Copyright>
-		<PackageProjectUrl>https://github.com/Project-MONAI/monai-deploy-storage</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Project-MONAI/monai-deploy-storage</RepositoryUrl>
-		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-	</PropertyGroup>
-
+  <PropertyGroup>
+    <PackageId>Monai.Deploy.Storage.MinIO</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>MONAI Consortium</Authors>
+    <Company>MONAI Consortium</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>MINIO plug-in for MONAI Deploy Storage Service.</Description>
+    <Copyright>MONAI Consortium</Copyright>
+    <PackageProjectUrl>https://github.com/Project-MONAI/monai-deploy-storage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Project-MONAI/monai-deploy-storage</RepositoryUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.100.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+    <PackageReference Include="Minio" Version="4.0.6" />
+  </ItemGroup>
+  
 	<ItemGroup>
 		<PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
 		<PackageReference Include="AWSSDK.SecurityToken" Version="3.7.100.1" />
