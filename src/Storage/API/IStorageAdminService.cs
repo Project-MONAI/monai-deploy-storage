@@ -56,5 +56,11 @@ namespace Monai.Deploy.Storage.API
         /// </summary>
         /// <returns></returns>
         Task<bool> HasConnectionAsync();
+
+        /// <summary>
+        /// Cread the Admin alias.
+        /// </summary>
+        /// <returns>Bool</returns>
+        Task<bool> SetConnectionAsync();
     }
 }

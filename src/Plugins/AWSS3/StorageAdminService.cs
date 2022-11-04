@@ -34,5 +34,6 @@ namespace Monai.Deploy.Storage.AWSS3
         public Task<bool> HasConnectionAsync() => throw new NotImplementedException();
 
         public Task RemoveUserAsync(string username) => throw new NotImplementedException();
+        public Task<bool> SetConnectionAsync() => throw new NotImplementedException();
     }
 }
