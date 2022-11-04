@@ -38,7 +38,9 @@ namespace Monai.Deploy.Storage.MinIO
             {
                 var hasConnection = await _storageAdminService.HasConnectionAsync().ConfigureAwait(false);
                 if (hasConnection is false)
-                { await _storageAdminService.SetConnectionAsync().ConfigureAwait(false); }
+                {
+                    await _storageAdminService.SetConnectionAsync().ConfigureAwait(false);
+                }
 
                 var connectionResult = await _storageAdminService.GetConnectionAsync().ConfigureAwait(false);
                 var joinedResult = string.Join("\n", connectionResult);
