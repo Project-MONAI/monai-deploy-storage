@@ -36,8 +36,11 @@ namespace Monai.Deploy.Storage.MinIO
         {
             try
             {
-                var hasConnection = await _storageAdminService.HasConnectionAsync();
-                var connectionResult = await _storageAdminService.GetConnectionAsync();
+                var hasConnection = await _storageAdminService.HasConnectionAsync().ConfigureAwait(false);
+                if (hasConnection is false)
+                { await _storageAdminService.SetConnectionAsync().ConfigureAwait(false); }
+
+                var connectionResult = await _storageAdminService.GetConnectionAsync().ConfigureAwait(false);
                 var joinedResult = string.Join("\n", connectionResult);
 
                 var roDict = new ReadOnlyDictionary<string, object>(new Dictionary<string, object>() { { "MinoAdminResult", joinedResult } });
