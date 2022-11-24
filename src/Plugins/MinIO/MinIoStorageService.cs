@@ -38,7 +38,7 @@ namespace Monai.Deploy.Storage.MinIO
 
         public MinIoStorageService(IMinIoClientFactory minioClientFactory, IAmazonSecurityTokenServiceClientFactory amazonSecurityTokenServiceClientFactory, IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
         {
-            Guard.Against.Null(options, nameof(options));
+            Guard.Against.Null(options);
             _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(IMinIoClientFactory));
             _amazonSecurityTokenServiceClientFactory = amazonSecurityTokenServiceClientFactory ?? throw new ArgumentNullException(nameof(amazonSecurityTokenServiceClientFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -51,7 +51,7 @@ namespace Monai.Deploy.Storage.MinIO
 
         private void ValidateConfiguration(StorageServiceConfiguration configuration)
         {
-            Guard.Against.Null(configuration, nameof(configuration));
+            Guard.Against.Null(configuration);
 
             foreach (var key in ConfigurationKeys.RequiredKeys)
             {
@@ -66,10 +66,10 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task CopyObjectAsync(string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(sourceBucketName, nameof(sourceBucketName));
-            Guard.Against.NullOrWhiteSpace(sourceObjectName, nameof(sourceObjectName));
-            Guard.Against.NullOrWhiteSpace(destinationBucketName, nameof(destinationBucketName));
-            Guard.Against.NullOrWhiteSpace(destinationObjectName, nameof(destinationObjectName));
+            Guard.Against.NullOrWhiteSpace(sourceBucketName);
+            Guard.Against.NullOrWhiteSpace(sourceObjectName);
+            Guard.Against.NullOrWhiteSpace(destinationBucketName);
+            Guard.Against.NullOrWhiteSpace(destinationObjectName);
 
             var client = _minioClientFactory.GetObjectOperationsClient();
             await CopyObjectUsingClient(client, sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken).ConfigureAwait(false);
@@ -77,8 +77,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(objectName);
 
             var client = _minioClientFactory.GetObjectOperationsClient();
             var stream = new MemoryStream();
@@ -89,70 +89,70 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string? prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
 
             var client = _minioClientFactory.GetBucketOperationsClient();
             return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Dictionary<string, string>> VerifyObjectsExistAsync(string bucketName, Dictionary<string, string> objectDict)
+        public async Task<Dictionary<string, bool>> VerifyObjectsExistAsync(string bucketName, IReadOnlyList<string> artifactList, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.Null(objectDict, nameof(objectDict));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.Null(artifactList);
 
-            var existingObjectsDict = new Dictionary<string, string>();
+            var existingObjectsDict = new Dictionary<string, bool>();
 
-            foreach (var obj in objectDict)
+            foreach (var artifact in artifactList)
             {
                 try
                 {
-                    var fileObjects = await ListObjectsAsync(bucketName, obj.Value).ConfigureAwait(false);
-                    var folderObjects = await ListObjectsAsync(bucketName, obj.Value.EndsWith("/") ? obj.Value : $"{obj.Value}/", true).ConfigureAwait(false);
+                    var fileObjects = await ListObjectsAsync(bucketName, artifact).ConfigureAwait(false);
+                    var folderObjects = await ListObjectsAsync(bucketName, artifact.EndsWith("/") ? artifact : $"{artifact}/", true).ConfigureAwait(false);
 
                     if (!folderObjects.Any() && !fileObjects.Any())
                     {
-                        _logger.FileNotFoundError(bucketName, $"{obj.Value}");
+                        _logger.FileNotFoundError(bucketName, $"{artifact}");
 
+                        existingObjectsDict.Add(artifact, false);
                         continue;
                     }
+                    existingObjectsDict.Add(artifact, true);
                 }
                 catch (Exception e)
                 {
                     _logger.VerifyObjectError(bucketName, e);
-
-                    continue;
+                    existingObjectsDict.Add(artifact, false);
                 }
 
-                existingObjectsDict.Add(obj.Key, obj.Value);
             }
 
             return existingObjectsDict;
         }
 
-        public async Task<KeyValuePair<string, string>> VerifyObjectExistsAsync(string bucketName, KeyValuePair<string, string> objectPair)
+        public async Task<bool> VerifyObjectExistsAsync(string bucketName, string artifactName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.Null(objectPair, nameof(objectPair));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(artifactName);
 
-            var fileObjects = await ListObjectsAsync(bucketName, objectPair.Value).ConfigureAwait(false);
-            var folderObjects = await ListObjectsAsync(bucketName, objectPair.Value.EndsWith("/") ? objectPair.Value : $"{objectPair.Value}/", true).ConfigureAwait(false);
+            var fileObjects = await ListObjectsAsync(bucketName, artifactName).ConfigureAwait(false);
+            var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true).ConfigureAwait(false);
 
             if (folderObjects.Any() || fileObjects.Any())
             {
-                return objectPair;
+                return true;
             }
 
-            _logger.FileNotFoundError(bucketName, $"{objectPair.Value}");
+            _logger.FileNotFoundError(bucketName, $"{artifactName}");
 
-            return default;
+            return false;
         }
 
         public async Task PutObjectAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(data, nameof(data));
-            Guard.Against.NullOrWhiteSpace(contentType, nameof(contentType));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(objectName);
+            Guard.Against.Null(data);
+            Guard.Against.NullOrWhiteSpace(contentType);
 
             var client = _minioClientFactory.GetObjectOperationsClient();
             await PutObjectUsingClient(client, bucketName, objectName, data, size, contentType, metadata, cancellationToken).ConfigureAwait(false);
@@ -160,8 +160,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task RemoveObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(objectName);
 
             var client = _minioClientFactory.GetObjectOperationsClient();
             await RemoveObjectUsingClient(client, bucketName, objectName, cancellationToken).ConfigureAwait(false);
@@ -169,8 +169,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task RemoveObjectsAsync(string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrEmpty(objectNames, nameof(objectNames));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrEmpty(objectNames);
 
             var client = _minioClientFactory.GetObjectOperationsClient();
             await RemoveObjectsUsingClient(client, bucketName, objectNames, cancellationToken).ConfigureAwait(false);
@@ -178,8 +178,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task CreateFolderAsync(string bucketName, string folderPath, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrEmpty(folderPath, nameof(folderPath));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrEmpty(folderPath);
 
             var stubFile = folderPath + "/stubFile.txt";
 
@@ -196,8 +196,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<Credentials> CreateTemporaryCredentialsAsync(string bucketName, string folderName, int durationSeconds = 3600, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrEmpty(folderName, nameof(folderName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrEmpty(folderName);
 
             var policy = PolicyExtensions.ToPolicy(bucketName, folderName);
 
@@ -218,10 +218,10 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task CopyObjectWithCredentialsAsync(string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(sourceBucketName, nameof(sourceBucketName));
-            Guard.Against.NullOrWhiteSpace(sourceObjectName, nameof(sourceObjectName));
-            Guard.Against.NullOrWhiteSpace(destinationBucketName, nameof(destinationBucketName));
-            Guard.Against.NullOrWhiteSpace(destinationObjectName, nameof(destinationObjectName));
+            Guard.Against.NullOrWhiteSpace(sourceBucketName);
+            Guard.Against.NullOrWhiteSpace(sourceObjectName);
+            Guard.Against.NullOrWhiteSpace(destinationBucketName);
+            Guard.Against.NullOrWhiteSpace(destinationObjectName);
 
             var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await CopyObjectUsingClient(client, sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken).ConfigureAwait(false);
@@ -229,8 +229,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<Stream> GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(objectName);
 
             var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             var stream = new MemoryStream();
@@ -241,7 +241,7 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task<IList<VirtualFileInfo>> ListObjectsWithCredentialsAsync(string bucketName, Credentials credentials, string? prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
 
             var client = _minioClientFactory.GetBucketOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             return await ListObjectsUsingClient(client, bucketName, prefix, recursive, cancellationToken).ConfigureAwait(false);
@@ -249,10 +249,10 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task PutObjectWithCredentialsAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
-            Guard.Against.Null(data, nameof(data));
-            Guard.Against.NullOrWhiteSpace(contentType, nameof(contentType));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(objectName);
+            Guard.Against.Null(data);
+            Guard.Against.NullOrWhiteSpace(contentType);
 
             var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await PutObjectUsingClient(client, bucketName, objectName, data, size, contentType, metadata, cancellationToken).ConfigureAwait(false);
@@ -260,8 +260,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task RemoveObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(objectName);
 
             var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await RemoveObjectUsingClient(client, bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -269,8 +269,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task RemoveObjectsWithCredentialsAsync(string bucketName, IEnumerable<string> objectNames, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrEmpty(objectNames, nameof(objectNames));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrEmpty(objectNames);
 
             var client = _minioClientFactory.GetObjectOperationsClient(credentials, _options.Settings[ConfigurationKeys.Region]);
             await RemoveObjectsUsingClient(client, bucketName, objectNames, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -278,8 +278,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         public async Task CreateFolderWithCredentialsAsync(string bucketName, string folderPath, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrEmpty(folderPath, nameof(folderPath));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrEmpty(folderPath);
 
             var stubFile = folderPath + "/stubFile.txt";
 

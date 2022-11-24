@@ -238,9 +238,9 @@ namespace Monai.Deploy.Storage.Tests
 
         public Task RemoveObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
-        public Task<KeyValuePair<string, string>> VerifyObjectExistsAsync(string bucketName, KeyValuePair<string, string> objectPair) => throw new NotImplementedException();
+        public Task<bool> VerifyObjectExistsAsync(string bucketName, string artifactName, CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
-        public Task<Dictionary<string, string>> VerifyObjectsExistAsync(string bucketName, Dictionary<string, string> objectDict) => throw new NotImplementedException();
+        public Task<Dictionary<string, bool>> VerifyObjectsExistAsync(string bucketName, IReadOnlyList<string> artifactList, CancellationToken cancellationToken = default) => throw new NotImplementedException();
     }
 
     internal class TheBadTestStorageService

@@ -134,10 +134,11 @@ jobs:
         run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo "${{ env.SOLUTION }}"
         working-directory: ./src
 
+      - name: Start docker-compose
+        run: docker compose up -d --wait
+        working-directory: ./src/Plugins/MinIO/Tests
+
       - name: Test
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: find ~+ -type f -name "*.Test.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal -r "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
         working-directory: ./src
 
@@ -157,6 +158,14 @@ jobs:
           name: codecov-umbrella
           fail_ci_if_error: true
           verbose: true
+
+      - name: Stop docker-compose
+        run: |
+          docker compose down
+          docker volume rm tests_minio_data
+          docker volume rm tests_minio_config
+        working-directory: ./src/Plugins/MinIO/Tests
+
 
   build:
     runs-on: ${{ matrix.os }}

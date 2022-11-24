@@ -99,17 +99,17 @@ namespace Monai.Deploy.Storage.API
         /// Verifies a list of artifacts to ensure that they exist.
         /// </summary>
         /// <param name="bucketName">Name of the bucket</param>
-        /// <param name="objectDict">Artifact dictionary to verify</param>
+        /// <param name="artifactList">Artifacts to verify</param>
         /// <returns>all valid artifacts</returns>
-        Task<Dictionary<string, string>> VerifyObjectsExistAsync(string bucketName, Dictionary<string, string> objectDict);
+        Task<Dictionary<string, bool>> VerifyObjectsExistAsync(string bucketName, IReadOnlyList<string> artifactList, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Verifies the existence of an artifact to ensure that they exist.
         /// </summary>
         /// <param name="bucketName">Name of the bucket</param>
-        /// <param name="objectPair">Artifact to verify</param>
+        /// <param name="artifactName">Artifact to verify</param>
         /// <returns>valid artifact</returns>
-        Task<KeyValuePair<string, string>> VerifyObjectExistsAsync(string bucketName, KeyValuePair<string, string> objectPair);
+        Task<bool> VerifyObjectExistsAsync(string bucketName, string artifactName, CancellationToken cancellationToken = default);
 
         #region Temporary Credential APIs
 
