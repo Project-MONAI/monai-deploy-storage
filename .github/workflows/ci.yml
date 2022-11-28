@@ -25,6 +25,46 @@ env:
   TEST_RESULTS: "results/"
 
 jobs:
+  CodeQL-Analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: "6.0.x"
+
+    - name: Enable NuGet cache
+      uses: actions/cache@v3.0.11
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: csharp
+
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ./src
+
+    - name: Build Solution
+      run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo ${{ env.SOLUTION }}
+      working-directory: ./src
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
 
   analyze:
     runs-on: ubuntu-latest
@@ -62,11 +102,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-nuget
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-
     - name: Restore dependencies
       run: dotnet restore
       working-directory: ./src
@@ -74,9 +109,6 @@ jobs:
     - name: Build Solution
       run: dotnet build -c ${{ env.BUILD_CONFIG }} --nologo ${{ env.SOLUTION }}
       working-directory: ./src
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
 
     - name: Secret detection
       uses: gitleaks/gitleaks-action@v1.6.0
