@@ -181,6 +181,13 @@ jobs:
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         working-directory: ./src
 
+      - name: Stop docker-compose
+        run: |
+          docker compose down
+          docker volume rm tests_minio_data
+          docker volume rm tests_minio_config
+        working-directory: ./src/Plugins/MinIO/Tests
+
       - uses: codecov/codecov-action@v3.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -190,14 +197,6 @@ jobs:
           name: codecov-umbrella
           fail_ci_if_error: true
           verbose: true
-
-      - name: Stop docker-compose
-        run: |
-          docker compose down
-          docker volume rm tests_minio_data
-          docker volume rm tests_minio_config
-        working-directory: ./src/Plugins/MinIO/Tests
-
 
   build:
     runs-on: ${{ matrix.os }}
