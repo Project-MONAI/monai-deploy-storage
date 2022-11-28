@@ -181,7 +181,7 @@ jobs:
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         working-directory: ./src
 
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v3.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: "src/${{ env.TEST_RESULTS }}"
