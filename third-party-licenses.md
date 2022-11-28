@@ -117,15 +117,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.101.6</summary>
+<summary>AWSSDK.S3 3.7.101.23</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.101.6
+- Version: 3.7.101.23
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.101.6)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.101.23)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -497,16 +497,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.CodeCoverage 17.3.2</summary>
+<summary>Microsoft.CodeCoverage 17.4.0</summary>
 
 ## Microsoft.CodeCoverage
 
-- Version: 17.3.2
+- Version: 17.4.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.3.2)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.2/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.4.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
 
 
 ```
@@ -1642,16 +1642,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.NET.Test.Sdk 17.3.2</summary>
+<summary>Microsoft.NET.Test.Sdk 17.4.0</summary>
 
 ## Microsoft.NET.Test.Sdk
 
-- Version: 17.3.2
+- Version: 17.4.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.3.2)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.4.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
 
 
 ```
@@ -2480,16 +2480,16 @@ consequential or other damages.
 
 
 <details>
-<summary>Microsoft.TestPlatform.ObjectModel 17.3.2</summary>
+<summary>Microsoft.TestPlatform.ObjectModel 17.4.0</summary>
 
 ## Microsoft.TestPlatform.ObjectModel
 
-- Version: 17.3.2
+- Version: 17.4.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.3.2)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.4.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
 
 
 ```
@@ -2518,16 +2518,16 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.TestPlatform.TestHost 17.3.2</summary>
+<summary>Microsoft.TestPlatform.TestHost 17.4.0</summary>
 
 ## Microsoft.TestPlatform.TestHost
 
-- Version: 17.3.2
+- Version: 17.4.0
 - Authors: Microsoft
 - Owners: Microsoft
 - Project URL: https://github.com/microsoft/vstest/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.3.2)
-- License: [MIT](https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.4.0)
+- License: [MIT](https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
 
 
 ```
@@ -3481,14 +3481,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Newtonsoft.Json 13.0.1</summary>
+<summary>Newtonsoft.Json 13.0.2</summary>
 
 ## Newtonsoft.Json
 
-- Version: 13.0.1
+- Version: 13.0.2
 - Authors: James Newton-King
 - Project URL: https://www.newtonsoft.com/json
-- Source: [NuGet](https://www.nuget.org/packages/Newtonsoft.Json/13.0.1)
+- Source: [NuGet](https://www.nuget.org/packages/Newtonsoft.Json/13.0.2)
 - License: [MIT](https://github.com/JamesNK/Newtonsoft.Json/raw/master/LICENSE.md)
 
 
@@ -6317,14 +6317,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions 17.2.3</summary>
+<summary>System.IO.Abstractions 18.0.1</summary>
 
 ## System.IO.Abstractions
 
-- Version: 17.2.3
+- Version: 18.0.1
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.2.3)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/18.0.1)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -6358,14 +6358,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions.TestingHelpers 17.2.3</summary>
+<summary>System.IO.Abstractions.TestingHelpers 18.0.1</summary>
 
 ## System.IO.Abstractions.TestingHelpers
 
-- Version: 17.2.3
+- Version: 18.0.1
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.2.3)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/18.0.1)
 - License: [MIT]( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
