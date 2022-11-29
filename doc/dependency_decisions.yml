@@ -4,21 +4,21 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.100.6
+    - 3.7.100.23
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.101.6
+    - 3.7.101.23
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.100.6
+    - 3.7.100.23
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
@@ -65,9 +65,9 @@
 - - :approve
   - Microsoft.CodeCoverage
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
     :versions:
-    - 17.3.2
+    - 17.4.0
     :when: 2022-08-16 18:11:17.245887971 Z
 - - :approve
   - Microsoft.Extensions.Configuration
@@ -261,9 +261,9 @@
 - - :approve
   - Microsoft.NET.Test.Sdk
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
     :versions:
-    - 17.3.2
+    - 17.4.0
     :when: 2022-08-16 18:11:29.155295778 Z
 - - :approve
   - Microsoft.NETCore.Platforms
@@ -296,16 +296,16 @@
 - - :approve
   - Microsoft.TestPlatform.ObjectModel
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
     :versions:
-    - 17.3.2
+    - 17.4.0
     :when: 2022-08-16 18:11:32.293966383 Z
 - - :approve
   - Microsoft.TestPlatform.TestHost
   - :who: mocsharp
-    :why: MIT (https://github.com/microsoft/vstest/raw/v17.3.0/LICENSE)
+    :why: MIT (https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
     :versions:
-    - 17.3.2
+    - 17.4.0
     :when: 2022-08-16 18:11:33.162650175 Z
 - - :approve
   - Microsoft.Win32.Primitives
@@ -347,7 +347,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/JamesNK/Newtonsoft.Json/raw/master/LICENSE.md)
     :versions:
-    - 13.0.1
+    - 13.0.2
     :when: 2022-08-16 18:11:36.170116006 Z
 - - :approve
   - NuGet.Frameworks
@@ -469,25 +469,25 @@
     - 4.3.0
     :when: 2022-08-16 18:11:43.670153994 Z
 - - :approve
-  - System.IO.Abstractions
-  - :who: mocsharp
-    :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
-    :versions:
-    - 17.0.18
-    :when: 2022-08-16 18:11:44.109277793 Z
-- - :approve
-  - System.IO.Abstractions
+  - TestableIO.System.IO.Abstractions
   - :who: mocsharp
     :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 17.2.3
+    - 18.0.1
     :when: 2022-08-16 18:11:44.550586685 Z
 - - :approve
-  - System.IO.Abstractions.TestingHelpers
+  - TestableIO.System.IO.Abstractions.TestingHelpers
   - :who: mocsharp
     :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 17.2.3
+    - 18.0.1
+    :when: 2022-08-16 18:11:44.984891276 Z
+- - :approve
+  - TestableIO.System.IO.Abstractions.Wrappers
+  - :who: mocsharp
+    :why: MIT ( https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
+    :versions:
+    - 18.0.1
     :when: 2022-08-16 18:11:44.984891276 Z
 - - :approve
   - System.IO.Compression
@@ -1147,3 +1147,34 @@
     :versions:
     - 2.4.5
     :when: 2022-08-16 18:12:27.491158618 Z
+- - :approve
+  - Dangl.Xunit.Extensions.Ordering
+  - :who: mocsharp
+    :why: Apache-2.0 (https://github.com/GeorgDangl/Xunit.Extensions.Ordering/raw/develop/LICENSE)
+    :versions:
+    - 2.1.0
+    :when: 2022-11-28 18:12:27.491158618 Z
+- - :approve
+  - FluentAssertions
+  - :who: mocsharp
+    :why: Apache-2.0 (https://github.com/fluentassertions/fluentassertions/raw/develop/LICENSE)
+    :versions:
+    - 6.8.0
+    :when: 2022-11-28 18:12:27.491158618 Z
+- - :approve
+  - System.Configuration.ConfigurationManager
+  - :who: mocsharp
+    :why: MIT ( https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+    :versions:
+    - 4.4.0
+    :when: 2022-08-16 23:06:43.335979768 Z
+- - :approve
+  - System.Security.Cryptography.ProtectedData
+  - :who: mocsharp
+    :why: MIT (https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
+    :versions:
+    - 4.4.0
+    :when: 2022-08-16 23:07:14.759818552 Z
+
+
+
