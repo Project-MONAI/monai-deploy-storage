@@ -4,21 +4,21 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.100.23
+    - 3.7.100.25
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.101.23
+    - 3.7.101.25
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.100.23
+    - 3.7.100.25
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
