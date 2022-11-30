@@ -27,8 +27,8 @@ namespace Monai.Deploy.Storage.S3Policy
     {
         public static Policy ToPolicy(string? bucketName, string? folderName)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
-            Guard.Against.NullOrWhiteSpace(folderName, nameof(folderName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(folderName);
 
             var pathList = GetPathList(folderName);
 
@@ -85,10 +85,10 @@ namespace Monai.Deploy.Storage.S3Policy
 
         public static Policy ToPolicy(PolicyRequest[] policyRequests)
         {
-            Guard.Against.NullOrEmpty(policyRequests, nameof(policyRequests));
+            Guard.Against.NullOrEmpty(policyRequests);
 
             var pathList = policyRequests.SelectMany(pr => GetPathList(pr.FolderName));
-            Guard.Against.NullOrEmpty(pathList, nameof(pathList));
+            Guard.Against.NullOrEmpty(pathList);
 
             return new Policy
             {
@@ -149,13 +149,13 @@ namespace Monai.Deploy.Storage.S3Policy
 
         public static List<string> GetPathList(string? folderName)
         {
-            Guard.Against.NullOrWhiteSpace(folderName, nameof(folderName));
+            Guard.Against.NullOrWhiteSpace(folderName);
 
             var pathList = new List<string> { folderName };
 
             var lastPath = folderName;
 
-            while (lastPath.Contains("/"))
+            while (lastPath.Contains('/'))
             {
                 var path = lastPath.Substring(0, lastPath.LastIndexOf("/") + 1);
                 pathList.Add(path);

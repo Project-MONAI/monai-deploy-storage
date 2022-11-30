@@ -28,7 +28,7 @@ namespace Monai.Deploy.Storage.S3Policy.Policies
 
         public PolicyRequest(string bucketName, string folderName)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(bucketName);
             _bucketName = bucketName;
             FolderName = folderName;
         }
