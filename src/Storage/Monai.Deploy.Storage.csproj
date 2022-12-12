@@ -67,7 +67,7 @@
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.10" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="TestableIO.System.IO.Abstractions" Version="18.0.1" />
-    <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="18.0.1" />
+    <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="19.0.1" />
   </ItemGroup>
 
   <ItemGroup>
