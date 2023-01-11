@@ -108,7 +108,7 @@ namespace Monai.Deploy.Storage.MinIO
             return GetClientInternal(credentials, region);
         }
 
-        private IMinioClient CreateClient(string accessKey, string accessToken)
+        private MinioClient CreateClient(string accessKey, string accessToken)
         {
             var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
             var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
