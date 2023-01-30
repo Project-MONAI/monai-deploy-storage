@@ -49,7 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
-    <PackageReference Include="AWSSDK.S3" Version="3.7.101.50" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.102" />
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.100.52" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
