@@ -42,7 +42,7 @@ namespace Monai.Deploy.Storage.MinIO
             _clients = new ConcurrentDictionary<string, MinioClient>();
         }
 
-        public IMinioClient GetClient()
+        public MinioClient GetClient()
         {
             return _clients.GetOrAdd(DefaultClient, _ =>
             {
@@ -54,12 +54,12 @@ namespace Monai.Deploy.Storage.MinIO
             });
         }
 
-        public IMinioClient GetClient(Credentials credentials)
+        public MinioClient GetClient(Credentials credentials)
         {
             return GetClient(credentials, string.Empty);
         }
 
-        public IMinioClient GetClient(Credentials credentials, string region)
+        public MinioClient GetClient(Credentials credentials, string region)
         {
             return GetClientInternal(credentials, region);
         }
@@ -108,7 +108,7 @@ namespace Monai.Deploy.Storage.MinIO
             return GetClientInternal(credentials, region);
         }
 
-        private IMinioClient CreateClient(string accessKey, string accessToken)
+        private MinioClient CreateClient(string accessKey, string accessToken)
         {
             var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
             var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
