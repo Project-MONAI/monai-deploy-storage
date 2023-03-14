@@ -21,11 +21,11 @@ namespace Monai.Deploy.Storage.MinIO
 {
     public interface IMinIoClientFactory
     {
-        IMinioClient GetClient();
+        MinioClient GetClient();
 
-        IMinioClient GetClient(Credentials credentials);
+        MinioClient GetClient(Credentials credentials);
 
-        IMinioClient GetClient(Credentials credentials, string region);
+        MinioClient GetClient(Credentials credentials, string region);
 
         IObjectOperations GetObjectOperationsClient();
 
