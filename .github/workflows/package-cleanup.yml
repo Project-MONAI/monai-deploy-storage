@@ -14,31 +14,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/delete-package-versions@v3
+    - uses: actions/delete-package-versions@v4
       name: Monai.Deploy.Storage
       with: 
         package-name: 'Monai.Deploy.Storage'
+        package-type: nuget
         min-versions-to-keep: 10
         delete-only-pre-release-versions: "true"
 
-    - uses: actions/delete-package-versions@v3
+    - uses: actions/delete-package-versions@v4
       name: Monai.Deploy.Storage.S3Policy
       with: 
         package-name: 'Monai.Deploy.Storage.S3Policy'
+        package-type: nuget
         min-versions-to-keep: 10
         delete-only-pre-release-versions: "true"
 
-    - uses: actions/delete-package-versions@v3
+    - uses: actions/delete-package-versions@v4
       name: Monai.Deploy.Storage.MinIO
       with: 
         package-name: 'Monai.Deploy.Storage.MinIO'
+        package-type: nuget
         min-versions-to-keep: 10
         delete-only-pre-release-versions: "true"
 
 
-    - uses: actions/delete-package-versions@v3
+    - uses: actions/delete-package-versions@v4
       name: Monai.Deploy.Storage.AWSS3
       with: 
         package-name: 'Monai.Deploy.Storage.AWSS3'
+        package-type: nuget
         min-versions-to-keep: 10
         delete-only-pre-release-versions: "true"
