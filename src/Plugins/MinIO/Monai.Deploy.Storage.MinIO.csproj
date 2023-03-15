@@ -48,7 +48,7 @@
   
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.101.22" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.101.24" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
     <PackageReference Include="Minio" Version="4.0.7" />
