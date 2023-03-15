@@ -249,7 +249,7 @@ jobs:
 
       - name: Determine Version
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.15
+        uses: gittools/actions/gitversion/execute@v0.10.2
         with:
           useConfigFile: true
           updateAssemblyInfo: true
@@ -379,12 +379,12 @@ jobs:
           msg: ${{ github.repository }}
 
       - name: Install GitReleaseManager
-        uses: gittools/actions/gitreleasemanager/setup@v0.9.15
+        uses: gittools/actions/gitreleasemanager/setup@v0.10.2
         with:
           versionSpec: "0.13.x"
 
       - name: Create release with GitReleaseManager
-        uses: gittools/actions/gitreleasemanager/create@v0.9.15
+        uses: gittools/actions/gitreleasemanager/create@v0.10.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ steps.repo.outputs._0 }}
@@ -397,7 +397,7 @@ jobs:
 
       - name: Publish release with GitReleaseManager
         if: ${{ contains(github.ref, 'refs/heads/main') }}
-        uses: gittools/actions/gitreleasemanager/publish@v0.9.15
+        uses: gittools/actions/gitreleasemanager/publish@v0.10.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ steps.repo.outputs._0 }}
@@ -406,7 +406,7 @@ jobs:
 
       - name: Close release with GitReleaseManager
         if: ${{ contains(github.ref, 'refs/heads/main') }}
-        uses: gittools/actions/gitreleasemanager/close@v0.9.15
+        uses: gittools/actions/gitreleasemanager/close@v0.10.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ steps.repo.outputs._0 }}
