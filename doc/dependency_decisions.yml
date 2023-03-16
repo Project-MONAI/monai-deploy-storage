@@ -5,7 +5,7 @@
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
     - 3.7.100.25
-    - 3.7.105.16
+    - 3.7.105.20
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
@@ -13,7 +13,7 @@
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
     - 3.7.101.25
-    - 3.7.103.24
+    - 3.7.103.28
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
@@ -21,8 +21,7 @@
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
     - 3.7.100.25
-    - 3.7.101.21
-    - 3.7.101.22
+    - 3.7.101.26
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
@@ -81,7 +80,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.1
-    - 7.0.0
     :when: 2022-08-16 18:11:18.098911237 Z
 - - :approve
   - Microsoft.Extensions.Configuration.Abstractions
@@ -89,7 +87,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:18.530982995 Z
 - - :approve
   - Microsoft.Extensions.Configuration.Binder
@@ -97,7 +94,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.3
     :when: 2022-08-16 18:11:18.988384334 Z
 - - :approve
   - Microsoft.Extensions.Configuration.CommandLine
@@ -105,7 +101,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:19.413255201 Z
 - - :approve
   - Microsoft.Extensions.Configuration.EnvironmentVariables
@@ -113,7 +108,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.1
-    - 7.0.0
     :when: 2022-08-16 18:11:19.867533681 Z
 - - :approve
   - Microsoft.Extensions.Configuration.FileExtensions
@@ -121,7 +115,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:20.301107519 Z
 - - :approve
   - Microsoft.Extensions.Configuration.Json
@@ -129,7 +122,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:20.734464747 Z
 - - :approve
   - Microsoft.Extensions.Configuration.UserSecrets
@@ -137,7 +129,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.1
-    - 7.0.0
     :when: 2022-08-16 18:11:21.184496539 Z
 - - :approve
   - Microsoft.Extensions.DependencyInjection
@@ -145,7 +136,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:21.651796135 Z
 - - :approve
   - Microsoft.Extensions.DependencyInjection.Abstractions
@@ -153,23 +143,20 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.Diagnostics.HealthChecks
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
-    - 6.0.10
-    - 7.0.3
+    - 6.0.15
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
-    - 6.0.10
-    - 7.0.3
+    - 6.0.15
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.FileProviders.Abstractions
@@ -177,7 +164,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:22.539614393 Z
 - - :approve
   - Microsoft.Extensions.FileProviders.Physical
@@ -185,7 +171,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:22.974981421 Z
 - - :approve
   - Microsoft.Extensions.FileSystemGlobbing
@@ -193,7 +178,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:23.404486462 Z
 - - :approve
   - Microsoft.Extensions.Hosting
@@ -201,7 +185,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.1
-    - 7.0.1
     :when: 2022-08-16 18:11:23.846859238 Z
 - - :approve
   - Microsoft.Extensions.Hosting.Abstractions
@@ -209,7 +192,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:24.291406794 Z
 - - :approve
   - Microsoft.Extensions.Logging
@@ -217,15 +199,13 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:24.728847267 Z
 - - :approve
   - Microsoft.Extensions.Logging.Abstractions
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 6.0.2
-    - 7.0.0
+    - 6.0.3
     :when: 2022-08-29 18:11:25.167886026 Z
 - - :approve
   - Microsoft.Extensions.Logging.Configuration
@@ -233,7 +213,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:25.603280883 Z
 - - :approve
   - Microsoft.Extensions.Logging.Console
@@ -241,7 +220,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:26.034503010 Z
 - - :approve
   - Microsoft.Extensions.Logging.Debug
@@ -249,7 +227,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:26.470514539 Z
 - - :approve
   - Microsoft.Extensions.Logging.EventLog
@@ -257,7 +234,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:26.934107393 Z
 - - :approve
   - Microsoft.Extensions.Logging.EventSource
@@ -265,7 +241,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:27.392784561 Z
 - - :approve
   - Microsoft.Extensions.Options
@@ -273,7 +248,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.1
     :when: 2022-08-16 18:11:27.836230472 Z
 - - :approve
   - Microsoft.Extensions.Options.ConfigurationExtensions
@@ -281,7 +255,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:28.266555006 Z
 - - :approve
   - Microsoft.Extensions.Primitives
@@ -289,14 +262,12 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:28.700166694 Z
 - - :approve
   - Microsoft.NET.Test.Sdk
   - :who: mocsharp
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.4.0/LICENSE)
     :versions:
-    - 17.4.0
     - 17.5.0
     :when: 2022-08-16 18:11:29.155295778 Z
 - - :approve
@@ -449,7 +420,6 @@
     :why: MICROSOFT .NET LIBRARY License ( http://go.microsoft.com/fwlink/?LinkId=329770)
     :versions:
     - 4.3.0
-    - 7.0.1
     :when: 2022-08-16 18:11:40.143801413 Z
 - - :approve
   - System.Diagnostics.DiagnosticSource
@@ -464,7 +434,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:11:41.018661434 Z
 - - :approve
   - System.Diagnostics.Tools
@@ -875,7 +844,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:12:05.599984798 Z
 - - :approve
   - System.Text.Json
@@ -883,7 +851,6 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 6.0.0
-    - 7.0.0
     :when: 2022-08-16 18:12:06.051546721 Z
 - - :approve
   - System.Text.RegularExpressions
