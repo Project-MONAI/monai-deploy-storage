@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 MONAI Consortium
+ * Copyright 2021-2023 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,8 +106,8 @@ namespace Monai.Deploy.Storage.MinIO
             {
                 try
                 {
-                    var fileObjects = await ListObjectsAsync(bucketName, artifact).ConfigureAwait(false);
-                    var folderObjects = await ListObjectsAsync(bucketName, artifact.EndsWith("/") ? artifact : $"{artifact}/", true).ConfigureAwait(false);
+                    var fileObjects = await ListObjectsAsync(bucketName, artifact, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    var folderObjects = await ListObjectsAsync(bucketName, artifact.EndsWith("/") ? artifact : $"{artifact}/", true, cancellationToken).ConfigureAwait(false);
 
                     if (!folderObjects.Any() && !fileObjects.Any())
                     {
@@ -134,8 +134,8 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName);
             Guard.Against.NullOrWhiteSpace(artifactName);
 
-            var fileObjects = await ListObjectsAsync(bucketName, artifactName).ConfigureAwait(false);
-            var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true).ConfigureAwait(false);
+            var fileObjects = await ListObjectsAsync(bucketName, artifactName, cancellationToken: cancellationToken).ConfigureAwait(false);
+            var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true, cancellationToken).ConfigureAwait(false);
 
             if (folderObjects.Any() || fileObjects.Any())
             {
@@ -320,6 +320,7 @@ namespace Monai.Deploy.Storage.MinIO
         {
             return await Task.Run(() =>
             {
+                var errors = new List<Exception>();
                 var files = new List<VirtualFileInfo>();
                 var listArgs = new ListObjectsArgs()
                     .WithBucket(bucketName)
@@ -340,11 +341,16 @@ namespace Monai.Deploy.Storage.MinIO
                 },
                 error =>
                 {
+                    errors.Add(error);
                     _logger.ListObjectError(bucketName, error.Message);
                 },
                 () => completedEvent.Set(), cancellationToken);
 
                 completedEvent.Wait(cancellationToken);
+                if (errors.Any())
+                {
+                    throw new ListObjectException(errors, files);
+                }
                 return files;
             }).ConfigureAwait(false);
         }
