@@ -26,6 +26,7 @@ namespace Monai.Deploy.Storage.MinIO
     public class MinIoClientFactory : IMinIoClientFactory
     {
         private static readonly string DefaultClient = "_DEFAULT_";
+        private static readonly int DefaultTimeout = 1500;
         private readonly ConcurrentDictionary<string, MinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }
@@ -112,10 +113,17 @@ namespace Monai.Deploy.Storage.MinIO
         {
             var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
             var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
+            var timeout = DefaultTimeout;
+
+            if (Options.Settings.ContainsKey(ConfigurationKeys.Timeout) && !int.TryParse(Options.Settings[ConfigurationKeys.Timeout], out timeout))
+            {
+                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.Timeout}: {Options.Settings[ConfigurationKeys.Timeout]}");
+            }
 
             var client = new MinioClient()
                 .WithEndpoint(endpoint)
-                .WithCredentials(accessKey, accessToken);
+                .WithCredentials(accessKey, accessToken)
+                .WithTimeout(timeout);
 
             if (bool.Parse(securedConnection))
             {
