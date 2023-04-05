@@ -33,6 +33,7 @@ namespace Monai.Deploy.Storage.MinIO
         private readonly IAmazonSecurityTokenServiceClientFactory _amazonSecurityTokenServiceClientFactory;
         private readonly ILogger<MinIoStorageService> _logger;
         private readonly StorageServiceConfiguration _options;
+        private readonly int _timeout;
 
         public string Name => "MinIO Storage Service";
 
@@ -47,6 +48,13 @@ namespace Monai.Deploy.Storage.MinIO
             ValidateConfiguration(configuration);
 
             _options = configuration;
+
+            _timeout = MinIoClientFactory.DefaultTimeout;
+
+            if (_options.Settings.ContainsKey(ConfigurationKeys.Timeout) && !int.TryParse(_options.Settings[ConfigurationKeys.Timeout], out _timeout))
+            {
+                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.Timeout}: {_options.Settings[ConfigurationKeys.Timeout]}");
+            }
         }
 
         private void ValidateConfiguration(StorageServiceConfiguration configuration)
@@ -354,7 +362,7 @@ namespace Monai.Deploy.Storage.MinIO
                 },
                 () => completedEvent.Set(), cancellationToken);
 
-                completedEvent.Wait(cancellationToken);
+                completedEvent.Wait(_timeout, cancellationToken);
                 if (errors.Any())
                 {
                     throw new ListObjectException(errors, files);

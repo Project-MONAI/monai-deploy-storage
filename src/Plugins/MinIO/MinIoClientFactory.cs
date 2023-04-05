@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 MONAI Consortium
+ * Copyright 2021-2023 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ namespace Monai.Deploy.Storage.MinIO
     public class MinIoClientFactory : IMinIoClientFactory
     {
         private static readonly string DefaultClient = "_DEFAULT_";
-        private static readonly int DefaultTimeout = 1500;
+        internal static readonly int DefaultTimeout = 2500;
         private readonly ConcurrentDictionary<string, MinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }
