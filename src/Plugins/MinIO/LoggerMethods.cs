@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 MONAI Consortium
+ * Copyright 2023 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 
 using Microsoft.Extensions.Logging;
+using Minio.Exceptions;
 
 namespace Monai.Deploy.Storage.MinIO
 {
@@ -43,5 +44,11 @@ namespace Monai.Deploy.Storage.MinIO
 
         [LoggerMessage(EventId = 20007, Level = LogLevel.Information, Message = "Bucket {bucket} created in region {region}.")]
         public static partial void BucketCreated(this ILogger logger, string bucket, string region);
+
+        [LoggerMessage(EventId = 20008, Level = LogLevel.Error, Message = "Error connecting to MinIO.")]
+        public static partial void ConnectionError(this ILogger logger, ConnectionException ex);
+
+        [LoggerMessage(EventId = 20009, Level = LogLevel.Error, Message = "Storage service error.")]
+        public static partial void StorageServiceError(this ILogger logger, Exception ex);
     }
 }
