@@ -27,6 +27,7 @@ namespace Monai.Deploy.Storage.MinIO
     {
         private static readonly string DefaultClient = "_DEFAULT_";
         internal static readonly int DefaultTimeout = 2500;
+        internal static readonly int DefaultListObjectsTimeout = 5000;
         private readonly ConcurrentDictionary<string, MinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }
@@ -115,9 +116,9 @@ namespace Monai.Deploy.Storage.MinIO
             var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
             var timeout = DefaultTimeout;
 
-            if (Options.Settings.ContainsKey(ConfigurationKeys.Timeout) && !int.TryParse(Options.Settings[ConfigurationKeys.Timeout], out timeout))
+            if (Options.Settings.ContainsKey(ConfigurationKeys.ApiCallTimeout) && !int.TryParse(Options.Settings[ConfigurationKeys.ApiCallTimeout], out timeout))
             {
-                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.Timeout}: {Options.Settings[ConfigurationKeys.Timeout]}");
+                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.ApiCallTimeout}: {Options.Settings[ConfigurationKeys.ApiCallTimeout]}");
             }
 
             var client = new MinioClient()

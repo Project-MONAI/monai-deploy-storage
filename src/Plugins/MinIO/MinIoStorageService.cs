@@ -49,11 +49,11 @@ namespace Monai.Deploy.Storage.MinIO
 
             _options = configuration;
 
-            _timeout = MinIoClientFactory.DefaultTimeout;
+            _timeout = MinIoClientFactory.DefaultListObjectsTimeout;
 
-            if (_options.Settings.ContainsKey(ConfigurationKeys.Timeout) && !int.TryParse(_options.Settings[ConfigurationKeys.Timeout], out _timeout))
+            if (_options.Settings.ContainsKey(ConfigurationKeys.ListObjectsCallTimeout) && !int.TryParse(_options.Settings[ConfigurationKeys.ListObjectsCallTimeout], out _timeout))
             {
-                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.Timeout}: {_options.Settings[ConfigurationKeys.Timeout]}");
+                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.ListObjectsCallTimeout}: {_options.Settings[ConfigurationKeys.ListObjectsCallTimeout]}");
             }
         }
 
