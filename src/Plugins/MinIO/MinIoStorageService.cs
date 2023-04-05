@@ -109,6 +109,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.Null(artifactList);
 
             var existingObjectsDict = new Dictionary<string, bool>();
+            var exceptions = new List<Exception>();
 
             foreach (var artifact in artifactList)
             {
@@ -130,10 +131,15 @@ namespace Monai.Deploy.Storage.MinIO
                 {
                     _logger.VerifyObjectError(bucketName, e);
                     existingObjectsDict.Add(artifact, false);
+                    exceptions.Add(e);
                 }
 
             }
 
+            if (exceptions.Any())
+            {
+                throw new VerifyObjectsException(exceptions, existingObjectsDict);
+            }
             return existingObjectsDict;
         }
 
@@ -159,7 +165,7 @@ namespace Monai.Deploy.Storage.MinIO
             catch (Exception ex)
             {
                 _logger.VerifyObjectError(bucketName, ex);
-                return false;
+                throw new VerifyObjectsException(ex.Message, ex);
             }
         }
 
