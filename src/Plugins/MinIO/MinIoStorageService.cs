@@ -134,17 +134,25 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName);
             Guard.Against.NullOrWhiteSpace(artifactName);
 
-            var fileObjects = await ListObjectsAsync(bucketName, artifactName, cancellationToken: cancellationToken).ConfigureAwait(false);
-            var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true, cancellationToken).ConfigureAwait(false);
-
-            if (folderObjects.Any() || fileObjects.Any())
+            try
             {
-                return true;
+                var fileObjects = await ListObjectsAsync(bucketName, artifactName, cancellationToken: cancellationToken).ConfigureAwait(false);
+                var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true, cancellationToken).ConfigureAwait(false);
+
+                if (folderObjects.Any() || fileObjects.Any())
+                {
+                    return true;
+                }
+
+                _logger.FileNotFoundError(bucketName, $"{artifactName}");
+
+                return false;
             }
-
-            _logger.FileNotFoundError(bucketName, $"{artifactName}");
-
-            return false;
+            catch (Exception ex)
+            {
+                _logger.VerifyObjectError(bucketName, ex);
+                return false;
+            }
         }
 
         public async Task PutObjectAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken = default)
