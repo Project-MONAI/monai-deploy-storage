@@ -392,7 +392,6 @@ namespace Monai.Deploy.Storage.MinIO
                 _logger.ConnectionError(ex);
                 var iex = new StorageConnectionException(ex.Message);
                 iex.Errors.Add(ex.ServerMessage);
-                iex.Errors.Add(ex.XmlError);
                 if (ex.ServerResponse is not null && !string.IsNullOrWhiteSpace(ex.ServerResponse.ErrorMessage))
                 {
                     iex.Errors.Add(ex.ServerResponse.ErrorMessage);
@@ -458,7 +457,6 @@ namespace Monai.Deploy.Storage.MinIO
                 _logger.ConnectionError(ex);
                 var iex = new StorageConnectionException(ex.Message);
                 iex.Errors.Add(ex.ServerMessage);
-                iex.Errors.Add(ex.XmlError);
                 if (ex.ServerResponse is not null && !string.IsNullOrWhiteSpace(ex.ServerResponse.ErrorMessage))
                 {
                     iex.Errors.Add(ex.ServerResponse.ErrorMessage);
