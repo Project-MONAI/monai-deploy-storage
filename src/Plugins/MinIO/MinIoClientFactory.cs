@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 MONAI Consortium
+ * Copyright 2021-2023 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ namespace Monai.Deploy.Storage.MinIO
     public class MinIoClientFactory : IMinIoClientFactory
     {
         private static readonly string DefaultClient = "_DEFAULT_";
+        internal static readonly int DefaultTimeout = 2500;
         private readonly ConcurrentDictionary<string, MinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }
@@ -112,10 +113,17 @@ namespace Monai.Deploy.Storage.MinIO
         {
             var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
             var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
+            var timeout = DefaultTimeout;
+
+            if (Options.Settings.ContainsKey(ConfigurationKeys.ApiCallTimeout) && !int.TryParse(Options.Settings[ConfigurationKeys.ApiCallTimeout], out timeout))
+            {
+                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.ApiCallTimeout}: {Options.Settings[ConfigurationKeys.ApiCallTimeout]}");
+            }
 
             var client = new MinioClient()
                 .WithEndpoint(endpoint)
-                .WithCredentials(accessKey, accessToken);
+                .WithCredentials(accessKey, accessToken)
+                .WithTimeout(timeout);
 
             if (bool.Parse(securedConnection))
             {
