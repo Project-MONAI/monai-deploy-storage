@@ -27,7 +27,6 @@ namespace Monai.Deploy.Storage.MinIO
     {
         private static readonly string DefaultClient = "_DEFAULT_";
         internal static readonly int DefaultTimeout = 2500;
-        internal static readonly int DefaultListObjectsTimeout = 5000;
         private readonly ConcurrentDictionary<string, MinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }

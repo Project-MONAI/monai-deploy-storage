@@ -27,6 +27,7 @@ namespace Monai.Deploy.Storage.API
 
         /// <summary>
         /// Lists objects in a bucket.
+        /// Caution: use of this API requires user to manually manage timeout via <c>CancellationToken</c> in case storage service stops responding.
         /// </summary>
         /// <param name="bucketName">Name of the bucket</param>
         /// <param name="prefix">Objects with name starts with prefix</param>

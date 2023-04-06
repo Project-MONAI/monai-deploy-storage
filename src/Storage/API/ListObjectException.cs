@@ -18,35 +18,30 @@ namespace Monai.Deploy.Storage.API
 {
     public class ListObjectException : Exception
     {
-        private readonly List<Exception> _errors;
         private readonly List<VirtualFileInfo> _files;
 
-        public IReadOnlyList<Exception> Exceptions
-        { get { return _errors; } }
+        public Exception? Exception { get; }
         public IReadOnlyList<VirtualFileInfo> Files
         { get { return _files; } }
 
         public ListObjectException()
         {
-            _errors = new List<Exception>();
             _files = new List<VirtualFileInfo>();
         }
 
         public ListObjectException(string? message) : base(message)
         {
-            _errors = new List<Exception>();
             _files = new List<VirtualFileInfo>();
         }
 
         public ListObjectException(string? message, Exception? innerException) : base(message, innerException)
         {
-            _errors = new List<Exception>();
             _files = new List<VirtualFileInfo>();
         }
 
-        public ListObjectException(List<Exception> errors, List<VirtualFileInfo> files)
+        public ListObjectException(Exception exception, List<VirtualFileInfo> files)
         {
-            _errors = errors;
+            Exception = exception;
             _files = files;
         }
     }

@@ -35,14 +35,13 @@ namespace Monai.Deploy.Storage.MinIO
         private readonly IAmazonSecurityTokenServiceClientFactory _amazonSecurityTokenServiceClientFactory;
         private readonly ILogger<MinIoStorageService> _logger;
         private readonly StorageServiceConfiguration _options;
-        private readonly int _timeout;
 
         public string Name => "MinIO Storage Service";
 
         public MinIoStorageService(IMinIoClientFactory minioClientFactory, IAmazonSecurityTokenServiceClientFactory amazonSecurityTokenServiceClientFactory, IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
         {
             Guard.Against.Null(options);
-            _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(IMinIoClientFactory));
+            _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(minioClientFactory));
             _amazonSecurityTokenServiceClientFactory = amazonSecurityTokenServiceClientFactory ?? throw new ArgumentNullException(nameof(amazonSecurityTokenServiceClientFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
@@ -50,13 +49,6 @@ namespace Monai.Deploy.Storage.MinIO
             ValidateConfiguration(configuration);
 
             _options = configuration;
-
-            _timeout = MinIoClientFactory.DefaultListObjectsTimeout;
-
-            if (_options.Settings.ContainsKey(ConfigurationKeys.ListObjectsCallTimeout) && !int.TryParse(_options.Settings[ConfigurationKeys.ListObjectsCallTimeout], out _timeout))
-            {
-                throw new ConfigurationException($"Invalid value specified for {ConfigurationKeys.ListObjectsCallTimeout}: {_options.Settings[ConfigurationKeys.ListObjectsCallTimeout]}");
-            }
         }
 
         private void ValidateConfiguration(StorageServiceConfiguration configuration)
@@ -352,62 +344,66 @@ namespace Monai.Deploy.Storage.MinIO
             }).ConfigureAwait(false);
         }
 
-        private async Task<IList<VirtualFileInfo>> ListObjectsUsingClient(IBucketOperations client, string bucketName, string? prefix, bool recursive, CancellationToken cancellationToken)
+        private Task<IList<VirtualFileInfo>> ListObjectsUsingClient(IBucketOperations client, string bucketName, string? prefix, bool recursive, CancellationToken cancellationToken)
         {
-            return await Task.Run(() =>
-            {
-                var errors = new List<Exception>();
-                var files = new List<VirtualFileInfo>();
-                var listArgs = new ListObjectsArgs()
-                    .WithBucket(bucketName)
-                    .WithPrefix(prefix)
-                    .WithRecursive(recursive);
-                try
-                {
-                    var objservable = client.ListObjectsAsync(listArgs, cancellationToken);
-                    var completedEvent = new ManualResetEventSlim(false);
-                    objservable.Subscribe(item =>
-                    {
-                        if (!item.IsDir)
-                        {
-                            files.Add(new VirtualFileInfo(Path.GetFileName(item.Key), item.Key, item.ETag, item.Size)
-                            {
-                                LastModifiedDateTime = item.LastModifiedDateTime
-                            });
-                        }
-                    },
-                    error =>
-                    {
-                        errors.Add(error);
-                        _logger.ListObjectError(bucketName, error.Message);
-                    },
-                    () => completedEvent.Set(), cancellationToken);
-                    completedEvent.Wait(_timeout, cancellationToken);
-                    if (errors.Any())
-                    {
-                        throw new ListObjectException(errors, files);
-                    }
-                    return files;
-                }
-                catch (ConnectionException ex)
-                {
-                    _logger.ConnectionError(ex);
-                    var iex = new StorageConnectionException(ex.Message);
-                    iex.Errors.Add(ex.ServerMessage);
-                    iex.Errors.Add(ex.XmlError);
-                    if (ex.ServerResponse is not null && !string.IsNullOrWhiteSpace(ex.ServerResponse.ErrorMessage))
-                    {
-                        iex.Errors.Add(ex.ServerResponse.ErrorMessage);
-                    }
-                    throw iex;
-                }
-                catch (Exception ex)
-                {
-                    _logger.StorageServiceError(ex);
-                    throw new StorageServiceException(ex.ToString());
-                }
+            var files = new List<VirtualFileInfo>();
+            var listArgs = new ListObjectsArgs()
+                .WithBucket(bucketName)
+                .WithPrefix(prefix)
+                .WithRecursive(recursive);
 
-            }).ConfigureAwait(false);
+            try
+            {
+                var done = new TaskCompletionSource<IList<VirtualFileInfo>>();
+
+                var objservable = client.ListObjectsAsync(listArgs, cancellationToken);
+                var completedEvent = new ManualResetEventSlim(false);
+                objservable.Subscribe(item =>
+                {
+                    if (!item.IsDir)
+                    {
+                        files.Add(new VirtualFileInfo(Path.GetFileName(item.Key), item.Key, item.ETag, item.Size)
+                        {
+                            LastModifiedDateTime = item.LastModifiedDateTime
+                        });
+                    }
+                },
+                error =>
+                {
+                    _logger.ListObjectError(bucketName, error.Message);
+                    if (error is OperationCanceledException)
+                        done.SetException(error);
+                    else
+                        done.SetException(new ListObjectException(error.ToString()));
+                },
+                () =>
+                {
+                    done.SetResult(files);
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        throw new ListObjectTimeoutException("Timed out waiting for results.");
+                    }
+                }, cancellationToken);
+
+                return done.Task;
+            }
+            catch (ConnectionException ex)
+            {
+                _logger.ConnectionError(ex);
+                var iex = new StorageConnectionException(ex.Message);
+                iex.Errors.Add(ex.ServerMessage);
+                iex.Errors.Add(ex.XmlError);
+                if (ex.ServerResponse is not null && !string.IsNullOrWhiteSpace(ex.ServerResponse.ErrorMessage))
+                {
+                    iex.Errors.Add(ex.ServerResponse.ErrorMessage);
+                }
+                throw iex;
+            }
+            catch (Exception ex) when (ex is not ListObjectTimeoutException && ex is not ListObjectException)
+            {
+                _logger.StorageServiceError(ex);
+                throw new StorageServiceException(ex.ToString());
+            }
         }
 
         private async Task RemoveObjectUsingClient(IObjectOperations client, string bucketName, string objectName, CancellationToken cancellationToken)
