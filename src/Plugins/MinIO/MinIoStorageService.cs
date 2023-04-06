@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 MONAI Consortium
+ * Copyright 2021-2023 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,12 @@ using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Minio;
+using Minio.Exceptions;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
 using Monai.Deploy.Storage.S3Policy;
 using Newtonsoft.Json;
+using ObjectNotFoundException = Minio.Exceptions.ObjectNotFoundException;
 
 namespace Monai.Deploy.Storage.MinIO
 {
@@ -39,7 +41,7 @@ namespace Monai.Deploy.Storage.MinIO
         public MinIoStorageService(IMinIoClientFactory minioClientFactory, IAmazonSecurityTokenServiceClientFactory amazonSecurityTokenServiceClientFactory, IOptions<StorageServiceConfiguration> options, ILogger<MinIoStorageService> logger)
         {
             Guard.Against.Null(options);
-            _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(IMinIoClientFactory));
+            _minioClientFactory = minioClientFactory ?? throw new ArgumentNullException(nameof(minioClientFactory));
             _amazonSecurityTokenServiceClientFactory = amazonSecurityTokenServiceClientFactory ?? throw new ArgumentNullException(nameof(amazonSecurityTokenServiceClientFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
@@ -101,13 +103,14 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.Null(artifactList);
 
             var existingObjectsDict = new Dictionary<string, bool>();
+            var exceptions = new List<Exception>();
 
             foreach (var artifact in artifactList)
             {
                 try
                 {
-                    var fileObjects = await ListObjectsAsync(bucketName, artifact).ConfigureAwait(false);
-                    var folderObjects = await ListObjectsAsync(bucketName, artifact.EndsWith("/") ? artifact : $"{artifact}/", true).ConfigureAwait(false);
+                    var fileObjects = await ListObjectsAsync(bucketName, artifact, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    var folderObjects = await ListObjectsAsync(bucketName, artifact.EndsWith("/") ? artifact : $"{artifact}/", true, cancellationToken).ConfigureAwait(false);
 
                     if (!folderObjects.Any() && !fileObjects.Any())
                     {
@@ -122,10 +125,14 @@ namespace Monai.Deploy.Storage.MinIO
                 {
                     _logger.VerifyObjectError(bucketName, e);
                     existingObjectsDict.Add(artifact, false);
+                    exceptions.Add(e);
                 }
-
             }
 
+            if (exceptions.Any())
+            {
+                throw new VerifyObjectsException(exceptions, existingObjectsDict);
+            }
             return existingObjectsDict;
         }
 
@@ -134,17 +141,25 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(bucketName);
             Guard.Against.NullOrWhiteSpace(artifactName);
 
-            var fileObjects = await ListObjectsAsync(bucketName, artifactName).ConfigureAwait(false);
-            var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true).ConfigureAwait(false);
-
-            if (folderObjects.Any() || fileObjects.Any())
+            try
             {
-                return true;
+                var fileObjects = await ListObjectsAsync(bucketName, artifactName, cancellationToken: cancellationToken).ConfigureAwait(false);
+                var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true, cancellationToken).ConfigureAwait(false);
+
+                if (folderObjects.Any() || fileObjects.Any())
+                {
+                    return true;
+                }
+
+                _logger.FileNotFoundError(bucketName, $"{artifactName}");
+
+                return false;
             }
-
-            _logger.FileNotFoundError(bucketName, $"{artifactName}");
-
-            return false;
+            catch (Exception ex)
+            {
+                _logger.VerifyObjectError(bucketName, ex);
+                throw new VerifyObjectsException(ex.Message, ex);
+            }
         }
 
         public async Task PutObjectAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken = default)
@@ -295,36 +310,51 @@ namespace Monai.Deploy.Storage.MinIO
 
         #region Internal Helper Methods
 
-        private static async Task CopyObjectUsingClient(IObjectOperations client, string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, CancellationToken cancellationToken)
+        private async Task CopyObjectUsingClient(IObjectOperations client, string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, CancellationToken cancellationToken)
         {
-            var copySourceObjectArgs = new CopySourceObjectArgs()
-                           .WithBucket(sourceBucketName)
-                           .WithObject(sourceObjectName);
-            var copyObjectArgs = new CopyObjectArgs()
-                .WithBucket(destinationBucketName)
-                .WithObject(destinationObjectName)
-                .WithCopyObjectSource(copySourceObjectArgs);
-            await client.CopyObjectAsync(copyObjectArgs, cancellationToken).ConfigureAwait(false);
-        }
-
-        private static async Task GetObjectUsingClient(IObjectOperations client, string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken)
-        {
-            var args = new GetObjectArgs()
-                            .WithBucket(bucketName)
-                            .WithObject(objectName)
-                            .WithCallbackStream(callback);
-            await client.GetObjectAsync(args, cancellationToken).ConfigureAwait(false);
-        }
-
-        private async Task<IList<VirtualFileInfo>> ListObjectsUsingClient(IBucketOperations client, string bucketName, string? prefix, bool recursive, CancellationToken cancellationToken)
-        {
-            return await Task.Run(() =>
+            await CallApi(async () =>
             {
-                var files = new List<VirtualFileInfo>();
-                var listArgs = new ListObjectsArgs()
-                    .WithBucket(bucketName)
-                    .WithPrefix(prefix)
-                    .WithRecursive(recursive);
+                try
+                {
+                    var copySourceObjectArgs = new CopySourceObjectArgs()
+                                   .WithBucket(sourceBucketName)
+                                   .WithObject(sourceObjectName);
+                    var copyObjectArgs = new CopyObjectArgs()
+                        .WithBucket(destinationBucketName)
+                        .WithObject(destinationObjectName)
+                        .WithCopyObjectSource(copySourceObjectArgs);
+                    await client.CopyObjectAsync(copyObjectArgs, cancellationToken).ConfigureAwait(false);
+                }
+                catch (ObjectNotFoundException ex) when (ex.ServerMessage.Contains("Not found", StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new API.StorageObjectNotFoundException(ex.ServerMessage);
+                }
+            }).ConfigureAwait(false);
+        }
+
+        private async Task GetObjectUsingClient(IObjectOperations client, string bucketName, string objectName, Action<Stream> callback, CancellationToken cancellationToken)
+        {
+            await CallApi(async () =>
+            {
+                var args = new GetObjectArgs()
+                                .WithBucket(bucketName)
+                                .WithObject(objectName)
+                                .WithCallbackStream(callback);
+                await client.GetObjectAsync(args, cancellationToken).ConfigureAwait(false);
+            }).ConfigureAwait(false);
+        }
+
+        private Task<IList<VirtualFileInfo>> ListObjectsUsingClient(IBucketOperations client, string bucketName, string? prefix, bool recursive, CancellationToken cancellationToken)
+        {
+            var files = new List<VirtualFileInfo>();
+            var listArgs = new ListObjectsArgs()
+                .WithBucket(bucketName)
+                .WithPrefix(prefix)
+                .WithRecursive(recursive);
+
+            try
+            {
+                var done = new TaskCompletionSource<IList<VirtualFileInfo>>();
 
                 var objservable = client.ListObjectsAsync(listArgs, cancellationToken);
                 var completedEvent = new ManualResetEventSlim(false);
@@ -341,44 +371,103 @@ namespace Monai.Deploy.Storage.MinIO
                 error =>
                 {
                     _logger.ListObjectError(bucketName, error.Message);
+                    if (error is OperationCanceledException)
+                        done.SetException(error);
+                    else
+                        done.SetException(new ListObjectException(error.ToString()));
                 },
-                () => completedEvent.Set(), cancellationToken);
+                () =>
+                {
+                    done.SetResult(files);
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        throw new ListObjectTimeoutException("Timed out waiting for results.");
+                    }
+                }, cancellationToken);
 
-                completedEvent.Wait(cancellationToken);
-                return files;
+                return done.Task;
+            }
+            catch (ConnectionException ex)
+            {
+                _logger.ConnectionError(ex);
+                var iex = new StorageConnectionException(ex.Message);
+                iex.Errors.Add(ex.ServerMessage);
+                if (ex.ServerResponse is not null && !string.IsNullOrWhiteSpace(ex.ServerResponse.ErrorMessage))
+                {
+                    iex.Errors.Add(ex.ServerResponse.ErrorMessage);
+                }
+                throw iex;
+            }
+            catch (Exception ex) when (ex is not ListObjectTimeoutException && ex is not ListObjectException)
+            {
+                _logger.StorageServiceError(ex);
+                throw new StorageServiceException(ex.ToString());
+            }
+        }
+
+        private async Task RemoveObjectUsingClient(IObjectOperations client, string bucketName, string objectName, CancellationToken cancellationToken)
+        {
+            await CallApi(async () =>
+            {
+                var args = new RemoveObjectArgs()
+                           .WithBucket(bucketName)
+                           .WithObject(objectName);
+                await client.RemoveObjectAsync(args, cancellationToken).ConfigureAwait(false);
             }).ConfigureAwait(false);
         }
 
-        private static async Task RemoveObjectUsingClient(IObjectOperations client, string bucketName, string objectName, CancellationToken cancellationToken)
+        private async Task PutObjectUsingClient(IObjectOperations client, string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken)
         {
-            var args = new RemoveObjectArgs()
-                           .WithBucket(bucketName)
-                           .WithObject(objectName);
-            await client.RemoveObjectAsync(args, cancellationToken).ConfigureAwait(false);
-        }
-
-        private static async Task PutObjectUsingClient(IObjectOperations client, string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string>? metadata, CancellationToken cancellationToken)
-        {
-            var args = new PutObjectArgs()
-                                .WithBucket(bucketName)
-                                .WithObject(objectName)
-                                .WithStreamData(data)
-                                .WithObjectSize(size)
-                                .WithContentType(contentType);
-            if (metadata is not null)
+            await CallApi(async () =>
             {
-                args.WithHeaders(metadata);
-            }
+                var args = new PutObjectArgs()
+                                    .WithBucket(bucketName)
+                                    .WithObject(objectName)
+                                    .WithStreamData(data)
+                                    .WithObjectSize(size)
+                                    .WithContentType(contentType);
+                if (metadata is not null)
+                {
+                    args.WithHeaders(metadata);
+                }
 
-            await client.PutObjectAsync(args, cancellationToken).ConfigureAwait(false);
+                await client.PutObjectAsync(args, cancellationToken).ConfigureAwait(false);
+            }).ConfigureAwait(false);
         }
 
-        private static async Task RemoveObjectsUsingClient(IObjectOperations client, string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken)
+        private async Task RemoveObjectsUsingClient(IObjectOperations client, string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken)
         {
-            var args = new RemoveObjectsArgs()
-                           .WithBucket(bucketName)
-                           .WithObjects(objectNames.ToList());
-            await client.RemoveObjectsAsync(args, cancellationToken).ConfigureAwait(false);
+            await CallApi(async () =>
+            {
+                var args = new RemoveObjectsArgs()
+                               .WithBucket(bucketName)
+                               .WithObjects(objectNames.ToList());
+                await client.RemoveObjectsAsync(args, cancellationToken).ConfigureAwait(false);
+            }).ConfigureAwait(false);
+        }
+
+        private async Task CallApi(Func<Task> func)
+        {
+            try
+            {
+                await func().ConfigureAwait(false);
+            }
+            catch (ConnectionException ex)
+            {
+                _logger.ConnectionError(ex);
+                var iex = new StorageConnectionException(ex.Message);
+                iex.Errors.Add(ex.ServerMessage);
+                if (ex.ServerResponse is not null && !string.IsNullOrWhiteSpace(ex.ServerResponse.ErrorMessage))
+                {
+                    iex.Errors.Add(ex.ServerResponse.ErrorMessage);
+                }
+                throw iex;
+            }
+            catch (Exception ex)
+            {
+                _logger.StorageServiceError(ex);
+                throw new StorageServiceException(ex.ToString());
+            }
         }
 
         #endregion Internal Helper Methods
