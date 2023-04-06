@@ -98,7 +98,11 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                             break;
                         }
                     }
+<<<<<<< HEAD
                     return await Task.FromResult(Disposable.Empty).ConfigureAwait(false);
+=======
+                    return Disposable.Empty;
+>>>>>>> 1757165 (Throw any error from MinIO with ListObject APIs (#214))
                 });
                 var service = new MinIoStorageService(_minIoClientFactory.Object, _amazonStsClient.Object, _options, _logger.Object);
                 _bucketOperations.Setup(p => p.ListObjectsAsync(It.IsAny<ListObjectsArgs>(), It.IsAny<CancellationToken>()))
@@ -121,7 +125,11 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                     obs.OnNext(new Item { Key = "key", ETag = "etag", Size = 1, IsDir = false });
                     obs.OnError(new Exception("error"));
                     obs.OnCompleted();
+<<<<<<< HEAD
                     return await Task.FromResult(Disposable.Empty).ConfigureAwait(false);
+=======
+                    return Disposable.Empty;
+>>>>>>> 1757165 (Throw any error from MinIO with ListObject APIs (#214))
                 });
                 var service = new MinIoStorageService(_minIoClientFactory.Object, _amazonStsClient.Object, _options, _logger.Object);
                 _bucketOperations.Setup(p => p.ListObjectsAsync(It.IsAny<ListObjectsArgs>(), It.IsAny<CancellationToken>()))
