@@ -188,7 +188,7 @@ jobs:
           docker volume rm tests_minio_config
         working-directory: ./src/Plugins/MinIO/Tests
 
-      - uses: codecov/codecov-action@v3.1.1
+      - uses: codecov/codecov-action@v3.1.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: "src/${{ env.TEST_RESULTS }}"
