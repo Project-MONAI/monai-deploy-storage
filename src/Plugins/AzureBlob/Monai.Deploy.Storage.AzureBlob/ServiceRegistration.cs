@@ -1,5 +1,5 @@
-﻿/*
- * Copyright 2023 MONAI Consortium
+/*
+ * Copyright 2022 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-using System.Runtime.Serialization;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Monai.Deploy.Storage.API
+namespace Monai.Deploy.Storage.AzureBlob
 {
-    public class StorageServiceException : Exception
+    public class ServiceRegistration : ServiceRegistrationBase
     {
-        public StorageServiceException()
+        public override IServiceCollection Configure(IServiceCollection services)
         {
-        }
-
-        public StorageServiceException(string message) : base(message)
-        {
-        }
-
-        public StorageServiceException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected StorageServiceException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
+            services.AddSingleton<IAzureBlobClientFactory, AzureBlobClientFactory>();
+            services.AddSingleton<AzureBlobStartup>();
+            services.AddHostedService(p => p.GetRequiredService<AzureBlobStartup>());
+            return services;
         }
     }
 }

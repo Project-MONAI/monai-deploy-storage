@@ -19,25 +19,25 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using Xunit;
 
-namespace Monai.Deploy.Storage.MinIO.Tests.Unit
+namespace Monai.Deploy.Storage.AzureBlob.Tests
 {
-    public class MinIoHealthCheckTest
+    public class AzureBlobHealthCheckTest
     {
-        private readonly Mock<IMinIoClientFactory> _minIoClientFactory;
-        private readonly Mock<ILogger<MinIoHealthCheck>> _logger;
+        private readonly Mock<IAzureBlobClientFactory> _azureblobClientFactory;
+        private readonly Mock<ILogger<AzureBlobHealthCheck>> _logger;
 
-        public MinIoHealthCheckTest()
+        public AzureBlobHealthCheckTest()
         {
-            _minIoClientFactory = new Mock<IMinIoClientFactory>();
-            _logger = new Mock<ILogger<MinIoHealthCheck>>();
+            _azureblobClientFactory = new Mock<IAzureBlobClientFactory>();
+            _logger = new Mock<ILogger<AzureBlobHealthCheck>>();
         }
 
         [Fact]
         public async Task CheckHealthAsync_WhenFailedToListBucket_ReturnUnhealthy()
         {
-            _minIoClientFactory.Setup(p => p.GetBucketOperationsClient()).Throws(new Exception("error"));
+            _azureblobClientFactory.Setup(p => p.GetBlobContainerClient(It.IsAny<string>())).Throws(new Exception("error"));
 
-            var healthCheck = new MinIoHealthCheck(_minIoClientFactory.Object, _logger.Object);
+            var healthCheck = new AzureBlobHealthCheck(_azureblobClientFactory.Object, _logger.Object);
             var results = await healthCheck.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
 
             Assert.Equal(HealthStatus.Unhealthy, results.Status);

@@ -15,9 +15,8 @@
  */
 
 using Microsoft.Extensions.Logging;
-using Minio.Exceptions;
 
-namespace Monai.Deploy.Storage.MinIO
+namespace Monai.Deploy.Storage.AzureBlob
 {
     public static partial class LoggerMethods
     {
@@ -39,17 +38,32 @@ namespace Monai.Deploy.Storage.MinIO
         [LoggerMessage(EventId = 20005, Level = LogLevel.Information, Message = "`createBuckets` not configured; no buckets created.")]
         public static partial void NoBucketCreated(this ILogger logger);
 
-        [LoggerMessage(EventId = 20006, Level = LogLevel.Critical, Message = "Error creating bucket {bucket} in region {region}.")]
-        public static partial void ErrorCreatingBucket(this ILogger logger, string bucket, string region, Exception ex);
+        [LoggerMessage(EventId = 20006, Level = LogLevel.Critical, Message = "Error creating bucket {bucket}.")]
+        public static partial void ErrorCreatingBucket(this ILogger logger, string bucket, Exception ex);
 
-        [LoggerMessage(EventId = 20007, Level = LogLevel.Information, Message = "Bucket {bucket} created in region {region}.")]
-        public static partial void BucketCreated(this ILogger logger, string bucket, string region);
-
-        [LoggerMessage(EventId = 20008, Level = LogLevel.Error, Message = "Error connecting to MinIO.")]
-        public static partial void ConnectionError(this ILogger logger, ConnectionException ex);
+        [LoggerMessage(EventId = 20007, Level = LogLevel.Information, Message = "Bucket {bucket} created")]
+        public static partial void BucketCreated(this ILogger logger, string bucket);
 
         [LoggerMessage(EventId = 20009, Level = LogLevel.Error, Message = "Storage service error.")]
         public static partial void StorageServiceError(this ILogger logger, Exception ex);
+
+        [LoggerMessage(EventId = 20010, Level = LogLevel.Debug, Message = "Copied from {sourceContainer}/{sourcePath} to {destinationContainer}/{destinationPath}")]
+        public static partial void BlobCopied(this ILogger logger, string sourceContainer, string sourcePath, string destinationContainer, string destinationPath);
+
+        [LoggerMessage(EventId = 20011, Level = LogLevel.Debug, Message = "Returning stream from {sourceContainer}/{sourcePath}")]
+        public static partial void BlobGetObject(this ILogger logger, string sourceContainer, string sourcePath);
+
+        [LoggerMessage(EventId = 20012, Level = LogLevel.Trace, Message = "Returning file list from {sourceContainer} with prefix {prefix}")]
+        public static partial void BlobListObjects(this ILogger logger, string sourceContainer, string? prefix);
+
+        [LoggerMessage(EventId = 20013, Level = LogLevel.Debug, Message = "Uploaded file {sourceContainer}/{path}")]
+        public static partial void BlobPutObject(this ILogger logger, string sourceContainer, string path);
+
+        [LoggerMessage(EventId = 20014, Level = LogLevel.Debug, Message = "Remove file {sourceContainer}/{path}")]
+        public static partial void BlobRemoveObject(this ILogger logger, string sourceContainer, string path);
+
+        [LoggerMessage(EventId = 20015, Level = LogLevel.Debug, Message = "Remove a list of files from {sourceContainer}")]
+        public static partial void BlobRemoveObjects(this ILogger logger, string sourceContainer);
 
     }
 }
