@@ -16,7 +16,6 @@
 
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
-using Monai.Deploy.Storage.API;
 
 namespace Monai.Deploy.Storage.AzureBlob
 {
@@ -35,12 +34,12 @@ namespace Monai.Deploy.Storage.AzureBlob
         {
             try
             {
-
-                var maxSingle = 2;
-
-                var client = _azureBlobClientFactory.GetBlobContainerClient("\\");
-                var resultSegment = client.GetBlobsAsync().AsPages(default, maxSingle);
-                var files = new List<VirtualFileInfo>();
+                var client = _azureBlobClientFactory.GetBlobServiceClient();
+                await client.GetBlobContainersAsync(cancellationToken: cancellationToken)
+                .AsPages(pageSizeHint: 1)
+                .GetAsyncEnumerator(cancellationToken)
+                .MoveNextAsync()
+                .ConfigureAwait(false); ;
 
                 return HealthCheckResult.Healthy();
             }

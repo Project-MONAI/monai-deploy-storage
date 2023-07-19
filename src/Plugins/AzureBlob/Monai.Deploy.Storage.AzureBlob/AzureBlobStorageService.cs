@@ -17,14 +17,13 @@
 using Amazon.SecurityToken.Model;
 using Ardalis.GuardClauses;
 using Azure.Storage.Blobs.Models;
-using Azure;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
 using Azure.Storage.Blobs.Specialized;
 using Azure.Storage.Sas;
-using Amazon.Auth.AccessControlPolicy;
+using System.Text;
 
 namespace Monai.Deploy.Storage.AzureBlob
 {
@@ -81,7 +80,7 @@ namespace Monai.Deploy.Storage.AzureBlob
                 if (exsists.Value is false)
                 {
                     _logger.FileNotFoundError(sourcecontainer, sourceObjectName);
-                    throw new Exception($"Source file {sourceObjectName} does not exist in {sourcecontainer}");
+                    throw new StorageObjectNotFoundException($"Source file {sourceObjectName} does not exist in {sourcecontainer}");
                 }
 
                 var blobSasBuilder = new BlobSasBuilder()
@@ -94,7 +93,8 @@ namespace Monai.Deploy.Storage.AzureBlob
                 blobSasBuilder.SetPermissions(BlobSasPermissions.Read);
                 var sasToken = sourceClient.GenerateSasUri(BlobSasPermissions.Read, DateTimeOffset.Now.AddHours(1));
 
-                await destClient.SyncUploadFromUriAsync(sasToken  /*, overwrite: false*/, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                await destClient.StartCopyFromUriAsync(sourceClient.Uri  /*, overwrite: false*/, cancellationToken: cancellationToken).ConfigureAwait(false);
                 _logger.BlobCopied(source.container, source.path, destination.container, destination.path);
             }
             catch (Exception ex)
@@ -137,6 +137,12 @@ namespace Monai.Deploy.Storage.AzureBlob
             try
             {
                 var client = _azureBlobClientFactory.GetBlobContainerClient(source.container);
+                var containerExists = await client.ExistsAsync().ConfigureAwait(false);
+                if (containerExists.Value is false)
+                {
+                    _logger.ContainerDoesNotExistCreated(source.container);
+                    return new List<VirtualFileInfo>();
+                }
                 var resultSegment = client.GetBlobsAsync(prefix: source.path, cancellationToken: cancellationToken).AsPages(default, maxSingle);
                 var files = new List<VirtualFileInfo>();
 
@@ -145,7 +151,7 @@ namespace Monai.Deploy.Storage.AzureBlob
                     foreach (var blobItem in blobPage.Values)
                     {
                         var file = new VirtualFileInfo(Path.GetFileName(blobItem.Name),
-                            Path.GetDirectoryName(blobItem.Name) ?? "",
+                            blobItem.Name ?? "",
                             string.Empty,
                             (ulong)(blobItem.Properties.ContentLength ?? 0
                         ));
@@ -274,7 +280,7 @@ namespace Monai.Deploy.Storage.AzureBlob
             catch (Exception ex)
             {
                 _logger.StorageServiceError(ex);
-                throw new StorageServiceException(ex.Message);
+                //throw new StorageServiceException(ex.Message);
             }
         }
 
@@ -295,21 +301,26 @@ namespace Monai.Deploy.Storage.AzureBlob
             catch (Exception ex)
             {
                 _logger.StorageServiceError(ex);
-                throw new StorageServiceException(ex.Message);
+                //throw new StorageServiceException(ex.Message);
             }
         }
 
         public async Task CreateFolderAsync(string container, string folderPath, CancellationToken cancellationToken = default)
         {
-
-            Guard.Against.NullOrEmpty(folderPath);
-
+            var containerPath = SanitiseBlobPath(container, folderPath);
             try
             {
-                var containerName = Path.Combine(container, folderPath);
-                var containerClient = _azureBlobClientFactory.GetBlobServiceClient();
-                await containerClient.CreateBlobContainerAsync(containerName, cancellationToken: cancellationToken).ConfigureAwait(false);
-                _logger.BucketCreated(containerName);
+                var containerClient = _azureBlobClientFactory.GetBlobContainerClient(containerPath.container);
+                await containerClient.CreateIfNotExistsAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
+                var path = $"{containerPath.path}/stubFile.txt".Replace("//", "/");
+                var blobClient = _azureBlobClientFactory.GetBlobClient(containerPath.container, path);
+
+                var data = Encoding.UTF8.GetBytes("stub file");
+                var length = data.Length;
+                var stream = new MemoryStream(data);
+
+                await blobClient.UploadAsync(stream, true, cancellationToken: cancellationToken).ConfigureAwait(false);
+                _logger.ContainerCreated($"{containerPath.container}/{containerPath.path}");
             }
             catch (Exception ex)
             {

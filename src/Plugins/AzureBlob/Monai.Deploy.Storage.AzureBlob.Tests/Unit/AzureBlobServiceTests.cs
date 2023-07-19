@@ -1,5 +1,4 @@
-﻿using Amazon.Runtime.Internal.Transform;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Monai.Deploy.Storage.Configuration;
 using Moq;
@@ -49,7 +48,7 @@ namespace Monai.Deploy.Storage.AzureBlob.Tests.Unit
         [Fact]
         public async Task ShouldListBlobs()
         {
-            var ops = new StorageServiceConfiguration { Settings = new Dictionary<string, string> { { "azureBlobConnectionString", "DefaultEndpointsProtocol=https;AccountName=monaistoragetest;AccountKey=Ir0OgOCWpYsW3/6K945jzQfKnO3+hYCKULZUy9D89FchZuUr0DFT9xhf3Q2enYDTraRQKUaFKhVm+AStvG5ZjQ==;EndpointSuffix=core.windows.net" } } };
+            var ops = new StorageServiceConfiguration { Settings = new Dictionary<string, string> { { "azureBlobConnectionString", "UseDevelopmentStorage=true" } } };
             var options = Options.Create(ops);
             var factory = new AzureBlobClientFactory(options, new Mock<ILogger<AzureBlobClientFactory>>().Object);
             var service = new AzureBlobStorageService(factory, options, new Mock<ILogger<AzureBlobStorageService>>().Object);

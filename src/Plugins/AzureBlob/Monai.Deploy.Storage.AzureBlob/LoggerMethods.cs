@@ -20,14 +20,14 @@ namespace Monai.Deploy.Storage.AzureBlob
 {
     public static partial class LoggerMethods
     {
-        [LoggerMessage(EventId = 20000, Level = LogLevel.Error, Message = "Error listing objects in bucket '{bucketName}' with error: {error}")]
-        public static partial void ListObjectError(this ILogger logger, string bucketName, string error);
+        [LoggerMessage(EventId = 20000, Level = LogLevel.Error, Message = "Error listing objects in container '{containerName}' with error: {error}")]
+        public static partial void ListObjectError(this ILogger logger, string containerName, string error);
 
-        [LoggerMessage(EventId = 20001, Level = LogLevel.Error, Message = "File '{path}' could not be found in '{bucketName}'.")]
-        public static partial void FileNotFoundError(this ILogger logger, string bucketName, string path);
+        [LoggerMessage(EventId = 20001, Level = LogLevel.Error, Message = "File '{path}' could not be found in '{containerName}'.")]
+        public static partial void FileNotFoundError(this ILogger logger, string containerName, string path);
 
-        [LoggerMessage(EventId = 20002, Level = LogLevel.Error, Message = "Error verifying objects in bucket '{bucketName}'.")]
-        public static partial void VerifyObjectError(this ILogger logger, string bucketName, Exception ex);
+        [LoggerMessage(EventId = 20002, Level = LogLevel.Error, Message = "Error verifying objects in container '{containerName}'.")]
+        public static partial void VerifyObjectError(this ILogger logger, string containerName, Exception ex);
 
         [LoggerMessage(EventId = 20003, Level = LogLevel.Error, Message = "Health check failure.")]
         public static partial void HealthCheckError(this ILogger logger, Exception ex);
@@ -35,14 +35,14 @@ namespace Monai.Deploy.Storage.AzureBlob
         [LoggerMessage(EventId = 20004, Level = LogLevel.Debug, Message = "Temporary credential policy={policy}.")]
         public static partial void TemporaryCredentialPolicy(this ILogger logger, string policy);
 
-        [LoggerMessage(EventId = 20005, Level = LogLevel.Information, Message = "`createBuckets` not configured; no buckets created.")]
-        public static partial void NoBucketCreated(this ILogger logger);
+        [LoggerMessage(EventId = 20005, Level = LogLevel.Information, Message = "`createcontainers` not configured; no containers created.")]
+        public static partial void NoContainerCreated(this ILogger logger);
 
-        [LoggerMessage(EventId = 20006, Level = LogLevel.Critical, Message = "Error creating bucket {bucket}.")]
-        public static partial void ErrorCreatingBucket(this ILogger logger, string bucket, Exception ex);
+        [LoggerMessage(EventId = 20006, Level = LogLevel.Critical, Message = "Error creating container {container}.")]
+        public static partial void ErrorCreatingContainer(this ILogger logger, string container, Exception ex);
 
-        [LoggerMessage(EventId = 20007, Level = LogLevel.Information, Message = "Bucket {bucket} created")]
-        public static partial void BucketCreated(this ILogger logger, string bucket);
+        [LoggerMessage(EventId = 20007, Level = LogLevel.Information, Message = "container {container} created")]
+        public static partial void ContainerCreated(this ILogger logger, string container);
 
         [LoggerMessage(EventId = 20009, Level = LogLevel.Error, Message = "Storage service error.")]
         public static partial void StorageServiceError(this ILogger logger, Exception ex);
@@ -64,6 +64,9 @@ namespace Monai.Deploy.Storage.AzureBlob
 
         [LoggerMessage(EventId = 20015, Level = LogLevel.Debug, Message = "Remove a list of files from {sourceContainer}")]
         public static partial void BlobRemoveObjects(this ILogger logger, string sourceContainer);
+
+        [LoggerMessage(EventId = 20016, Level = LogLevel.Error, Message = "container {container} does not exist")]
+        public static partial void ContainerDoesNotExistCreated(this ILogger logger, string container);
 
     }
 }

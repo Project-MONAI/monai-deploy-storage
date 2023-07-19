@@ -36,11 +36,11 @@ namespace Monai.Deploy.Storage.AzureBlob
                     {
                         try
                         {
-                            await blobServiceClient.CreateBlobContainerAsync(bucket.Trim());
+                            await blobServiceClient.CreateBlobContainerAsync(bucket.Trim(), cancellationToken: cancellationToken).ConfigureAwait(false);
                         }
                         catch (Exception ex)
                         {
-                            _logger.ErrorCreatingBucket(bucket, ex);
+                            _logger.ErrorCreatingContainer(bucket, ex);
                             exceptions.Add(ex);
                         }
                     }
@@ -53,7 +53,7 @@ namespace Monai.Deploy.Storage.AzureBlob
             }
             else
             {
-                _logger.NoBucketCreated();
+                _logger.NoContainerCreated();
             }
         }
         public Task StopAsync(CancellationToken cancellationToken)
