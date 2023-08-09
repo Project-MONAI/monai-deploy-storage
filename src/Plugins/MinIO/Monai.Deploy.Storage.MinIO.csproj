@@ -51,7 +51,7 @@
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.201.9" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
-    <PackageReference Include="Minio" Version="4.0.7" />
+    <PackageReference Include="Minio" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
