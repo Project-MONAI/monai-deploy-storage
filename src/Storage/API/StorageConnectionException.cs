@@ -20,7 +20,7 @@ namespace Monai.Deploy.Storage.API
 {
     public class StorageConnectionException : Exception
     {
-        public string ServerMessage { get; set; }
+        public string ServerMessage { get; set; } = default!;
         public List<string> Errors { get; set; }
 
         public StorageConnectionException()
@@ -40,6 +40,7 @@ namespace Monai.Deploy.Storage.API
 
         protected StorageConnectionException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
+            Errors = new List<string>();
         }
     }
 }

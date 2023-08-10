@@ -55,9 +55,9 @@ namespace Monai.Deploy.Storage.API
 
         public VirtualFileInfo(string filename, string filePath, string etag, ulong size)
         {
-            Guard.Against.Null(filename);
-            Guard.Against.Null(filePath);
-            Guard.Against.Null(etag);
+            Guard.Against.Null(filename, nameof(filename));
+            Guard.Against.Null(filePath, nameof(filePath));
+            Guard.Against.Null(etag, nameof(etag));
 
             Filename = filename;
             FilePath = filePath;

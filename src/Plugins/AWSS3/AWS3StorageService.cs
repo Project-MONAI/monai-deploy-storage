@@ -47,7 +47,7 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public Awss3StorageService(IOptions<StorageServiceConfiguration> options, ILogger<Awss3StorageService> logger)
         {
-            Guard.Against.Null(options);
+            Guard.Against.Null(options, nameof(options));
 
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
@@ -73,7 +73,7 @@ namespace Monai.Deploy.Storage.AWSS3
 
         private void ValidateConfiguration(StorageServiceConfiguration configuration)
         {
-            Guard.Against.Null(configuration);
+            Guard.Against.Null(configuration, nameof(configuration));
 
             foreach (var key in ConfigurationKeys.RequiredKeys)
             {
@@ -88,18 +88,18 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task CopyObjectAsync(string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(sourceBucketName);
-            Guard.Against.NullOrWhiteSpace(sourceObjectName);
-            Guard.Against.NullOrWhiteSpace(destinationBucketName);
-            Guard.Against.NullOrWhiteSpace(destinationObjectName);
+            Guard.Against.NullOrWhiteSpace(sourceBucketName, nameof(sourceBucketName));
+            Guard.Against.NullOrWhiteSpace(sourceObjectName, nameof(sourceObjectName));
+            Guard.Against.NullOrWhiteSpace(destinationBucketName, nameof(destinationBucketName));
+            Guard.Against.NullOrWhiteSpace(destinationObjectName, nameof(destinationObjectName));
 
             await _client.CopyObjectAsync(sourceBucketName, sourceObjectName, destinationBucketName, destinationObjectName, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<Stream> GetObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(objectName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
             var obj = await _client.GetObjectAsync(bucketName, objectName, cancellationToken: cancellationToken).ConfigureAwait(false);
 
@@ -108,7 +108,7 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task<IList<VirtualFileInfo>> ListObjectsAsync(string bucketName, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
 
             var request = new ListObjectsV2Request { BucketName = bucketName, Prefix = prefix };
             var files = new List<VirtualFileInfo>();
@@ -129,10 +129,10 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task PutObjectAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(objectName);
-            Guard.Against.Null(data);
-            Guard.Against.NullOrWhiteSpace(contentType);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+            Guard.Against.Null(data, nameof(data));
+            Guard.Against.NullOrWhiteSpace(contentType, nameof(contentType));
 
             var por = new PutObjectRequest
             {
@@ -144,8 +144,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task RemoveObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(objectName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
             var dor = new DeleteObjectRequest { BucketName = bucketName, Key = objectName };
 
@@ -154,8 +154,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task RemoveObjectsAsync(string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrEmpty(objectNames);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrEmpty(objectNames, nameof(objectNames));
 
             var KeyVersionList = new List<KeyVersion>();
             foreach (var objectName in objectNames)
@@ -174,8 +174,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task CreateFolderAsync(string bucketName, string folderPath, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrEmpty(folderPath);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrEmpty(folderPath, nameof(folderPath));
 
             var stubFile = folderPath + "/stubFile.txt";
 
@@ -186,8 +186,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task<Credentials> CreateTemporaryCredentialsAsync(string bucketName, string folderName, int durationSeconds = 3600, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrEmpty(folderName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrEmpty(folderName, nameof(folderName));
 
             var policy = PolicyExtensions.ToPolicy(bucketName, folderName);
 
@@ -210,10 +210,10 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task CopyObjectWithCredentialsAsync(string sourceBucketName, string sourceObjectName, string destinationBucketName, string destinationObjectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(sourceBucketName);
-            Guard.Against.NullOrWhiteSpace(sourceObjectName);
-            Guard.Against.NullOrWhiteSpace(destinationBucketName);
-            Guard.Against.NullOrWhiteSpace(destinationObjectName);
+            Guard.Against.NullOrWhiteSpace(sourceBucketName, nameof(sourceBucketName));
+            Guard.Against.NullOrWhiteSpace(sourceObjectName, nameof(sourceObjectName));
+            Guard.Against.NullOrWhiteSpace(destinationBucketName, nameof(destinationBucketName));
+            Guard.Against.NullOrWhiteSpace(destinationObjectName, nameof(destinationObjectName));
             IsCredentialsNull(credentials);
 
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
@@ -222,8 +222,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task<Stream> GetObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(objectName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
 
             IsCredentialsNull(credentials);
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
@@ -235,7 +235,7 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task<IList<VirtualFileInfo>> ListObjectsWithCredentialsAsync(string bucketName, Credentials credentials, string prefix = "", bool recursive = false, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
             IsCredentialsNull(credentials);
 
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
@@ -259,10 +259,10 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task PutObjectWithCredentialsAsync(string bucketName, string objectName, Stream data, long size, string contentType, Dictionary<string, string> metadata, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(objectName);
-            Guard.Against.Null(data);
-            Guard.Against.NullOrWhiteSpace(contentType);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
+            Guard.Against.Null(data, nameof(data));
+            Guard.Against.NullOrWhiteSpace(contentType, nameof(contentType));
             IsCredentialsNull(credentials);
 
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
@@ -276,8 +276,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task RemoveObjectWithCredentialsAsync(string bucketName, string objectName, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(objectName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(objectName, nameof(objectName));
             IsCredentialsNull(credentials);
 
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
@@ -289,8 +289,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task RemoveObjectsWithCredentialsAsync(string bucketName, IEnumerable<string> objectNames, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrEmpty(objectNames);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrEmpty(objectNames, nameof(objectNames));
 
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
 
@@ -311,8 +311,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task CreateFolderWithCredentialsAsync(string bucketName, string folderPath, Credentials credentials, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrEmpty(folderPath);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrEmpty(folderPath, nameof(folderPath));
 
             IsCredentialsNull(credentials);
             var client = new AmazonS3Client(credentials.AccessKeyId, credentials.SecretAccessKey, RegionEndpoint.GetBySystemName(_options.Settings[ConfigurationKeys.Region]));
@@ -328,16 +328,16 @@ namespace Monai.Deploy.Storage.AWSS3
 
         private void IsCredentialsNull(Credentials credentials)
         {
-            Guard.Against.Null(credentials);
-            Guard.Against.NullOrWhiteSpace(credentials.AccessKeyId);
-            Guard.Against.NullOrWhiteSpace(credentials.SecretAccessKey);
-            Guard.Against.NullOrWhiteSpace(credentials.SessionToken);
+            Guard.Against.Null(credentials, nameof(credentials));
+            Guard.Against.NullOrWhiteSpace(credentials.AccessKeyId, nameof(credentials.AccessKeyId));
+            Guard.Against.NullOrWhiteSpace(credentials.SecretAccessKey, nameof(credentials.SecretAccessKey));
+            Guard.Against.NullOrWhiteSpace(credentials.SessionToken, nameof(credentials.SessionToken));
         }
 
         public async Task<Dictionary<string, bool>> VerifyObjectsExistAsync(string bucketName, IReadOnlyList<string> artifactList, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.Null(artifactList);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.Null(artifactList, nameof(artifactList));
 
             var existingObjectsDict = new Dictionary<string, bool>();
 
@@ -370,8 +370,8 @@ namespace Monai.Deploy.Storage.AWSS3
 
         public async Task<bool> VerifyObjectExistsAsync(string bucketName, string artifactName, CancellationToken cancellationToken = default)
         {
-            Guard.Against.NullOrWhiteSpace(bucketName);
-            Guard.Against.NullOrWhiteSpace(artifactName);
+            Guard.Against.NullOrWhiteSpace(bucketName, nameof(bucketName));
+            Guard.Against.NullOrWhiteSpace(artifactName, nameof(artifactName));
 
             var fileObjects = await ListObjectsAsync(bucketName, artifactName);
             var folderObjects = await ListObjectsAsync(bucketName, artifactName.EndsWith("/") ? artifactName : $"{artifactName}/", true);

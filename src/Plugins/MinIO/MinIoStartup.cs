@@ -85,8 +85,8 @@ namespace Monai.Deploy.Storage.MinIO
 
         private async Task CreateBucket(IBucketOperations client, string bucket, string region, CancellationToken cancellationToken)
         {
-            Guard.Against.Null(client);
-            Guard.Against.Null(bucket);
+            Guard.Against.Null(client, nameof(client));
+            Guard.Against.Null(bucket, nameof(bucket));
 
             var bucketExistsArgs = new BucketExistsArgs().WithBucket(bucket);
             if (!await client.BucketExistsAsync(bucketExistsArgs, cancellationToken).ConfigureAwait(false))
