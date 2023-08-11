@@ -187,7 +187,7 @@
   - :who: mocsharp
     :why: BSD 3-Clause License ( https://raw.githubusercontent.com/moq/moq4/main/License.txt)
     :versions:
-    - 4.20.1
+    - 4.20.69
     :when: 2022-08-16 18:11:34.872036382 Z
 - - :approve
   - NETStandard.Library
