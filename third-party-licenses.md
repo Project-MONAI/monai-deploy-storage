@@ -1,3 +1,19 @@
+<!--
+Copyright 2022-2023 MONAI Consortium
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 # Third-Party Licenses
 
 
@@ -389,46 +405,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Crc32.NET 1.2.0</summary>
-
-## Crc32.NET
-
-- Version: 1.2.0
-- Authors: force
-- Owners: force
-- Project URL: https://github.com/force-net/Crc32.NET
-- Source: [NuGet](https://www.nuget.org/packages/Crc32.NET/1.2.0)
-- License: [MIT](https://github.com/force-net/Crc32.NET/raw/develop/LICENSE)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) 2016 force
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 ```
 
 </details>
@@ -918,130 +894,6 @@ third-party archives.
 
 
 <details>
-<summary>JetBrains.Annotations 2021.3.0</summary>
-
-## JetBrains.Annotations
-
-- Version: 2021.3.0
-- Authors: JetBrains
-- Owners: JetBrains
-- Project URL: https://www.jetbrains.com/help/resharper/Code_Analysis__Code_Annotations.html
-- Source: [NuGet](https://www.nuget.org/packages/JetBrains.Annotations/2021.3.0)
-- License: [MIT](https://github.com/JetBrains/JetBrains.Annotations/raw/main/license.md)
-
-
-```
-MIT License
-
-Copyright (c) 2016 JetBrains http://www.jetbrains.com
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Bcl.AsyncInterfaces 1.1.0</summary>
-
-## Microsoft.Bcl.AsyncInterfaces
-
-- Version: 1.1.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://github.com/dotnet/corefx
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Bcl.AsyncInterfaces/1.1.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.CSharp 4.7.0</summary>
-
-## Microsoft.CSharp
-
-- Version: 4.7.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://github.com/dotnet/corefx
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CSharp/4.7.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
 <summary>Microsoft.CodeCoverage 17.7.0</summary>
 
 ## Microsoft.CodeCoverage
@@ -1083,47 +935,6 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Configuration 6.0.1</summary>
-
-## Microsoft.Extensions.Configuration
-
-- Version: 6.0.1
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/6.0.1)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
 <summary>Microsoft.Extensions.Configuration.Abstractions 6.0.0</summary>
 
 ## Microsoft.Extensions.Configuration.Abstractions
@@ -1132,293 +943,6 @@ SOFTWARE.
 - Authors: Microsoft
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Abstractions/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Configuration.Binder 6.0.0</summary>
-
-## Microsoft.Extensions.Configuration.Binder
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Configuration.CommandLine 6.0.0</summary>
-
-## Microsoft.Extensions.Configuration.CommandLine
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.CommandLine/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Configuration.EnvironmentVariables 6.0.1</summary>
-
-## Microsoft.Extensions.Configuration.EnvironmentVariables
-
-- Version: 6.0.1
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.1)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Configuration.FileExtensions 6.0.0</summary>
-
-## Microsoft.Extensions.Configuration.FileExtensions
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Configuration.Json 6.0.0</summary>
-
-## Microsoft.Extensions.Configuration.Json
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Configuration.UserSecrets 6.0.1</summary>
-
-## Microsoft.Extensions.Configuration.UserSecrets
-
-- Version: 6.0.1
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets/6.0.1)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.DependencyInjection 6.0.0</summary>
-
-## Microsoft.Extensions.DependencyInjection
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/6.0.0)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -1616,129 +1140,6 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.FileProviders.Physical 6.0.0</summary>
-
-## Microsoft.Extensions.FileProviders.Physical
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Physical/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.FileSystemGlobbing 6.0.0</summary>
-
-## Microsoft.Extensions.FileSystemGlobbing
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.FileSystemGlobbing/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Hosting 6.0.1</summary>
-
-## Microsoft.Extensions.Hosting
-
-- Version: 6.0.1
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Hosting/6.0.1)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
 <summary>Microsoft.Extensions.Hosting.Abstractions 6.0.0</summary>
 
 ## Microsoft.Extensions.Hosting.Abstractions
@@ -1747,47 +1148,6 @@ SOFTWARE.
 - Authors: Microsoft
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.Abstractions/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Logging 6.0.0</summary>
-
-## Microsoft.Extensions.Logging
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging/6.0.0)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -1862,211 +1222,6 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Logging.Configuration 6.0.0</summary>
-
-## Microsoft.Extensions.Logging.Configuration
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Configuration/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Logging.Console 6.0.0</summary>
-
-## Microsoft.Extensions.Logging.Console
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Logging.Debug 6.0.0</summary>
-
-## Microsoft.Extensions.Logging.Debug
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Logging.EventLog 6.0.0</summary>
-
-## Microsoft.Extensions.Logging.EventLog
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Logging.EventSource 6.0.0</summary>
-
-## Microsoft.Extensions.Logging.EventSource
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
 <summary>Microsoft.Extensions.Options 6.0.0</summary>
 
 ## Microsoft.Extensions.Options
@@ -2075,47 +1230,6 @@ SOFTWARE.
 - Authors: Microsoft
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.Extensions.Options.ConfigurationExtensions 6.0.0</summary>
-
-## Microsoft.Extensions.Options.ConfigurationExtensions
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -2431,206 +1545,6 @@ consequential or other damages.
 
 
 <details>
-<summary>Microsoft.NETCore.Platforms 1.1.1</summary>
-
-## Microsoft.NETCore.Platforms
-
-- Version: 1.1.1
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/1.1.1)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
-
-
-```
-MICROSOFT SOFTWARE LICENSE
-TERMS
-
-MICROSOFT .NET
-LIBRARY
-
-These
-license terms are an agreement between you and Microsoft Corporation (or based
-on where you live, one of its affiliates). They apply to the software named
-above. The terms also apply to any Microsoft services or updates for the
-software, except to the extent those have different terms.
-
-If
-you comply with these license terms, you have the rights below.
-
-1.    INSTALLATION AND USE RIGHTS. 
-You may
-install and use any number of copies of the software to develop and test your applications. 
-
-2.   
-THIRD PARTY COMPONENTS. The software may include third party components with
-separate legal notices or governed by other agreements, as may be described in
-the ThirdPartyNotices file(s) accompanying the software.
-3.   
-ADDITIONAL LICENSING
-REQUIREMENTS AND/OR USE RIGHTS.
-a.    
-DISTRIBUTABLE
-CODE.  The software is
-comprised of Distributable Code. “Distributable Code” is code that you are
-permitted to distribute in applications you develop if you comply with the
-terms below.
-i.      Right to Use and Distribute. 
-·       
-You may copy and distribute the object code form of the software.
-·       
-Third Party Distribution. You may permit distributors of your applications
-to copy and distribute the Distributable Code as part of those applications.
-ii.     Distribution Requirements. For any
-Distributable Code you distribute, you must
-·       
-use the Distributable Code in your applications and not as a
-standalone distribution;
-·       
-require distributors and external end users to agree to terms that
-protect it at least as much as this agreement; and
-·       
-indemnify, defend, and hold harmless Microsoft from any claims,
-including attorneys’ fees, related to the distribution or use of your applications,
-except to the extent that any claim is based solely on the unmodified Distributable
-Code.
-iii.   Distribution Restrictions. You may not
-·       
-use Microsoft’s trademarks in your applications’ names or in a way
-that suggests your applications come from or are endorsed by Microsoft; or
-·       
-modify or distribute the source code of any Distributable Code so
-that any part of it becomes subject to an Excluded License. An “Excluded
-License” is one that requires, as a condition of use, modification or
-distribution of code, that (i) it be disclosed or distributed in source code
-form; or (ii) others have the right to modify it.
-4.   
-DATA.
-a.    
-Data Collection. The software may collect
-information about you and your use of the software, and send that to Microsoft.
-Microsoft may use this information to provide services and improve our products
-and services.  You may opt-out of many of these scenarios, but not all, as
-described in the software documentation.  There are also some features in the software that may enable you and
-Microsoft to collect data from users of your applications. If you use
-these features, you must comply with applicable law, including providing
-appropriate notices to users of your applications together with Microsoft’s
-privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data
-collection and its use from the software documentation and our privacy
-statement. Your use of the software operates as your consent to these
-practices.
-b.   
-Processing of Personal Data. To the extent Microsoft is a
-processor or subprocessor of personal data in connection with the software,
-Microsoft makes the commitments in the European Union General Data Protection
-Regulation Terms of the Online Services Terms to all customers effective May
-25, 2018, at https://learn.microsoft.com/en-us/legal/gdpr.
-5.   
-Scope of
-License. The software is licensed, not sold. This agreement
-only gives you some rights to use the software. Microsoft reserves all other
-rights. Unless applicable law gives you more rights despite this limitation,
-you may use the software only as expressly permitted in this agreement. In
-doing so, you must comply with any technical limitations in the software that
-only allow you to use it in certain ways. You may not
-·       
-work around any technical
-limitations in the software;
-·       
-reverse engineer, decompile or
-disassemble the software, or otherwise attempt to derive the source code for
-the software, except and to the extent required by third party licensing terms
-governing use of certain open source components that may be included in the
-software;
-·       
-remove, minimize, block or modify
-any notices of Microsoft or its suppliers in the software; 
-·       
-use the software in any way that
-is against the law; or
-·       
-share, publish, rent or lease the
-software, provide the software as a stand-alone offering for others to use, or
-transfer the software or this agreement to any third party.
-6.   
-Export
-Restrictions. You must comply with all domestic and international
-export laws and regulations that apply to the software, which include
-restrictions on destinations, end users, and end use. For further information
-on export restrictions, visit www.microsoft.com/exporting.  
-7.   
-SUPPORT
-SERVICES. Because this software is “as is,” we may not provide
-support services for it.
-8.   
-Entire
-Agreement. This
-agreement, and the terms for supplements, updates, Internet-based services and
-support services that you use, are the entire agreement for the software and
-support services.
-9.    Applicable Law.  If you acquired the software in the United States, Washington law
-applies to interpretation of and claims for breach of this agreement, and the
-laws of the state where you live apply to all other claims. If you acquired the
-software in any other country, its laws apply.
-10. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
-may have other rights, including consumer rights, under the laws of your state
-or country. Separate and apart from your relationship with Microsoft, you may
-also have rights with respect to the party from which you acquired the
-software. This agreement does not change those other rights if the laws of your
-state or country do not permit it to do so. For example, if you acquired the
-software in one of the below regions, or mandatory country law applies, then
-the following provisions apply to you:
-a)    Australia. You have statutory guarantees under the Australian Consumer
-Law and nothing in this agreement is intended to affect those rights.
-b)    Canada. If you acquired this software in Canada, you may stop
-receiving updates by turning off the automatic update feature, disconnecting
-your device from the Internet (if and when you re-connect to the Internet,
-however, the software will resume checking for and installing updates), or uninstalling
-the software. The product documentation, if any, may also specify how to turn
-off updates for your specific device or software.
-c)    Germany and Austria.
-(i)        Warranty. The software will perform
-substantially as described in any Microsoft materials that accompany it.
-However, Microsoft gives no contractual guarantee in relation to the software.
-(ii)       Limitation of Liability. In case of
-intentional conduct, gross negligence, claims based on the Product Liability
-Act, as well as in case of death or personal or physical injury, Microsoft is
-liable according to the statutory law.
-Subject to the foregoing clause (ii), Microsoft will only
-be liable for slight negligence if Microsoft is in breach of such material
-contractual obligations, the fulfillment of which facilitate the due
-performance of this agreement, the breach of which would endanger the purpose
-of this agreement and the compliance with which a party may constantly trust in
-(so-called "cardinal obligations"). In other cases of slight negligence,
-Microsoft will not be liable for slight negligence
-11. Disclaimer of Warranty. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK
-OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.
-TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NON-INFRINGEMENT. 
-12.
-Limitation
-on and Exclusion of Remedies and Damages. YOU
-CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S.
-$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST
-PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
-This limitation applies to (a)
-anything related to the software, services, content (including code) on third
-party Internet sites, or third party applications; and (b) claims for breach of
-contract, breach of warranty, guarantee or condition, strict liability,
-negligence, or other tort to the extent permitted by applicable law.
-It
-also applies even if Microsoft knew or should have known about the possibility
-of the damages. The above limitation or exclusion may not apply to you because
-your state or country may not allow the exclusion or limitation of incidental,
-consequential or other damages.
-```
-
-</details>
-
-
-<details>
 <summary>Microsoft.NETCore.Targets 1.1.0</summary>
 
 ## Microsoft.NETCore.Targets
@@ -2640,206 +1554,6 @@ consequential or other damages.
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Targets/1.1.0)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
-
-
-```
-MICROSOFT SOFTWARE LICENSE
-TERMS
-
-MICROSOFT .NET
-LIBRARY
-
-These
-license terms are an agreement between you and Microsoft Corporation (or based
-on where you live, one of its affiliates). They apply to the software named
-above. The terms also apply to any Microsoft services or updates for the
-software, except to the extent those have different terms.
-
-If
-you comply with these license terms, you have the rights below.
-
-1.    INSTALLATION AND USE RIGHTS. 
-You may
-install and use any number of copies of the software to develop and test your applications. 
-
-2.   
-THIRD PARTY COMPONENTS. The software may include third party components with
-separate legal notices or governed by other agreements, as may be described in
-the ThirdPartyNotices file(s) accompanying the software.
-3.   
-ADDITIONAL LICENSING
-REQUIREMENTS AND/OR USE RIGHTS.
-a.    
-DISTRIBUTABLE
-CODE.  The software is
-comprised of Distributable Code. “Distributable Code” is code that you are
-permitted to distribute in applications you develop if you comply with the
-terms below.
-i.      Right to Use and Distribute. 
-·       
-You may copy and distribute the object code form of the software.
-·       
-Third Party Distribution. You may permit distributors of your applications
-to copy and distribute the Distributable Code as part of those applications.
-ii.     Distribution Requirements. For any
-Distributable Code you distribute, you must
-·       
-use the Distributable Code in your applications and not as a
-standalone distribution;
-·       
-require distributors and external end users to agree to terms that
-protect it at least as much as this agreement; and
-·       
-indemnify, defend, and hold harmless Microsoft from any claims,
-including attorneys’ fees, related to the distribution or use of your applications,
-except to the extent that any claim is based solely on the unmodified Distributable
-Code.
-iii.   Distribution Restrictions. You may not
-·       
-use Microsoft’s trademarks in your applications’ names or in a way
-that suggests your applications come from or are endorsed by Microsoft; or
-·       
-modify or distribute the source code of any Distributable Code so
-that any part of it becomes subject to an Excluded License. An “Excluded
-License” is one that requires, as a condition of use, modification or
-distribution of code, that (i) it be disclosed or distributed in source code
-form; or (ii) others have the right to modify it.
-4.   
-DATA.
-a.    
-Data Collection. The software may collect
-information about you and your use of the software, and send that to Microsoft.
-Microsoft may use this information to provide services and improve our products
-and services.  You may opt-out of many of these scenarios, but not all, as
-described in the software documentation.  There are also some features in the software that may enable you and
-Microsoft to collect data from users of your applications. If you use
-these features, you must comply with applicable law, including providing
-appropriate notices to users of your applications together with Microsoft’s
-privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data
-collection and its use from the software documentation and our privacy
-statement. Your use of the software operates as your consent to these
-practices.
-b.   
-Processing of Personal Data. To the extent Microsoft is a
-processor or subprocessor of personal data in connection with the software,
-Microsoft makes the commitments in the European Union General Data Protection
-Regulation Terms of the Online Services Terms to all customers effective May
-25, 2018, at https://learn.microsoft.com/en-us/legal/gdpr.
-5.   
-Scope of
-License. The software is licensed, not sold. This agreement
-only gives you some rights to use the software. Microsoft reserves all other
-rights. Unless applicable law gives you more rights despite this limitation,
-you may use the software only as expressly permitted in this agreement. In
-doing so, you must comply with any technical limitations in the software that
-only allow you to use it in certain ways. You may not
-·       
-work around any technical
-limitations in the software;
-·       
-reverse engineer, decompile or
-disassemble the software, or otherwise attempt to derive the source code for
-the software, except and to the extent required by third party licensing terms
-governing use of certain open source components that may be included in the
-software;
-·       
-remove, minimize, block or modify
-any notices of Microsoft or its suppliers in the software; 
-·       
-use the software in any way that
-is against the law; or
-·       
-share, publish, rent or lease the
-software, provide the software as a stand-alone offering for others to use, or
-transfer the software or this agreement to any third party.
-6.   
-Export
-Restrictions. You must comply with all domestic and international
-export laws and regulations that apply to the software, which include
-restrictions on destinations, end users, and end use. For further information
-on export restrictions, visit www.microsoft.com/exporting.  
-7.   
-SUPPORT
-SERVICES. Because this software is “as is,” we may not provide
-support services for it.
-8.   
-Entire
-Agreement. This
-agreement, and the terms for supplements, updates, Internet-based services and
-support services that you use, are the entire agreement for the software and
-support services.
-9.    Applicable Law.  If you acquired the software in the United States, Washington law
-applies to interpretation of and claims for breach of this agreement, and the
-laws of the state where you live apply to all other claims. If you acquired the
-software in any other country, its laws apply.
-10. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
-may have other rights, including consumer rights, under the laws of your state
-or country. Separate and apart from your relationship with Microsoft, you may
-also have rights with respect to the party from which you acquired the
-software. This agreement does not change those other rights if the laws of your
-state or country do not permit it to do so. For example, if you acquired the
-software in one of the below regions, or mandatory country law applies, then
-the following provisions apply to you:
-a)    Australia. You have statutory guarantees under the Australian Consumer
-Law and nothing in this agreement is intended to affect those rights.
-b)    Canada. If you acquired this software in Canada, you may stop
-receiving updates by turning off the automatic update feature, disconnecting
-your device from the Internet (if and when you re-connect to the Internet,
-however, the software will resume checking for and installing updates), or uninstalling
-the software. The product documentation, if any, may also specify how to turn
-off updates for your specific device or software.
-c)    Germany and Austria.
-(i)        Warranty. The software will perform
-substantially as described in any Microsoft materials that accompany it.
-However, Microsoft gives no contractual guarantee in relation to the software.
-(ii)       Limitation of Liability. In case of
-intentional conduct, gross negligence, claims based on the Product Liability
-Act, as well as in case of death or personal or physical injury, Microsoft is
-liable according to the statutory law.
-Subject to the foregoing clause (ii), Microsoft will only
-be liable for slight negligence if Microsoft is in breach of such material
-contractual obligations, the fulfillment of which facilitate the due
-performance of this agreement, the breach of which would endanger the purpose
-of this agreement and the compliance with which a party may constantly trust in
-(so-called "cardinal obligations"). In other cases of slight negligence,
-Microsoft will not be liable for slight negligence
-11. Disclaimer of Warranty. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK
-OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.
-TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NON-INFRINGEMENT. 
-12.
-Limitation
-on and Exclusion of Remedies and Damages. YOU
-CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S.
-$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST
-PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
-This limitation applies to (a)
-anything related to the software, services, content (including code) on third
-party Internet sites, or third party applications; and (b) claims for breach of
-contract, breach of warranty, guarantee or condition, strict liability,
-negligence, or other tort to the extent permitted by applicable law.
-It
-also applies even if Microsoft knew or should have known about the possibility
-of the damages. The above limitation or exclusion may not apply to you because
-your state or country may not allow the exclusion or limitation of incidental,
-consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>Microsoft.NETCore.Targets 1.1.3</summary>
-
-## Microsoft.NETCore.Targets
-
-- Version: 1.1.3
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NETCore.Targets/1.1.3)
 - License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
@@ -3773,84 +2487,6 @@ also applies even if Microsoft knew or should have known about the possibility
 of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>NETStandard.Library 2.0.0</summary>
-
-## NETStandard.Library
-
-- Version: 2.0.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/NETStandard.Library/2.0.0)
-- License: [MIT](https://github.com/dotnet/standard/raw/release/2.0.0/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>Newtonsoft.Json 13.0.2</summary>
-
-## Newtonsoft.Json
-
-- Version: 13.0.2
-- Authors: James Newton-King
-- Project URL: https://www.newtonsoft.com/json
-- Source: [NuGet](https://www.nuget.org/packages/Newtonsoft.Json/13.0.2)
-- License: [MIT](https://github.com/JamesNK/Newtonsoft.Json/raw/master/LICENSE.md)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) 2007 James Newton-King
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 </details>
@@ -5221,205 +3857,6 @@ consequential or other damages.
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource/4.3.0)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
-
-
-```
-MICROSOFT SOFTWARE LICENSE
-TERMS
-
-MICROSOFT .NET
-LIBRARY
-
-These
-license terms are an agreement between you and Microsoft Corporation (or based
-on where you live, one of its affiliates). They apply to the software named
-above. The terms also apply to any Microsoft services or updates for the
-software, except to the extent those have different terms.
-
-If
-you comply with these license terms, you have the rights below.
-
-1.    INSTALLATION AND USE RIGHTS. 
-You may
-install and use any number of copies of the software to develop and test your applications. 
-
-2.   
-THIRD PARTY COMPONENTS. The software may include third party components with
-separate legal notices or governed by other agreements, as may be described in
-the ThirdPartyNotices file(s) accompanying the software.
-3.   
-ADDITIONAL LICENSING
-REQUIREMENTS AND/OR USE RIGHTS.
-a.    
-DISTRIBUTABLE
-CODE.  The software is
-comprised of Distributable Code. “Distributable Code” is code that you are
-permitted to distribute in applications you develop if you comply with the
-terms below.
-i.      Right to Use and Distribute. 
-·       
-You may copy and distribute the object code form of the software.
-·       
-Third Party Distribution. You may permit distributors of your applications
-to copy and distribute the Distributable Code as part of those applications.
-ii.     Distribution Requirements. For any
-Distributable Code you distribute, you must
-·       
-use the Distributable Code in your applications and not as a
-standalone distribution;
-·       
-require distributors and external end users to agree to terms that
-protect it at least as much as this agreement; and
-·       
-indemnify, defend, and hold harmless Microsoft from any claims,
-including attorneys’ fees, related to the distribution or use of your applications,
-except to the extent that any claim is based solely on the unmodified Distributable
-Code.
-iii.   Distribution Restrictions. You may not
-·       
-use Microsoft’s trademarks in your applications’ names or in a way
-that suggests your applications come from or are endorsed by Microsoft; or
-·       
-modify or distribute the source code of any Distributable Code so
-that any part of it becomes subject to an Excluded License. An “Excluded
-License” is one that requires, as a condition of use, modification or
-distribution of code, that (i) it be disclosed or distributed in source code
-form; or (ii) others have the right to modify it.
-4.   
-DATA.
-a.    
-Data Collection. The software may collect
-information about you and your use of the software, and send that to Microsoft.
-Microsoft may use this information to provide services and improve our products
-and services.  You may opt-out of many of these scenarios, but not all, as
-described in the software documentation.  There are also some features in the software that may enable you and
-Microsoft to collect data from users of your applications. If you use
-these features, you must comply with applicable law, including providing
-appropriate notices to users of your applications together with Microsoft’s
-privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data
-collection and its use from the software documentation and our privacy
-statement. Your use of the software operates as your consent to these
-practices.
-b.   
-Processing of Personal Data. To the extent Microsoft is a
-processor or subprocessor of personal data in connection with the software,
-Microsoft makes the commitments in the European Union General Data Protection
-Regulation Terms of the Online Services Terms to all customers effective May
-25, 2018, at https://learn.microsoft.com/en-us/legal/gdpr.
-5.   
-Scope of
-License. The software is licensed, not sold. This agreement
-only gives you some rights to use the software. Microsoft reserves all other
-rights. Unless applicable law gives you more rights despite this limitation,
-you may use the software only as expressly permitted in this agreement. In
-doing so, you must comply with any technical limitations in the software that
-only allow you to use it in certain ways. You may not
-·       
-work around any technical
-limitations in the software;
-·       
-reverse engineer, decompile or
-disassemble the software, or otherwise attempt to derive the source code for
-the software, except and to the extent required by third party licensing terms
-governing use of certain open source components that may be included in the
-software;
-·       
-remove, minimize, block or modify
-any notices of Microsoft or its suppliers in the software; 
-·       
-use the software in any way that
-is against the law; or
-·       
-share, publish, rent or lease the
-software, provide the software as a stand-alone offering for others to use, or
-transfer the software or this agreement to any third party.
-6.   
-Export
-Restrictions. You must comply with all domestic and international
-export laws and regulations that apply to the software, which include
-restrictions on destinations, end users, and end use. For further information
-on export restrictions, visit www.microsoft.com/exporting.  
-7.   
-SUPPORT
-SERVICES. Because this software is “as is,” we may not provide
-support services for it.
-8.   
-Entire
-Agreement. This
-agreement, and the terms for supplements, updates, Internet-based services and
-support services that you use, are the entire agreement for the software and
-support services.
-9.    Applicable Law.  If you acquired the software in the United States, Washington law
-applies to interpretation of and claims for breach of this agreement, and the
-laws of the state where you live apply to all other claims. If you acquired the
-software in any other country, its laws apply.
-10. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
-may have other rights, including consumer rights, under the laws of your state
-or country. Separate and apart from your relationship with Microsoft, you may
-also have rights with respect to the party from which you acquired the
-software. This agreement does not change those other rights if the laws of your
-state or country do not permit it to do so. For example, if you acquired the
-software in one of the below regions, or mandatory country law applies, then
-the following provisions apply to you:
-a)    Australia. You have statutory guarantees under the Australian Consumer
-Law and nothing in this agreement is intended to affect those rights.
-b)    Canada. If you acquired this software in Canada, you may stop
-receiving updates by turning off the automatic update feature, disconnecting
-your device from the Internet (if and when you re-connect to the Internet,
-however, the software will resume checking for and installing updates), or uninstalling
-the software. The product documentation, if any, may also specify how to turn
-off updates for your specific device or software.
-c)    Germany and Austria.
-(i)        Warranty. The software will perform
-substantially as described in any Microsoft materials that accompany it.
-However, Microsoft gives no contractual guarantee in relation to the software.
-(ii)       Limitation of Liability. In case of
-intentional conduct, gross negligence, claims based on the Product Liability
-Act, as well as in case of death or personal or physical injury, Microsoft is
-liable according to the statutory law.
-Subject to the foregoing clause (ii), Microsoft will only
-be liable for slight negligence if Microsoft is in breach of such material
-contractual obligations, the fulfillment of which facilitate the due
-performance of this agreement, the breach of which would endanger the purpose
-of this agreement and the compliance with which a party may constantly trust in
-(so-called "cardinal obligations"). In other cases of slight negligence,
-Microsoft will not be liable for slight negligence
-11. Disclaimer of Warranty. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK
-OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.
-TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NON-INFRINGEMENT. 
-12.
-Limitation
-on and Exclusion of Remedies and Damages. YOU
-CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S.
-$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST
-PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
-This limitation applies to (a)
-anything related to the software, services, content (including code) on third
-party Internet sites, or third party applications; and (b) claims for breach of
-contract, breach of warranty, guarantee or condition, strict liability,
-negligence, or other tort to the extent permitted by applicable law.
-It
-also applies even if Microsoft knew or should have known about the possibility
-of the damages. The above limitation or exclusion may not apply to you because
-your state or country may not allow the exclusion or limitation of incidental,
-consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.Diagnostics.DiagnosticSource 6.0.0</summary>
-
-## System.Diagnostics.DiagnosticSource
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource/6.0.0)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -6702,48 +5139,7 @@ consequential or other damages.
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
 - Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/17.2.3)
-- License: [MIT]( https://raw.githubusercontent.com/TestableIO/System.IO.Abstractions/main/LICENSE)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) Tatham Oddie and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>System.IO.Abstractions 19.2.1</summary>
-
-## System.IO.Abstractions
-
-- Version: 19.2.1
-- Authors: Tatham Oddie & friends
-- Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/19.2.1)
-- License: [MIT]( https://raw.githubusercontent.com/TestableIO/System.IO.Abstractions/main/LICENSE)
+- License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
 ```
@@ -6784,48 +5180,7 @@ SOFTWARE.
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
 - Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/17.2.3)
-- License: [MIT]( https://raw.githubusercontent.com/TestableIO/System.IO.Abstractions/main/LICENSE)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) Tatham Oddie and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>System.IO.Abstractions.TestingHelpers 19.2.1</summary>
-
-## System.IO.Abstractions.TestingHelpers
-
-- Version: 19.2.1
-- Authors: Tatham Oddie & friends
-- Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/19.2.1)
-- License: [MIT]( https://raw.githubusercontent.com/TestableIO/System.IO.Abstractions/main/LICENSE)
+- License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
 ```
@@ -7458,48 +5813,6 @@ consequential or other damages.
 
 
 <details>
-<summary>System.IO.FileSystem.AccessControl 4.7.0</summary>
-
-## System.IO.FileSystem.AccessControl
-
-- Version: 4.7.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://github.com/dotnet/corefx
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.FileSystem.AccessControl/4.7.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
 <summary>System.IO.FileSystem.Primitives 4.3.0</summary>
 
 ## System.IO.FileSystem.Primitives
@@ -7709,6 +6022,47 @@ consequential or other damages.
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/System.IO.Hashing/7.0.0)
 - License: [MIT](https://raw.githubusercontent.com/dotnet/runtime/main/LICENSE.TXT)
+
+
+```
+The MIT License (MIT)
+
+Copyright (c) .NET Foundation and Contributors
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+</details>
+
+
+<details>
+<summary>System.IO.Pipelines 6.0.3</summary>
+
+## System.IO.Pipelines
+
+- Version: 6.0.3
+- Authors: Microsoft
+- Project URL: https://dot.net/
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Pipelines/6.0.3)
+- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
 ```
@@ -8383,206 +6737,6 @@ consequential or other damages.
 
 
 <details>
-<summary>System.Net.Http 4.3.4</summary>
-
-## System.Net.Http
-
-- Version: 4.3.4
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Http/4.3.4)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
-
-
-```
-MICROSOFT SOFTWARE LICENSE
-TERMS
-
-MICROSOFT .NET
-LIBRARY
-
-These
-license terms are an agreement between you and Microsoft Corporation (or based
-on where you live, one of its affiliates). They apply to the software named
-above. The terms also apply to any Microsoft services or updates for the
-software, except to the extent those have different terms.
-
-If
-you comply with these license terms, you have the rights below.
-
-1.    INSTALLATION AND USE RIGHTS. 
-You may
-install and use any number of copies of the software to develop and test your applications. 
-
-2.   
-THIRD PARTY COMPONENTS. The software may include third party components with
-separate legal notices or governed by other agreements, as may be described in
-the ThirdPartyNotices file(s) accompanying the software.
-3.   
-ADDITIONAL LICENSING
-REQUIREMENTS AND/OR USE RIGHTS.
-a.    
-DISTRIBUTABLE
-CODE.  The software is
-comprised of Distributable Code. “Distributable Code” is code that you are
-permitted to distribute in applications you develop if you comply with the
-terms below.
-i.      Right to Use and Distribute. 
-·       
-You may copy and distribute the object code form of the software.
-·       
-Third Party Distribution. You may permit distributors of your applications
-to copy and distribute the Distributable Code as part of those applications.
-ii.     Distribution Requirements. For any
-Distributable Code you distribute, you must
-·       
-use the Distributable Code in your applications and not as a
-standalone distribution;
-·       
-require distributors and external end users to agree to terms that
-protect it at least as much as this agreement; and
-·       
-indemnify, defend, and hold harmless Microsoft from any claims,
-including attorneys’ fees, related to the distribution or use of your applications,
-except to the extent that any claim is based solely on the unmodified Distributable
-Code.
-iii.   Distribution Restrictions. You may not
-·       
-use Microsoft’s trademarks in your applications’ names or in a way
-that suggests your applications come from or are endorsed by Microsoft; or
-·       
-modify or distribute the source code of any Distributable Code so
-that any part of it becomes subject to an Excluded License. An “Excluded
-License” is one that requires, as a condition of use, modification or
-distribution of code, that (i) it be disclosed or distributed in source code
-form; or (ii) others have the right to modify it.
-4.   
-DATA.
-a.    
-Data Collection. The software may collect
-information about you and your use of the software, and send that to Microsoft.
-Microsoft may use this information to provide services and improve our products
-and services.  You may opt-out of many of these scenarios, but not all, as
-described in the software documentation.  There are also some features in the software that may enable you and
-Microsoft to collect data from users of your applications. If you use
-these features, you must comply with applicable law, including providing
-appropriate notices to users of your applications together with Microsoft’s
-privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data
-collection and its use from the software documentation and our privacy
-statement. Your use of the software operates as your consent to these
-practices.
-b.   
-Processing of Personal Data. To the extent Microsoft is a
-processor or subprocessor of personal data in connection with the software,
-Microsoft makes the commitments in the European Union General Data Protection
-Regulation Terms of the Online Services Terms to all customers effective May
-25, 2018, at https://learn.microsoft.com/en-us/legal/gdpr.
-5.   
-Scope of
-License. The software is licensed, not sold. This agreement
-only gives you some rights to use the software. Microsoft reserves all other
-rights. Unless applicable law gives you more rights despite this limitation,
-you may use the software only as expressly permitted in this agreement. In
-doing so, you must comply with any technical limitations in the software that
-only allow you to use it in certain ways. You may not
-·       
-work around any technical
-limitations in the software;
-·       
-reverse engineer, decompile or
-disassemble the software, or otherwise attempt to derive the source code for
-the software, except and to the extent required by third party licensing terms
-governing use of certain open source components that may be included in the
-software;
-·       
-remove, minimize, block or modify
-any notices of Microsoft or its suppliers in the software; 
-·       
-use the software in any way that
-is against the law; or
-·       
-share, publish, rent or lease the
-software, provide the software as a stand-alone offering for others to use, or
-transfer the software or this agreement to any third party.
-6.   
-Export
-Restrictions. You must comply with all domestic and international
-export laws and regulations that apply to the software, which include
-restrictions on destinations, end users, and end use. For further information
-on export restrictions, visit www.microsoft.com/exporting.  
-7.   
-SUPPORT
-SERVICES. Because this software is “as is,” we may not provide
-support services for it.
-8.   
-Entire
-Agreement. This
-agreement, and the terms for supplements, updates, Internet-based services and
-support services that you use, are the entire agreement for the software and
-support services.
-9.    Applicable Law.  If you acquired the software in the United States, Washington law
-applies to interpretation of and claims for breach of this agreement, and the
-laws of the state where you live apply to all other claims. If you acquired the
-software in any other country, its laws apply.
-10. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
-may have other rights, including consumer rights, under the laws of your state
-or country. Separate and apart from your relationship with Microsoft, you may
-also have rights with respect to the party from which you acquired the
-software. This agreement does not change those other rights if the laws of your
-state or country do not permit it to do so. For example, if you acquired the
-software in one of the below regions, or mandatory country law applies, then
-the following provisions apply to you:
-a)    Australia. You have statutory guarantees under the Australian Consumer
-Law and nothing in this agreement is intended to affect those rights.
-b)    Canada. If you acquired this software in Canada, you may stop
-receiving updates by turning off the automatic update feature, disconnecting
-your device from the Internet (if and when you re-connect to the Internet,
-however, the software will resume checking for and installing updates), or uninstalling
-the software. The product documentation, if any, may also specify how to turn
-off updates for your specific device or software.
-c)    Germany and Austria.
-(i)        Warranty. The software will perform
-substantially as described in any Microsoft materials that accompany it.
-However, Microsoft gives no contractual guarantee in relation to the software.
-(ii)       Limitation of Liability. In case of
-intentional conduct, gross negligence, claims based on the Product Liability
-Act, as well as in case of death or personal or physical injury, Microsoft is
-liable according to the statutory law.
-Subject to the foregoing clause (ii), Microsoft will only
-be liable for slight negligence if Microsoft is in breach of such material
-contractual obligations, the fulfillment of which facilitate the due
-performance of this agreement, the breach of which would endanger the purpose
-of this agreement and the compliance with which a party may constantly trust in
-(so-called "cardinal obligations"). In other cases of slight negligence,
-Microsoft will not be liable for slight negligence
-11. Disclaimer of Warranty. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK
-OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.
-TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NON-INFRINGEMENT. 
-12.
-Limitation
-on and Exclusion of Remedies and Damages. YOU
-CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S.
-$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST
-PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
-This limitation applies to (a)
-anything related to the software, services, content (including code) on third
-party Internet sites, or third party applications; and (b) claims for breach of
-contract, breach of warranty, guarantee or condition, strict liability,
-negligence, or other tort to the extent permitted by applicable law.
-It
-also applies even if Microsoft knew or should have known about the possibility
-of the damages. The above limitation or exclusion may not apply to you because
-your state or country may not allow the exclusion or limitation of incidental,
-consequential or other damages.
-```
-
-</details>
-
-
-<details>
 <summary>System.Net.Primitives 4.3.0</summary>
 
 ## System.Net.Primitives
@@ -8592,206 +6746,6 @@ consequential or other damages.
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/System.Net.Primitives/4.3.0)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
-
-
-```
-MICROSOFT SOFTWARE LICENSE
-TERMS
-
-MICROSOFT .NET
-LIBRARY
-
-These
-license terms are an agreement between you and Microsoft Corporation (or based
-on where you live, one of its affiliates). They apply to the software named
-above. The terms also apply to any Microsoft services or updates for the
-software, except to the extent those have different terms.
-
-If
-you comply with these license terms, you have the rights below.
-
-1.    INSTALLATION AND USE RIGHTS. 
-You may
-install and use any number of copies of the software to develop and test your applications. 
-
-2.   
-THIRD PARTY COMPONENTS. The software may include third party components with
-separate legal notices or governed by other agreements, as may be described in
-the ThirdPartyNotices file(s) accompanying the software.
-3.   
-ADDITIONAL LICENSING
-REQUIREMENTS AND/OR USE RIGHTS.
-a.    
-DISTRIBUTABLE
-CODE.  The software is
-comprised of Distributable Code. “Distributable Code” is code that you are
-permitted to distribute in applications you develop if you comply with the
-terms below.
-i.      Right to Use and Distribute. 
-·       
-You may copy and distribute the object code form of the software.
-·       
-Third Party Distribution. You may permit distributors of your applications
-to copy and distribute the Distributable Code as part of those applications.
-ii.     Distribution Requirements. For any
-Distributable Code you distribute, you must
-·       
-use the Distributable Code in your applications and not as a
-standalone distribution;
-·       
-require distributors and external end users to agree to terms that
-protect it at least as much as this agreement; and
-·       
-indemnify, defend, and hold harmless Microsoft from any claims,
-including attorneys’ fees, related to the distribution or use of your applications,
-except to the extent that any claim is based solely on the unmodified Distributable
-Code.
-iii.   Distribution Restrictions. You may not
-·       
-use Microsoft’s trademarks in your applications’ names or in a way
-that suggests your applications come from or are endorsed by Microsoft; or
-·       
-modify or distribute the source code of any Distributable Code so
-that any part of it becomes subject to an Excluded License. An “Excluded
-License” is one that requires, as a condition of use, modification or
-distribution of code, that (i) it be disclosed or distributed in source code
-form; or (ii) others have the right to modify it.
-4.   
-DATA.
-a.    
-Data Collection. The software may collect
-information about you and your use of the software, and send that to Microsoft.
-Microsoft may use this information to provide services and improve our products
-and services.  You may opt-out of many of these scenarios, but not all, as
-described in the software documentation.  There are also some features in the software that may enable you and
-Microsoft to collect data from users of your applications. If you use
-these features, you must comply with applicable law, including providing
-appropriate notices to users of your applications together with Microsoft’s
-privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data
-collection and its use from the software documentation and our privacy
-statement. Your use of the software operates as your consent to these
-practices.
-b.   
-Processing of Personal Data. To the extent Microsoft is a
-processor or subprocessor of personal data in connection with the software,
-Microsoft makes the commitments in the European Union General Data Protection
-Regulation Terms of the Online Services Terms to all customers effective May
-25, 2018, at https://learn.microsoft.com/en-us/legal/gdpr.
-5.   
-Scope of
-License. The software is licensed, not sold. This agreement
-only gives you some rights to use the software. Microsoft reserves all other
-rights. Unless applicable law gives you more rights despite this limitation,
-you may use the software only as expressly permitted in this agreement. In
-doing so, you must comply with any technical limitations in the software that
-only allow you to use it in certain ways. You may not
-·       
-work around any technical
-limitations in the software;
-·       
-reverse engineer, decompile or
-disassemble the software, or otherwise attempt to derive the source code for
-the software, except and to the extent required by third party licensing terms
-governing use of certain open source components that may be included in the
-software;
-·       
-remove, minimize, block or modify
-any notices of Microsoft or its suppliers in the software; 
-·       
-use the software in any way that
-is against the law; or
-·       
-share, publish, rent or lease the
-software, provide the software as a stand-alone offering for others to use, or
-transfer the software or this agreement to any third party.
-6.   
-Export
-Restrictions. You must comply with all domestic and international
-export laws and regulations that apply to the software, which include
-restrictions on destinations, end users, and end use. For further information
-on export restrictions, visit www.microsoft.com/exporting.  
-7.   
-SUPPORT
-SERVICES. Because this software is “as is,” we may not provide
-support services for it.
-8.   
-Entire
-Agreement. This
-agreement, and the terms for supplements, updates, Internet-based services and
-support services that you use, are the entire agreement for the software and
-support services.
-9.    Applicable Law.  If you acquired the software in the United States, Washington law
-applies to interpretation of and claims for breach of this agreement, and the
-laws of the state where you live apply to all other claims. If you acquired the
-software in any other country, its laws apply.
-10. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
-may have other rights, including consumer rights, under the laws of your state
-or country. Separate and apart from your relationship with Microsoft, you may
-also have rights with respect to the party from which you acquired the
-software. This agreement does not change those other rights if the laws of your
-state or country do not permit it to do so. For example, if you acquired the
-software in one of the below regions, or mandatory country law applies, then
-the following provisions apply to you:
-a)    Australia. You have statutory guarantees under the Australian Consumer
-Law and nothing in this agreement is intended to affect those rights.
-b)    Canada. If you acquired this software in Canada, you may stop
-receiving updates by turning off the automatic update feature, disconnecting
-your device from the Internet (if and when you re-connect to the Internet,
-however, the software will resume checking for and installing updates), or uninstalling
-the software. The product documentation, if any, may also specify how to turn
-off updates for your specific device or software.
-c)    Germany and Austria.
-(i)        Warranty. The software will perform
-substantially as described in any Microsoft materials that accompany it.
-However, Microsoft gives no contractual guarantee in relation to the software.
-(ii)       Limitation of Liability. In case of
-intentional conduct, gross negligence, claims based on the Product Liability
-Act, as well as in case of death or personal or physical injury, Microsoft is
-liable according to the statutory law.
-Subject to the foregoing clause (ii), Microsoft will only
-be liable for slight negligence if Microsoft is in breach of such material
-contractual obligations, the fulfillment of which facilitate the due
-performance of this agreement, the breach of which would endanger the purpose
-of this agreement and the compliance with which a party may constantly trust in
-(so-called "cardinal obligations"). In other cases of slight negligence,
-Microsoft will not be liable for slight negligence
-11. Disclaimer of Warranty. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK
-OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.
-TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NON-INFRINGEMENT. 
-12.
-Limitation
-on and Exclusion of Remedies and Damages. YOU
-CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S.
-$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST
-PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
-This limitation applies to (a)
-anything related to the software, services, content (including code) on third
-party Internet sites, or third party applications; and (b) claims for breach of
-contract, breach of warranty, guarantee or condition, strict liability,
-negligence, or other tort to the extent permitted by applicable law.
-It
-also applies even if Microsoft knew or should have known about the possibility
-of the damages. The above limitation or exclusion may not apply to you because
-your state or country may not allow the exclusion or limitation of incidental,
-consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.Net.Primitives 4.3.1</summary>
-
-## System.Net.Primitives
-
-- Version: 4.3.1
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Net.Primitives/4.3.1)
 - License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
 
 
@@ -9177,48 +7131,6 @@ also applies even if Microsoft knew or should have known about the possibility
 of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.Numerics.Vectors 4.4.0</summary>
-
-## System.Numerics.Vectors
-
-- Version: 4.4.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Numerics.Vectors/4.4.0)
-- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 ```
 
 </details>
@@ -11349,206 +9261,6 @@ consequential or other damages.
 
 
 <details>
-<summary>System.Runtime 4.3.1</summary>
-
-## System.Runtime
-
-- Version: 4.3.1
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Runtime/4.3.1)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
-
-
-```
-MICROSOFT SOFTWARE LICENSE
-TERMS
-
-MICROSOFT .NET
-LIBRARY
-
-These
-license terms are an agreement between you and Microsoft Corporation (or based
-on where you live, one of its affiliates). They apply to the software named
-above. The terms also apply to any Microsoft services or updates for the
-software, except to the extent those have different terms.
-
-If
-you comply with these license terms, you have the rights below.
-
-1.    INSTALLATION AND USE RIGHTS. 
-You may
-install and use any number of copies of the software to develop and test your applications. 
-
-2.   
-THIRD PARTY COMPONENTS. The software may include third party components with
-separate legal notices or governed by other agreements, as may be described in
-the ThirdPartyNotices file(s) accompanying the software.
-3.   
-ADDITIONAL LICENSING
-REQUIREMENTS AND/OR USE RIGHTS.
-a.    
-DISTRIBUTABLE
-CODE.  The software is
-comprised of Distributable Code. “Distributable Code” is code that you are
-permitted to distribute in applications you develop if you comply with the
-terms below.
-i.      Right to Use and Distribute. 
-·       
-You may copy and distribute the object code form of the software.
-·       
-Third Party Distribution. You may permit distributors of your applications
-to copy and distribute the Distributable Code as part of those applications.
-ii.     Distribution Requirements. For any
-Distributable Code you distribute, you must
-·       
-use the Distributable Code in your applications and not as a
-standalone distribution;
-·       
-require distributors and external end users to agree to terms that
-protect it at least as much as this agreement; and
-·       
-indemnify, defend, and hold harmless Microsoft from any claims,
-including attorneys’ fees, related to the distribution or use of your applications,
-except to the extent that any claim is based solely on the unmodified Distributable
-Code.
-iii.   Distribution Restrictions. You may not
-·       
-use Microsoft’s trademarks in your applications’ names or in a way
-that suggests your applications come from or are endorsed by Microsoft; or
-·       
-modify or distribute the source code of any Distributable Code so
-that any part of it becomes subject to an Excluded License. An “Excluded
-License” is one that requires, as a condition of use, modification or
-distribution of code, that (i) it be disclosed or distributed in source code
-form; or (ii) others have the right to modify it.
-4.   
-DATA.
-a.    
-Data Collection. The software may collect
-information about you and your use of the software, and send that to Microsoft.
-Microsoft may use this information to provide services and improve our products
-and services.  You may opt-out of many of these scenarios, but not all, as
-described in the software documentation.  There are also some features in the software that may enable you and
-Microsoft to collect data from users of your applications. If you use
-these features, you must comply with applicable law, including providing
-appropriate notices to users of your applications together with Microsoft’s
-privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data
-collection and its use from the software documentation and our privacy
-statement. Your use of the software operates as your consent to these
-practices.
-b.   
-Processing of Personal Data. To the extent Microsoft is a
-processor or subprocessor of personal data in connection with the software,
-Microsoft makes the commitments in the European Union General Data Protection
-Regulation Terms of the Online Services Terms to all customers effective May
-25, 2018, at https://learn.microsoft.com/en-us/legal/gdpr.
-5.   
-Scope of
-License. The software is licensed, not sold. This agreement
-only gives you some rights to use the software. Microsoft reserves all other
-rights. Unless applicable law gives you more rights despite this limitation,
-you may use the software only as expressly permitted in this agreement. In
-doing so, you must comply with any technical limitations in the software that
-only allow you to use it in certain ways. You may not
-·       
-work around any technical
-limitations in the software;
-·       
-reverse engineer, decompile or
-disassemble the software, or otherwise attempt to derive the source code for
-the software, except and to the extent required by third party licensing terms
-governing use of certain open source components that may be included in the
-software;
-·       
-remove, minimize, block or modify
-any notices of Microsoft or its suppliers in the software; 
-·       
-use the software in any way that
-is against the law; or
-·       
-share, publish, rent or lease the
-software, provide the software as a stand-alone offering for others to use, or
-transfer the software or this agreement to any third party.
-6.   
-Export
-Restrictions. You must comply with all domestic and international
-export laws and regulations that apply to the software, which include
-restrictions on destinations, end users, and end use. For further information
-on export restrictions, visit www.microsoft.com/exporting.  
-7.   
-SUPPORT
-SERVICES. Because this software is “as is,” we may not provide
-support services for it.
-8.   
-Entire
-Agreement. This
-agreement, and the terms for supplements, updates, Internet-based services and
-support services that you use, are the entire agreement for the software and
-support services.
-9.    Applicable Law.  If you acquired the software in the United States, Washington law
-applies to interpretation of and claims for breach of this agreement, and the
-laws of the state where you live apply to all other claims. If you acquired the
-software in any other country, its laws apply.
-10. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
-may have other rights, including consumer rights, under the laws of your state
-or country. Separate and apart from your relationship with Microsoft, you may
-also have rights with respect to the party from which you acquired the
-software. This agreement does not change those other rights if the laws of your
-state or country do not permit it to do so. For example, if you acquired the
-software in one of the below regions, or mandatory country law applies, then
-the following provisions apply to you:
-a)    Australia. You have statutory guarantees under the Australian Consumer
-Law and nothing in this agreement is intended to affect those rights.
-b)    Canada. If you acquired this software in Canada, you may stop
-receiving updates by turning off the automatic update feature, disconnecting
-your device from the Internet (if and when you re-connect to the Internet,
-however, the software will resume checking for and installing updates), or uninstalling
-the software. The product documentation, if any, may also specify how to turn
-off updates for your specific device or software.
-c)    Germany and Austria.
-(i)        Warranty. The software will perform
-substantially as described in any Microsoft materials that accompany it.
-However, Microsoft gives no contractual guarantee in relation to the software.
-(ii)       Limitation of Liability. In case of
-intentional conduct, gross negligence, claims based on the Product Liability
-Act, as well as in case of death or personal or physical injury, Microsoft is
-liable according to the statutory law.
-Subject to the foregoing clause (ii), Microsoft will only
-be liable for slight negligence if Microsoft is in breach of such material
-contractual obligations, the fulfillment of which facilitate the due
-performance of this agreement, the breach of which would endanger the purpose
-of this agreement and the compliance with which a party may constantly trust in
-(so-called "cardinal obligations"). In other cases of slight negligence,
-Microsoft will not be liable for slight negligence
-11. Disclaimer of Warranty. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK
-OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.
-TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NON-INFRINGEMENT. 
-12.
-Limitation
-on and Exclusion of Remedies and Damages. YOU
-CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S.
-$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST
-PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
-This limitation applies to (a)
-anything related to the software, services, content (including code) on third
-party Internet sites, or third party applications; and (b) claims for breach of
-contract, breach of warranty, guarantee or condition, strict liability,
-negligence, or other tort to the extent permitted by applicable law.
-It
-also applies even if Microsoft knew or should have known about the possibility
-of the damages. The above limitation or exclusion may not apply to you because
-your state or country may not allow the exclusion or limitation of incidental,
-consequential or other damages.
-```
-
-</details>
-
-
-<details>
 <summary>System.Runtime.CompilerServices.Unsafe 6.0.0</summary>
 
 ## System.Runtime.CompilerServices.Unsafe
@@ -12584,62 +10296,6 @@ also applies even if Microsoft knew or should have known about the possibility
 of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.Security.AccessControl 4.7.0</summary>
-
-## System.Security.AccessControl
-
-- Version: 4.7.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://github.com/dotnet/corefx
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.AccessControl/4.7.0)
-- License: [MIT]( https://licenses.nuget.org/MIT)
-
-
-```
-'MIT' reference
-
-
-
-MIT License
-SPDX identifier
-MIT
-License text
-
-MIT License
-
-
-Copyright (c) <year> <copyright holders>
-         
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of  this software and
-         associated documentation files (the "Software"), to deal in the Software without restriction,
-         including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-         and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
-         subject to the following conditions:
-The above copyright notice and this permission notice
-          (including the next paragraph)
-         shall be included in all copies or substantial
-         portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-         LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-         NO EVENT SHALL  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-         WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-SPDX web page
-
-https://spdx.org/licenses/MIT.html
-
-Notice
-This license content is provided by the SPDX project. For more information about licenses.nuget.org, see our documentation.
-
-Data pulled from spdx/license-list-data on February 9, 2023.
 ```
 
 </details>
@@ -14088,48 +11744,6 @@ consequential or other damages.
 
 
 <details>
-<summary>System.Security.Principal.Windows 4.7.0</summary>
-
-## System.Security.Principal.Windows
-
-- Version: 4.7.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://github.com/dotnet/corefx
-- Source: [NuGet](https://www.nuget.org/packages/System.Security.Principal.Windows/4.7.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
 <summary>System.Text.Encoding 4.3.0</summary>
 
 ## System.Text.Encoding
@@ -14524,88 +12138,6 @@ also applies even if Microsoft knew or should have known about the possibility
 of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.Text.Encodings.Web 6.0.0</summary>
-
-## System.Text.Encodings.Web
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.Encodings.Web/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>System.Text.Json 6.0.0</summary>
-
-## System.Text.Json
-
-- Version: 6.0.0
-- Authors: Microsoft
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Text.Json/6.0.0)
-- License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 ```
 
 </details>
@@ -15012,6 +12544,766 @@ consequential or other damages.
 
 
 <details>
+<summary>System.Threading.Channels 4.7.1</summary>
+
+## System.Threading.Channels
+
+- Version: 4.7.1
+- Authors: Microsoft
+- Owners: microsoft,dotnetframework
+- Project URL: https://github.com/dotnet/corefx
+- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Channels/4.7.1)
+- License: [MIT]( https://github.com/dotnet/corefx/blob/master/LICENSE.TXT)
+
+
+```
+corefx/LICENSE.TXT at master · dotnet/corefx · GitHub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+
+
+
+
+
+            Sign up
+          
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Product
+        
+
+
+
+
+
+
+
+
+
+
+
+
+Actions
+        Automate any workflow
+      
+
+
+
+
+
+
+
+Packages
+        Host and manage packages
+      
+
+
+
+
+
+
+
+Security
+        Find and fix vulnerabilities
+      
+
+
+
+
+
+
+
+Codespaces
+        Instant dev environments
+      
+
+
+
+
+
+
+
+Copilot
+        Write better code with AI
+      
+
+
+
+
+
+
+
+Code review
+        Manage code changes
+      
+
+
+
+
+
+
+
+Issues
+        Plan and track work
+      
+
+
+
+
+
+
+
+Discussions
+        Collaborate outside of code
+      
+
+
+
+
+Explore
+
+
+
+      All features
+
+    
+
+
+
+      Documentation
+
+    
+
+
+
+
+
+      GitHub Skills
+
+    
+
+
+
+
+
+      Blog
+
+    
+
+
+
+
+
+
+
+
+
+        Solutions
+        
+
+
+
+
+
+For
+
+
+
+      Enterprise
+
+    
+
+
+
+      Teams
+
+    
+
+
+
+      Startups
+
+    
+
+
+
+      Education
+
+    
+
+
+
+
+
+
+By Solution
+
+
+
+      CI/CD & Automation
+
+    
+
+
+
+      DevOps
+
+    
+
+
+
+
+
+      DevSecOps
+
+    
+
+
+
+
+
+
+Resources
+
+
+
+      Customer Stories
+
+    
+
+
+
+      White papers, Ebooks, Webinars
+
+    
+
+
+
+
+
+      Partners
+
+    
+
+
+
+
+
+
+
+
+
+        Open Source
+        
+
+
+
+
+
+
+
+
+
+GitHub Sponsors
+        Fund open source developers
+      
+
+
+
+
+
+
+
+
+The ReadME Project
+        GitHub community articles
+      
+
+
+
+
+Repositories
+
+
+
+      Topics
+
+    
+
+
+
+      Trending
+
+    
+
+
+
+      Collections
+
+    
+
+
+
+
+
+
+Pricing
+
+
+
+
+
+
+
+
+
+
+
+
+Search or jump to...
+
+
+
+
+
+
+
+Search code, repositories, users, issues, pull requests...
+
+ 
+
+
+
+
+        Search
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+Clear
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+              Search syntax tips
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Provide feedback
+      
+
+
+
+
+
+
+
+
+ 
+We read every piece of feedback, and take your input very seriously.
+
+
+Include my email address so I can be contacted
+
+     Cancel
+
+    Submit feedback
+
+
+
+
+
+
+
+
+
+
+        Saved searches
+      
+Use saved searches to filter your results more quickly
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Name
+
+
+
+
+
+
+Query
+
+
+
+            To see all available qualifiers, see our documentation.
+          
+ 
+
+
+
+
+     Cancel
+
+    Create saved search
+
+
+
+
+
+
+
+
+              Sign in
+            
+
+
+              Sign up
+            
+
+
+
+
+
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    This repository has been archived by the owner on Jan 23, 2023. It is now read-only.
+  
+
+
+
+
+
+
+
+
+
+        dotnet
+ 
+/
+
+corefx
+
+Public archive
+
+
+
+
+
+ 
+
+Notifications
+
+
+
+ 
+
+Fork
+    5.2k
+
+
+
+
+ 
+
+
+          Star
+ 17.8k
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code
+
+
+
+
+
+
+
+Pull requests
+0
+
+
+
+
+
+
+Security
+
+
+
+
+
+
+
+Insights
+
+
+
+ 
+ 
+
+
+
+More
+
+
+
+
+
+
+                  Code
+ 
+
+
+                  Pull requests
+ 
+
+
+                  Security
+ 
+
+
+                  Insights
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Footer
+
+
+
+
+
+
+
+ 
+        © 2023 GitHub, Inc.
+        
+
+
+
+Footer navigation
+
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    You can’t perform that action at this time.
+```
+
+</details>
+
+
+<details>
 <summary>System.Threading.Tasks 4.3.0</summary>
 
 ## System.Threading.Tasks
@@ -15221,7 +13513,7 @@ consequential or other damages.
 - Owners: microsoft,dotnetframework
 - Project URL: https://dot.net/
 - Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.3.0)
-- License: [MICROSOFT .NET LIBRARY License]( http://go.microsoft.com/fwlink/?LinkId=329770)
+- License: [MIT](https://dotnet.microsoft.com/en-us/dotnet_library_license.htm)
 
 
 ```
@@ -15406,48 +13698,6 @@ also applies even if Microsoft knew or should have known about the possibility
 of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.Threading.Tasks.Extensions 4.5.2</summary>
-
-## System.Threading.Tasks.Extensions
-
-- Version: 4.5.2
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/4.5.2)
-- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 ```
 
 </details>
@@ -15690,48 +13940,6 @@ also applies even if Microsoft knew or should have known about the possibility
 of the damages. The above limitation or exclusion may not apply to you because
 your state or country may not allow the exclusion or limitation of incidental,
 consequential or other damages.
-```
-
-</details>
-
-
-<details>
-<summary>System.ValueTuple 4.4.0</summary>
-
-## System.ValueTuple
-
-- Version: 4.4.0
-- Authors: Microsoft
-- Owners: microsoft,dotnetframework
-- Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.ValueTuple/4.4.0)
-- License: [MIT](https://github.com/dotnet/corefx/raw/master/LICENSE.TXT)
-
-
-```
-The MIT License (MIT)
-
-Copyright (c) .NET Foundation and Contributors
-
-All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 ```
 
 </details>
@@ -21994,62 +20202,6 @@ Both sets of code are covered by the following license:
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
-```
-
-</details>
-
-
-<details>
-<summary>xunit.runner.visualstudio 2.4.3</summary>
-
-## xunit.runner.visualstudio
-
-- Version: 2.4.3
-- Authors: .NET Foundation and Contributors
-- Owners: .NET Foundation and Contributors
-- Project URL: https://github.com/xunit/visualstudio.xunit
-- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.3)
-- License: [MIT]( https://licenses.nuget.org/MIT)
-
-
-```
-'MIT' reference
-
-
-
-MIT License
-SPDX identifier
-MIT
-License text
-
-MIT License
-
-
-Copyright (c) <year> <copyright holders>
-         
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of  this software and
-         associated documentation files (the "Software"), to deal in the Software without restriction,
-         including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-         and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
-         subject to the following conditions:
-The above copyright notice and this permission notice
-          (including the next paragraph)
-         shall be included in all copies or substantial
-         portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-         LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-         NO EVENT SHALL  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-         WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-SPDX web page
-
-https://spdx.org/licenses/MIT.html
-
-Notice
-This license content is provided by the SPDX project. For more information about licenses.nuget.org, see our documentation.
-
-Data pulled from spdx/license-list-data on February 9, 2023.
 ```
 
 </details>
