@@ -29,7 +29,7 @@ namespace Monai.Deploy.Storage.AzureBlob
                     var exceptions = new List<Exception>();
                     var bucketNames = buckets.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
-                    var blobServiceClient = new BlobServiceClient(new Uri("https://<storage-account-name>.blob.core.windows.net"), new DefaultAzureCredential());
+                    var blobServiceClient = new BlobServiceClient(_options.Value.Settings[ConfigurationKeys.ConnectionString]);
 
 
                     foreach (var bucket in bucketNames)
