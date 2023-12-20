@@ -171,7 +171,7 @@ jobs:
         working-directory: ./src/Plugins/MinIO/Tests
 
       - name: Test
-        run: find ~+ -type f -name "*.Tests.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal -r "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+        run: find ~+ -type f -name "*.Tests.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal --results-directory "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
         working-directory: ./src
 
       - name: End SonarScanner
