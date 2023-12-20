@@ -16,7 +16,8 @@
 
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Minio;
+using Minio.ApiEndpoints;
+using Minio.DataModel.Args;
 using Monai.Deploy.Storage.Configuration;
 using Moq;
 using Xunit;
