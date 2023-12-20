@@ -191,7 +191,7 @@ jobs:
       - uses: codecov/codecov-action@v3.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: "src/${{ env.TEST_RESULTS }}"
+          directory: "src/"
           files: "**/coverage.opencover.xml"
           flags: unittests
           name: codecov-umbrella
