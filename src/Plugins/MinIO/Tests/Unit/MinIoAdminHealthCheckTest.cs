@@ -39,7 +39,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
             _storageAdminService.Setup(p => p.HasConnectionAsync()).Throws(new Exception("error"));
 
             var healthCheck = new MinIoAdminHealthCheck(_storageAdminService.Object, _logger.Object);
-            var results = await healthCheck.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
+            var results = await healthCheck.CheckHealthAsync(new HealthCheckContext());
 
             Assert.Equal(HealthStatus.Unhealthy, results.Status);
             Assert.NotNull(results.Exception);
@@ -52,7 +52,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
             _storageAdminService.Setup(p => p.HasConnectionAsync()).ReturnsAsync(true);
             _storageAdminService.Setup(p => p.GetConnectionAsync()).ReturnsAsync(new List<string>() { "strings" });
             var healthCheck = new MinIoAdminHealthCheck(_storageAdminService.Object, _logger.Object);
-            var results = await healthCheck.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
+            var results = await healthCheck.CheckHealthAsync(new HealthCheckContext());
 
             Assert.Equal(HealthStatus.Healthy, results.Status);
             Assert.Null(results.Exception);

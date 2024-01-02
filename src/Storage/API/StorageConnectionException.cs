@@ -14,17 +14,11 @@
  * limitations under the License.
  */
 
-using System.Runtime.Serialization;
-
 namespace Monai.Deploy.Storage.API
 {
     public class StorageConnectionException : Exception
     {
-<<<<<<< HEAD
         public string ServerMessage { get; set; } = default!;
-=======
-        public string ServerMessage { get; set; }
->>>>>>> 1757165 (Throw any error from MinIO with ListObject APIs (#214))
         public List<string> Errors { get; set; }
 
         public StorageConnectionException()
@@ -40,14 +34,6 @@ namespace Monai.Deploy.Storage.API
         public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
         {
             Errors = new List<string>();
-        }
-
-        protected StorageConnectionException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-<<<<<<< HEAD
-            Errors = new List<string>();
-=======
->>>>>>> 1757165 (Throw any error from MinIO with ListObject APIs (#214))
         }
     }
 }
