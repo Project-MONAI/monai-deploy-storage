@@ -40,7 +40,7 @@ jobs:
 
     - uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: "6.0.x"
+        dotnet-version: "8.0.x"
 
     - name: Enable NuGet cache
       uses: actions/cache@v3.3.0
@@ -84,7 +84,7 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: "6.0.x"
+        dotnet-version: "8.0.x"
 
     - name: Enable Homebrew
       run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
@@ -126,11 +126,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: '11'
+          java-version: '17'
 
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: "6.0.x"
+          dotnet-version: "8.0.x"
 
       - name: Enable NuGet cache
         uses: actions/cache@v3.3.0
@@ -171,7 +171,7 @@ jobs:
         working-directory: ./src/Plugins/MinIO/Tests
 
       - name: Test
-        run: find ~+ -type f -name "*.Test.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal -r "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+        run: find ~+ -type f -name "*.Tests.csproj" | xargs -L1 dotnet test -c ${{ env.BUILD_CONFIG }} -v=minimal --results-directory "${{ env.TEST_RESULTS }}" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
         working-directory: ./src
 
       - name: End SonarScanner
@@ -191,7 +191,7 @@ jobs:
       - uses: codecov/codecov-action@v3.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: "src/${{ env.TEST_RESULTS }}"
+          directory: "src/"
           files: "**/coverage.opencover.xml"
           flags: unittests
           name: codecov-umbrella
@@ -223,7 +223,7 @@ jobs:
 
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: "6.0.x"
+          dotnet-version: "8.0.x"
 
       - name: Enable NuGet cache
         uses: actions/cache@v3.3.0
@@ -311,7 +311,7 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          dotnet-version: "6.0.x"
+          dotnet-version: "8.0.x"
           source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
 
       - name: Publish to GitHub
@@ -336,7 +336,7 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          dotnet-version: "6.0.x"
+          dotnet-version: "8.0.x"
           source-url: https://nuget.pkg.github.com/Project-MONAI/index.json
 
       - name: Publish to GitHub

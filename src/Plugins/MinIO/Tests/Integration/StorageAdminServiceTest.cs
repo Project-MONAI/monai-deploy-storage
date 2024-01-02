@@ -65,9 +65,9 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         {
             var exception = await Record.ExceptionAsync(async () =>
             {
-                var result = await _minIoService.SetConnectionAsync().ConfigureAwait(false);
+                var result = await _minIoService.SetConnectionAsync();
                 Assert.True(result);
-            }).ConfigureAwait(false);
+            });
 
             Assert.Null(exception);
         }
@@ -77,9 +77,9 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         {
             var exception = await Record.ExceptionAsync(async () =>
             {
-                var result = await _minIoService.HasConnectionAsync().ConfigureAwait(false);
+                var result = await _minIoService.HasConnectionAsync();
                 Assert.True(result);
-            }).ConfigureAwait(false);
+            });
 
             Assert.Null(exception);
         }
@@ -93,8 +93,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
                     new PolicyRequest("my-bucket", "directory1"),
                     new PolicyRequest("my-bucket", "directory1/subdirectory2"),
                 };
-                await _minIoService.CreateUserAsync($"monai-deploy-{DateTime.UtcNow.Ticks}", policies).ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await _minIoService.CreateUserAsync($"monai-deploy-{DateTime.UtcNow.Ticks}", policies);
+            });
 
             Assert.Null(exception);
         }
@@ -104,9 +104,9 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         {
             var exception = await Record.ExceptionAsync(async () =>
             {
-                var result = await _minIoService.UserAlreadyExistsAsync("monai-deploy").ConfigureAwait(false);
+                var result = await _minIoService.UserAlreadyExistsAsync("monai-deploy");
                 Assert.True(result);
-            }).ConfigureAwait(false);
+            });
 
             Assert.Null(exception);
         }

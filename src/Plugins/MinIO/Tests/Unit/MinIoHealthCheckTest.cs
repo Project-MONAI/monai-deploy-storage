@@ -38,7 +38,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
             _minIoClientFactory.Setup(p => p.GetBucketOperationsClient()).Throws(new Exception("error"));
 
             var healthCheck = new MinIoHealthCheck(_minIoClientFactory.Object, _logger.Object);
-            var results = await healthCheck.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
+            var results = await healthCheck.CheckHealthAsync(new HealthCheckContext());
 
             Assert.Equal(HealthStatus.Unhealthy, results.Status);
             Assert.NotNull(results.Exception);

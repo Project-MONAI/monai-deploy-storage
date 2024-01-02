@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-using System.Runtime.Serialization;
-
 namespace Monai.Deploy.Storage.API
 {
     public class StorageObjectNotFoundException : Exception
@@ -29,10 +27,6 @@ namespace Monai.Deploy.Storage.API
         }
 
         public StorageObjectNotFoundException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected StorageObjectNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }
