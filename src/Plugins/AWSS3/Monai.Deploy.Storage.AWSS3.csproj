@@ -13,22 +13,18 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
 -->
-
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Monai.Deploy.Storage.AWSS3</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
     <None Include="..\..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
   </ItemGroup>
-
   <PropertyGroup>
     <PackageId>Monai.Deploy.Storage.AWSS3</PackageId>
     <Version>0.1.0</Version>
@@ -42,18 +38,14 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="AWSSDK.S3" Version="3.7.201.11" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.305.4" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
     <ProjectReference Include="..\..\Storage\Monai.Deploy.Storage.csproj" />
   </ItemGroup>
-
 </Project>

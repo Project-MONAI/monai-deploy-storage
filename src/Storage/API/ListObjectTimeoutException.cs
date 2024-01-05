@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-using System.Runtime.Serialization;
-
 namespace Monai.Deploy.Storage.API
 {
     public class ListObjectTimeoutException : Exception
@@ -29,10 +27,6 @@ namespace Monai.Deploy.Storage.API
         }
 
         public ListObjectTimeoutException(string? message, Exception? innerException) : base(message, innerException)
-        {
-        }
-
-        protected ListObjectTimeoutException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

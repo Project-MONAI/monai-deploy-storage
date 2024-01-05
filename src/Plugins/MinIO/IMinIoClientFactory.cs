@@ -16,16 +16,17 @@
 
 using Amazon.SecurityToken.Model;
 using Minio;
+using Minio.ApiEndpoints;
 
 namespace Monai.Deploy.Storage.MinIO
 {
     public interface IMinIoClientFactory
     {
-        MinioClient GetClient();
+        IMinioClient GetClient();
 
-        MinioClient GetClient(Credentials credentials);
+        IMinioClient GetClient(Credentials credentials);
 
-        MinioClient GetClient(Credentials credentials, string region);
+        IMinioClient GetClient(Credentials credentials, string region);
 
         IObjectOperations GetObjectOperationsClient();
 

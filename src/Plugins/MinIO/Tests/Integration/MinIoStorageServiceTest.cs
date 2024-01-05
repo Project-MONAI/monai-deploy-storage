@@ -16,7 +16,7 @@
 
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
-using Minio;
+using Minio.DataModel.Args;
 using Moq;
 using Xunit;
 using Xunit.Extensions.Ordering;
@@ -52,8 +52,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
                 var makeBucketArgs = new MakeBucketArgs()
                         .WithBucket(_fixture.BucketName)
                         .WithLocation(_fixture.Location);
-                await client.MakeBucketAsync(makeBucketArgs).ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await client.MakeBucketAsync(makeBucketArgs);
+            });
 
             Assert.Null(exception);
         }
@@ -64,8 +64,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
             var exception = await Record.ExceptionAsync(async () =>
             {
                 var client = _fixture.ClientFactory.GetObjectOperationsClient();
-                await _fixture.GenerateAndUploadData(client).ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await _fixture.GenerateAndUploadData(client);
+            });
 
             Assert.Null(exception);
         }
@@ -76,7 +76,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         [InlineData("dir-2/", 2)]
         public async Task S03_WhenListObjectsAsyncIsCalled_ExpectItToListObjectsBasedOnParameters(string? prefix, int count)
         {
-            var actual = await _minIoService.ListObjectsAsync(_fixture.BucketName, prefix, true).ConfigureAwait(false);
+            var actual = await _minIoService.ListObjectsAsync(_fixture.BucketName, prefix, true);
 
             actual.Should().NotBeEmpty()
                 .And.HaveCount(count);
@@ -92,7 +92,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         [Fact, Order(4)]
         public async Task S04_WhenVerifyObjectsExistAsyncIsCalled_ExpectToReturnAll()
         {
-            var actual = await _minIoService.VerifyObjectsExistAsync(_fixture.BucketName, _fixture.Files).ConfigureAwait(false);
+            var actual = await _minIoService.VerifyObjectsExistAsync(_fixture.BucketName, _fixture.Files);
 
             actual.Should().NotBeEmpty()
                 .And.HaveCount(_fixture.Files.Count);
@@ -105,7 +105,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         {
             var data = _fixture.GetRandomBytes();
             var stream = new MemoryStream(data);
-            await _minIoService.PutObjectAsync(_fixture.BucketName, _testFileName, stream, data.Length, "application/binary", null).ConfigureAwait(false);
+            await _minIoService.PutObjectAsync(_fixture.BucketName, _testFileName, stream, data.Length, "application/binary", null);
 
             var callback = (Stream stream) =>
             {
@@ -118,7 +118,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
                     .WithBucket(_fixture.BucketName)
                     .WithObject(_testFileName)
                     .WithCallbackStream(callback);
-            var obj = await client.GetObjectAsync(args).ConfigureAwait(false);
+            var obj = await client.GetObjectAsync(args);
             obj.Should().NotBeNull();
             obj.Size.Should().Be(data.Length);
         }
@@ -126,13 +126,13 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         [Fact, Order(6)]
         public async Task S06_ExpectTheFileToBeBeDownloadable()
         {
-            var stream = await _minIoService.GetObjectAsync(_fixture.BucketName, _testFileName).ConfigureAwait(false);
+            var stream = await _minIoService.GetObjectAsync(_fixture.BucketName, _testFileName);
             Assert.NotNull(stream);
             var ms = new MemoryStream();
             stream.CopyTo(ms);
             var data = ms.ToArray();
 
-            var original = await DownloadData(_testFileName).ConfigureAwait(false);
+            var original = await DownloadData(_testFileName);
 
             Assert.NotNull(original);
 
@@ -142,10 +142,10 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         [Fact, Order(7)]
         public async Task S07_GivenACopyOfTheFile()
         {
-            await _minIoService.CopyObjectAsync(_fixture.BucketName, _testFileName, _fixture.BucketName, _testFileNameCopy).ConfigureAwait(false);
+            await _minIoService.CopyObjectAsync(_fixture.BucketName, _testFileName, _fixture.BucketName, _testFileNameCopy);
 
-            var original = await DownloadData(_testFileName).ConfigureAwait(false);
-            var copy = await DownloadData(_testFileNameCopy).ConfigureAwait(false);
+            var original = await DownloadData(_testFileName);
+            var copy = await DownloadData(_testFileNameCopy);
 
             Assert.NotNull(original);
             Assert.NotNull(copy);
@@ -158,7 +158,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         {
             var files = new List<string>() { _testFileName, _testFileNameCopy, "file-does-not-exist" };
             var expectedResults = new List<bool>() { true, true, false };
-            var results = await _minIoService.VerifyObjectsExistAsync(_fixture.BucketName, files).ConfigureAwait(false);
+            var results = await _minIoService.VerifyObjectsExistAsync(_fixture.BucketName, files);
 
             Assert.NotNull(results);
 
@@ -168,7 +168,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
             for (var i = 0; i < files.Count; i++)
             {
                 var file = files[i];
-                var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, file).ConfigureAwait(false);
+                var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, file);
                 Assert.Equal(expectedResults[i], result);
             }
         }
@@ -177,8 +177,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         public async Task S09_GivenADirectoryCreatedOnMinIo()
         {
             var folderName = "my-folder";
-            await _minIoService.CreateFolderAsync(_fixture.BucketName, folderName).ConfigureAwait(false);
-            var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, $"{folderName}/stubFile.txt").ConfigureAwait(false);
+            await _minIoService.CreateFolderAsync(_fixture.BucketName, folderName);
+            var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, $"{folderName}/stubFile.txt");
 
             Assert.True(result);
         }
@@ -187,24 +187,24 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
         public async Task S10_ExpectTheDirectoryToBeRemovable()
         {
             var folderName = "my - folder / stubFile.txt";
-            await _minIoService.RemoveObjectAsync(_fixture.BucketName, folderName).ConfigureAwait(false);
-            var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, $"{folderName}/stubFile.txt").ConfigureAwait(false);
+            await _minIoService.RemoveObjectAsync(_fixture.BucketName, folderName);
+            var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, $"{folderName}/stubFile.txt");
             Assert.False(result);
 
             var files = new List<string>() { _testFileName, _testFileNameCopy, "file-does-not-exist" };
-            await _minIoService.RemoveObjectsAsync(_fixture.BucketName, files).ConfigureAwait(false);
+            await _minIoService.RemoveObjectsAsync(_fixture.BucketName, files);
         }
 
         [Fact, Order(11)]
         public async Task S11_ExpectTheFilesToBeRemovable()
         {
             var files = new List<string>() { _testFileName, _testFileNameCopy, "file-does-not-exist" };
-            await _minIoService.RemoveObjectsAsync(_fixture.BucketName, files).ConfigureAwait(false);
+            await _minIoService.RemoveObjectsAsync(_fixture.BucketName, files);
 
             for (var i = 0; i < files.Count; i++)
             {
                 var file = files[i];
-                var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, file).ConfigureAwait(false);
+                var result = await _minIoService.VerifyObjectExistsAsync(_fixture.BucketName, file);
                 Assert.False(result);
             }
         }
@@ -225,7 +225,7 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Integration
                     .WithBucket(_fixture.BucketName)
                     .WithObject(filename)
                     .WithCallbackStream(callback);
-            var copiedObject = await client.GetObjectAsync(copiedArgs).ConfigureAwait(false);
+            var copiedObject = await client.GetObjectAsync(copiedArgs);
             copiedObject.Should().NotBeNull();
             manulReset.Wait();
             return copiedStream.ToArray();

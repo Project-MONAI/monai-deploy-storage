@@ -13,11 +13,9 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
 -->
-
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Monai.Deploy.Storage.MinIO</RootNamespace>
@@ -26,12 +24,10 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
     <None Include="..\..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
   </ItemGroup>
-
   <PropertyGroup>
     <PackageId>Monai.Deploy.Storage.MinIO</PackageId>
     <Version>0.1.0</Version>
@@ -45,24 +41,19 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
-  
   <ItemGroup>
-    <PackageReference Include="Minio" Version="5.0.0" />
+    <PackageReference Include="Minio" Version="6.0.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
     <ProjectReference Include="..\..\Storage\Monai.Deploy.Storage.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Remove="Tests\**" />
     <EmbeddedResource Remove="Tests\**" />
     <None Remove="Tests\**" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
   </ItemGroup>
-
 </Project>

@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   ~ Copyright 2021-2022 MONAI Consortium
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +13,9 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
 -->
-
-
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Monai.Deploy.Storage</RootNamespace>
@@ -30,7 +28,6 @@
   <ItemGroup>
     <AdditionalFiles Include="..\.sonarlint\project-monai_monai-deploy-storage\CSharp\SonarLint.xml" Link="SonarLint.xml" />
   </ItemGroup>
-
   <PropertyGroup>
     <PackageId>Monai.Deploy.Storage</PackageId>
     <Version>0.1.0</Version>
@@ -44,28 +41,23 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\..\LICENSE" Link="LICENSE" PackagePath="" Pack="true" />
     <None Include="..\..\third-party-licenses.md" Link="third-party-licenses.md" PackagePath="" Pack="true" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Remove="Tests\**" />
     <EmbeddedResource Remove="Tests\**" />
     <None Remove="Tests\**" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.201.9" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.21" />
-    <PackageReference Include="System.IO.Abstractions" Version="17.2.3" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.300.30" />
+    <PackageReference Include="System.IO.Abstractions" Version="20.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
   </ItemGroup>

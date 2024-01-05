@@ -18,8 +18,10 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Minio;
+using Minio.ApiEndpoints;
 using Minio.DataModel;
+using Minio.DataModel.Args;
+using Minio.DataModel.Result;
 using Minio.Exceptions;
 using Monai.Deploy.Storage.API;
 using Monai.Deploy.Storage.Configuration;
@@ -65,8 +67,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                 _objectOperations.Setup(p => p.CopyObjectAsync(It.IsAny<CopyObjectArgs>(), It.IsAny<CancellationToken>()))
                     .ThrowsAsync(new ConnectionException("error", new ResponseResult(new HttpRequestMessage(), new Exception("inner exception"))));
 
-                await service.CopyObjectAsync("sourceBucket", "sourceFile", "destinationBucket", "destinationFile").ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await service.CopyObjectAsync("sourceBucket", "sourceFile", "destinationBucket", "destinationFile");
+            });
         }
 
         [Fact]
@@ -78,8 +80,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                 _objectOperations.Setup(p => p.CopyObjectAsync(It.IsAny<CopyObjectArgs>(), It.IsAny<CancellationToken>()))
                     .ThrowsAsync(new Exception("inner exception"));
 
-                await service.CopyObjectAsync("sourceBucket", "sourceFile", "destinationBucket", "destinationFile").ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await service.CopyObjectAsync("sourceBucket", "sourceFile", "destinationBucket", "destinationFile");
+            });
         }
 
         [Fact]
@@ -98,16 +100,16 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                             break;
                         }
                     }
-                    return await Task.FromResult(Disposable.Empty).ConfigureAwait(false);
+                    return await Task.FromResult(Disposable.Empty);
                 });
                 var service = new MinIoStorageService(_minIoClientFactory.Object, _amazonStsClient.Object, _options, _logger.Object);
                 _bucketOperations.Setup(p => p.ListObjectsAsync(It.IsAny<ListObjectsArgs>(), It.IsAny<CancellationToken>()))
                     .Returns(observable);
 
                 cancellationTokenSource.CancelAfter(5000);
-                await service.ListObjectsAsync("bucket", cancellationToken: cancellationTokenSource.Token).ConfigureAwait(false);
+                await service.ListObjectsAsync("bucket", cancellationToken: cancellationTokenSource.Token);
 
-            }).ConfigureAwait(false);
+            });
         }
 
         [Fact]
@@ -121,17 +123,17 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                     obs.OnNext(new Item { Key = "key", ETag = "etag", Size = 1, IsDir = false });
                     obs.OnError(new Exception("error"));
                     obs.OnCompleted();
-                    return await Task.FromResult(Disposable.Empty).ConfigureAwait(false);
+                    return await Task.FromResult(Disposable.Empty);
                 });
                 var service = new MinIoStorageService(_minIoClientFactory.Object, _amazonStsClient.Object, _options, _logger.Object);
                 _bucketOperations.Setup(p => p.ListObjectsAsync(It.IsAny<ListObjectsArgs>(), It.IsAny<CancellationToken>()))
                     .Returns(observable);
 
                 var listObjectTask = service.ListObjectsAsync("bucket");
-                await Task.Delay(3000).ConfigureAwait(false);
+                await Task.Delay(3000);
 
-                await listObjectTask.ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await listObjectTask;
+            });
         }
 
         [Fact]
@@ -144,8 +146,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                 _bucketOperations.Setup(p => p.ListObjectsAsync(It.IsAny<ListObjectsArgs>(), It.IsAny<CancellationToken>()))
                     .Throws(new ConnectionException("error", new ResponseResult(new HttpRequestMessage(), new Exception("inner exception"))));
 
-                await service.ListObjectsAsync("bucket").ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await service.ListObjectsAsync("bucket");
+            });
         }
 
         [Fact]
@@ -158,8 +160,8 @@ namespace Monai.Deploy.Storage.MinIO.Tests.Unit
                 _bucketOperations.Setup(p => p.ListObjectsAsync(It.IsAny<ListObjectsArgs>(), It.IsAny<CancellationToken>()))
                     .Throws(new InvalidBucketNameException("bucket", "bad"));
 
-                await service.ListObjectsAsync("bucket").ConfigureAwait(false);
-            }).ConfigureAwait(false);
+                await service.ListObjectsAsync("bucket");
+            });
         }
     }
 }

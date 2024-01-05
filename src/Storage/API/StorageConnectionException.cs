@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-using System.Runtime.Serialization;
-
 namespace Monai.Deploy.Storage.API
 {
     public class StorageConnectionException : Exception
@@ -34,11 +32,6 @@ namespace Monai.Deploy.Storage.API
         }
 
         public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
-        {
-            Errors = new List<string>();
-        }
-
-        protected StorageConnectionException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
             Errors = new List<string>();
         }

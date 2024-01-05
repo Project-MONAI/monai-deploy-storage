@@ -19,6 +19,7 @@ using Amazon.SecurityToken.Model;
 using Ardalis.GuardClauses;
 using Microsoft.Extensions.Options;
 using Minio;
+using Minio.ApiEndpoints;
 using Monai.Deploy.Storage.Configuration;
 
 namespace Monai.Deploy.Storage.MinIO
@@ -27,7 +28,7 @@ namespace Monai.Deploy.Storage.MinIO
     {
         private static readonly string DefaultClient = "_DEFAULT_";
         internal static readonly int DefaultTimeout = 2500;
-        private readonly ConcurrentDictionary<string, MinioClient> _clients;
+        private readonly ConcurrentDictionary<string, IMinioClient> _clients;
 
         private StorageServiceConfiguration Options { get; }
 
@@ -40,10 +41,10 @@ namespace Monai.Deploy.Storage.MinIO
 
             Options = configuration;
 
-            _clients = new ConcurrentDictionary<string, MinioClient>();
+            _clients = new ConcurrentDictionary<string, IMinioClient>();
         }
 
-        public MinioClient GetClient()
+        public IMinioClient GetClient()
         {
             return _clients.GetOrAdd(DefaultClient, _ =>
             {
@@ -55,12 +56,12 @@ namespace Monai.Deploy.Storage.MinIO
             });
         }
 
-        public MinioClient GetClient(Credentials credentials)
+        public IMinioClient GetClient(Credentials credentials)
         {
             return GetClient(credentials, string.Empty);
         }
 
-        public MinioClient GetClient(Credentials credentials, string region)
+        public IMinioClient GetClient(Credentials credentials, string region)
         {
             return GetClientInternal(credentials, region);
         }
@@ -109,7 +110,7 @@ namespace Monai.Deploy.Storage.MinIO
             return GetClientInternal(credentials, region);
         }
 
-        private MinioClient CreateClient(string accessKey, string accessToken)
+        private IMinioClient CreateClient(string accessKey, string accessToken)
         {
             var endpoint = Options.Settings[ConfigurationKeys.EndPoint];
             var securedConnection = Options.Settings[ConfigurationKeys.SecuredConnection];
@@ -133,7 +134,7 @@ namespace Monai.Deploy.Storage.MinIO
             return client;
         }
 
-        private MinioClient GetClientInternal(Credentials credentials, string region)
+        private IMinioClient GetClientInternal(Credentials credentials, string region)
         {
             Guard.Against.Null(credentials, nameof(credentials));
             Guard.Against.NullOrWhiteSpace(credentials.AccessKeyId, nameof(credentials.AccessKeyId));
