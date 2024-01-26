@@ -28,20 +28,20 @@ namespace Monai.Deploy.Storage.API
 
         public VerifyObjectsException()
         {
-            _errors = new List<Exception>();
-            _results = new Dictionary<string, bool>();
+            _errors = [];
+            _results = [];
         }
 
         public VerifyObjectsException(string? message) : base(message)
         {
-            _errors = new List<Exception>();
-            _results = new Dictionary<string, bool>();
+            _errors = [];
+            _results = [];
         }
 
         public VerifyObjectsException(string? message, Exception? innerException) : base(message, innerException)
         {
-            _errors = new List<Exception>();
-            _results = new Dictionary<string, bool>();
+            _errors = [];
+            _results = [];
         }
 
         public VerifyObjectsException(List<Exception> errors, Dictionary<string, bool> files)

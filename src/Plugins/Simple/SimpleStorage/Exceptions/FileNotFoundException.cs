@@ -14,26 +14,22 @@
  * limitations under the License.
  */
 
-namespace Monai.Deploy.Storage.API
+
+namespace Monai.Deploy.Storage.SimpleStorage.Exceptions
 {
-    public class StorageConnectionException : Exception
+    public class FileNotFoundException : Exception
     {
-        public string ServerMessage { get; set; } = default!;
-        public List<string> Errors { get; set; }
 
-        public StorageConnectionException()
+        public FileNotFoundException()
         {
-            Errors = [];
         }
 
-        public StorageConnectionException(string message) : base(message)
+        public FileNotFoundException(string message) : base(message)
         {
-            Errors = [];
         }
 
-        public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
+        public FileNotFoundException(string message, Exception innerException) : base(message, innerException)
         {
-            Errors = [];
         }
     }
 }
