@@ -384,12 +384,14 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             var filePath = Path.Combine(rootPath, bucketName, objectName);
             var md5path = Path.Combine(rootPath, bucketName, $"{objectName}{_md5Extension}");
             var md5Checksum = "md5Checksum";
+            var path = Path.Combine("/", "testBucket", "testObject");
 
             var mockFileStream = new MockFileStream(_fileSystemMock, "/", FileMode.OpenOrCreate);
             mockFileStream.Write(_testdataStr, 0, _testdataStr.Length);
             var mockFileStream2 = new MockFileStream(_fileSystemMock, "/", FileMode.OpenOrCreate);
             //_mokFileSystemMock.Setup(fs => fs.File.Create(It.IsAny<string>())).Returns(mockFileStream);
-            _mokFileSystemMock.SetupSequence(fs => fs.File.OpenRead("/testBucket\\testObject")).Returns(mockFileStream).Returns(mockFileStream2);
+
+            _mokFileSystemMock.SetupSequence(fs => fs.File.OpenRead(path)).Returns(mockFileStream).Returns(mockFileStream2);
 
             _hashCreatorMock.Setup(x => x.GetMd5Hash(It.IsAny<Stream>())).ReturnsAsync(md5Checksum);
             _mokFileSystemMock.Setup(f => f.File.Exists(filePath)).Returns(true);
@@ -490,30 +492,22 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
         }
 
         [Fact]
-        public async Task List_Should_Use_Prefix_as_Directorie_Real_Test()
+        public async Task List_Should_Use_Prefix_as_Directories_Real_Test()
         {
             var options = new StorageServiceConfiguration { Settings = new Dictionary<string, string> { { ConfigurationKeys.Rootpath, "./testdata" } } };
             var simpleStorage = new SimpleStorageService(new FileSystem(), new HashCreator(), Options.Create(options), NullLogger<SimpleStorageService>.Instance);
+            var path = Path.Combine("test-object", "folder");
+            var nextPath = Path.Combine("test-object", "folder", "nextfolder");
 
-            await simpleStorage.PutObjectAsync("test-bucket", "test-object\\folder\\nextfolder", _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(false);
+            await simpleStorage.PutObjectAsync("test-bucket", nextPath, _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(false);
 
-            var vResults = await simpleStorage.ListObjectsAsync("test-bucket", "test-object\\folder", true).ConfigureAwait(false);
+            var vResults = await simpleStorage.ListObjectsAsync("test-bucket", path, true).ConfigureAwait(false);
 
             Assert.True(vResults.Any());
 
             await simpleStorage.RemoveObjectAsync("test-bucket", "").ConfigureAwait(false);
 
             Assert.Throws<DirectoryNotFoundException>(() => { Directory.GetFiles(Path.Combine("./testdata", "test-bucket"), "*", SearchOption.AllDirectories); });
-
-            options = new StorageServiceConfiguration { Settings = new Dictionary<string, string> { { ConfigurationKeys.Rootpath, "C:/temp/monaidata" } } };
-            simpleStorage = new SimpleStorageService(new FileSystem(), new HashCreator(), Options.Create(options), NullLogger<SimpleStorageService>.Instance);
-
-            var file = "8d319a11-e6a1-4513-96a4-0ff395db999d/dcm\\2.25.119983757383436971267161663925584902185\\2.25.63418180833487998694904886171176363739\\2.25.162984673648280847516503991701032289095.dcm";
-            var steram = await simpleStorage.GetObjectAsync("monaideploy", file).ConfigureAwait(false);
-
-            Assert.NotNull(steram);
-
-
         }
     }
 }
