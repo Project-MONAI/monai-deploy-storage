@@ -61,6 +61,7 @@
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
     :versions:
     - 17.8.0
+    - 17.6.0
     :when: 2022-08-16 18:11:17.245887971 Z
 - - :approve
   - Microsoft.Extensions.Configuration.Abstractions
@@ -153,6 +154,7 @@
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
     :versions:
     - 17.8.0
+    - 17.6.0
     :when: 2022-08-16 18:11:29.155295778 Z
 - - :approve
   - Microsoft.NETCore.Platforms
