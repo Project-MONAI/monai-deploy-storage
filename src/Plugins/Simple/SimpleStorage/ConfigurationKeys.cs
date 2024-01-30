@@ -14,26 +14,12 @@
  * limitations under the License.
  */
 
-namespace Monai.Deploy.Storage.API
+namespace Monai.Deploy.Storage.SimpleStorage
 {
-    public class StorageConnectionException : Exception
+    public static class ConfigurationKeys
     {
-        public string ServerMessage { get; set; } = default!;
-        public List<string> Errors { get; set; }
+        public static readonly string StorageServiceName = "simple";
 
-        public StorageConnectionException()
-        {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message) : base(message)
-        {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
-        {
-            Errors = [];
-        }
+        public static readonly string Rootpath = "rootpath";
     }
 }

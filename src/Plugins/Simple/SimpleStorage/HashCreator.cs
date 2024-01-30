@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-namespace Monai.Deploy.Storage.API
+using System.Security.Cryptography;
+
+namespace Monai.Deploy.Storage.SimpleStorage
 {
-    public class StorageConnectionException : Exception
+    public class HashCreator : IHashCreator
     {
-        public string ServerMessage { get; set; } = default!;
-        public List<string> Errors { get; set; }
-
-        public StorageConnectionException()
+        public async Task<string> GetMd5Hash(Stream dataStream)
         {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message) : base(message)
-        {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
-        {
-            Errors = [];
+            using var md5 = MD5.Create();
+            dataStream.Seek(0, SeekOrigin.Begin);
+            var compMd5 = await md5.ComputeHashAsync(dataStream).ConfigureAwait(false);
+            return BitConverter.ToString(compMd5).Replace("-", "").ToLowerInvariant();
         }
     }
 }

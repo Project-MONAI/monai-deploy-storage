@@ -5,6 +5,7 @@
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
     - 3.7.300.22
+    - 3.7.302
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
@@ -19,6 +20,7 @@
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
     - 3.7.300.23
+    - 3.7.300.42
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
@@ -26,6 +28,7 @@
     :why: MIT (https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
     :versions:
     - 4.2.0
+    - 4.4.0
     :when: 2022-08-16 18:11:14.642522140 Z
 - - :approve
   - Castle.Core
@@ -96,6 +99,7 @@
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
     - 8.0.0
+    - 8.0.1
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
@@ -103,6 +107,7 @@
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
     - 8.0.0
+    - 8.0.1
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.FileProviders.Abstractions
@@ -139,6 +144,7 @@
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
     - 8.0.0
+    - 8.0.1
     :when: 2022-08-16 18:11:27.836230472 Z
 - - :approve
   - Microsoft.Extensions.Primitives
@@ -336,6 +342,7 @@
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 20.0.4
+    - 20.0.15
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - System.IO.Abstractions.TestingHelpers
@@ -343,6 +350,7 @@
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 20.0.4
+    - 20.0.15
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - runtime.native.System.IO.Compression
@@ -665,6 +673,7 @@
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 20.0.4
+    - 20.0.15
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - TestableIO.System.IO.Abstractions.TestingHelpers
@@ -672,6 +681,7 @@
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 20.0.4
+    - 20.0.15
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - TestableIO.System.IO.Abstractions.Wrappers
@@ -679,6 +689,7 @@
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
     - 20.0.4
+    - 20.0.15
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - coverlet.collector
@@ -798,6 +809,7 @@
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
     - 2.6.3
+    - 2.6.6
     :when: 2022-08-16 21:40:29.166018542 Z
 - - :approve
   - xunit.abstractions
@@ -812,6 +824,7 @@
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
     :versions:
     - 1.7.0
+    - 1.10.0
     :when: 2022-08-16 21:40:30.047067134 Z
 - - :approve
   - xunit.assert
@@ -819,6 +832,7 @@
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
     - 2.6.3
+    - 2.6.6  
     :when: 2022-08-16 21:40:30.526718458 Z
 - - :approve
   - xunit.core
@@ -826,6 +840,7 @@
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
     - 2.6.3
+    - 2.6.6
     :when: 2022-08-16 21:40:30.973515441 Z
 - - :approve
   - xunit.extensibility.core
@@ -833,6 +848,7 @@
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
     - 2.6.3
+    - 2.6.6
     :when: 2022-08-16 21:40:31.401607230 Z
 - - :approve
   - xunit.extensibility.execution
@@ -840,6 +856,7 @@
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
     - 2.6.3
+    - 2.6.6
     :when: 2022-08-16 21:40:31.845685693 Z
 - - :approve
   - xunit.runner.visualstudio
@@ -847,4 +864,19 @@
     :why: MIT ( https://licenses.nuget.org/MIT)
     :versions:
     - 2.5.5
+    - 2.5.6
     :when: 2022-08-16 21:40:32.294717110 Z
+- - :approve
+  - Polly
+  - :who: ndsouth
+    :why: BSD 3-Clause License ( https://github.com/App-vNext/Polly/blob/main/LICENSE)
+    :versions:
+    - 8.2.1
+    :when: 2024-01-29 09:20:32.294717110 Z
+- - :approve
+  - Polly.Core
+  - :who: ndsouth
+    :why: BSD 3-Clause License ( https://github.com/App-vNext/Polly/blob/main/LICENSE)
+    :versions:
+    - 8.2.1
+    :when: 2024-01-29 09:20:32.294717110 Z

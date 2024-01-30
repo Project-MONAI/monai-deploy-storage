@@ -14,26 +14,10 @@
  * limitations under the License.
  */
 
-namespace Monai.Deploy.Storage.API
+namespace Monai.Deploy.Storage.SimpleStorage
 {
-    public class StorageConnectionException : Exception
+    public interface IHashCreator
     {
-        public string ServerMessage { get; set; } = default!;
-        public List<string> Errors { get; set; }
-
-        public StorageConnectionException()
-        {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message) : base(message)
-        {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
-        {
-            Errors = [];
-        }
+        Task<string> GetMd5Hash(Stream dataStream);
     }
 }

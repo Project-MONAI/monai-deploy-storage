@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2023 MONAI Consortium
+ * Copyright 2022 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-namespace Monai.Deploy.Storage.API
+using Microsoft.Extensions.DependencyInjection;
+using Monai.Deploy.Storage.API;
+
+namespace Monai.Deploy.Storage.SimpleStorage
 {
-    public class StorageConnectionException : Exception
+    public class ServiceRegistration : ServiceRegistrationBase
     {
-        public string ServerMessage { get; set; } = default!;
-        public List<string> Errors { get; set; }
-
-        public StorageConnectionException()
+        public override IServiceCollection Configure(IServiceCollection services)
         {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message) : base(message)
-        {
-            Errors = [];
-        }
-
-        public StorageConnectionException(string message, Exception innerException) : base(message, innerException)
-        {
-            Errors = [];
+            services.AddSingleton<IStorageService, SimpleStorageService>();
+            services.AddSingleton<IHashCreator, HashCreator>();
+            return services;
         }
     }
 }
