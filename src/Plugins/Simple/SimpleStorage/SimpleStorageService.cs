@@ -36,7 +36,6 @@ namespace Monai.Deploy.Storage.SimpleStorage
         private ResiliencePipeline Polly { get; set; }
         private readonly IHashCreator _hashCreator;
         private readonly ILogger<SimpleStorageService> _logger;
-        private readonly StorageServiceConfiguration _configuration;
         private readonly string _rootpath;
         private const string MetaDataFolder = "-meta";
         private readonly string _md5Extension;
@@ -48,8 +47,8 @@ namespace Monai.Deploy.Storage.SimpleStorage
             _fileSystem = fileSystem ?? throw new ArgumentNullException(nameof(fileSystem));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _hashCreator = hashCreator ?? throw new ArgumentNullException(nameof(hashCreator));
-            _configuration = options?.Value ?? throw new ArgumentNullException(nameof(options));
-            _rootpath = _configuration.Settings[ConfigurationKeys.Rootpath];
+            var configuration = options?.Value ?? throw new ArgumentNullException(nameof(options));
+            _rootpath = configuration.Settings[ConfigurationKeys.Rootpath];
 
             _md5Extension = Path.Combine(MetaDataFolder, "md5");
             _metaExtension = Path.Combine(MetaDataFolder, "meta");
@@ -188,9 +187,7 @@ namespace Monai.Deploy.Storage.SimpleStorage
             throw new FileCorruptException("File and backup is corrupted");
         }
 
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         public async Task<Stream> GetObjectMetaAsync(string bucketName, string objectName)
-#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             var path = Path.Combine(_rootpath, bucketName, $"{objectName}{_metaExtension}");
             if (_fileSystem.File.Exists(path))
@@ -236,7 +233,7 @@ namespace Monai.Deploy.Storage.SimpleStorage
                 throw new ArgumentNullException(nameof(objectName));
             }
 
-            string? dirName = null;
+            string? dirName;
             if ((dirName = Path.GetDirectoryName(path + _md5Extension)) is not null && Directory.Exists(dirName) is false)
             {
                 _fileSystem.Directory.CreateDirectory(dirName);
@@ -246,9 +243,7 @@ namespace Monai.Deploy.Storage.SimpleStorage
 
             var md5File = Path.Combine(_rootpath, bucketName, $"{objectName}{_md5Extension}");
 
-            List<Task> Tasks = new();
-
-            Tasks.Add(_fileSystem.File.WriteAllTextAsync(md5File, Md5Hash, cancellationToken));
+            List<Task> Tasks = [_fileSystem.File.WriteAllTextAsync(md5File, Md5Hash, cancellationToken)];
 
 
             var metaFile = Path.Combine(_rootpath, bucketName, $"{objectName}{_metaExtension}");
@@ -331,7 +326,6 @@ namespace Monai.Deploy.Storage.SimpleStorage
             var result = new Dictionary<string, bool>();
             foreach (var artifactName in artifactList)
             {
-                var path = Path.Combine(_rootpath, bucketName, artifactName);
                 result.Add(artifactName, (await VerifyObjectExistsAsync(bucketName, artifactName, cancellationToken).ConfigureAwait(false)));
             }
             return result;
@@ -351,7 +345,7 @@ namespace Monai.Deploy.Storage.SimpleStorage
 
                 if ((await CheckFileAsync(path, Md5Hash).ConfigureAwait(false)) is false)
                 {
-                    throw new Exception("File is corrupted");
+                    throw new FileCorruptException("File is corrupted");
                 }
 
                 return Md5Hash;

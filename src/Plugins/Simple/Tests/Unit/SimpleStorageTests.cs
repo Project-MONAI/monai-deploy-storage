@@ -98,7 +98,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.File.Create(Path.Combine(_rootPath, bucketName, objectName))).Returns(mockFileStream);
 
             // Act
-            await _simpleStorage.PutObjectAsync(bucketName, objectName, _writenMemoryStream, size, contentType, metadata, cancellationToken).ConfigureAwait(false);
+            await _simpleStorage.PutObjectAsync(bucketName, objectName, _writenMemoryStream, size, contentType, metadata, cancellationToken).ConfigureAwait(true);
 
             var allFiles = _fileSystemMock.AllFiles.ToArray();
             // Assert
@@ -127,7 +127,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.File.Create(Path.Combine(_rootPath, destinationBucketName, destinationObjectName))).Returns(mockFileStream);
 
             // Act
-            await _simpleStorage.CopyObjectAsync(_writenMemoryStream, destinationBucketName, destinationObjectName).ConfigureAwait(false);
+            await _simpleStorage.CopyObjectAsync(_writenMemoryStream, destinationBucketName, destinationObjectName).ConfigureAwait(true);
 
             // Assert
 
@@ -153,7 +153,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.File.Exists(It.IsAny<string>())).Returns(true);
 
             // Act
-            await _simpleStorage.RemoveObjectAsync(bucketName, objectName).ConfigureAwait(false);
+            await _simpleStorage.RemoveObjectAsync(bucketName, objectName).ConfigureAwait(true);
 
             // Assert
             _mokFileSystemMock.Verify(fs => fs.File.Delete(path), Times.Once);
@@ -178,7 +178,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             }
 
             // Act
-            await _simpleStorage.RemoveObjectsAsync(bucketName, objectNames).ConfigureAwait(false);
+            await _simpleStorage.RemoveObjectsAsync(bucketName, objectNames).ConfigureAwait(true);
 
             // Assert
             foreach (var objectName in objectNames)
@@ -205,7 +205,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.File.Exists(path)).Returns(true);
 
             // Act
-            var result = await _simpleStorage.VerifyObjectExistsAsync(bucketName, objectName).ConfigureAwait(false);
+            var result = await _simpleStorage.VerifyObjectExistsAsync(bucketName, objectName).ConfigureAwait(true);
 
             // Assert
             Assert.True(result);
@@ -222,7 +222,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.File.Exists(path)).Returns(false);
 
             // Act
-            var result = await _simpleStorage.VerifyObjectExistsAsync(bucketName, objectName).ConfigureAwait(false);
+            var result = await _simpleStorage.VerifyObjectExistsAsync(bucketName, objectName).ConfigureAwait(true);
 
             // Assert
             Assert.False(result);
@@ -242,7 +242,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             }
 
             // Act
-            var result = await _simpleStorage.VerifyObjectsExistAsync(bucketName, objectList).ConfigureAwait(false);
+            var result = await _simpleStorage.VerifyObjectsExistAsync(bucketName, objectList).ConfigureAwait(true);
 
             // Assert
             Assert.Equal(objectList.Count, result.Count);
@@ -276,7 +276,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.FileInfo.New(filePath3).LastWriteTimeUtc).Returns(lastModified);
 
             // Act
-            var result = await _simpleStorage.ListObjectsAsync(bucketName, prefix, recursive, CancellationToken.None).ConfigureAwait(false);
+            var result = await _simpleStorage.ListObjectsAsync(bucketName, prefix, recursive, CancellationToken.None).ConfigureAwait(true);
 
             // Assert
             Assert.Equal(3, result.Count);
@@ -320,7 +320,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.FileInfo.New(filePath3).LastWriteTimeUtc).Returns(lastModified);
 
             // Act
-            var result = await _simpleStorage.ListObjectsAsync(bucketName, prefix, recursive, CancellationToken.None).ConfigureAwait(false);
+            var result = await _simpleStorage.ListObjectsAsync(bucketName, prefix, recursive, CancellationToken.None).ConfigureAwait(true);
 
             // Assert
             Assert.Equal(3, result.Count);
@@ -360,7 +360,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(fs => fs.FileInfo.New(filePath5).LastWriteTimeUtc).Returns(lastModified);
 
             // Act
-            var result = await _simpleStorage.ListObjectsAsync(bucketName, prefix, recursive, CancellationToken.None).ConfigureAwait(false);
+            var result = await _simpleStorage.ListObjectsAsync(bucketName, prefix, recursive, CancellationToken.None).ConfigureAwait(true);
 
             // Assert
             Assert.Equal(2, result.Count);
@@ -399,7 +399,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(f => f.File.Exists(md5path)).Returns(true);
 
             // Act
-            var result = await _simpleStorage.GetObjectAsync(bucketName, objectName, CancellationToken.None).ConfigureAwait(false);
+            var result = await _simpleStorage.GetObjectAsync(bucketName, objectName, CancellationToken.None).ConfigureAwait(true);
 
             // Assert
             Assert.NotNull(result);
@@ -425,7 +425,7 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             _mokFileSystemMock.Setup(f => f.File.Exists(md5path)).Returns(true);
 
             // Act & Assert
-            await Assert.ThrowsAsync<FileCorruptException>(() => _simpleStorage.GetObjectAsync(bucketName, objectName, CancellationToken.None)).ConfigureAwait(false);
+            await Assert.ThrowsAsync<FileCorruptException>(() => _simpleStorage.GetObjectAsync(bucketName, objectName, CancellationToken.None)).ConfigureAwait(true);
         }
 
         [Fact]
@@ -435,12 +435,12 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             var options = new StorageServiceConfiguration { Settings = new Dictionary<string, string> { { ConfigurationKeys.Rootpath, "./testdata" } } };
             var simpleStorage = new SimpleStorageService(new FileSystem(), new HashCreator(), Options.Create(options), NullLogger<SimpleStorageService>.Instance);
 
-            await simpleStorage.PutObjectAsync("test-bucket", "test-object", _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(false);
+            await simpleStorage.PutObjectAsync("test-bucket", "test-object", _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(true);
 
-            await simpleStorage.CopyObjectAsync(_writenMemoryStream, "test-bucket", "other/destinationtest-object").ConfigureAwait(false);
+            await simpleStorage.CopyObjectAsync(_writenMemoryStream, "test-bucket", "other/destinationtest-object").ConfigureAwait(true);
 
 
-            var result = await simpleStorage.ListObjectsAsync("test-bucket", "", true, CancellationToken.None).ConfigureAwait(false);
+            var result = await simpleStorage.ListObjectsAsync("test-bucket", "", true, CancellationToken.None).ConfigureAwait(true);
 
             Assert.Equal(2, result.Count);
 
@@ -448,10 +448,10 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             var oriTestString = "{\"text\" : \"this is some file data\"}";
             var testString = "{\"text\" : \"this is some Not file data\"}";
             var path = Path.Combine("./testdata", "test-bucket", "test-object");
-            await File.WriteAllTextAsync(path, testString).ConfigureAwait(false);
+            await File.WriteAllTextAsync(path, testString).ConfigureAwait(true);
 
-            using var copyStream = await simpleStorage.GetObjectAsync("test-bucket", "test-object", CancellationToken.None).ConfigureAwait(false);
-            await simpleStorage.CopyObjectAsync(copyStream, "destinationtest-bucket", "destinationtest-object").ConfigureAwait(false);
+            using var copyStream = await simpleStorage.GetObjectAsync("test-bucket", "test-object", CancellationToken.None).ConfigureAwait(true);
+            await simpleStorage.CopyObjectAsync(copyStream, "destinationtest-bucket", "destinationtest-object").ConfigureAwait(true);
             copyStream.Seek(0, SeekOrigin.Begin);
             var memoryStream = new MemoryStream();
             copyStream.CopyTo(memoryStream);
@@ -462,15 +462,15 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             Assert.Equal(oriTestString, text);
             Assert.NotEqual(testString, text);
 
-            await simpleStorage.RemoveObjectAsync("test-bucket", "test-object").ConfigureAwait(false);
+            await simpleStorage.RemoveObjectAsync("test-bucket", "test-object").ConfigureAwait(true);
 
-            await simpleStorage.RemoveObjectAsync("destinationtest-bucket", "destinationtest-object").ConfigureAwait(false);
+            await simpleStorage.RemoveObjectAsync("destinationtest-bucket", "destinationtest-object").ConfigureAwait(true);
 
             var metaPath = Path.Combine("./testdata", "test-bucket", "test-object-meta");
             Assert.Throws<DirectoryNotFoundException>(() => { Directory.GetFiles(metaPath, "*", SearchOption.AllDirectories); });
 
             //should remove now empty folder
-            Assert.False(await simpleStorage.VerifyObjectExistsAsync("test-bucket", "test-object-meta").ConfigureAwait(false));
+            Assert.False(await simpleStorage.VerifyObjectExistsAsync("test-bucket", "test-object-meta").ConfigureAwait(true));
         }
 
         [Fact]
@@ -479,13 +479,13 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             var options = new StorageServiceConfiguration { Settings = new Dictionary<string, string> { { ConfigurationKeys.Rootpath, "./testdata" } } };
             var simpleStorage = new SimpleStorageService(new FileSystem(), new HashCreator(), Options.Create(options), NullLogger<SimpleStorageService>.Instance);
 
-            await simpleStorage.PutObjectAsync("test-bucket", "test-object", _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(false);
+            await simpleStorage.PutObjectAsync("test-bucket", "test-object", _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(true);
 
-            var vResults = await simpleStorage.VerifyObjectExistsAsync("test-bucket", "").ConfigureAwait(false);
+            var vResults = await simpleStorage.VerifyObjectExistsAsync("test-bucket", "").ConfigureAwait(true);
 
             Assert.True(vResults);
 
-            await simpleStorage.RemoveObjectAsync("test-bucket", "").ConfigureAwait(false);
+            await simpleStorage.RemoveObjectAsync("test-bucket", "").ConfigureAwait(true);
 
             Assert.Throws<DirectoryNotFoundException>(() => { Directory.GetFiles(Path.Combine("./testdata", "test-bucket"), "*", SearchOption.AllDirectories); });
 
@@ -499,13 +499,13 @@ namespace Monai.Deploy.Storage.SimpleStorage.Tests.Unit
             var path = Path.Combine("test-object", "folder");
             var nextPath = Path.Combine("test-object", "folder", "nextfolder");
 
-            await simpleStorage.PutObjectAsync("test-bucket", nextPath, _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(false);
+            await simpleStorage.PutObjectAsync("test-bucket", nextPath, _writenMemoryStream, _writenMemoryStream.Length, "application/octet-stream", [], CancellationToken.None).ConfigureAwait(true);
 
-            var vResults = await simpleStorage.ListObjectsAsync("test-bucket", path, true).ConfigureAwait(false);
+            var vResults = await simpleStorage.ListObjectsAsync("test-bucket", path, true).ConfigureAwait(true);
 
             Assert.True(vResults.Any());
 
-            await simpleStorage.RemoveObjectAsync("test-bucket", "").ConfigureAwait(false);
+            await simpleStorage.RemoveObjectAsync("test-bucket", "").ConfigureAwait(true);
 
             Assert.Throws<DirectoryNotFoundException>(() => { Directory.GetFiles(Path.Combine("./testdata", "test-bucket"), "*", SearchOption.AllDirectories); });
         }

@@ -16,7 +16,7 @@
 
 namespace Monai.Deploy.Storage.SimpleStorage
 {
-    public class ConfigurationKeys
+    public static class ConfigurationKeys
     {
         public static readonly string StorageServiceName = "simple";
 
