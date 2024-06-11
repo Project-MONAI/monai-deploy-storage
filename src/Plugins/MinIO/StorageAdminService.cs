@@ -61,11 +61,6 @@ namespace Monai.Deploy.Storage.MinIO
             _accessKey = options.Value.Settings[ConfigurationKeys.AccessKey];
             _secretKey = options.Value.Settings[ConfigurationKeys.AccessToken];
 
-            SetCommandTemplates(options);
-        }
-
-        private void SetCommandTemplates(IOptions<StorageServiceConfiguration> options)
-        {
             _set_connection_cmd = $"alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}";
             _get_connections_cmd = "alias list";
             _get_users_cmd = $"admin user list {_serviceName}";
@@ -105,7 +100,7 @@ namespace Monai.Deploy.Storage.MinIO
             var setPolicyCmd = string.Format(CultureInfo.InvariantCulture, _set_policy_cmd, _serviceName, policiesStr, policyType.ToString().ToLowerInvariant(), itemName);
             var result = await ExecuteAsync(setPolicyCmd).ConfigureAwait(false);
 
-            var expectedResult = $"Policy `{policiesStr}` is set on {policyType.ToString().ToLower()} `{itemName}`";
+            var expectedResult = $"Attached Policies: [{policiesStr}]";
             if (!result.Any(r => r.Contains(expectedResult)))
             {
                 return false;
@@ -274,7 +269,7 @@ namespace Monai.Deploy.Storage.MinIO
 
             var policyFileName = await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
             var result = await ExecuteAsync(string.Format(CultureInfo.InvariantCulture, _create_policy_cmd, _serviceName, username, policyFileName)).ConfigureAwait(false);
-            if (result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")) is false)
+            if (result.Any(r => r.Contains($"Created policy `pol_{username}` successfully.")) is false)
             {
                 await RemoveUserAsync(username).ConfigureAwait(false);
                 File.Delete($"{username}.json");
