@@ -4,7 +4,7 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.300.22
+    - 3.7.303.5
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
@@ -811,7 +811,7 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
     :versions:
-    - 1.7.0
+    - 1.11.0
     :when: 2022-08-16 21:40:30.047067134 Z
 - - :approve
   - xunit.assert
