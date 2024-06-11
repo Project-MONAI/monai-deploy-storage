@@ -11,21 +11,21 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.304.11
+    - 3.7.307.6
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.300.23
+    - 3.7.300.66
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
   - :who: mocsharp
     :why: MIT (https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
     :versions:
-    - 4.2.0
+    - 4.5.0
     :when: 2022-08-16 18:11:14.642522140 Z
 - - :approve
   - Castle.Core
@@ -797,7 +797,7 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.7.0
     :when: 2022-08-16 21:40:29.166018542 Z
 - - :approve
   - xunit.abstractions
@@ -818,33 +818,33 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.7.0
     :when: 2022-08-16 21:40:30.526718458 Z
 - - :approve
   - xunit.core
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.7.0
     :when: 2022-08-16 21:40:30.973515441 Z
 - - :approve
   - xunit.extensibility.core
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.7.0
     :when: 2022-08-16 21:40:31.401607230 Z
 - - :approve
   - xunit.extensibility.execution
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.7.0
     :when: 2022-08-16 21:40:31.845685693 Z
 - - :approve
   - xunit.runner.visualstudio
   - :who: mocsharp
     :why: MIT ( https://licenses.nuget.org/MIT)
     :versions:
-    - 2.5.5
+    - 2.5.7
     :when: 2022-08-16 21:40:32.294717110 Z

@@ -132,15 +132,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.304.11</summary>
+<summary>AWSSDK.S3 3.7.307.6</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.304.11
+- Version: 3.7.307.6
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.304.11)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.307.6)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -205,15 +205,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.SecurityToken 3.7.300.23</summary>
+<summary>AWSSDK.SecurityToken 3.7.300.66</summary>
 
 ## AWSSDK.SecurityToken
 
-- Version: 3.7.300.23
+- Version: 3.7.300.66
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.300.23)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.300.66)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -278,14 +278,14 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>Ardalis.GuardClauses 4.2.0</summary>
+<summary>Ardalis.GuardClauses 4.5.0</summary>
 
 ## Ardalis.GuardClauses
 
-- Version: 4.2.0
+- Version: 4.5.0
 - Authors: Steve Smith (@ardalis)
 - Project URL: https://github.com/ardalis/guardclauses
-- Source: [NuGet](https://www.nuget.org/packages/Ardalis.GuardClauses/4.2.0)
+- Source: [NuGet](https://www.nuget.org/packages/Ardalis.GuardClauses/4.5.0)
 - License: [MIT](https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
 
 
@@ -17340,13 +17340,13 @@ consequential or other damages.
 
 
 <details>
-<summary>xunit 2.6.3</summary>
+<summary>xunit 2.7.0</summary>
 
 ## xunit
 
-- Version: 2.6.3
+- Version: 2.7.0
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit/2.7.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17503,13 +17503,13 @@ limitations under the License.
 
 
 <details>
-<summary>xunit.assert 2.6.3</summary>
+<summary>xunit.assert 2.7.0</summary>
 
 ## xunit.assert
 
-- Version: 2.6.3
+- Version: 2.7.0
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.7.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17568,13 +17568,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.core 2.6.3</summary>
+<summary>xunit.core 2.7.0</summary>
 
 ## xunit.core
 
-- Version: 2.6.3
+- Version: 2.7.0
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.7.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17633,13 +17633,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.extensibility.core 2.6.3</summary>
+<summary>xunit.extensibility.core 2.7.0</summary>
 
 ## xunit.extensibility.core
 
-- Version: 2.6.3
+- Version: 2.7.0
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.7.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17698,13 +17698,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.extensibility.execution 2.6.3</summary>
+<summary>xunit.extensibility.execution 2.7.0</summary>
 
 ## xunit.extensibility.execution
 
-- Version: 2.6.3
+- Version: 2.7.0
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.7.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17763,13 +17763,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.runner.visualstudio 2.5.5</summary>
+<summary>xunit.runner.visualstudio 2.5.7</summary>
 
 ## xunit.runner.visualstudio
 
-- Version: 2.5.5
+- Version: 2.5.7
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.5.5)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.5.7)
 - License: [MIT]( https://licenses.nuget.org/MIT)
 
 
