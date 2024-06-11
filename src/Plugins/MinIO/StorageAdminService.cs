@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 MONAI Consortium
+ * Copyright 2022-2024 MONAI Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 
 using System.Diagnostics;
+using System.Globalization;
 using System.IO.Abstractions;
 using Amazon.SecurityToken.Model;
 using Ardalis.GuardClauses;
@@ -36,9 +37,12 @@ namespace Monai.Deploy.Storage.MinIO
         private readonly string _accessKey;
         private readonly string _secretKey;
         private readonly IFileSystem _fileSystem;
-        private readonly string _set_connection_cmd;
-        private readonly string _get_connections_cmd;
-        private readonly string _get_users_cmd;
+        private string _set_connection_cmd;
+        private string _get_connections_cmd;
+        private string _get_users_cmd;
+        private string _set_policy_cmd;
+        private string _create_policy_cmd;
+        private string _remove_user_cmd;
 
         public StorageAdminService(IOptions<StorageServiceConfiguration> options, ILogger<StorageAdminService> logger, IFileSystem fileSystem)
         {
@@ -56,9 +60,18 @@ namespace Monai.Deploy.Storage.MinIO
             _endpoint = options.Value.Settings[ConfigurationKeys.EndPoint];
             _accessKey = options.Value.Settings[ConfigurationKeys.AccessKey];
             _secretKey = options.Value.Settings[ConfigurationKeys.AccessToken];
+
+            SetCommandTemplates(options);
+        }
+
+        private void SetCommandTemplates(IOptions<StorageServiceConfiguration> options)
+        {
             _set_connection_cmd = $"alias set {_serviceName} http://{_endpoint} {_accessKey} {_secretKey}";
             _get_connections_cmd = "alias list";
             _get_users_cmd = $"admin user list {_serviceName}";
+            _set_policy_cmd = "admin policy attach {0} {1} --{2} {3}";
+            _remove_user_cmd = "admin user remove {0} {1}";
+            _create_policy_cmd = "admin policy create {0} pol_{1} {2}";
         }
 
         private static void ValidateConfiguration(StorageServiceConfiguration configuration)
@@ -89,7 +102,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(itemName, nameof(itemName));
 
             var policiesStr = string.Join(',', policies);
-            var setPolicyCmd = $"admin policy set {_serviceName} {policiesStr} {policyType.ToString().ToLower()}={itemName}";
+            var setPolicyCmd = string.Format(CultureInfo.InvariantCulture, _set_policy_cmd, _serviceName, policiesStr, policyType.ToString().ToLowerInvariant(), itemName);
             var result = await ExecuteAsync(setPolicyCmd).ConfigureAwait(false);
 
             var expectedResult = $"Policy `{policiesStr}` is set on {policyType.ToString().ToLower()} `{itemName}`";
@@ -197,7 +210,7 @@ namespace Monai.Deploy.Storage.MinIO
         {
             Guard.Against.NullOrWhiteSpace(username, nameof(username));
 
-            var result = await ExecuteAsync($"admin user remove {_serviceName} {username}").ConfigureAwait(false);
+            var result = await ExecuteAsync(string.Format(CultureInfo.InvariantCulture, _remove_user_cmd, _serviceName, username)).ConfigureAwait(false);
 
             if (!result.Any(r => r.Contains($"Removed user `{username}` successfully.")))
             {
@@ -260,7 +273,7 @@ namespace Monai.Deploy.Storage.MinIO
             Guard.Against.NullOrWhiteSpace(username, nameof(username));
 
             var policyFileName = await CreatePolicyFile(policyRequests, username).ConfigureAwait(false);
-            var result = await ExecuteAsync($"admin policy add {_serviceName} pol_{username} {policyFileName}").ConfigureAwait(false);
+            var result = await ExecuteAsync(string.Format(CultureInfo.InvariantCulture, _create_policy_cmd, _serviceName, username, policyFileName)).ConfigureAwait(false);
             if (result.Any(r => r.Contains($"Added policy `pol_{username}` successfully.")) is false)
             {
                 await RemoveUserAsync(username).ConfigureAwait(false);
