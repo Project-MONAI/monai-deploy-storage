@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2022 MONAI Consortium
+# SPDX-FileCopyrightText: © 2022-2024 MONAI Consortium
 # SPDX-License-Identifier: Apache License 2.0
 
 name: ci
@@ -117,7 +117,7 @@ jobs:
       run: license_finder -r
 
     - name: Check License Header
-      uses: apache/skywalking-eyes@v0.5.0
+      uses: apache/skywalking-eyes@v0.6.0
 
   unit-test:
     runs-on: ubuntu-latest
