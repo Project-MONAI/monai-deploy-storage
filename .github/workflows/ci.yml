@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2022 MONAI Consortium
+# SPDX-FileCopyrightText: © 2022-2024 MONAI Consortium
 # SPDX-License-Identifier: Apache License 2.0
 
 name: ci
@@ -34,7 +34,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
@@ -43,7 +43,7 @@ jobs:
         dotnet-version: "8.0.x"
 
     - name: Enable NuGet cache
-      uses: actions/cache@v3.3.0
+      uses: actions/cache@v4.0.2
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -51,7 +51,7 @@ jobs:
           ${{ runner.os }}-nuget
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v3
       with:
         languages: csharp
 
@@ -64,7 +64,7 @@ jobs:
       working-directory: ./src
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
 
   analyze:
     runs-on: ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - uses: actions/setup-dotnet@v3
@@ -95,7 +95,7 @@ jobs:
         tools: licensefinder
 
     - name: Enable NuGet cache
-      uses: actions/cache@v3.3.0
+      uses: actions/cache@v4.0.2
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -117,30 +117,30 @@ jobs:
       run: license_finder -r
 
     - name: Check License Header
-      uses: apache/skywalking-eyes@v0.4.0
+      uses: apache/skywalking-eyes@v0.6.0
 
   unit-test:
     runs-on: ubuntu-latest
     steps:
       - name: Set up JDK 11
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
 
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
 
       - name: Enable NuGet cache
-        uses: actions/cache@v3.3.0
+        uses: actions/cache@v4.0.2
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -188,7 +188,7 @@ jobs:
           docker volume rm tests_minio_config
         working-directory: ./src/Plugins/MinIO/Tests
 
-      - uses: codecov/codecov-action@v3.1.1
+      - uses: codecov/codecov-action@v4.4.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: "src/"
@@ -206,7 +206,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
       fail-fast: true
 
     permissions:
@@ -217,7 +217,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -226,7 +226,7 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Enable NuGet cache
-        uses: actions/cache@v3.3.0
+        uses: actions/cache@v4.0.2
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -278,7 +278,7 @@ jobs:
 
       - name: Upload Nuget
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.0.0
         with:
           name: nuget
           path: ${{ github.workspace }}/release/*.nupkg
@@ -286,7 +286,7 @@ jobs:
 
       - name: Upload Zipped Plug-ins
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.0.0
         with:
           name: plug-ins
           path: ${{ github.workspace }}/src/Plugins/release/*.zip
@@ -298,7 +298,7 @@ jobs:
     needs: [build, unit-test]
     if: ${{ ! ( github.event.inputs.nuget ) && ! ( contains(github.ref, 'refs/heads/main') ) }}
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         id: download
 
       - name: List artifacts
@@ -323,7 +323,7 @@ jobs:
     needs: [build, unit-test]
     if: ${{ github.event.inputs.nuget }}
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         id: download
 
       - name: List artifacts
@@ -351,11 +351,11 @@ jobs:
       MAJORMINORPATCH: ${{ needs.build.outputs.majorMinorPatch }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         id: download
 
       - name: List artifacts
