@@ -4,28 +4,28 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.300.22
+    - 3.7.304.15
     :when: 2022-08-29 18:11:12.923214877 Z
 - - :approve
   - AWSSDK.S3
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.304.11
+    - 3.7.309.3
     :when: 2022-08-29 18:11:13.354973002 Z
 - - :approve
   - AWSSDK.SecurityToken
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/aws/aws-sdk-net/raw/master/License.txt)
     :versions:
-    - 3.7.300.23
+    - 3.7.300.105
     :when: 2022-08-16 18:11:13.781079769 Z
 - - :approve
   - Ardalis.GuardClauses
   - :who: mocsharp
     :why: MIT (https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
     :versions:
-    - 4.2.0
+    - 4.5.0
     :when: 2022-08-16 18:11:14.642522140 Z
 - - :approve
   - Castle.Core
@@ -60,7 +60,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
     :versions:
-    - 17.8.0
+    - 17.10.0
     :when: 2022-08-16 18:11:17.245887971 Z
 - - :approve
   - Microsoft.Extensions.Configuration.Abstractions
@@ -74,14 +74,14 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 7.0.0
+    - 8.0.0
     :when: 2022-08-16 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.DependencyInjection.Abstractions
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 8.0.0
+    - 8.0.1
     :when: 2022-08-16 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.Diagnostics.Abstractions
@@ -95,14 +95,14 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
-    - 8.0.0
+    - 8.0.6
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
     :versions:
-    - 8.0.0
+    - 8.0.6
     :when: 2022-08-29 18:11:22.090772006 Z
 - - :approve
   - Microsoft.Extensions.FileProviders.Abstractions
@@ -131,14 +131,14 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 8.0.0
+    - 8.0.1
     :when: 2022-08-29 18:11:25.167886026 Z
 - - :approve
   - Microsoft.Extensions.Options
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
     :versions:
-    - 8.0.0
+    - 8.0.2
     :when: 2022-08-16 18:11:27.836230472 Z
 - - :approve
   - Microsoft.Extensions.Primitives
@@ -152,7 +152,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
     :versions:
-    - 17.8.0
+    - 17.10.0
     :when: 2022-08-16 18:11:29.155295778 Z
 - - :approve
   - Microsoft.NETCore.Platforms
@@ -173,14 +173,14 @@
   - :who: mocsharp
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
     :versions:
-    - 17.8.0
+    - 17.10.0
     :when: 2022-08-16 18:11:32.293966383 Z
 - - :approve
   - Microsoft.TestPlatform.TestHost
   - :who: mocsharp
     :why: MIT (https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
     :versions:
-    - 17.8.0
+    - 17.10.0
     :when: 2022-08-16 18:11:33.162650175 Z
 - - :approve
   - Microsoft.Win32.Primitives
@@ -194,7 +194,7 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/minio/minio-dotnet/raw/master/LICENSE)
     :versions:
-    - 6.0.1
+    - 6.0.2
     :when: 2022-08-16 18:11:34.443742604 Z
 - - :approve
   - Moq
@@ -335,14 +335,14 @@
   - :who: samrooke
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 20.0.4
+    - 21.0.2
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - System.IO.Abstractions.TestingHelpers
   - :who: samrooke
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 20.0.4
+    - 21.0.2
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - runtime.native.System.IO.Compression
@@ -377,7 +377,7 @@
   - :who: mocsharp
     :why: MIT (https://raw.githubusercontent.com/dotnet/runtime/main/LICENSE.TXT)
     :versions:
-    - 7.0.0
+    - 8.0.0
     :when: 2023-08-10 20:50:14.759818552 Z
 - - :approve
   - System.Linq
@@ -664,28 +664,28 @@
   - :who: samrooke
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 20.0.4
+    - 21.0.2
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - TestableIO.System.IO.Abstractions.TestingHelpers
   - :who: samrooke
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 20.0.4
+    - 21.0.2
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - TestableIO.System.IO.Abstractions.Wrappers
   - :who: samrooke
     :why: MIT (https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
     :versions:
-    - 20.0.4
+    - 21.0.2
     :when: 2022-12-14 12:28:00.728481602 Z
 - - :approve
   - coverlet.collector
   - :who: mocsharp
     :why: MIT (https://github.com/coverlet-coverage/coverlet/raw/master/LICENSE)
     :versions:
-    - 6.0.0
+    - 6.0.2
     :when: 2022-08-16 18:12:11.244463651 Z
 - - :approve
   - runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl
@@ -797,7 +797,7 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.8.1
     :when: 2022-08-16 21:40:29.166018542 Z
 - - :approve
   - xunit.abstractions
@@ -811,40 +811,40 @@
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
     :versions:
-    - 1.7.0
+    - 1.14.0
     :when: 2022-08-16 21:40:30.047067134 Z
 - - :approve
   - xunit.assert
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.8.1
     :when: 2022-08-16 21:40:30.526718458 Z
 - - :approve
   - xunit.core
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.8.1
     :when: 2022-08-16 21:40:30.973515441 Z
 - - :approve
   - xunit.extensibility.core
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.8.1
     :when: 2022-08-16 21:40:31.401607230 Z
 - - :approve
   - xunit.extensibility.execution
   - :who: mocsharp
     :why: Apache-2.0 ( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
     :versions:
-    - 2.6.3
+    - 2.8.1
     :when: 2022-08-16 21:40:31.845685693 Z
 - - :approve
   - xunit.runner.visualstudio
   - :who: mocsharp
     :why: MIT ( https://licenses.nuget.org/MIT)
     :versions:
-    - 2.5.5
+    - 2.8.1
     :when: 2022-08-16 21:40:32.294717110 Z

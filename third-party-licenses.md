@@ -1,5 +1,5 @@
 <!--
-Copyright 2022-2023 MONAI Consortium
+Copyright 2022-2024 MONAI Consortium
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
 # Third-Party Licenses
 
 
@@ -59,15 +60,15 @@ SOFTWARE.
 
 
 <details>
-<summary>AWSSDK.Core 3.7.300.22</summary>
+<summary>AWSSDK.Core 3.7.304.15</summary>
 
 ## AWSSDK.Core
 
-- Version: 3.7.300.22
+- Version: 3.7.304.15
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.300.22)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.Core/3.7.304.15)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -132,15 +133,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.S3 3.7.304.11</summary>
+<summary>AWSSDK.S3 3.7.309.3</summary>
 
 ## AWSSDK.S3
 
-- Version: 3.7.304.11
+- Version: 3.7.309.3
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.304.11)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.S3/3.7.309.3)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -205,15 +206,15 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>AWSSDK.SecurityToken 3.7.300.23</summary>
+<summary>AWSSDK.SecurityToken 3.7.300.105</summary>
 
 ## AWSSDK.SecurityToken
 
-- Version: 3.7.300.23
+- Version: 3.7.300.105
 - Authors: Amazon Web Services
 - Owners: Amazon Web Services
 - Project URL: https://github.com/aws/aws-sdk-net/
-- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.300.23)
+- Source: [NuGet](https://www.nuget.org/packages/AWSSDK.SecurityToken/3.7.300.105)
 - License: [Apache-2.0](https://github.com/aws/aws-sdk-net/raw/master/License.txt)
 
 
@@ -278,14 +279,14 @@ END OF TERMS AND CONDITIONS
 
 
 <details>
-<summary>Ardalis.GuardClauses 4.2.0</summary>
+<summary>Ardalis.GuardClauses 4.5.0</summary>
 
 ## Ardalis.GuardClauses
 
-- Version: 4.2.0
+- Version: 4.5.0
 - Authors: Steve Smith (@ardalis)
 - Project URL: https://github.com/ardalis/guardclauses
-- Source: [NuGet](https://www.nuget.org/packages/Ardalis.GuardClauses/4.2.0)
+- Source: [NuGet](https://www.nuget.org/packages/Ardalis.GuardClauses/4.5.0)
 - License: [MIT](https://github.com/ardalis/GuardClauses.Analyzers/raw/master/LICENSE)
 
 
@@ -807,14 +808,14 @@ third-party archives.
 
 
 <details>
-<summary>Microsoft.CodeCoverage 17.8.0</summary>
+<summary>Microsoft.CodeCoverage 17.10.0</summary>
 
 ## Microsoft.CodeCoverage
 
-- Version: 17.8.0
+- Version: 17.10.0
 - Authors: Microsoft
 - Project URL: https://github.com/microsoft/vstest
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.8.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.CodeCoverage/17.10.0)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
 
 
@@ -889,14 +890,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.DependencyInjection 7.0.0</summary>
+<summary>Microsoft.Extensions.DependencyInjection 8.0.0</summary>
 
 ## Microsoft.Extensions.DependencyInjection
 
-- Version: 7.0.0
+- Version: 8.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/7.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/8.0.0)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -930,14 +931,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0</summary>
+<summary>Microsoft.Extensions.DependencyInjection.Abstractions 8.0.1</summary>
 
 ## Microsoft.Extensions.DependencyInjection.Abstractions
 
-- Version: 8.0.0
+- Version: 8.0.1
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/8.0.1)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -1012,14 +1013,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks 8.0.0</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks 8.0.6</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks
 
-- Version: 8.0.0
+- Version: 8.0.6
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/8.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks/8.0.6)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -1053,14 +1054,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 8.0.0</summary>
+<summary>Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions 8.0.6</summary>
 
 ## Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions
 
-- Version: 8.0.0
+- Version: 8.0.6
 - Authors: Microsoft
 - Project URL: https://asp.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/8.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/8.0.6)
 - License: [MIT](https://github.com/dotnet/aspnetcore/raw/main/LICENSE.txt)
 
 
@@ -1258,14 +1259,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Logging.Abstractions 8.0.0</summary>
+<summary>Microsoft.Extensions.Logging.Abstractions 8.0.1</summary>
 
 ## Microsoft.Extensions.Logging.Abstractions
 
-- Version: 8.0.0
+- Version: 8.0.1
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/8.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/8.0.1)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -1299,14 +1300,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.Extensions.Options 8.0.0</summary>
+<summary>Microsoft.Extensions.Options 8.0.2</summary>
 
 ## Microsoft.Extensions.Options
 
-- Version: 8.0.0
+- Version: 8.0.2
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options/8.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Options/8.0.2)
 - License: [MIT](https://github.com/dotnet/runtime/raw/main/LICENSE.TXT)
 
 
@@ -1381,14 +1382,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.NET.Test.Sdk 17.8.0</summary>
+<summary>Microsoft.NET.Test.Sdk 17.10.0</summary>
 
 ## Microsoft.NET.Test.Sdk
 
-- Version: 17.8.0
+- Version: 17.10.0
 - Authors: Microsoft
 - Project URL: https://github.com/microsoft/vstest
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.8.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.10.0)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
 
 
@@ -1832,14 +1833,14 @@ consequential or other damages.
 
 
 <details>
-<summary>Microsoft.TestPlatform.ObjectModel 17.8.0</summary>
+<summary>Microsoft.TestPlatform.ObjectModel 17.10.0</summary>
 
 ## Microsoft.TestPlatform.ObjectModel
 
-- Version: 17.8.0
+- Version: 17.10.0
 - Authors: Microsoft
 - Project URL: https://github.com/microsoft/vstest
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.8.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.ObjectModel/17.10.0)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
 
 
@@ -1873,14 +1874,14 @@ SOFTWARE.
 
 
 <details>
-<summary>Microsoft.TestPlatform.TestHost 17.8.0</summary>
+<summary>Microsoft.TestPlatform.TestHost 17.10.0</summary>
 
 ## Microsoft.TestPlatform.TestHost
 
-- Version: 17.8.0
+- Version: 17.10.0
 - Authors: Microsoft
 - Project URL: https://github.com/microsoft/vstest
-- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.8.0)
+- Source: [NuGet](https://www.nuget.org/packages/Microsoft.TestPlatform.TestHost/17.10.0)
 - License: [MIT](https://github.com/microsoft/vstest/raw/v17.7.0/LICENSE)
 
 
@@ -2119,14 +2120,14 @@ consequential or other damages.
 
 
 <details>
-<summary>Minio 6.0.1</summary>
+<summary>Minio 6.0.2</summary>
 
 ## Minio
 
-- Version: 6.0.1
+- Version: 6.0.2
 - Authors: MinIO, Inc.
 - Project URL: https://github.com/minio/minio-dotnet
-- Source: [NuGet](https://www.nuget.org/packages/Minio/6.0.1)
+- Source: [NuGet](https://www.nuget.org/packages/Minio/6.0.2)
 - License: [Apache-2.0](https://github.com/minio/minio-dotnet/raw/master/LICENSE)
 
 
@@ -5450,14 +5451,14 @@ consequential or other damages.
 
 
 <details>
-<summary>System.IO.Abstractions 20.0.4</summary>
+<summary>System.IO.Abstractions 21.0.2</summary>
 
 ## System.IO.Abstractions
 
-- Version: 20.0.4
+- Version: 21.0.2
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/20.0.4)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions/21.0.2)
 - License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -5491,14 +5492,14 @@ SOFTWARE.
 
 
 <details>
-<summary>System.IO.Abstractions.TestingHelpers 20.0.4</summary>
+<summary>System.IO.Abstractions.TestingHelpers 21.0.2</summary>
 
 ## System.IO.Abstractions.TestingHelpers
 
-- Version: 20.0.4
+- Version: 21.0.2
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/20.0.4)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Abstractions.TestingHelpers/21.0.2)
 - License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -6352,14 +6353,14 @@ consequential or other damages.
 
 
 <details>
-<summary>System.IO.Hashing 7.0.0</summary>
+<summary>System.IO.Hashing 8.0.0</summary>
 
 ## System.IO.Hashing
 
-- Version: 7.0.0
+- Version: 8.0.0
 - Authors: Microsoft
 - Project URL: https://dot.net/
-- Source: [NuGet](https://www.nuget.org/packages/System.IO.Hashing/7.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/System.IO.Hashing/8.0.0)
 - License: [MIT](https://raw.githubusercontent.com/dotnet/runtime/main/LICENSE.TXT)
 
 
@@ -13898,14 +13899,14 @@ consequential or other damages.
 
 
 <details>
-<summary>TestableIO.System.IO.Abstractions 20.0.4</summary>
+<summary>TestableIO.System.IO.Abstractions 21.0.2</summary>
 
 ## TestableIO.System.IO.Abstractions
 
-- Version: 20.0.4
+- Version: 21.0.2
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/TestableIO.System.IO.Abstractions/20.0.4)
+- Source: [NuGet](https://www.nuget.org/packages/TestableIO.System.IO.Abstractions/21.0.2)
 - License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -13939,14 +13940,14 @@ SOFTWARE.
 
 
 <details>
-<summary>TestableIO.System.IO.Abstractions.TestingHelpers 20.0.4</summary>
+<summary>TestableIO.System.IO.Abstractions.TestingHelpers 21.0.2</summary>
 
 ## TestableIO.System.IO.Abstractions.TestingHelpers
 
-- Version: 20.0.4
+- Version: 21.0.2
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/TestableIO.System.IO.Abstractions.TestingHelpers/20.0.4)
+- Source: [NuGet](https://www.nuget.org/packages/TestableIO.System.IO.Abstractions.TestingHelpers/21.0.2)
 - License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -13980,14 +13981,14 @@ SOFTWARE.
 
 
 <details>
-<summary>TestableIO.System.IO.Abstractions.Wrappers 20.0.4</summary>
+<summary>TestableIO.System.IO.Abstractions.Wrappers 21.0.2</summary>
 
 ## TestableIO.System.IO.Abstractions.Wrappers
 
-- Version: 20.0.4
+- Version: 21.0.2
 - Authors: Tatham Oddie & friends
 - Project URL: https://github.com/TestableIO/System.IO.Abstractions
-- Source: [NuGet](https://www.nuget.org/packages/TestableIO.System.IO.Abstractions.Wrappers/20.0.4)
+- Source: [NuGet](https://www.nuget.org/packages/TestableIO.System.IO.Abstractions.Wrappers/21.0.2)
 - License: [MIT](https://github.com/TestableIO/System.IO.Abstractions/raw/main/LICENSE)
 
 
@@ -14021,14 +14022,14 @@ SOFTWARE.
 
 
 <details>
-<summary>coverlet.collector 6.0.0</summary>
+<summary>coverlet.collector 6.0.2</summary>
 
 ## coverlet.collector
 
-- Version: 6.0.0
+- Version: 6.0.2
 - Authors: tonerdo
 - Project URL: https://github.com/coverlet-coverage/coverlet
-- Source: [NuGet](https://www.nuget.org/packages/coverlet.collector/6.0.0)
+- Source: [NuGet](https://www.nuget.org/packages/coverlet.collector/6.0.2)
 - License: [MIT](https://github.com/coverlet-coverage/coverlet/raw/master/LICENSE)
 
 
@@ -17340,13 +17341,13 @@ consequential or other damages.
 
 
 <details>
-<summary>xunit 2.6.3</summary>
+<summary>xunit 2.8.1</summary>
 
 ## xunit
 
-- Version: 2.6.3
+- Version: 2.8.1
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit/2.8.1)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17472,13 +17473,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.analyzers 1.7.0</summary>
+<summary>xunit.analyzers 1.14.0</summary>
 
 ## xunit.analyzers
 
-- Version: 1.7.0
+- Version: 1.14.0
 - Authors: jnewkirk,bradwilson,marcind
-- Source: [NuGet](https://www.nuget.org/packages/xunit.analyzers/1.7.0)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.analyzers/1.14.0)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit.analyzers/master/LICENSE)
 
 
@@ -17503,13 +17504,13 @@ limitations under the License.
 
 
 <details>
-<summary>xunit.assert 2.6.3</summary>
+<summary>xunit.assert 2.8.1</summary>
 
 ## xunit.assert
 
-- Version: 2.6.3
+- Version: 2.8.1
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.assert/2.8.1)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17568,13 +17569,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.core 2.6.3</summary>
+<summary>xunit.core 2.8.1</summary>
 
 ## xunit.core
 
-- Version: 2.6.3
+- Version: 2.8.1
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.core/2.8.1)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17633,13 +17634,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.extensibility.core 2.6.3</summary>
+<summary>xunit.extensibility.core 2.8.1</summary>
 
 ## xunit.extensibility.core
 
-- Version: 2.6.3
+- Version: 2.8.1
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.core/2.8.1)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17698,13 +17699,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.extensibility.execution 2.6.3</summary>
+<summary>xunit.extensibility.execution 2.8.1</summary>
 
 ## xunit.extensibility.execution
 
-- Version: 2.6.3
+- Version: 2.8.1
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.6.3)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.extensibility.execution/2.8.1)
 - License: [Apache-2.0]( https://raw.githubusercontent.com/xunit/xunit/master/license.txt)
 
 
@@ -17763,13 +17764,13 @@ Both sets of code are covered by the following license:
 
 
 <details>
-<summary>xunit.runner.visualstudio 2.5.5</summary>
+<summary>xunit.runner.visualstudio 2.8.1</summary>
 
 ## xunit.runner.visualstudio
 
-- Version: 2.5.5
+- Version: 2.8.1
 - Authors: jnewkirk,bradwilson
-- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.5.5)
+- Source: [NuGet](https://www.nuget.org/packages/xunit.runner.visualstudio/2.8.1)
 - License: [MIT]( https://licenses.nuget.org/MIT)
 
 
