@@ -50,5 +50,6 @@ namespace Monai.Deploy.Storage.MinIO
 
         [LoggerMessage(EventId = 20009, Level = LogLevel.Error, Message = "Storage service error.")]
         public static partial void StorageServiceError(this ILogger logger, Exception ex);
+
     }
 }
