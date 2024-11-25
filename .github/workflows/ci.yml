@@ -38,7 +38,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/setup-dotnet@v3
+    - uses: actions/setup-dotnet@v4
       with:
         dotnet-version: "8.0.x"
 
@@ -82,7 +82,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-dotnet@v3
+    - uses: actions/setup-dotnet@v4
       with:
         dotnet-version: "8.0.x"
 
@@ -221,7 +221,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
 
@@ -307,7 +307,7 @@ jobs:
       - name: Install grp
         run: dotnet tool install gpr -g
 
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v4
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -332,7 +332,7 @@ jobs:
       - name: Install grp
         run: dotnet tool install gpr -g
 
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v4
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
