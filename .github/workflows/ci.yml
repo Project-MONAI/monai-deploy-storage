@@ -261,10 +261,20 @@ jobs:
           sh -c "! grep 'has the following vulnerable packages' vulnerable.txt"
         working-directory: ./src
 
+      - name: Package (Official Release)
+        env:
+          PACKAGEDIR: '${{ github.workspace }}/release/'
+        if: ${{ github.event.inputs.nuget && matrix.os == 'ubuntu-latest' }}
+        run: |
+          mkdir $PACKAGEDIR
+          dotnet pack --no-build -c ${{ env.BUILD_CONFIG }} -o $PACKAGEDIR -p:PackageVersion=${{ steps.gitversion.outputs.majorMinorPatch }}
+          ls -lR $PACKAGEDIR
+        working-directory: ./src
+
       - name: Package
         env:
           PACKAGEDIR: '${{ github.workspace }}/release/'
-        if: ${{ matrix.os == 'ubuntu-latest' }}
+        if: ${{ ! ( github.event.inputs.nuget ) && matrix.os == 'ubuntu-latest' }}
         run: |
           mkdir $PACKAGEDIR
           dotnet pack --no-build -c ${{ env.BUILD_CONFIG }} -o $PACKAGEDIR -p:PackageVersion=${{ steps.gitversion.outputs.majorMinorPatch }}-${{ steps.gitversion.outputs.EscapedBranchName }}.${{ steps.gitversion.outputs.CommitsSinceVersionSource }}
