@@ -2,8 +2,7 @@ header:
   license:
     spdx-id: Apache-2.0
     copyright-owner: MONAI Consortium
-    copyright-year: '2021-2024'
-
+    copyright-year: '2021-2025'
 
   paths:
     - 'src'
