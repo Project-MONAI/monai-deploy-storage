@@ -398,6 +398,7 @@ jobs:
           owner: ${{ steps.repo.outputs._0 }}
           repository: ${{ steps.repo.outputs._1 }}
           tagName: ${{ env.MAJORMINORPATCH }}
+          milestone: ${{ env.MAJORMINORPATCH }}
 
       - name: Close release with GitReleaseManager
         if: ${{ contains(github.ref, 'refs/heads/main') }}
