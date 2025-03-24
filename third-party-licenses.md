@@ -4832,14 +4832,14 @@ Contact
 
 
 <details>
-<summary>Minio 6.0.4</summary>
+<summary>Minio 6.0.2</summary>
 
 ## Minio
 
-- Version: 6.0.4
+- Version: 6.0.2
 - Authors: MinIO, Inc.
 - Project URL: https://github.com/minio/minio-dotnet
-- Source: [NuGet](https://www.nuget.org/packages/Minio/6.0.4)
+- Source: [NuGet](https://www.nuget.org/packages/Minio/6.0.2)
 - License: [Apache-2.0](https://github.com/minio/minio-dotnet/raw/master/LICENSE)
 
 

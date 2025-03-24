@@ -194,7 +194,7 @@
   - :who: mocsharp
     :why: Apache-2.0 (https://github.com/minio/minio-dotnet/raw/master/LICENSE)
     :versions:
-    - 6.0.4
+    - 6.0.2
     :when: 2022-08-16 18:11:34.443742604 Z
 - - :approve
   - Moq
