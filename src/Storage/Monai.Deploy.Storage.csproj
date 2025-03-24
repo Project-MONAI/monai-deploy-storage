@@ -54,9 +54,9 @@
     <Compile Include="..\AssemblyInfo.cs" Link="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.300.105" />
-    <PackageReference Include="System.IO.Abstractions" Version="21.0.2" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.6" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.7.401.68" />
+    <PackageReference Include="System.IO.Abstractions" Version="21.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.14" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />

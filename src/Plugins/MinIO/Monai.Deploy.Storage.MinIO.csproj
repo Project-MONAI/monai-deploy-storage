@@ -42,7 +42,7 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Minio" Version="6.0.2" />
+    <PackageReference Include="Minio" Version="6.0.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\S3Policy\Monai.Deploy.Storage.S3Policy.csproj" />
