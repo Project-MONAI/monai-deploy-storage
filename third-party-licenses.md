@@ -346,14 +346,14 @@ limitations under the License.
 
 
 <details>
-<summary>CommunityToolkit.HighPerformance 8.3.0</summary>
+<summary>CommunityToolkit.HighPerformance 8.2.2</summary>
 
 ## CommunityToolkit.HighPerformance
 
-- Version: 8.3.0
+- Version: 8.2.2
 - Authors: Microsoft
 - Project URL: https://github.com/CommunityToolkit/dotnet
-- Source: [NuGet](https://www.nuget.org/packages/CommunityToolkit.HighPerformance/8.3.0)
+- Source: [NuGet](https://www.nuget.org/packages/CommunityToolkit.HighPerformance/8.2.2)
 - License: [MIT](https://raw.githubusercontent.com/CommunityToolkit/dotnet/main/License.md)
 
 
@@ -32138,14 +32138,14 @@ Contact
 
 
 <details>
-<summary>System.Reactive 6.0.1</summary>
+<summary>System.Reactive 6.0.0</summary>
 
 ## System.Reactive
 
-- Version: 6.0.1
+- Version: 6.0.0
 - Authors: .NET Foundation and Contributors
 - Project URL: https://github.com/dotnet/reactive
-- Source: [NuGet](https://www.nuget.org/packages/System.Reactive/6.0.1)
+- Source: [NuGet](https://www.nuget.org/packages/System.Reactive/6.0.0)
 - License: [MIT](https://github.com/dotnet/reactive/raw/main/LICENSE)
 
 

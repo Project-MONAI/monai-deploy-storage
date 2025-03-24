@@ -39,7 +39,7 @@
   - :who: mocsharp
     :why: MIT (https://raw.githubusercontent.com/CommunityToolkit/dotnet/main/License.md)
     :versions:
-    - 8.3.0
+    - 8.2.2
     :when: 2023-08-10 20:50:14.759818552 Z
 - - :approve
   - Dangl.Xunit.Extensions.Ordering
@@ -426,7 +426,7 @@
   - :who: mocsharp
     :why: MIT (https://github.com/dotnet/reactive/raw/main/LICENSE)
     :versions:
-    - 6.0.1
+    - 6.0.0
     :when: 2022-08-16 18:11:52.055491398 Z
 - - :approve
   - System.Reflection
